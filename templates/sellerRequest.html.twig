@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+  <div class="container">
+    <h1>Sell with us</h1>
+    <h4>Fill the following data:</h4>
+    {{ form_start(form) }}
+    {{ form_row(form.accountManagerName) }}
+    {{ form_row(form.accountManagerLastName) }}
+    {{ form_row(form.phoneNumber) }}
+    {{ form_row(form.storeCommercialName) }}
+    {{ form_row(form.email) }}
+    {{ form_row(form.manifest) }}
+    {{ form_row(form.acceptTermsAndConditions) }}
+    {{ form_row(form.acceptCommissionsAndPaymentPolicy) }}
+    <div>Nombre y Apellido del encargado de la cuenta en Linio</div>
+    {{ form_end(form) }}
+  </div>
+{% endblock %}

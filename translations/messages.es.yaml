@@ -1,3 +1,22 @@
-Account manager name: Nombre del encargado de la cuenta en Linio
-Phone number: Teléfono
-Email: "Correo electrónico (Ideal: Gmail, Hotmail, Outlook, Yahoo)"
+form_title: Vende con nosotros
+section_1_title: Completa la siguiente información
+section_2_title: Completa los siguientes campos relacionados con tu empresa
+section_3_title: Cuenta Bancaria
+section_4_title: Contactos de almacén
+section_5_title: ¿Cumples con los siguientes requisitos operativos?
+section_6_title: Cuéntanos acerca de tu catálogo
+section_7_title: Cuéntanos acerca de tu experiencia Online
+section_8_title: Cuéntanos acerca de las marcas que vendes
+Account manager name: Nombre y Apellido del encargado de la cuenta en Linio:
+Phone number: Teléfono (con clave LADA):
+Account name: Nombre comercial de la tienda en Linio:
+Terms_and_conditions: Términos y condiciones:
+Accept manifest: Manifiesto bajo protesta de decir verdad manifiesto que los documentos y datos aportados en mi cuenta cumplen con los requisitos legales aplicables vigentes, liberando a Linio de cualquier responsabilidad que de estos pueda surgir.
+Accept terms and conditions: Acepto los Términos y Condiciones
+Accept commissions and payment policy: Acepto las Comisiones y Políticas de pagos
+Email: Correo electrónico:
+Repeat Email: Repite tu correo electrónico:
+email_caption: Ten en cuenta que no está permitida la palabra "Linio" en el correo electrónico
+account_name_caption: Elige un nombre de fantasía que represente a tu comercio
+Submit: Enviar
+

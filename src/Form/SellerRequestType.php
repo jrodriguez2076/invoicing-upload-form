@@ -7,8 +7,10 @@ namespace App\Form;
 use App\Entity\SellerRequest;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
+use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\RepeatedType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -18,14 +20,15 @@ class SellerRequestType extends AbstractType
     {
         $builder
             ->add('accountManagerName')
-            ->add('accountManagerLastName')
             ->add('phoneNumber')
-            ->add('storeCommercialName')
+            ->add('accountName', TextType::class, [ 'help' => 'account_name_caption'])
             ->add('email', RepeatedType::class, [
-                'first_options'  => ['label' => 'Email'],
+                'type' => EmailType::class,
+                'first_options'  => ['label' => 'Email', 'help' => 'email_caption'],
                 'second_options' => ['label' => 'Repeat Email'],
+
             ])
-            ->add('manifest', CheckboxType::class)
+            ->add('acceptManifest', CheckboxType::class)
             ->add('acceptTermsAndConditions', CheckboxType::class)
             ->add('acceptCommissionsAndPaymentPolicy', CheckboxType::class)
             ->add('Submit', SubmitType::class)

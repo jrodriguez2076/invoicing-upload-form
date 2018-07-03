@@ -2,18 +2,21 @@
 
 {% block body %}
   <div class="container">
-    <h1>Sell with us</h1>
-    <h4>Fill the following data:</h4>
+    <h1>{{'form_title' | trans }}</h1></br>
     {{ form_start(form) }}
+    <h4>{{ 'section_1_title' | trans }}</h4>
+    </br>
     {{ form_row(form.accountManagerName) }}
-    {{ form_row(form.accountManagerLastName) }}
     {{ form_row(form.phoneNumber) }}
-    {{ form_row(form.storeCommercialName) }}
+    {{ form_row(form.accountName) }}
     {{ form_row(form.email) }}
-    {{ form_row(form.manifest) }}
-    {{ form_row(form.acceptTermsAndConditions) }}
-    {{ form_row(form.acceptCommissionsAndPaymentPolicy) }}
-    <div>Nombre y Apellido del encargado de la cuenta en Linio</div>
+    {{ 'Terms_and_conditions' | trans }}</p>
+
+    {{ form_row(form.acceptManifest) }}
+    {{ form_row(form.acceptTermsAndConditions) }} <a href=""> Ver términos y condiciones</a></br>
+    {{ form_row(form.acceptCommissionsAndPaymentPolicy) }} <a href=""> Ver comisiones y políticas de pagos</a>
+    <hr>
+    <h4>{{ 'section_2_title' | trans }}</h4>
     {{ form_end(form) }}
   </div>
 {% endblock %}

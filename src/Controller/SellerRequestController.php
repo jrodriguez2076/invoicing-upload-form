@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Controller;
 
-use App\Adapter\Prm;
+use App\Adapter\PrmAdapter;
 use App\Entity\SellerRequest;
 use App\Form\SellerRequestType;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -14,7 +14,7 @@ use Symfony\Component\HttpFoundation\Response;
 class SellerRequestController extends AbstractController
 {
     /**
-     * @var Prm
+     * @var PrmAdapter
      */
     protected $prmAdapter;
 
@@ -23,7 +23,7 @@ class SellerRequestController extends AbstractController
      */
     protected $country;
 
-    public function __construct(Prm $prmAdapter, string $country)
+    public function __construct(PrmAdapter $prmAdapter, string $country)
     {
         $this->prmAdapter = $prmAdapter;
         $this->country = $country;

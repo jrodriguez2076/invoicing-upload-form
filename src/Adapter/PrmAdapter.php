@@ -10,7 +10,7 @@ use GuzzleHttp\ClientInterface;
 use GuzzleHttp\Exception\ClientException;
 use GuzzleHttp\Exception\ServerException;
 
-class Prm
+class PrmAdapter
 {
     /** @var ClientInterface */
     protected $client;

@@ -831,16 +831,6 @@ class SellerRequest
         $this->accountManagerName = $accountManagerName;
     }
 
-    public function getAccountManagerLastName(): string
-    {
-        return $this->accountManagerLastName;
-    }
-
-    public function setAccountManagerLastName(string $accountManagerLastName): void
-    {
-        $this->accountManagerLastName = $accountManagerLastName;
-    }
-
     public function getPhoneNumber(): string
     {
         return $this->phoneNumber;
@@ -999,9 +989,7 @@ class SellerRequest
                     'Otro' => 'Otro',
                 ];
                 break;
-
         }
-
     }
 
     public static function getSecondaryCategories(string $country): array
@@ -1024,12 +1012,10 @@ class SellerRequest
                     'Otro' => 'Otro',
                 ];
                 break;
-
         }
-
     }
 
-    public static function getPotentialCatalogList(string $country): array
+    public static function getPotentialCatalogData(string $country): array
     {
         switch ($country){
             default:
@@ -1042,10 +1028,70 @@ class SellerRequest
                     '501-1000' => '501-1000',
                     '1001+' => '1001+',
                 ];
-
                 break;
-
         }
 
+    }
+
+    public static function getOtherStoresRatingData(string $country): array
+    {
+        switch ($country){
+            default:
+            case 'mx':
+                return [
+                    '5/5' => '5/5',
+                    '4/5' => '4/5',
+                    '3/5' => '3/5',
+                    '2/5' => '2/5',
+                    '1/5' => '1/5',
+                ];
+                break;
+        }
+
+    }
+
+    public static function getOtherStoresListData(string $country): array
+    {
+        switch ($country){
+            default:
+            case 'mx':
+                return [
+                    'Amazon' => 'Amazon',
+                    'Mercado Libre' => 'Mercado Libre',
+                    'Walmart' => 'Walmart',
+                    'Otra' => 'Otra',
+                    'No vendo' => 'No vendo',
+                ];
+                break;
+        }
+    }
+
+    public static function getMarketingInvestData(string $country): array
+    {
+        switch ($country){
+            default:
+            case 'mx':
+            return [
+                '0' => '0',
+                '1-100' => '1-100',
+                '101-500' => '101-500',
+                '501-1000' => '501-1000',
+                '1001+' => '1001+',
+            ];
+                break;
+        }
+    }
+
+    public static function getIntegrationFlagData(string $country): array
+    {
+        switch ($country){
+            default:
+            case 'mx':
+                return [
+                    'Sí' => 'Sí',
+                    'No' => 'No',
+                ];
+                break;
+        }
     }
 }

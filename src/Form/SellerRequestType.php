@@ -118,8 +118,34 @@ class SellerRequestType extends AbstractType
                 'choices' => SellerRequest::getSecondaryCategories($options['country'])
             ])
             ->add('potentialCatalog', ChoiceType::class, [
-                'choices' => SellerRequest::getPotentialCatalogList($options['country'])
+                'choices' => SellerRequest::getPotentialCatalogData($options['country'])
             ])
+
+            #Section 7
+            ->add('website')
+            ->add('otherStoresList', ChoiceType::class, [
+                'choices' => SellerRequest::getOtherStoresListData($options['country'])
+            ])
+            ->add('otherStoreName')
+            ->add('otherStoresAddress')
+            ->add('otherStoresRating', ChoiceType::class, [
+                'choices' => SellerRequest::getOtherStoresRatingData($options['country'])
+            ])
+
+            #Section 8
+            ->add('officialDistributorBrand')
+            ->add('brand1')
+            ->add('brand2')
+            ->add('brand3')
+            ->add('marketingInvest', ChoiceType::class, [
+                'choices' => SellerRequest::getMarketingInvestData($options['country'])
+            ])
+            ->add('integrationFlag', ChoiceType::class, [
+                'choices' => SellerRequest::getIntegrationFlagData($options['country'])
+            ])
+
+
+
 
             ->add('Submit', SubmitType::class)
         ;

@@ -2,22 +2,21 @@
 
 {% block body %}
   <div class="container">
-    <h1>{{'form_title' | trans }}</h1></br>
+    <h1>{{'form_title' | trans }}</h1><br>
     {{ form_start(form) }}
     <h4>{{ 'section_1_title' | trans }}</h4>
-    </br>
+    <br>
     {{ form_row(form.accountManagerName) }}
     {{ form_row(form.phoneNumber) }}
     {{ form_row(form.accountName) }}
     {{ form_row(form.email) }}
-    {{ 'Terms_and_conditions' | trans }}</p>
-
+    <p>{{ 'Terms_and_conditions' | trans }}</p>
     {{ form_row(form.acceptManifest) }}
-    {{ form_row(form.acceptTermsAndConditions) }} <a href=""> Ver términos y condiciones</a></br>
+    {{ form_row(form.acceptTermsAndConditions) }} <a href=""> Ver términos y condiciones</a><br>
     {{ form_row(form.acceptCommissionsAndPaymentPolicy) }} <a href=""> Ver comisiones y políticas de pagos</a>
     <hr>
     <h4>{{ 'section_2_title' | trans }}</h4>
-    </br>
+    <br>
     {{ form_row(form.legalName) }}
     {{ form_row(form.contributorType) }}
     {{ form_row(form.legalAddress) }}
@@ -37,7 +36,7 @@
     {{ form_row(form.financeContactPhone) }}
     <hr>
     <h4>{{ 'section_3_title' | trans }}</h4>
-    </br>
+    <br>
     {{ form_row(form.bankAcctHolder) }}
     {{ form_row(form.bankAcctNumber) }}
     {{ form_row(form.bankName) }}
@@ -47,7 +46,7 @@
     {{ form_row(form.bankCertificate) }}
     <hr>
     <h4>{{ 'section_4_title' | trans }}</h4>
-    </br>
+    <br>
     {{ form_row(form.warehouseContact) }}
     {{ form_row(form.warehouseAddress) }}
     {{ form_row(form.warehouseAddress2) }}
@@ -58,7 +57,7 @@
     <hr>
     <p class="text-justify font-italic">{{ 'section_5_introduction' | trans }}</p>
     <h4>{{ 'section_5_title' | trans }}</h4>
-    </br>
+    <br>
     {{ form_row(form.operativeCheckLegallyConstituted) }}
     {{ form_row(form.operativeCheckCatalog) }}
     {{ form_row(form.operativeCheckInventory) }}
@@ -69,10 +68,28 @@
     {{ form_row(form.earningsEstimate) }}
     <hr>
     <h4>{{ 'section_6_title' | trans }}</h4>
+    <br>
     {{ form_row(form.mainCategory) }}
     {{ form_row(form.secondaryCategory) }}
     {{ form_row(form.potentialCatalog) }}
-    </br>
+    <hr>
+    <h4>{{ 'section_7_title' | trans }}</h4>
+    <br>
+    {{ form_row(form.website) }}
+    {{ form_row(form.otherStoresList) }}
+    {{ form_row(form.otherStoreName) }}
+    {{ form_row(form.otherStoresAddress) }}
+    {{ form_row(form.otherStoresRating) }}
+    <hr>
+    <h4>{{ 'section_8_title' | trans }}</h4>
+    <br>
+    {{ form_row(form.officialDistributorBrand) }}
+    {{ 'Main brands'| trans }}
+    {{ form_row(form.brand1) }}
+    {{ form_row(form.brand2) }}
+    {{ form_row(form.brand3) }}
+    {{ form_row(form.marketingInvest) }}
+    {{ form_row(form.integrationFlag) }}
     {{ form_end(form) }}
   </div>
 {% endblock %}

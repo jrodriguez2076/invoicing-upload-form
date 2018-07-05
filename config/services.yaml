@@ -33,7 +33,7 @@ services:
         arguments:
             - base_uri: '%env(ORO_PRM_BASE_URL)%'
 
-    App\Adapter\Prm:
+    App\Adapter\PrmAdapter:
         arguments:
             - '@adapter.prm.client'
             - '%env(ORO_PRM_CLIENT_ID)%'

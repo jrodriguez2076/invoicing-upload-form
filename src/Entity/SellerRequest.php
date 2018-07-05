@@ -44,132 +44,292 @@ class SellerRequest
     /**
      * @var string
      */
-    protected $legalName;
+    protected $legalName = '';
 
     /**
      * @var string
      */
-    protected $contributorType;
+    protected $contributorType = '';
 
     /**
      * @var string
      */
-    protected $legalAddress;
+    protected $legalAddress = '';
 
     /**
      * @var string
      */
-    protected $legalAddress2;
+    protected $legalAddress2 = '';
 
     /**
      * @var string
      */
-    protected $country;
+    protected $country = '';
 
     /**
      * @var string
      */
-    protected $legalRepresentative;
+    protected $legalRepresentative = '';
 
     /**
      * @var string
      */
-    protected $fiscalIdNumber;
+    protected $fiscalIdNumber = '';
 
     /**
      * @var string
      */
-    protected $city;
+    protected $city = '';
 
     /**
      * @var string
      */
-    protected $postalCode;
+    protected $postalCode = '';
 
     /**
      * @var string
      */
-    protected $idAdditionalDoc;
+    protected $idAdditionalDoc = '';
 
     /**
      * @var string
      */
-    protected $fiscalAdditionalDoc;
+    protected $fiscalIdAdditionalDoc = '';
 
     /**
      * @var string
      */
-    protected $bankAcctHolder;
+    protected $bankAcctHolder = '';
 
     /**
      * @var string
      */
-    protected $bankAcctNumber;
+    protected $bankAcctNumber = '';
 
     /**
      * @var string
      */
-    protected $bankName;
+    protected $bankName = '';
 
     /**
      * @var string
      */
-    protected $bankCode;
+    protected $bankCode = '';
 
     /**
      * @var string
      */
-    protected $bankRegistrationNumber;
+    protected $bankRegistrationNumber = '';
 
     /**
      * @var string
      */
-    protected $bankIban;
+    protected $bankIban = '';
 
     /**
      * @var string
      */
-    protected $bankCertificate;
+    protected $bankCertificate = '';
 
     /**
      * @var string
      */
-    protected $warehouseContact;
+    protected $warehouseContact = '';
 
     /**
      * @var string
      */
-    protected $warehouseAddress;
+    protected $warehouseAddress = '';
 
     /**
      * @var string
      */
-    protected $warehouseAddress2;
+    protected $warehouseAddress2 = '';
 
     /**
      * @var string
      */
-    protected $warehousePhone;
+    protected $warehousePhone = '';
 
     /**
      * @var string
      */
-    protected $warehousePostalCode;
+    protected $warehousePostalCode = '';
 
     /**
      * @var string
      */
-    protected $warehouseCity;
+    protected $warehouseCity = '';
 
     /**
      * @var boolean
      */
-    protected $operativeCheckLegallyConstituted;
+    protected $operativeCheckLegallyConstituted = false;
 
     /**
      * @var boolean
      */
-    protected $operativeCheckCatalog;
+    protected $operativeCheckInventory = false;
+
+    /**
+     * @var boolean
+     */
+    protected $operativeCheckDelivery = false;
+
+    /**
+     * @var boolean
+     */
+    protected $operativeCheckReturns = false;
+
+    /**
+     * @var boolean
+     */
+    protected $operativeCheckShippingAgreement = false;
+
+    /**
+     * @var boolean
+     */
+    protected $operativeCheckInvoices = false;
+
+    /**
+     * @var string
+     */
+    protected $earningsEstimate = '';
+
+    /**
+     * @var string
+     */
+    protected $mainCategory = '';
+
+    /**
+     * @var string
+     */
+    protected $secondaryCategory = '';
+
+    /**
+     * @var string
+     */
+    protected $potentialCatalog = '';
+
+    /**
+     * @var string
+     */
+    protected $website = '';
+
+    /**
+     * @var string
+     */
+    protected $otherStoresList = '';
+
+    /**
+     * @var string
+     */
+    protected $otherStoreName = '';
+
+    /**
+     * @var string
+     */
+    protected $otherStoresAddress = '';
+
+    /**
+     * @var string
+     */
+    protected $otherStoresRating = '';
+
+    /**
+     * @var string
+     */
+    protected $officialDistributorBrand = '';
+
+    /**
+     * @var string
+     */
+    protected $brand1 = '';
+
+    /**
+     * @var string
+     */
+    protected $brand2 = '';
+
+    /**
+     * @var string
+     */
+    protected $brand3 = '';
+
+    /**
+     * @var string
+     */
+    protected $marketingInvest = '';
+
+    /**
+     * @var string
+     */
+    protected $integrationFlag = '';
+
+    /**
+     * @var string
+     */
+    protected $economicActivity = '';
+
+    /**
+     * @var string
+     */
+    protected $logisticDocument = '';
+
+    /**
+     * @var string
+     */
+    protected $warrantyContact = '';
+
+    /**
+     * @var boolean
+     */
+    protected $operativeCheckCatalog = false;
+
+    /**
+     * @var string
+     */
+    protected $financeContactName = '';
+
+    /**
+     * @var string
+     */
+    protected $financeContactMail = '';
+
+    /**
+     * @var string
+     */
+    protected $financeContactPhone = '';
+
+    public function getFinanceContactName(): string
+    {
+        return $this->financeContactName;
+    }
+
+    public function setFinanceContactName(string $financeContactName): void
+    {
+        $this->financeContactName = $financeContactName;
+    }
+
+    public function getFinanceContactMail(): string
+    {
+        return $this->financeContactMail;
+    }
+
+    public function setFinanceContactMail(string $financeContactMail): void
+    {
+        $this->financeContactMail = $financeContactMail;
+    }
+
+    public function getFinanceContactPhone(): string
+    {
+        return $this->financeContactPhone;
+    }
+
+    public function setFinanceContactPhone(string $financeContactPhone): void
+    {
+        $this->financeContactPhone = $financeContactPhone;
+    }
 
     public function getLegalName(): string
     {
@@ -271,14 +431,14 @@ class SellerRequest
         $this->idAdditionalDoc = $idAdditionalDoc;
     }
 
-    public function getFiscalAdditionalDoc(): string
+    public function getFiscalIdAdditionalDoc(): string
     {
-        return $this->fiscalAdditionalDoc;
+        return $this->fiscalIdAdditionalDoc;
     }
 
-    public function setFiscalAdditionalDoc(string $fiscalAdditionalDoc): void
+    public function setFiscalIdAdditionalDoc(string $fiscalIdAdditionalDoc): void
     {
-        $this->fiscalAdditionalDoc = $fiscalAdditionalDoc;
+        $this->fiscalIdAdditionalDoc = $fiscalIdAdditionalDoc;
     }
 
     public function getBankAcctHolder(): string
@@ -661,121 +821,6 @@ class SellerRequest
         $this->warrantyContact = $warrantyContact;
     }
 
-    /**
-     * @var boolean
-     */
-    protected $operativeCheckInventory;
-
-    /**
-     * @var boolean
-     */
-    protected $operativeCheckDelivery;
-
-    /**
-     * @var boolean
-     */
-    protected $operativeCheckReturns;
-
-    /**
-     * @var boolean
-     */
-    protected $operativeCheckShippingAgreement;
-
-    /**
-     * @var boolean
-     */
-    protected $operativeCheckInvoices;
-
-    /**
-     * @var string
-     */
-    protected $earningsEstimate;
-
-    /**
-     * @var string
-     */
-    protected $mainCategory;
-
-    /**
-     * @var string
-     */
-    protected $secondaryCategory;
-
-    /**
-     * @var string
-     */
-    protected $potentialCatalog;
-
-    /**
-     * @var string
-     */
-    protected $website;
-
-    /**
-     * @var string
-     */
-    protected $otherStoresList;
-
-    /**
-     * @var string
-     */
-    protected $otherStoreName;
-
-    /**
-     * @var string
-     */
-    protected $otherStoresAddress;
-
-    /**
-     * @var string
-     */
-    protected $otherStoresRating;
-
-    /**
-     * @var string
-     */
-    protected $officialDistributorBrand;
-
-    /**
-     * @var string
-     */
-    protected $brand1;
-
-    /**
-     * @var string
-     */
-    protected $brand2;
-
-    /**
-     * @var string
-     */
-    protected $brand3;
-
-    /**
-     * @var string
-     */
-    protected $marketingInvest;
-
-    /**
-     * @var string
-     */
-    protected $integrationFlag;
-
-    /**
-     * @var string
-     */
-    protected $economicActivity;
-
-    /**
-     * @var string
-     */
-    protected $logisticDocument;
-
-    /**
-     * @var string
-     */
-    protected $warrantyContact;
-
     public function getAccountManagerName(): string
     {
         return $this->accountManagerName;
@@ -854,5 +899,153 @@ class SellerRequest
     public function setAcceptManifest(bool $acceptManifest): void
     {
         $this->acceptManifest = $acceptManifest;
+    }
+
+    public static function getContributorTypes(string $country): array
+    {
+        switch ($country) {
+            case 'mx':
+                return [
+                    '601-General de ley personas morales' => '601-General de ley personas morales',
+                    '603-Personas morales con fines no lucrativos' => '603-Personas morales con fines no lucrativos',
+                    '605-Sueldos y salarios e ingresos asimilados a salarios' => '605-Sueldos y salarios e ingresos asimilados a salarios',
+                    '606-Arrendamiento' => '606-Arrendamiento',
+                    '608-Demás ingresos' => '608-Demás ingresos',
+                    '609-Consolidación' => '609-Consolidación',
+                    '610-Residentes en el extranjero sin establecimiento permanente en México' => '610-Residentes en el extranjero sin establecimiento permanente en México',
+                    '611-Ingresos por dividendos (socios y accionistas)' => '611-Ingresos por dividendos (socios y accionistas)',
+                    '612-Personas físicas con actividades empresariales y profesionales' => '612-Personas físicas con actividades empresariales y profesionales',
+                    '614-Ingresos por intereses' => '614-Ingresos por intereses',
+                    '616-Sin obligaciones fiscales' => '616-Sin obligaciones fiscales',
+                    '620-Sociedades cooperativas de producción que optan por diferir sus ingresos' => '620-Sociedades cooperativas de producción que optan por diferir sus ingresos',
+                    '621-Incorporación fiscal' => '621-Incorporación fiscal',
+                    '622-Actividades agrícolas, ganaderas, silvícolas y pesqueras' => '622-Actividades agrícolas, ganaderas, silvícolas y pesqueras',
+                    '623-Opcional para grupos de sociedades' => '623-Opcional para grupos de sociedades',
+                    '624-Coordinados' => '624-Coordinados',
+                    '628-Hidrocarburos' => '628-Hidrocarburos',
+                    '607-Régimen de enajenación o adquisición de bienes' => '607-Régimen de enajenación o adquisición de bienes',
+                    '629-De los regímenes fiscales preferentes y de las empresas multinacionales' => '629-De los regímenes fiscales preferentes y de las empresas multinacionales',
+                    '630-Enajenación de acciones en bolsa de valores' => '630-Enajenación de acciones en bolsa de valores',
+                    '615-Régimen de los ingresos por obtención de premios' => '615-Régimen de los ingresos por obtención de premios',
+                    'International seller' => 'International seller',
+                ];
+                break;
+            case 'co':
+                return [
+                    'Régimen Simplificado' => 'Régimen Simplificado',
+                    'Régimen Común' => 'Régimen Común',
+                    'Gran Contribuyente' => 'Gran Contribuyente',
+                ];
+                break;
+            case 'cl':
+                return [
+                    'Limitada' => 'Limitada',
+                    'EIRL' => 'EIRL',
+                    'SpA' => 'SpA',
+                    'Persona Natural' => 'Persona Natural',
+                    'Sociedad Anónima' => 'Sociedad Anónima',
+                ];
+                break;
+            case 'ar':
+                return [
+                    'Sociedad de Responsabilidad limitada ' => 'Sociedad de Responsabilidad limitada ',
+                    'Monotributista' => 'Monotributista',
+                    'Responsable Inscrito' => 'Responsable Inscrito',
+                    'Sociedad Anónima' => 'Sociedad Anónima',
+                ];
+                break;
+            case 'ec':
+                return [
+                    'Persona jurídica' => 'Persona jurídica',
+                    'Persona natural con negocio' => 'Persona natural con negocio',
+                ];
+                break;
+            case 'pe':
+                return [
+                    'Sociedad Anónima Cerrada' => 'Sociedad Anónima Cerrada',
+                    'S.R.L.' => 'PE-S.R.L.',
+                    'Sociedad Anónima' => 'Sociedad Anónima',
+                    'Persona natural con negocio' => 'Persona natural con negocio',
+                    'Empresa Individual de Responsabilidad Limitada' => 'Empresa Individual de Responsabilidad Limitada',
+                ];
+                break;
+            case 'pa':
+                return [
+                    'Sociedad Colectiva de Responsabilidad Limitada' => 'Sociedad Colectiva de Responsabilidad Limitada',
+                    'Sociedad Anónima' => 'Sociedad Anónima',
+                    'Empresa Individual de Responsabilidad Limitada' => 'Empresa Individual de Responsabilidad Limitada',
+                ];
+                break;
+        }
+    }
+
+    public static function getMainCategories(string $country): array
+    {
+        switch ($country){
+            default:
+            case 'mx':
+                return [
+                    'Electrodomésticos' => 'Electrodomésticos',
+                    'Libros' => 'Libros',
+                    'Celulares y Tablets' => 'Celulares y Tablets',
+                    'Computación' => 'Computación',
+                    'Moda' => 'Moda',
+                    'Belleza y cuidado personal' => 'Belleza y cuidado personal',
+                    'Hogar,Niños y bebés' => 'Hogar,Niños y bebés',
+                    'Fotografía' => 'Fotografía',
+                    'Deportes' => 'Deportes',
+                    'TV/Audio/Video' => 'TV/Audio/Video',
+                    'Videojuegos' => 'Videojuegos',
+                    'Otro' => 'Otro',
+                ];
+                break;
+
+        }
+
+    }
+
+    public static function getSecondaryCategories(string $country): array
+    {
+        switch ($country){
+            default:
+            case 'mx':
+                return [
+                    'Electrodomésticos' => 'Electrodomésticos',
+                    'Libros' => 'Libros',
+                    'Celulares y Tablets' => 'Celulares y Tablets',
+                    'Computación' => 'Computación',
+                    'Moda' => 'Moda',
+                    'Belleza y cuidado personal' => 'Belleza y cuidado personal',
+                    'Hogar,Niños y bebés' => 'Hogar,Niños y bebés',
+                    'Fotografía' => 'Fotografía',
+                    'Deportes' => 'Deportes',
+                    'TV/Audio/Video' => 'TV/Audio/Video',
+                    'Videojuegos' => 'Videojuegos',
+                    'Otro' => 'Otro',
+                ];
+                break;
+
+        }
+
+    }
+
+    public static function getPotentialCatalogList(string $country): array
+    {
+        switch ($country){
+            default:
+            case 'mx':
+                return [
+                    '1-29' => '1-29',
+                    '30-60' => '30-60',
+                    '61-150' => '61-150',
+                    '151-500' => '151-500',
+                    '501-1000' => '501-1000',
+                    '1001+' => '1001+',
+                ];
+
+                break;
+
+        }
+
     }
 }

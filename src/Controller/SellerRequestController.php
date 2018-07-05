@@ -18,15 +18,26 @@ class SellerRequestController extends AbstractController
      */
     protected $prmAdapter;
 
-    public function __construct(Prm $prmAdapter)
+    /**
+     * @var string
+     */
+    protected $country;
+
+    public function __construct(Prm $prmAdapter, string $country)
     {
         $this->prmAdapter = $prmAdapter;
+        $this->country = $country;
     }
 
     public function index(Request $request): Response
     {
         $sellerRequest = new SellerRequest();
-        $form = $this->createForm(SellerRequestType::class, $sellerRequest);
+
+        $form = $this->createForm(
+            SellerRequestType::class,
+            $sellerRequest,
+            ['country' => $this->country
+        ]);
 
         $form->handleRequest($request);
 

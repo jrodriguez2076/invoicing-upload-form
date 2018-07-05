@@ -17,6 +17,62 @@
     {{ form_row(form.acceptCommissionsAndPaymentPolicy) }} <a href=""> Ver comisiones y políticas de pagos</a>
     <hr>
     <h4>{{ 'section_2_title' | trans }}</h4>
+    </br>
+    {{ form_row(form.legalName) }}
+    {{ form_row(form.contributorType) }}
+    {{ form_row(form.legalAddress) }}
+    {{ form_row(form.legalAddress2) }}
+    {{ form_row(form.city) }}
+    {{ form_row(form.postalCode) }}
+    {{ form_row(form.legalRepresentative) }}
+    {{ form_row(form.fiscalIdNumber) }}
+    {{ 'Fiscal id additional doc'| trans }}
+    {{ form_row(form.fiscalIdAdditionalDoc) }}
+    {{ 'Logistic document'| trans }}
+    {{ form_row(form.logisticDocument) }}
+    {{ 'Id additional doc'| trans }}
+    {{ form_row(form.idAdditionalDoc) }}
+    {{ form_row(form.financeContactName) }}
+    {{ form_row(form.financeContactMail) }}
+    {{ form_row(form.financeContactPhone) }}
+    <hr>
+    <h4>{{ 'section_3_title' | trans }}</h4>
+    </br>
+    {{ form_row(form.bankAcctHolder) }}
+    {{ form_row(form.bankAcctNumber) }}
+    {{ form_row(form.bankName) }}
+    {{ form_row(form.bankCode) }}
+    {{ form_row(form.bankIban) }}
+    {{ 'Bank certificate'| trans }}
+    {{ form_row(form.bankCertificate) }}
+    <hr>
+    <h4>{{ 'section_4_title' | trans }}</h4>
+    </br>
+    {{ form_row(form.warehouseContact) }}
+    {{ form_row(form.warehouseAddress) }}
+    {{ form_row(form.warehouseAddress2) }}
+    {{ form_row(form.warehouseCity) }}
+    {{ form_row(form.warehousePhone) }}
+    {{ form_row(form.warehousePostalCode) }}
+    {{ form_row(form.warrantyContact) }}
+    <hr>
+    <p class="text-justify font-italic">{{ 'section_5_introduction' | trans }}</p>
+    <h4>{{ 'section_5_title' | trans }}</h4>
+    </br>
+    {{ form_row(form.operativeCheckLegallyConstituted) }}
+    {{ form_row(form.operativeCheckCatalog) }}
+    {{ form_row(form.operativeCheckInventory) }}
+    {{ form_row(form.operativeCheckDelivery) }}
+    {{ form_row(form.operativeCheckReturns) }}
+    {{ form_row(form.operativeCheckShippingAgreement) }}
+    {{ form_row(form.operativeCheckInvoices) }}
+    {{ form_row(form.earningsEstimate) }}
+    <hr>
+    <h4>{{ 'section_6_title' | trans }}</h4>
+    {{ form_row(form.mainCategory) }}
+    {{ form_row(form.secondaryCategory) }}
+    {{ form_row(form.potentialCatalog) }}
+    </br>
     {{ form_end(form) }}
   </div>
 {% endblock %}

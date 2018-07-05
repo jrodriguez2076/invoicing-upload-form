@@ -5,6 +5,12 @@
         <title>{% block title %}Welcome!{% endblock %}</title>
         {% block stylesheets %}
             <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+          <style type="text/css">
+            .custom-file-input ~ .custom-file-label::after {
+              content: "Elegir archivo";
+            }
+
+          </style>
         {% endblock %}
     </head>
     <body>
@@ -16,7 +22,13 @@
          <script>
            $(function () {
              $('[data-toggle="tooltip"]').tooltip()
-           })
+           });
+
+           // For update the custom file input with the name of the file selected
+           $('.custom-file-input').on('change', function() {
+             let fileName = $(this).val().split('\\').pop();
+             $(this).siblings('.custom-file-label').addClass('selected').html(fileName);
+           });
          </script>
         {% endblock %}
     </body>

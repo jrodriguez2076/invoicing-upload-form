@@ -2,7 +2,7 @@
 
 {% block body %}
   <div class="container">
-    <h1>{{'form_title' | trans }}</h1><br>
+    <h1>{{ 'form_title' | trans }}</h1><br>
     {{ form_start(form) }}
     <h4>{{ 'section_1_title' | trans }}</h4>
     <br>
@@ -27,13 +27,21 @@
     {{ form_row(form.fiscalIdNumber) }}
     {{ 'Fiscal id additional doc'| trans }}
     {{ form_row(form.fiscalIdAdditionalDoc) }}
-    {{ 'Logistic document'| trans }}
-    {{ form_row(form.logisticDocument) }}
+    {% if form.logisticDocument is defined %}
+      {{ 'Logistic document'| trans }}
+      {{ form_row(form.logisticDocument) }}
+    {% endif %}
     {{ 'Id additional doc'| trans }}
     {{ form_row(form.idAdditionalDoc) }}
-    {{ form_row(form.financeContactName) }}
-    {{ form_row(form.financeContactMail) }}
-    {{ form_row(form.financeContactPhone) }}
+    {% if form.financeContactName is defined %}
+      {{ form_row(form.financeContactName) }}
+    {% endif %}
+    {% if form.financeContactMail is defined %}
+      {{ form_row(form.financeContactMail) }}
+    {% endif %}
+    {% if form.financeContactPhone is defined %}
+      {{ form_row(form.financeContactPhone) }}
+    {% endif %}
     <hr>
     <h4>{{ 'section_3_title' | trans }}</h4>
     <br>
@@ -41,6 +49,9 @@
     {{ form_row(form.bankAcctNumber) }}
     {{ form_row(form.bankName) }}
     {{ form_row(form.bankCode) }}
+    {% if form.bankRegistrationNumber is defined %}
+      {{ form_row(form.bankRegistrationNumber) }}
+    {% endif %}
     {{ form_row(form.bankIban) }}
     {{ 'Bank certificate'| trans }}
     {{ form_row(form.bankCertificate) }}
@@ -53,7 +64,12 @@
     {{ form_row(form.warehouseCity) }}
     {{ form_row(form.warehousePhone) }}
     {{ form_row(form.warehousePostalCode) }}
-    {{ form_row(form.warrantyContact) }}
+    {% if form.warehouseMode is defined %}
+      {{ form_row(form.warehouseMode) }}
+    {% endif %}
+    {% if form.warrantyContact is defined %}
+      {{ form_row(form.warrantyContact) }}
+    {% endif %}
     <hr>
     <p class="text-justify font-italic">{{ 'section_5_introduction' | trans }}</p>
     <h4>{{ 'section_5_title' | trans }}</h4>

@@ -162,6 +162,11 @@ class SellerRequest
     protected $warehouseCity = '';
 
     /**
+     * @var string
+     */
+    protected $warehouseMode = '';
+
+    /**
      * @var boolean
      */
     protected $operativeCheckLegallyConstituted = false;
@@ -561,6 +566,16 @@ class SellerRequest
         $this->warehousePostalCode = $warehousePostalCode;
     }
 
+    public function getWarehouseMode(): string
+    {
+        return $this->warehouseMode;
+    }
+
+    public function setWarehouseMode(string $warehouseMode): void
+    {
+        $this->warehouseMode = $warehouseMode;
+    }
+
     public function getWarehouseCity(): string
     {
         return $this->warehouseCity;
@@ -891,7 +906,7 @@ class SellerRequest
         $this->acceptManifest = $acceptManifest;
     }
 
-    public static function getContributorTypes(string $country): array
+    public static function getContributorTypesChoices(string $country): array
     {
         switch ($country) {
             case 'mx':
@@ -966,12 +981,14 @@ class SellerRequest
                     'Empresa Individual de Responsabilidad Limitada' => 'Empresa Individual de Responsabilidad Limitada',
                 ];
                 break;
+            default:
+                return [];
         }
     }
 
-    public static function getMainCategories(string $country): array
+    public static function getMainCategoriesChoices(string $country): array
     {
-        switch ($country){
+        switch ($country) {
             default:
             case 'mx':
                 return [
@@ -992,9 +1009,9 @@ class SellerRequest
         }
     }
 
-    public static function getSecondaryCategories(string $country): array
+    public static function getSecondaryCategoriesChoices(string $country): array
     {
-        switch ($country){
+        switch ($country) {
             default:
             case 'mx':
                 return [
@@ -1015,9 +1032,9 @@ class SellerRequest
         }
     }
 
-    public static function getPotentialCatalogData(string $country): array
+    public static function getPotentialCatalogChoices(string $country): array
     {
-        switch ($country){
+        switch ($country) {
             default:
             case 'mx':
                 return [
@@ -1030,12 +1047,11 @@ class SellerRequest
                 ];
                 break;
         }
-
     }
 
-    public static function getOtherStoresRatingData(string $country): array
+    public static function getOtherStoresRatingChoices(string $country): array
     {
-        switch ($country){
+        switch ($country) {
             default:
             case 'mx':
                 return [
@@ -1047,12 +1063,11 @@ class SellerRequest
                 ];
                 break;
         }
-
     }
 
-    public static function getOtherStoresListData(string $country): array
+    public static function getOtherStoresListChoices(string $country): array
     {
-        switch ($country){
+        switch ($country) {
             default:
             case 'mx':
                 return [
@@ -1066,25 +1081,25 @@ class SellerRequest
         }
     }
 
-    public static function getMarketingInvestData(string $country): array
+    public static function getMarketingInvestChoices(string $country): array
     {
-        switch ($country){
+        switch ($country) {
             default:
             case 'mx':
-            return [
-                '0' => '0',
-                '1-100' => '1-100',
-                '101-500' => '101-500',
-                '501-1000' => '501-1000',
-                '1001+' => '1001+',
-            ];
+                return [
+                    '0' => '0',
+                    '1-100' => '1-100',
+                    '101-500' => '101-500',
+                    '501-1000' => '501-1000',
+                    '1001+' => '1001+',
+                ];
                 break;
         }
     }
 
-    public static function getIntegrationFlagData(string $country): array
+    public static function getIntegrationFlagChoices(string $country): array
     {
-        switch ($country){
+        switch ($country) {
             default:
             case 'mx':
                 return [
@@ -1092,6 +1107,20 @@ class SellerRequest
                     'No' => 'No',
                 ];
                 break;
+        }
+    }
+
+    public static function getWarehouseModeChoices(string $country): array
+    {
+        switch ($country) {
+            case 'ar':
+                return [
+                    'Pickup' => 'P',
+                    'Dropoff' => 'D',
+                ];
+                break;
+            default:
+                return [];
         }
     }
 }

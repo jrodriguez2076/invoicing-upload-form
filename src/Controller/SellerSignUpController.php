@@ -36,8 +36,9 @@ class SellerSignUpController extends AbstractController
         $form = $this->createForm(
             SellerSignUpType::class,
             $sellerSignUp,
-            ['country' => $this->country
-        ]);
+            ['country' => $this->country,
+        ]
+        );
 
         $form->handleRequest($request);
 

@@ -22,17 +22,17 @@ class SellerSignUp
     protected $accountName = '';
 
     /**
-     * @var boolean
+     * @var bool
      */
     protected $acceptTermsAndConditions = false;
 
     /**
-     * @var boolean
+     * @var bool
      */
     protected $acceptCommissionsAndPaymentPolicy = false;
 
     /**
-     * @var boolean
+     * @var bool
      */
     protected $acceptManifest = false;
 
@@ -187,32 +187,32 @@ class SellerSignUp
     protected $warehouseMode = '';
 
     /**
-     * @var boolean
+     * @var bool
      */
     protected $operativeCheckLegallyConstituted = false;
 
     /**
-     * @var boolean
+     * @var bool
      */
     protected $operativeCheckInventory = false;
 
     /**
-     * @var boolean
+     * @var bool
      */
     protected $operativeCheckDelivery = false;
 
     /**
-     * @var boolean
+     * @var bool
      */
     protected $operativeCheckReturns = false;
 
     /**
-     * @var boolean
+     * @var bool
      */
     protected $operativeCheckShippingAgreement = false;
 
     /**
-     * @var boolean
+     * @var bool
      */
     protected $operativeCheckInvoices = false;
 
@@ -307,7 +307,7 @@ class SellerSignUp
     protected $warrantyContact = '';
 
     /**
-     * @var boolean
+     * @var bool
      */
     protected $operativeCheckCatalog = false;
 

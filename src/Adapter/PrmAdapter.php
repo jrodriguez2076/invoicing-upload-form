@@ -32,7 +32,7 @@ class PrmAdapter
         $this->clientSecret = $clientSecret;
     }
 
-    public function createAccount(SellerSignUp $sellerSignUp)
+    public function createAccount(SellerSignUp $sellerSignUp): void
     {
         $requestBody = $this->createRequest($sellerSignUp);
 
@@ -56,6 +56,19 @@ class PrmAdapter
         }
     }
 
+    public function createRequest(SellerSignUp $sellerSignUp)
+    {
+        return [
+            'account' => [
+                'name' => $sellerSignUp->getAccountName(),
+                'phone' => $sellerSignUp->getPhoneNumber(),
+                'emailAddress' => $sellerSignUp->getEmail(),
+                'countryId' => 'ec',
+                'owner' => 1,
+            ],
+        ];
+    }
+
     protected function getWsseHeaders(): array
     {
         $nonce = uniqid();
@@ -71,19 +84,6 @@ class PrmAdapter
         return [
             'Authorization' => 'WSSE profile="UsernameToken"',
             'X-WSSE' => $wsse,
-        ];
-    }
-
-    public function createRequest(SellerSignUp $sellerSignUp)
-    {
-        return [
-            'account' => [
-                'name' => $sellerSignUp->getAccountName(),
-                'phone' => $sellerSignUp->getPhoneNumber(),
-                'emailAddress' => $sellerSignUp->getEmail(),
-                'countryId' => 'ec',
-                'owner' => 1,
-            ],
         ];
     }
 }

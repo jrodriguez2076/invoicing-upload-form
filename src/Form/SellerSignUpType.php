@@ -29,7 +29,7 @@ class SellerSignUpType extends AbstractType
         $this->sellerSignUpService = $sellerSignUpService;
     }
 
-    public function buildForm(FormBuilderInterface $builder, array $options)
+    public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
             ->add('accountManagerName')
@@ -48,13 +48,12 @@ class SellerSignUpType extends AbstractType
                     'type' => EmailType::class,
                     'first_options' => ['label' => 'Email', 'help' => 'email_caption'],
                     'second_options' => ['label' => 'Repeat Email'],
-
                 ]
             )
             ->add('acceptManifest', CheckboxType::class)
             ->add('acceptTermsAndConditions', CheckboxType::class)
             ->add('acceptCommissionsAndPaymentPolicy', CheckboxType::class)
-            #Section 2
+            //Section 2
             ->add(
                 'legalName',
                 TextType::class,
@@ -130,7 +129,7 @@ class SellerSignUpType extends AbstractType
             ->add('financeContactName')
             ->add('financeContactMail')
             ->add('financeContactPhone')
-            #Section 3
+            //Section 3
             ->add(
                 'bankAcctHolder',
                 TextType::class,
@@ -175,7 +174,7 @@ class SellerSignUpType extends AbstractType
                     'label_format' => 'bank_certificate_caption',
                 ]
             )
-            #Section 4
+            //Section 4
             ->add(
                 'warehouseContact',
                 TextType::class,
@@ -243,7 +242,7 @@ class SellerSignUpType extends AbstractType
                 ]
             )
             ->add('warrantyContact', EmailType::class)
-            #Section 5
+            //Section 5
             ->add('operativeCheckLegallyConstituted', CheckboxType::class)
             ->add('operativeCheckCatalog', CheckboxType::class)
             ->add('operativeCheckInventory', CheckboxType::class)
@@ -252,7 +251,7 @@ class SellerSignUpType extends AbstractType
             ->add('operativeCheckShippingAgreement', CheckboxType::class)
             ->add('operativeCheckInvoices', CheckboxType::class)
             ->add('earningsEstimate')
-            #Section 6
+            //Section 6
             ->add(
                 'mainCategory',
                 ChoiceType::class,
@@ -274,7 +273,7 @@ class SellerSignUpType extends AbstractType
                     'choices' => $this->sellerSignUpService->getPotentialCatalogChoices($options['country']),
                 ]
             )
-            #Section 7
+            //Section 7
             ->add('website')
             ->add(
                 'otherStoresList',
@@ -292,7 +291,7 @@ class SellerSignUpType extends AbstractType
                     'choices' => $this->sellerSignUpService->getOtherStoresRatingChoices($options['country']),
                 ]
             )
-            #Section 8
+            //Section 8
             ->add('officialDistributorBrand')
             ->add('brand1')
             ->add('brand2')
@@ -400,7 +399,7 @@ class SellerSignUpType extends AbstractType
         }
     }
 
-    public function configureOptions(OptionsResolver $resolver)
+    public function configureOptions(OptionsResolver $resolver): void
     {
         $resolver->setDefaults(
             [
@@ -410,7 +409,7 @@ class SellerSignUpType extends AbstractType
         );
     }
 
-    protected function updateRequiredOption(FormBuilderInterface $builder, string $fieldName, bool $required)
+    protected function updateRequiredOption(FormBuilderInterface $builder, string $fieldName, bool $required): void
     {
         $field = $builder->get($fieldName);
         $options = $field->getOptions();

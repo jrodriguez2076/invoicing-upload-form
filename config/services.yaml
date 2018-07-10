@@ -39,3 +39,5 @@ services:
             - '%env(ORO_PRM_CLIENT_ID)%'
             - '%env(ORO_PRM_CLIENT_SECRET)%'
 
+    App\Form\SellerSignUpType:
+

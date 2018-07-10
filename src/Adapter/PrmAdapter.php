@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Adapter;
 
-use App\Entity\SellerRequest;
+use App\Entity\SellerSignUp;
 use App\Exception\PrmException;
 use GuzzleHttp\ClientInterface;
 use GuzzleHttp\Exception\ClientException;
@@ -32,9 +32,9 @@ class PrmAdapter
         $this->clientSecret = $clientSecret;
     }
 
-    public function createAccount(SellerRequest $sellerRequest)
+    public function createAccount(SellerSignUp $sellerSignUp)
     {
-        $requestBody = $this->createRequest($sellerRequest);
+        $requestBody = $this->createRequest($sellerSignUp);
 
         try {
             $this->client->request(
@@ -74,13 +74,13 @@ class PrmAdapter
         ];
     }
 
-    public function createRequest(SellerRequest $sellerRequest)
+    public function createRequest(SellerSignUp $sellerSignUp)
     {
         return [
             'account' => [
-                'name' => $sellerRequest->getAccountName(),
-                'phone' => $sellerRequest->getPhoneNumber(),
-                'emailAddress' => $sellerRequest->getEmail(),
+                'name' => $sellerSignUp->getAccountName(),
+                'phone' => $sellerSignUp->getPhoneNumber(),
+                'emailAddress' => $sellerSignUp->getEmail(),
                 'countryId' => 'ec',
                 'owner' => 1,
             ],

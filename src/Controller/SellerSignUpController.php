@@ -5,13 +5,13 @@ declare(strict_types=1);
 namespace App\Controller;
 
 use App\Adapter\PrmAdapter;
-use App\Entity\SellerRequest;
-use App\Form\SellerRequestType;
+use App\Entity\SellerSignUp;
+use App\Form\SellerSignUpType;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
-class SellerRequestController extends AbstractController
+class SellerSignUpController extends AbstractController
 {
     /**
      * @var PrmAdapter
@@ -31,22 +31,22 @@ class SellerRequestController extends AbstractController
 
     public function index(Request $request): Response
     {
-        $sellerRequest = new SellerRequest();
+        $sellerSignUp = new SellerSignUp();
 
         $form = $this->createForm(
-            SellerRequestType::class,
-            $sellerRequest,
+            SellerSignUpType::class,
+            $sellerSignUp,
             ['country' => $this->country
         ]);
 
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $this->prmAdapter->createAccount($sellerRequest);
+            $this->prmAdapter->createAccount($sellerSignUp);
         }
 
         return $this->render(
-            'sellerRequest.html.twig',
+            'sellerSignUp.html.twig',
             [
                 'form' => $form->createView(),
             ]

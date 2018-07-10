@@ -1,0 +1,88 @@
+form_title: Vende con nosotros
+section_1_title: Completa la siguiente información
+section_2_title: Completa los siguientes campos relacionados con tu empresa
+section_3_title: Cuenta Bancaria
+section_4_title: Contactos de almacén
+section_5_title: ¿Cumples con los siguientes requisitos operativos?
+section_6_title: Cuéntanos acerca de tu catálogo
+section_7_title: Cuéntanos acerca de tu experiencia Online
+section_8_title: Cuéntanos acerca de las marcas que vendes
+section_5_introduction: En Linio estamos evolucionando hacia un Marketplace Premium que responda a las exigencias del eCommerce en nuestro país, el cual nos demanda ser comercial y operativamente impecables para ofrecer la mejor experiencia de compra a nuestros clientes. Para lograrlo, necesitamos unir esfuerzos con Socios que tengan esta misma visión y estén dispuestos a afrontar los retos y rebasar las expectativas de esta industria. ¿Eres ese socio? Cuéntanos sobre ti
+Account manager name: Nombre y Apellido del encargado de la cuenta en Linio:
+Phone number: Teléfono (con clave LADA):
+Account name: Nombre comercial de la tienda en Linio:
+Terms_and_conditions: Términos y condiciones:
+Accept manifest: Manifiesto bajo protesta de decir verdad manifiesto que los documentos y datos aportados en mi cuenta cumplen con los requisitos legales aplicables vigentes, liberando a Linio de cualquier responsabilidad que de estos pueda surgir.
+Accept terms and conditions: Acepto los Términos y Condiciones
+Accept commissions and payment policy: Acepto las Comisiones y Políticas de pagos
+Email: Correo electrónico:
+Repeat Email: Repite tu correo electrónico:
+Legal name: Razón Social
+Contributor type: Tipo de sociedad
+Legal address: Calle y número, incluir Colonia (No usar punto(.), coma(,), gato(#), punto y coma(;), etc.
+Legal address2: Estado
+City: Ciudad o Municipio
+Postal code: Código postal
+Legal representative: Nombre del representante legal
+Fiscal id number: R.F.C de la Razón Social
+Fiscal id additional doc: Registro Federal de Contribuyente
+Logistic document: Acta Constitutiva (sólo para empresas)
+Id additional doc: Identificación oficial vigente del Representante legal (IFE o Pasaporte)
+Finance contact name: Nombre Contacto Finanzas
+Finance contact phone: Teléfono Contacto Finanzas
+Finance contact mail: Email Contacto Finanzas
+Bank acct holder: Titular de la Cuenta
+Bank acct number: Número de la Cuenta de Banco
+Bank name: Banco
+Bank code: Clabe Interbancaria
+Bank iban: IBAN
+Bank certificate: Estado de Cuenta
+Warehouse contact: Persona de contacto
+Warehouse address: Calle y número, incluir Colonia (No usar punto(.), coma(,), gato(#), punto y coma(;), etc. 
+Warehouse address2: Estado
+Warehouse city: Ciudad o Municipio
+Warehouse phone: Teléfono (con clave LADA)
+Warehouse postal code: Código Postal
+Warranty contact: Email para tramitar garantías
+Main category: Indícanos a qué categoría pertenecen la mayoría de los productos que deseas vender en Linio
+Secondary category: Indícanos, de aplica, la categoría secundaria del catálogo de productos que deseas vender
+Potential catalog: Indícanos la cantidad de productos diferentes (SKU's) que tienes en tu catálogo
+Operative check legally constituted: Empresa legalmente constituída, en capacidad de emitir facturas
+Operative check catalog: Productos legales, originales y con el contenido correspondiente
+Operative check inventory: Inventario disponible y actualizado
+Operative check delivery: Capacidad operativa para despachar productos en 24 horas
+Operative check returns: Capacidad para aceptar devoluciones y manejar garantías en mis productos
+Operative check shipping agreement: Estoy dispuesto a utilizar las guías automáticas que Genera Linio para entregar mis productos
+Operative check invoices: Estoy dispuesto a usar el sistema de Facturación de Linio (Interfacturas del SAT)
+Earnings estimate: Indícanos (en USD) cuánto estimas vender en Linio los primeros doce meses
+Website: ¿Cuentas con página web propia? Indícanos su dirección
+Other stores list: ¿Vendes tus productos en otro e-commerce?
+Other store name: (Otros) Por favor, indícanos el nombre del e-commerce
+Other stores address: Escribe la dirección a tu tienda virtual en este espacio, por favor
+Other stores rating: Indícanos tu puntuación en dicha plataforma
+Official distributor brand: ¿Eres Distribuidor Oficial de alguna marca reconocida? Indícanos de cual
+Main brands: Indícanos las tres marcas principales que deseas vender a través de Linio
+Brand1: Marca 1
+Brand2: Marca 2
+Brand3: Marca 3
+Marketing invest: ¿Están dispuestos a invertir en campañas de márketing conjuntas con Linio para aumentar sus ventas? Indica la cantidad dispuesta a invertir mensualmente (en USD)
+Integration flag: ¿Deseas integrar sus sistemas de inventario con Linio? (Mediante el uso de API o ERP)
+legal_name_caption: Para Personas Morales "Empresa SA DE CV" o según su tipo de sociedad / Personas físicas es el nombre COMPLETO de la persona dada de alta en el SAT
+legal_address_caption: Domicilio fiscal de la razón social
+legal_representative_caption: Representante legal de la Razón Social
+logistic_document_caption: Primeras 4 y últimas 4 páginas del documento
+fiscal_id_number_caption: 'Ejemplo: LINM020212K87'
+fiscal_id_additional_doc_caption: (Cédula Fiscal emitida por el SAT) LEGIBLE, SIN MANCHAS, SIN TACHADURAS.
+id_additional_doc_caption: Por las dos caras, con suficiente nitidez
+bank_account_holder_caption: (Debe coincidir con la persona física o jurídica)
+bank_account_number_caption: (Si no lo conoces pregunta a tu Banco, de ello dependen tus PAGOS)
+bank_code_caption: Los 18 dígitos
+bank_iban_caption: Opcional
+bank_certificate_caption: No mayor a 3 meses con clave interbancaria, RFC y domicilio visible. Las cantidades pueden estar ocultas
+warehouse_contact_caption: Nombre y apellidos de quien se ocupará de despachar los pedidos
+warehouse_address_caption: Dirección desde la cual despacharás tus productos
+warehouse_postal_code_caption: Sólo usa números (Ej. 67214)
+email_caption: Ten en cuenta que no está permitida la palabra "Linio" en el correo electrónico
+account_name_caption: Elige un nombre de fantasía que represente a tu comercio
+Submit: Enviar
+

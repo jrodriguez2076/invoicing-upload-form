@@ -22,7 +22,9 @@ class SellerRequestType extends AbstractType
     {
         $builder
             ->add('accountManagerName')
-            ->add('phoneNumber')
+            ->add('phoneNumber', TextType::class, [
+                'help' => 'phone_number_caption',
+            ])
             ->add('accountName', TextType::class, ['help' => 'account_name_caption'])
             ->add(
                 'email',
@@ -60,8 +62,13 @@ class SellerRequestType extends AbstractType
                 ]
             )
             ->add('legalAddress2')
-            ->add('city')
-            ->add('postalCode')
+            ->add('city', TextType::class, [
+                'help' => 'city_caption',
+            ])
+            ->add('postalCode', TextType::class, [
+                'help' => 'postal_code_caption',
+            ])
+            ->add('economicActivity')
             ->add(
                 'legalRepresentative',
                 TextType::class,
@@ -134,7 +141,7 @@ class SellerRequestType extends AbstractType
                 'bankIban',
                 TextType::class,
                 [
-                    'required' => false,
+                    'required' => true,
                     'help' => 'bank_iban_caption',
                 ]
             )
@@ -162,7 +169,9 @@ class SellerRequestType extends AbstractType
             )
             ->add('warehouseAddress2')
             ->add('warehouseCity')
-            ->add('warehousePhone')
+            ->add('warehousePhone', TextType::class, [
+                'help' => 'warehouse_phone_caption'
+            ])
             ->add(
                 'warehousePostalCode',
                 TextType::class,
@@ -251,16 +260,24 @@ class SellerRequestType extends AbstractType
 
         switch ($options['country']) {
             case 'ar':
-                $builder->remove('logisticDocument')
+                $builder
+                    ->remove('logisticDocument')
                     ->remove('financeContactName')
                     ->remove('financeContactMail')
                     ->remove('financeContactPhone')
                     ->remove('warrantyContact');
-                $this->updateHelpCaption($builder, 'phoneNumber', 'phone_number_caption');
-                $this->updateHelpCaption($builder, 'city', 'city_caption');
-                $this->updateHelpCaption($builder, 'postalCode', 'postal_code_caption');
                 break;
             case 'cl':
+                $builder
+                    ->remove('logisticDocument')
+                    ->remove('financeContactName')
+                    ->remove('financeContactMail')
+                    ->remove('financeContactPhone')
+                    ->remove('warrantyContact')
+                    ->remove('warehouseMode')
+                    ->remove('idAdditionalDoc')
+                    ->remove('bankCertificate')
+                    ;
                 break;
             case 'co':
                 break;
@@ -269,7 +286,9 @@ class SellerRequestType extends AbstractType
             case 'mx':
                 $builder
                     ->remove('bankRegistrationNumber')
-                    ->remove('warehouseMode');
+                    ->remove('warehouseMode')
+                ;
+                $this->updateRequiredOption($builder, 'bankIban', false);
                 break;
             case 'pa':
             case 'pe':
@@ -286,12 +305,12 @@ class SellerRequestType extends AbstractType
         );
     }
 
-    protected function updateHelpCaption(FormBuilderInterface $builder, string $fieldName, string $helpKey)
+    protected function updateRequiredOption(FormBuilderInterface $builder, string $fieldName, bool $required)
     {
         $field = $builder->get($fieldName);
         $options = $field->getOptions();
         $type = get_class($field->getType()->getInnerType());
-        $options['help'] = $helpKey;
+        $options['required'] = $required;
         $builder->add($fieldName, $type, $options);
     }
 }

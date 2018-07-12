@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Adapter;
 
-use App\Entity\SellerRequest;
+use App\Entity\SellerSignUp;
 use App\Exception\PrmException;
 use GuzzleHttp\ClientInterface;
 use GuzzleHttp\Exception\ClientException;
@@ -32,9 +32,9 @@ class PrmAdapter
         $this->clientSecret = $clientSecret;
     }
 
-    public function createAccount(SellerRequest $sellerRequest)
+    public function createAccount(SellerSignUp $sellerSignUp): void
     {
-        $requestBody = $this->createRequest($sellerRequest);
+        $requestBody = $this->createRequest($sellerSignUp);
 
         try {
             $this->client->request(
@@ -56,6 +56,19 @@ class PrmAdapter
         }
     }
 
+    public function createRequest(SellerSignUp $sellerSignUp)
+    {
+        return [
+            'account' => [
+                'name' => $sellerSignUp->getAccountName(),
+                'phone' => $sellerSignUp->getPhoneNumber(),
+                'emailAddress' => $sellerSignUp->getEmail(),
+                'countryId' => 'ec',
+                'owner' => 1,
+            ],
+        ];
+    }
+
     protected function getWsseHeaders(): array
     {
         $nonce = uniqid();
@@ -71,19 +84,6 @@ class PrmAdapter
         return [
             'Authorization' => 'WSSE profile="UsernameToken"',
             'X-WSSE' => $wsse,
-        ];
-    }
-
-    public function createRequest(SellerRequest $sellerRequest)
-    {
-        return [
-            'account' => [
-                'name' => $sellerRequest->getAccountName(),
-                'phone' => $sellerRequest->getPhoneNumber(),
-                'emailAddress' => $sellerRequest->getEmail(),
-                'countryId' => 'ec',
-                'owner' => 1,
-            ],
         ];
     }
 }

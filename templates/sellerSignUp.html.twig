@@ -67,6 +67,18 @@
     <br>
     {{ form_row(form.warehouseContact) }}
     {{ form_row(form.warehouseAddress) }}
+    {% if form.warehouseAddressExtraData is defined %}
+      {{ form_row(form.warehouseAddressExtraData) }}
+    {% endif %}
+    {% if form.warehouseAddressExtraData2 is defined %}
+      {{ form_row(form.warehouseAddressExtraData2) }}
+    {% endif %}
+    {% if form.warehouseAddressExtraData3 is defined %}
+      {{ form_row(form.warehouseAddressExtraData3) }}
+    {% endif %}
+    {% if form.warehouseAddressExtraData4 is defined %}
+      {{ form_row(form.warehouseAddressExtraData4) }}
+    {% endif %}
     {{ form_row(form.warehouseAddress2) }}
     {{ form_row(form.warehouseCity) }}
     {{ form_row(form.warehousePhone) }}

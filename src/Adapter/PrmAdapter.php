@@ -12,7 +12,9 @@ use GuzzleHttp\Exception\ServerException;
 
 class PrmAdapter
 {
-    /** @var ClientInterface */
+    /**
+     * @var ClientInterface
+     */
     protected $client;
 
     /**
@@ -56,7 +58,7 @@ class PrmAdapter
         }
     }
 
-    public function createRequest(SellerSignUp $sellerSignUp)
+    protected function createRequest(SellerSignUp $sellerSignUp)
     {
         return [
             'account' => [

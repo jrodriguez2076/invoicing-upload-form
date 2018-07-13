@@ -1,3 +1,5 @@
 index:
-    path: /
+    path: /{store}
     controller: App\Controller\SellerSignUpController::index
+    defaults:
+        store: int

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Form;
+namespace App\Form\Factory;
 
 use App\Entity\SellerSignUp;
 use App\Service\SellerSignUpService;
@@ -17,7 +17,7 @@ use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
-class SellerSignUpType extends AbstractType
+class SellerSignUpChileForm extends AbstractType
 {
     /**
      * @var SellerSignUpService
@@ -65,7 +65,7 @@ class SellerSignUpType extends AbstractType
                 'contributorType',
                 ChoiceType::class,
                 [
-                    'choices' => $this->sellerSignUpService->getContributorTypesChoices($options['country']),
+                    'choices' => $this->sellerSignUpService->getContributorTypesChoices($options['store']),
                 ]
             )
             ->add(
@@ -112,23 +112,6 @@ class SellerSignUpType extends AbstractType
                     'label_format' => 'fiscal_id_additional_doc_caption',
                 ]
             )
-            ->add(
-                'logisticDocument',
-                FileType::class,
-                [
-                    'label_format' => 'logistic_document_caption',
-                ]
-            )
-            ->add(
-                'idAdditionalDoc',
-                FileType::class,
-                [
-                    'label_format' => 'id_additional_doc_caption',
-                ]
-            )
-            ->add('financeContactName')
-            ->add('financeContactMail')
-            ->add('financeContactPhone')
             //Section 3
             ->add(
                 'bankAcctHolder',
@@ -167,13 +150,6 @@ class SellerSignUpType extends AbstractType
                     'help' => 'bank_iban_caption',
                 ]
             )
-            ->add(
-                'bankCertificate',
-                FileType::class,
-                [
-                    'label_format' => 'bank_certificate_caption',
-                ]
-            )
             //Section 4
             ->add(
                 'warehouseContact',
@@ -187,34 +163,6 @@ class SellerSignUpType extends AbstractType
                 TextType::class,
                 [
                     'help' => 'warehouse_address_caption',
-                ]
-            )
-            ->add(
-                'warehouseAddressExtraData',
-                TextType::class,
-                [
-                    'help' => 'warehouse_address_extra_data_caption',
-                ]
-            )
-            ->add(
-                'warehouseAddressExtraData2',
-                TextType::class,
-                [
-                    'help' => 'warehouse_address_extra_data2_caption',
-                ]
-            )
-            ->add(
-                'warehouseAddressExtraData3',
-                TextType::class,
-                [
-                    'help' => 'warehouse_address_extra_data3_caption',
-                ]
-            )
-            ->add(
-                'warehouseAddressExtraData4',
-                TextType::class,
-                [
-                    'help' => 'warehouse_address_extra_data4_caption',
                 ]
             )
             ->add('warehouseAddress2')
@@ -233,15 +181,6 @@ class SellerSignUpType extends AbstractType
                     'help' => 'warehouse_postal_code_caption',
                 ]
             )
-            ->add(
-                'warehouseMode',
-                ChoiceType::class,
-                [
-                    'choices' => $this->sellerSignUpService->getWarehouseModeChoices($options['country']),
-                    'help' => 'warehouse_mode_caption',
-                ]
-            )
-            ->add('warrantyContact', EmailType::class)
             //Section 5
             ->add('operativeCheckLegallyConstituted', CheckboxType::class)
             ->add('operativeCheckCatalog', CheckboxType::class)
@@ -256,21 +195,21 @@ class SellerSignUpType extends AbstractType
                 'mainCategory',
                 ChoiceType::class,
                 [
-                    'choices' => $this->sellerSignUpService->getMainCategoriesChoices($options['country']),
+                    'choices' => $this->sellerSignUpService->getMainCategoriesChoices($options['store']),
                 ]
             )
             ->add(
                 'secondaryCategory',
                 ChoiceType::class,
                 [
-                    'choices' => $this->sellerSignUpService->getSecondaryCategoriesChoices($options['country']),
+                    'choices' => $this->sellerSignUpService->getSecondaryCategoriesChoices($options['store']),
                 ]
             )
             ->add(
                 'potentialCatalog',
                 ChoiceType::class,
                 [
-                    'choices' => $this->sellerSignUpService->getPotentialCatalogChoices($options['country']),
+                    'choices' => $this->sellerSignUpService->getPotentialCatalogChoices($options['store']),
                 ]
             )
             //Section 7
@@ -279,7 +218,7 @@ class SellerSignUpType extends AbstractType
                 'otherStoresList',
                 ChoiceType::class,
                 [
-                    'choices' => $this->sellerSignUpService->getOtherStoresListChoices($options['country']),
+                    'choices' => $this->sellerSignUpService->getOtherStoresListChoices($options['store']),
                 ]
             )
             ->add('otherStoreName')
@@ -288,7 +227,7 @@ class SellerSignUpType extends AbstractType
                 'otherStoresRating',
                 ChoiceType::class,
                 [
-                    'choices' => $this->sellerSignUpService->getOtherStoresRatingChoices($options['country']),
+                    'choices' => $this->sellerSignUpService->getOtherStoresRatingChoices($options['store']),
                 ]
             )
             //Section 8
@@ -300,103 +239,17 @@ class SellerSignUpType extends AbstractType
                 'marketingInvest',
                 ChoiceType::class,
                 [
-                    'choices' => $this->sellerSignUpService->getMarketingInvestChoices($options['country']),
+                    'choices' => $this->sellerSignUpService->getMarketingInvestChoices($options['store']),
                 ]
             )
             ->add(
                 'integrationFlag',
                 ChoiceType::class,
                 [
-                    'choices' => $this->sellerSignUpService->getIntegrationFlagChoices($options['country']),
+                    'choices' => $this->sellerSignUpService->getIntegrationFlagChoices($options['store']),
                 ]
             )
             ->add('Submit', SubmitType::class);
-
-        switch ($options['country']) {
-            case 'ar':
-                $builder
-                    ->remove('logisticDocument')
-                    ->remove('financeContactName')
-                    ->remove('financeContactMail')
-                    ->remove('financeContactPhone')
-                    ->remove('warrantyContact')
-                    ->remove('economicActivity')
-                    ->remove('warehouseAddressExtraData')
-                    ->remove('warehouseAddressExtraData2')
-                    ->remove('warehouseAddressExtraData3')
-                    ->remove('warehouseAddressExtraData4');
-                break;
-            case 'cl':
-                $builder
-                    ->remove('logisticDocument')
-                    ->remove('financeContactName')
-                    ->remove('financeContactMail')
-                    ->remove('financeContactPhone')
-                    ->remove('warrantyContact')
-                    ->remove('warehouseMode')
-                    ->remove('idAdditionalDoc')
-                    ->remove('bankCertificate')
-                    ->remove('warehouseAddressExtraData')
-                    ->remove('warehouseAddressExtraData2')
-                    ->remove('warehouseAddressExtraData3')
-                    ->remove('warehouseAddressExtraData4');
-                break;
-            case 'co':
-                $builder
-                    ->remove('financeContactName')
-                    ->remove('financeContactMail')
-                    ->remove('financeContactPhone')
-                    ->remove('economicActivity')
-                    ->remove('warehouseMode')
-                    ->remove('warehouseAddressExtraData')
-                    ->remove('warehouseAddressExtraData2')
-                    ->remove('warehouseAddressExtraData3')
-                    ->remove('warehouseAddressExtraData4');
-                break;
-            case 'ec':
-                $builder
-                    ->remove('financeContactName')
-                    ->remove('financeContactMail')
-                    ->remove('financeContactPhone')
-                    ->remove('warehouseAddressExtraData')
-                    ->remove('warehouseAddressExtraData2')
-                    ->remove('warehouseAddressExtraData3')
-                    ->remove('warehouseAddressExtraData4')
-                    ->remove('economicActivity')
-                    ->remove('bankRegistrationNumber')
-                    ->remove('warehouseMode');
-                break;
-            case 'mx':
-                $builder
-                    ->remove('bankRegistrationNumber')
-                    ->remove('warehouseMode')
-                    ->remove('economicActivity')
-                    ->remove('warehouseAddressExtraData')
-                    ->remove('warehouseAddressExtraData2')
-                    ->remove('warehouseAddressExtraData3')
-                    ->remove('warehouseAddressExtraData4');
-                $this->updateRequiredOption($builder, 'bankIban', false);
-                break;
-            case 'pe':
-                $builder
-                    ->remove('economicActivity')
-                    ->remove('financeContactName')
-                    ->remove('financeContactMail')
-                    ->remove('financeContactPhone')
-                    ->remove('warehouseMode')
-                    ->remove('warrantyContact')
-                    ->remove('warehouseCity');
-                $this->updateRequiredOption($builder, 'bankIban', false);
-                $builder
-                    ->add(
-                        'warehouseCity',
-                        ChoiceType::class,
-                        [
-                            'choices' => $this->sellerSignUpService->getWarehouseCities($options['country']),
-                        ]
-                    );
-                break;
-        }
     }
 
     public function configureOptions(OptionsResolver $resolver): void
@@ -404,17 +257,8 @@ class SellerSignUpType extends AbstractType
         $resolver->setDefaults(
             [
                 'data_class' => SellerSignUp::class,
-                'country' => 'mx',
+                'store' => 'cl',
             ]
         );
-    }
-
-    protected function updateRequiredOption(FormBuilderInterface $builder, string $fieldName, bool $required): void
-    {
-        $field = $builder->get($fieldName);
-        $options = $field->getOptions();
-        $type = get_class($field->getType()->getInnerType());
-        $options['required'] = $required;
-        $builder->add($fieldName, $type, $options);
     }
 }

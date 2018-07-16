@@ -17,7 +17,7 @@ class LocaleSubscriber implements EventSubscriberInterface
         'ar' => 'es_AR',
         'cl' => 'es_CL',
         'co' => 'es_CO',
-        'ec' => 'es_CO',
+        'ec' => 'es_EC',
         'mx' => 'es_MX',
         'pe' => 'es_PE',
         'int' => 'en_US',

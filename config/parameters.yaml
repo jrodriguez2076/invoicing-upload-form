@@ -1,25 +1,255 @@
 parameters:
     locale: 'en_US'
-    contributor_types:
-        ar:
+    ar:
+        contributor_types:
             'Sociedad de Responsabilidad limitada ': 'Sociedad de Responsabilidad limitada '
             'Monotributista': 'Monotributista'
             'Responsable Inscrito': 'Responsable Inscrito'
             'Sociedad Anónima': 'Sociedad Anónima'
-        cl:
+        main_categories:
+            'Electrodomésticos': 'Electrodomésticos'
+            'Libros': 'Libros'
+            'Celulares y Tablets': 'Celulares y Tablets'
+            'Computación': 'Computación'
+            'Moda': 'Moda'
+            'Belleza y cuidado personal': 'Belleza y cuidado personal'
+            'Hogar,Niños y bebés': 'Hogar,Niños y bebés'
+            'Fotografía': 'Fotografía'
+            'Deportes': 'Deportes'
+            'TV/Audio/Video': 'TV/Audio/Video'
+            'Videojuegos': 'Videojuegos'
+            'Otro': 'Otro'
+        secondary_categories:
+            'Electrodomésticos': 'Electrodomésticos'
+            'Libros': 'Libros'
+            'Celulares y Tablets': 'Celulares y Tablets'
+            'Computación': 'Computación'
+            'Moda': 'Moda'
+            'Belleza y cuidado personal': 'Belleza y cuidado personal'
+            'Hogar,Niños y bebés': 'Hogar,Niños y bebés'
+            'Fotografía': 'Fotografía'
+            'Deportes': 'Deportes'
+            'TV/Audio/Video': 'TV/Audio/Video'
+            'Videojuegos': 'Videojuegos'
+            'Otro': 'Otro'
+        potential_catalog:
+            '1-29': '1-29'
+            '30-60': '30-60'
+            '61-150': '61-150'
+            '151-500': '151-500'
+            '501-1000': '501-1000'
+            '1001+': '1001+'
+        other_stores_rating:
+            '5/5': '5/5'
+            '4/5': '4/5'
+            '3/5': '3/5'
+            '2/5': '2/5'
+            '1/5': '1/5'
+        other_stores:
+            'Amazon': 'Amazon'
+            'Mercado Libre': 'Mercado Libre'
+            'Walmart': 'Walmart'
+            'Otra': 'Otra'
+            'No vendo': 'No vendo'
+        marketing_invest:
+            '0': '0'
+            '1-100': '1-100'
+            '101-500': '101-500'
+            '501-1000': '501-1000'
+            '1001+': '1001+'
+        integration_flag:
+            'Sí': 'Sí'
+            'No': 'No'
+        warehouse_mode:
+            'Pickup': 'P'
+            'Dropoff': 'D'
+        warehouse_cities: []
+    cl:
+        contributor_types:
             'Limitada': 'Limitada'
             'EIRL': 'EIRL'
             'SpA': 'SpA'
             'Persona Natural': 'Persona Natural'
             'Sociedad Anónima': 'Sociedad Anónima'
-        co:
+        main_categories:
+            'Electrodomésticos': 'Electrodomésticos'
+            'Libros': 'Libros'
+            'Celulares y Tablets': 'Celulares y Tablets'
+            'Computación': 'Computación'
+            'Moda': 'Moda'
+            'Belleza y cuidado personal': 'Belleza y cuidado personal'
+            'Hogar,Niños y bebés': 'Hogar,Niños y bebés'
+            'Fotografía': 'Fotografía'
+            'Deportes': 'Deportes'
+            'TV/Audio/Video': 'TV/Audio/Video'
+            'Videojuegos': 'Videojuegos'
+            'Otro': 'Otro'
+        secondary_categories:
+            'Electrodomésticos': 'Electrodomésticos'
+            'Libros': 'Libros'
+            'Celulares y Tablets': 'Celulares y Tablets'
+            'Computación': 'Computación'
+            'Moda': 'Moda'
+            'Belleza y cuidado personal': 'Belleza y cuidado personal'
+            'Hogar,Niños y bebés': 'Hogar,Niños y bebés'
+            'Fotografía': 'Fotografía'
+            'Deportes': 'Deportes'
+            'TV/Audio/Video': 'TV/Audio/Video'
+            'Videojuegos': 'Videojuegos'
+            'Otro': 'Otro'
+        potential_catalog:
+            '1-29': '1-29'
+            '30-60': '30-60'
+            '61-150': '61-150'
+            '151-500': '151-500'
+            '501-1000': '501-1000'
+            '1001+': '1001+'
+        other_stores_rating:
+            '5/5': '5/5'
+            '4/5': '4/5'
+            '3/5': '3/5'
+            '2/5': '2/5'
+            '1/5': '1/5'
+        other_stores:
+            'Amazon': 'Amazon'
+            'Mercado Libre': 'Mercado Libre'
+            'Walmart': 'Walmart'
+            'Otra': 'Otra'
+            'No vendo': 'No vendo'
+        marketing_invest:
+            '0': '0'
+            '1-100': '1-100'
+            '101-500': '101-500'
+            '501-1000': '501-1000'
+            '1001+': '1001+'
+        integration_flag:
+            'Sí': 'Sí'
+            'No': 'No'
+        warehouse_mode: []
+        warehouse_cities: []
+    co:
+        contributor_types:
             'Régimen Simplificado': 'Régimen Simplificado'
             'Régimen Común': 'Régimen Común'
             'Gran Contribuyente': 'Gran Contribuyente'
-        ec:
+        main_categories:
+            'Electrodomésticos': 'Electrodomésticos'
+            'Libros': 'Libros'
+            'Celulares y Tablets': 'Celulares y Tablets'
+            'Computación': 'Computación'
+            'Moda': 'Moda'
+            'Belleza y cuidado personal': 'Belleza y cuidado personal'
+            'Hogar,Niños y bebés': 'Hogar,Niños y bebés'
+            'Fotografía': 'Fotografía'
+            'Deportes': 'Deportes'
+            'TV/Audio/Video': 'TV/Audio/Video'
+            'Videojuegos': 'Videojuegos'
+            'Otro': 'Otro'
+        secondary_categories:
+            'Electrodomésticos': 'Electrodomésticos'
+            'Libros': 'Libros'
+            'Celulares y Tablets': 'Celulares y Tablets'
+            'Computación': 'Computación'
+            'Moda': 'Moda'
+            'Belleza y cuidado personal': 'Belleza y cuidado personal'
+            'Hogar,Niños y bebés': 'Hogar,Niños y bebés'
+            'Fotografía': 'Fotografía'
+            'Deportes': 'Deportes'
+            'TV/Audio/Video': 'TV/Audio/Video'
+            'Videojuegos': 'Videojuegos'
+            'Otro': 'Otro'
+        potential_catalog:
+            '1-29': '1-29'
+            '30-60': '30-60'
+            '61-150': '61-150'
+            '151-500': '151-500'
+            '501-1000': '501-1000'
+            '1001+': '1001+'
+        other_stores_rating:
+            '5/5': '5/5'
+            '4/5': '4/5'
+            '3/5': '3/5'
+            '2/5': '2/5'
+            '1/5': '1/5'
+        other_stores:
+            'Amazon': 'Amazon'
+            'Mercado Libre': 'Mercado Libre'
+            'Walmart': 'Walmart'
+            'Otra': 'Otra'
+            'No vendo': 'No vendo'
+        marketing_invest:
+            '0': '0'
+            '1-100': '1-100'
+            '101-500': '101-500'
+            '501-1000': '501-1000'
+            '1001+': '1001+'
+        integration_flag:
+            'Sí': 'Sí'
+            'No': 'No'
+        warehouse_mode: []
+        warehouse_cities: []
+    ec:
+        contributor_types:
             'Persona jurídica': 'Persona jurídica'
             'Persona natural con negocio': 'Persona natural con negocio'
-        mx:
+        main_categories:
+            'Electrodomésticos': 'Electrodomésticos'
+            'Libros': 'Libros'
+            'Celulares y Tablets': 'Celulares y Tablets'
+            'Computación': 'Computación'
+            'Moda': 'Moda'
+            'Belleza y cuidado personal': 'Belleza y cuidado personal'
+            'Hogar,Niños y bebés': 'Hogar,Niños y bebés'
+            'Fotografía': 'Fotografía'
+            'Deportes': 'Deportes'
+            'TV/Audio/Video': 'TV/Audio/Video'
+            'Videojuegos': 'Videojuegos'
+            'Otro': 'Otro'
+        secondary_categories:
+            'Electrodomésticos': 'Electrodomésticos'
+            'Libros': 'Libros'
+            'Celulares y Tablets': 'Celulares y Tablets'
+            'Computación': 'Computación'
+            'Moda': 'Moda'
+            'Belleza y cuidado personal': 'Belleza y cuidado personal'
+            'Hogar,Niños y bebés': 'Hogar,Niños y bebés'
+            'Fotografía': 'Fotografía'
+            'Deportes': 'Deportes'
+            'TV/Audio/Video': 'TV/Audio/Video'
+            'Videojuegos': 'Videojuegos'
+            'Otro': 'Otro'
+        potential_catalog:
+            '1-29': '1-29'
+            '30-60': '30-60'
+            '61-150': '61-150'
+            '151-500': '151-500'
+            '501-1000': '501-1000'
+            '1001+': '1001+'
+        other_stores_rating:
+            '5/5': '5/5'
+            '4/5': '4/5'
+            '3/5': '3/5'
+            '2/5': '2/5'
+            '1/5': '1/5'
+        other_stores:
+            'Amazon': 'Amazon'
+            'Mercado Libre': 'Mercado Libre'
+            'Walmart': 'Walmart'
+            'Otra': 'Otra'
+            'No vendo': 'No vendo'
+        marketing_invest:
+            '0': '0'
+            '1-100': '1-100'
+            '101-500': '101-500'
+            '501-1000': '501-1000'
+            '1001+': '1001+'
+        integration_flag:
+            'Sí': 'Sí'
+            'No': 'No'
+        warehouse_mode: []
+        warehouse_cities: []
+    mx:
+        contributor_types:
             '601-General de ley personas morales': '601-General de ley personas morales'
             '603-Personas morales con fines no lucrativos': '603-Personas morales con fines no lucrativos'
             '605-Sueldos y salarios e ingresos asimilados a salarios': '605-Sueldos y salarios e ingresos asimilados a salarios'
@@ -42,14 +272,70 @@ parameters:
             '630-Enajenación de acciones en bolsa de valores': '630-Enajenación de acciones en bolsa de valores'
             '615-Régimen de los ingresos por obtención de premios': '615-Régimen de los ingresos por obtención de premios'
             'International seller': 'International seller'
-        pe:
+        main_categories:
+            'Electrodomésticos': 'Electrodomésticos'
+            'Libros': 'Libros'
+            'Celulares y Tablets': 'Celulares y Tablets'
+            'Computación': 'Computación'
+            'Moda': 'Moda'
+            'Belleza y cuidado personal': 'Belleza y cuidado personal'
+            'Hogar,Niños y bebés': 'Hogar,Niños y bebés'
+            'Fotografía': 'Fotografía'
+            'Deportes': 'Deportes'
+            'TV/Audio/Video': 'TV/Audio/Video'
+            'Videojuegos': 'Videojuegos'
+            'Otro': 'Otro'
+        secondary_categories:
+            'Electrodomésticos': 'Electrodomésticos'
+            'Libros': 'Libros'
+            'Celulares y Tablets': 'Celulares y Tablets'
+            'Computación': 'Computación'
+            'Moda': 'Moda'
+            'Belleza y cuidado personal': 'Belleza y cuidado personal'
+            'Hogar,Niños y bebés': 'Hogar,Niños y bebés'
+            'Fotografía': 'Fotografía'
+            'Deportes': 'Deportes'
+            'TV/Audio/Video': 'TV/Audio/Video'
+            'Videojuegos': 'Videojuegos'
+            'Otro': 'Otro'
+        potential_catalog:
+            '1-29': '1-29'
+            '30-60': '30-60'
+            '61-150': '61-150'
+            '151-500': '151-500'
+            '501-1000': '501-1000'
+            '1001+': '1001+'
+        other_stores_rating:
+            '5/5': '5/5'
+            '4/5': '4/5'
+            '3/5': '3/5'
+            '2/5': '2/5'
+            '1/5': '1/5'
+        other_stores:
+            'Amazon': 'Amazon'
+            'Mercado Libre': 'Mercado Libre'
+            'Walmart': 'Walmart'
+            'Otra': 'Otra'
+            'No vendo': 'No vendo'
+        marketing_invest:
+            '0': '0'
+            '1-100': '1-100'
+            '101-500': '101-500'
+            '501-1000': '501-1000'
+            '1001+': '1001+'
+        integration_flag:
+            'Sí': 'Sí'
+            'No': 'No'
+        warehouse_mode: []
+        warehouse_cities: []
+    pe:
+        contributor_types:
             'Sociedad Anónima Cerrada': 'Sociedad Anónima Cerrada'
             'S.R.L.': 'PE-S.R.L.'
             'Sociedad Anónima': 'Sociedad Anónima'
             'Persona natural con negocio': 'Persona natural con negocio'
             'Empresa Individual de Responsabilidad Limitada': 'Empresa Individual de Responsabilidad Limitada'
-    main_categories:
-        ar:
+        main_categories:
             'Electrodomésticos': 'Electrodomésticos'
             'Libros': 'Libros'
             'Celulares y Tablets': 'Celulares y Tablets'
@@ -62,7 +348,7 @@ parameters:
             'TV/Audio/Video': 'TV/Audio/Video'
             'Videojuegos': 'Videojuegos'
             'Otro': 'Otro'
-        cl:
+        secondary_categories:
             'Electrodomésticos': 'Electrodomésticos'
             'Libros': 'Libros'
             'Celulares y Tablets': 'Celulares y Tablets'
@@ -75,328 +361,39 @@ parameters:
             'TV/Audio/Video': 'TV/Audio/Video'
             'Videojuegos': 'Videojuegos'
             'Otro': 'Otro'
-        co:
-            'Electrodomésticos': 'Electrodomésticos'
-            'Libros': 'Libros'
-            'Celulares y Tablets': 'Celulares y Tablets'
-            'Computación': 'Computación'
-            'Moda': 'Moda'
-            'Belleza y cuidado personal': 'Belleza y cuidado personal'
-            'Hogar,Niños y bebés': 'Hogar,Niños y bebés'
-            'Fotografía': 'Fotografía'
-            'Deportes': 'Deportes'
-            'TV/Audio/Video': 'TV/Audio/Video'
-            'Videojuegos': 'Videojuegos'
-            'Otro': 'Otro'
-        ec:
-            'Electrodomésticos': 'Electrodomésticos'
-            'Libros': 'Libros'
-            'Celulares y Tablets': 'Celulares y Tablets'
-            'Computación': 'Computación'
-            'Moda': 'Moda'
-            'Belleza y cuidado personal': 'Belleza y cuidado personal'
-            'Hogar,Niños y bebés': 'Hogar,Niños y bebés'
-            'Fotografía': 'Fotografía'
-            'Deportes': 'Deportes'
-            'TV/Audio/Video': 'TV/Audio/Video'
-            'Videojuegos': 'Videojuegos'
-            'Otro': 'Otro'
-        mx:
-            'Electrodomésticos': 'Electrodomésticos'
-            'Libros': 'Libros'
-            'Celulares y Tablets': 'Celulares y Tablets'
-            'Computación': 'Computación'
-            'Moda': 'Moda'
-            'Belleza y cuidado personal': 'Belleza y cuidado personal'
-            'Hogar,Niños y bebés': 'Hogar,Niños y bebés'
-            'Fotografía': 'Fotografía'
-            'Deportes': 'Deportes'
-            'TV/Audio/Video': 'TV/Audio/Video'
-            'Videojuegos': 'Videojuegos'
-            'Otro': 'Otro'
-        pe:
-            'Electrodomésticos': 'Electrodomésticos'
-            'Libros': 'Libros'
-            'Celulares y Tablets': 'Celulares y Tablets'
-            'Computación': 'Computación'
-            'Moda': 'Moda'
-            'Belleza y cuidado personal': 'Belleza y cuidado personal'
-            'Hogar,Niños y bebés': 'Hogar,Niños y bebés'
-            'Fotografía': 'Fotografía'
-            'Deportes': 'Deportes'
-            'TV/Audio/Video': 'TV/Audio/Video'
-            'Videojuegos': 'Videojuegos'
-            'Otro': 'Otro'
-    secondary_categories:
-        ar:
-            'Electrodomésticos': 'Electrodomésticos'
-            'Libros': 'Libros'
-            'Celulares y Tablets': 'Celulares y Tablets'
-            'Computación': 'Computación'
-            'Moda': 'Moda'
-            'Belleza y cuidado personal': 'Belleza y cuidado personal'
-            'Hogar,Niños y bebés': 'Hogar,Niños y bebés'
-            'Fotografía': 'Fotografía'
-            'Deportes': 'Deportes'
-            'TV/Audio/Video': 'TV/Audio/Video'
-            'Videojuegos': 'Videojuegos'
-            'Otro': 'Otro'
-        cl:
-            'Electrodomésticos': 'Electrodomésticos'
-            'Libros': 'Libros'
-            'Celulares y Tablets': 'Celulares y Tablets'
-            'Computación': 'Computación'
-            'Moda': 'Moda'
-            'Belleza y cuidado personal': 'Belleza y cuidado personal'
-            'Hogar,Niños y bebés': 'Hogar,Niños y bebés'
-            'Fotografía': 'Fotografía'
-            'Deportes': 'Deportes'
-            'TV/Audio/Video': 'TV/Audio/Video'
-            'Videojuegos': 'Videojuegos'
-            'Otro': 'Otro'
-        co:
-            'Electrodomésticos': 'Electrodomésticos'
-            'Libros': 'Libros'
-            'Celulares y Tablets': 'Celulares y Tablets'
-            'Computación': 'Computación'
-            'Moda': 'Moda'
-            'Belleza y cuidado personal': 'Belleza y cuidado personal'
-            'Hogar,Niños y bebés': 'Hogar,Niños y bebés'
-            'Fotografía': 'Fotografía'
-            'Deportes': 'Deportes'
-            'TV/Audio/Video': 'TV/Audio/Video'
-            'Videojuegos': 'Videojuegos'
-            'Otro': 'Otro'
-        ec:
-            'Electrodomésticos': 'Electrodomésticos'
-            'Libros': 'Libros'
-            'Celulares y Tablets': 'Celulares y Tablets'
-            'Computación': 'Computación'
-            'Moda': 'Moda'
-            'Belleza y cuidado personal': 'Belleza y cuidado personal'
-            'Hogar,Niños y bebés': 'Hogar,Niños y bebés'
-            'Fotografía': 'Fotografía'
-            'Deportes': 'Deportes'
-            'TV/Audio/Video': 'TV/Audio/Video'
-            'Videojuegos': 'Videojuegos'
-            'Otro': 'Otro'
-        mx:
-            'Electrodomésticos': 'Electrodomésticos'
-            'Libros': 'Libros'
-            'Celulares y Tablets': 'Celulares y Tablets'
-            'Computación': 'Computación'
-            'Moda': 'Moda'
-            'Belleza y cuidado personal': 'Belleza y cuidado personal'
-            'Hogar,Niños y bebés': 'Hogar,Niños y bebés'
-            'Fotografía': 'Fotografía'
-            'Deportes': 'Deportes'
-            'TV/Audio/Video': 'TV/Audio/Video'
-            'Videojuegos': 'Videojuegos'
-            'Otro': 'Otro'
-        pe:
-            'Electrodomésticos': 'Electrodomésticos'
-            'Libros': 'Libros'
-            'Celulares y Tablets': 'Celulares y Tablets'
-            'Computación': 'Computación'
-            'Moda': 'Moda'
-            'Belleza y cuidado personal': 'Belleza y cuidado personal'
-            'Hogar,Niños y bebés': 'Hogar,Niños y bebés'
-            'Fotografía': 'Fotografía'
-            'Deportes': 'Deportes'
-            'TV/Audio/Video': 'TV/Audio/Video'
-            'Videojuegos': 'Videojuegos'
-            'Otro': 'Otro'
-    potential_catalog:
-        ar:
+        potential_catalog:
             '1-29': '1-29'
             '30-60': '30-60'
             '61-150': '61-150'
             '151-500': '151-500'
             '501-1000': '501-1000'
             '1001+': '1001+'
-        cl:
-            '1-29': '1-29'
-            '30-60': '30-60'
-            '61-150': '61-150'
-            '151-500': '151-500'
-            '501-1000': '501-1000'
-            '1001+': '1001+'
-        co:
-            '1-29': '1-29'
-            '30-60': '30-60'
-            '61-150': '61-150'
-            '151-500': '151-500'
-            '501-1000': '501-1000'
-            '1001+': '1001+'
-        ec:
-            '1-29': '1-29'
-            '30-60': '30-60'
-            '61-150': '61-150'
-            '151-500': '151-500'
-            '501-1000': '501-1000'
-            '1001+': '1001+'
-        mx:
-            '1-29': '1-29'
-            '30-60': '30-60'
-            '61-150': '61-150'
-            '151-500': '151-500'
-            '501-1000': '501-1000'
-            '1001+': '1001+'
-        pe:
-            '1-29': '1-29'
-            '30-60': '30-60'
-            '61-150': '61-150'
-            '151-500': '151-500'
-            '501-1000': '501-1000'
-            '1001+': '1001+'
-    other_stores_rating:
-        ar:
+        other_stores_rating:
             '5/5': '5/5'
             '4/5': '4/5'
             '3/5': '3/5'
             '2/5': '2/5'
             '1/5': '1/5'
-        cl:
-            '5/5': '5/5'
-            '4/5': '4/5'
-            '3/5': '3/5'
-            '2/5': '2/5'
-            '1/5': '1/5'
-        co:
-            '5/5': '5/5'
-            '4/5': '4/5'
-            '3/5': '3/5'
-            '2/5': '2/5'
-            '1/5': '1/5'
-        ec:
-            '5/5': '5/5'
-            '4/5': '4/5'
-            '3/5': '3/5'
-            '2/5': '2/5'
-            '1/5': '1/5'
-        mx:
-            '5/5': '5/5'
-            '4/5': '4/5'
-            '3/5': '3/5'
-            '2/5': '2/5'
-            '1/5': '1/5'
-        pe:
-            '5/5': '5/5'
-            '4/5': '4/5'
-            '3/5': '3/5'
-            '2/5': '2/5'
-            '1/5': '1/5'
-    other_stores:
-        ar:
+        other_stores:
             'Amazon': 'Amazon'
             'Mercado Libre': 'Mercado Libre'
             'Walmart': 'Walmart'
             'Otra': 'Otra'
             'No vendo': 'No vendo'
-        cl:
-            'Amazon': 'Amazon'
-            'Mercado Libre': 'Mercado Libre'
-            'Walmart': 'Walmart'
-            'Otra': 'Otra'
-            'No vendo': 'No vendo'
-        co:
-            'Amazon': 'Amazon'
-            'Mercado Libre': 'Mercado Libre'
-            'Walmart': 'Walmart'
-            'Otra': 'Otra'
-            'No vendo': 'No vendo'
-        ec:
-            'Amazon': 'Amazon'
-            'Mercado Libre': 'Mercado Libre'
-            'Walmart': 'Walmart'
-            'Otra': 'Otra'
-            'No vendo': 'No vendo'
-        mx:
-            'Amazon': 'Amazon'
-            'Mercado Libre': 'Mercado Libre'
-            'Walmart': 'Walmart'
-            'Otra': 'Otra'
-            'No vendo': 'No vendo'
-        pe:
-            'Amazon': 'Amazon'
-            'Mercado Libre': 'Mercado Libre'
-            'Walmart': 'Walmart'
-            'Otra': 'Otra'
-            'No vendo': 'No vendo'
-    marketing_invest:
-        ar:
+        marketing_invest:
             '0': '0'
             '1-100': '1-100'
             '101-500': '101-500'
             '501-1000': '501-1000'
             '1001+': '1001+'
-        cl:
-            '0': '0'
-            '1-100': '1-100'
-            '101-500': '101-500'
-            '501-1000': '501-1000'
-            '1001+': '1001+'
-        co:
-            '0': '0'
-            '1-100': '1-100'
-            '101-500': '101-500'
-            '501-1000': '501-1000'
-            '1001+': '1001+'
-        ec:
-            '0': '0'
-            '1-100': '1-100'
-            '101-500': '101-500'
-            '501-1000': '501-1000'
-            '1001+': '1001+'
-        mx:
-            '0': '0'
-            '1-100': '1-100'
-            '101-500': '101-500'
-            '501-1000': '501-1000'
-            '1001+': '1001+'
-        pe:
-            '0': '0'
-            '1-100': '1-100'
-            '101-500': '101-500'
-            '501-1000': '501-1000'
-            '1001+': '1001+'
-    integration_flag:
-        ar:
+        integration_flag:
             'Sí': 'Sí'
             'No': 'No'
-        cl:
-            'Sí': 'Sí'
-            'No': 'No'
-        co:
-            'Sí': 'Sí'
-            'No': 'No'
-        ec:
-            'Sí': 'Sí'
-            'No': 'No'
-        mx:
-            'Sí': 'Sí'
-            'No': 'No'
-        pe:
-            'Sí': 'Sí'
-            'No': 'No'
-    warehouse_mode:
-        ar:
-            'Pickup': 'P'
-            'Dropoff': 'D'
-        cl: []
-        co: []
-        ec: []
-        mx: []
-        pe: []
-    warehouse_cities:
-        ar: []
-        cl: []
-        co: []
-        ec: []
-        mx: []
-        pe:
+        warehouse_mode: []
+        warehouse_cities:
             'Lima': 'Lima|Lima|Lima'
             'Callao': 'Callao|Callao|Callao'
+
 
 
 

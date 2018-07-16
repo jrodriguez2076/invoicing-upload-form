@@ -2,4 +2,4 @@ index:
     path: /{store}
     controller: App\Controller\SellerSignUpController::index
     defaults:
-        store: int
+        store: international

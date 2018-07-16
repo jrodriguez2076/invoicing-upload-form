@@ -12,12 +12,12 @@ use App\Form\Factory\SellerSignUpInternationalForm;
 use App\Form\Factory\SellerSignUpMexicoForm;
 use App\Form\Factory\SellerSignUpPeruForm;
 
-class SellerSignUpFactory
+class SellerSignUpFormFactory
 {
     /**
      * @var array
      */
-    protected static $classMap = [
+    protected const LOCALE_FORM_MAP = [
         'ar' => SellerSignUpArgentinaForm::class,
         'cl' => SellerSignUpChileForm::class,
         'co' => SellerSignUpColombiaForm::class,
@@ -26,12 +26,8 @@ class SellerSignUpFactory
         'pe' => SellerSignUpPeruForm::class,
     ];
 
-    public static function fromStore(string $name): string
+    public static function fromStore(string $store): string
     {
-        if (!isset(static::$classMap[$name])) {
-            return SellerSignUpInternationalForm::class;
-        }
-
-        return static::$classMap[$name];
+        return static::LOCALE_FORM_MAP[$store] ?? SellerSignUpInternationalForm::class;
     }
 }

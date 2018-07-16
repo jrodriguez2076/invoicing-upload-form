@@ -13,19 +13,22 @@ class LocaleSubscriber implements EventSubscriberInterface
     /**
      * @var array
      */
-    protected $localeMap = [
+    protected const LOCALE_MAP = [
         'ar' => 'es_AR',
         'cl' => 'es_CL',
         'co' => 'es_CO',
         'ec' => 'es_EC',
         'mx' => 'es_MX',
         'pe' => 'es_PE',
-        'int' => 'en_US',
+        'international' => 'en_US',
     ];
 
+    /**
+     * @var string
+     */
     private $defaultLocale;
 
-    public function __construct($defaultLocale = 'en')
+    public function __construct(string $defaultLocale = 'en')
     {
         $this->defaultLocale = $defaultLocale;
     }
@@ -57,6 +60,6 @@ class LocaleSubscriber implements EventSubscriberInterface
 
     protected function getLocaleFromStore(string $store): string
     {
-        return $this->localeMap[$store] ?? $this->defaultLocale;
+        return $this::LOCALE_MAP[$store] ?? $this->defaultLocale;
     }
 }

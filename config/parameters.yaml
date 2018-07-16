@@ -393,6 +393,65 @@ parameters:
         warehouse_cities:
             'Lima': 'Lima|Lima|Lima'
             'Callao': 'Callao|Callao|Callao'
+    international:
+        contributor_types:
+            'International seller': 'International seller'
+        main_categories:
+            'Electrodomésticos': 'Electrodomésticos'
+            'Libros': 'Libros'
+            'Celulares y Tablets': 'Celulares y Tablets'
+            'Computación': 'Computación'
+            'Moda': 'Moda'
+            'Belleza y cuidado personal': 'Belleza y cuidado personal'
+            'Hogar,Niños y bebés': 'Hogar,Niños y bebés'
+            'Fotografía': 'Fotografía'
+            'Deportes': 'Deportes'
+            'TV/Audio/Video': 'TV/Audio/Video'
+            'Videojuegos': 'Videojuegos'
+            'Otro': 'Otro'
+        secondary_categories:
+            'Electrodomésticos': 'Electrodomésticos'
+            'Libros': 'Libros'
+            'Celulares y Tablets': 'Celulares y Tablets'
+            'Computación': 'Computación'
+            'Moda': 'Moda'
+            'Belleza y cuidado personal': 'Belleza y cuidado personal'
+            'Hogar,Niños y bebés': 'Hogar,Niños y bebés'
+            'Fotografía': 'Fotografía'
+            'Deportes': 'Deportes'
+            'TV/Audio/Video': 'TV/Audio/Video'
+            'Videojuegos': 'Videojuegos'
+            'Otro': 'Otro'
+        potential_catalog:
+            '1-29': '1-29'
+            '30-60': '30-60'
+            '61-150': '61-150'
+            '151-500': '151-500'
+            '501-1000': '501-1000'
+            '1001+': '1001+'
+        other_stores_rating:
+            '5/5': '5/5'
+            '4/5': '4/5'
+            '3/5': '3/5'
+            '2/5': '2/5'
+            '1/5': '1/5'
+        other_stores:
+            'Amazon': 'Amazon'
+            'Mercado Libre': 'Mercado Libre'
+            'Walmart': 'Walmart'
+            'Otra': 'Otra'
+            'No vendo': 'No vendo'
+        marketing_invest:
+            '0': '0'
+            '1-100': '1-100'
+            '101-500': '101-500'
+            '501-1000': '501-1000'
+            '1001+': '1001+'
+        integration_flag:
+            'Sí': 'Sí'
+            'No': 'No'
+        warehouse_mode: []
+        warehouse_cities: []
 
 
 

@@ -6,7 +6,7 @@ namespace App\Controller;
 
 use App\Adapter\PrmAdapter;
 use App\Entity\SellerSignUp;
-use App\Form\SellerSignUpFactory;
+use App\Form\SellerSignUpFormFactory;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -28,7 +28,7 @@ class SellerSignUpController extends AbstractController
         $sellerSignUp = new SellerSignUp();
 
         $form = $this->createForm(
-            SellerSignUpFactory::fromStore($store),
+            SellerSignUpFormFactory::fromStore($store),
             $sellerSignUp
         );
 

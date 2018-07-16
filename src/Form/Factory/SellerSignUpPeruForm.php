@@ -31,6 +31,8 @@ class SellerSignUpPeruForm extends AbstractType
 
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
+        $store = $options['store'];
+
         $builder
             ->add('accountManagerName')
             ->add(
@@ -65,7 +67,7 @@ class SellerSignUpPeruForm extends AbstractType
                 'contributorType',
                 ChoiceType::class,
                 [
-                    'choices' => $this->sellerSignUpService->getContributorTypesChoices($options['store']),
+                    'choices' => $this->sellerSignUpService->getContributorTypesChoices($store),
                 ]
             )
             ->add(
@@ -218,7 +220,7 @@ class SellerSignUpPeruForm extends AbstractType
                 'warehouseCity',
                 ChoiceType::class,
                 [
-                    'choices' => $this->sellerSignUpService->getWarehouseCities($options['store']),
+                    'choices' => $this->sellerSignUpService->getWarehouseCities($store),
                 ]
             )
             ->add(
@@ -249,21 +251,21 @@ class SellerSignUpPeruForm extends AbstractType
                 'mainCategory',
                 ChoiceType::class,
                 [
-                    'choices' => $this->sellerSignUpService->getMainCategoriesChoices($options['store']),
+                    'choices' => $this->sellerSignUpService->getMainCategoriesChoices($store),
                 ]
             )
             ->add(
                 'secondaryCategory',
                 ChoiceType::class,
                 [
-                    'choices' => $this->sellerSignUpService->getSecondaryCategoriesChoices($options['store']),
+                    'choices' => $this->sellerSignUpService->getSecondaryCategoriesChoices($store),
                 ]
             )
             ->add(
                 'potentialCatalog',
                 ChoiceType::class,
                 [
-                    'choices' => $this->sellerSignUpService->getPotentialCatalogChoices($options['store']),
+                    'choices' => $this->sellerSignUpService->getPotentialCatalogChoices($store),
                 ]
             )
             //Section 7
@@ -272,7 +274,7 @@ class SellerSignUpPeruForm extends AbstractType
                 'otherStoresList',
                 ChoiceType::class,
                 [
-                    'choices' => $this->sellerSignUpService->getOtherStoresListChoices($options['store']),
+                    'choices' => $this->sellerSignUpService->getOtherStoresListChoices($store),
                 ]
             )
             ->add('otherStoreName')
@@ -281,7 +283,7 @@ class SellerSignUpPeruForm extends AbstractType
                 'otherStoresRating',
                 ChoiceType::class,
                 [
-                    'choices' => $this->sellerSignUpService->getOtherStoresRatingChoices($options['store']),
+                    'choices' => $this->sellerSignUpService->getOtherStoresRatingChoices($store),
                 ]
             )
             //Section 8
@@ -293,14 +295,14 @@ class SellerSignUpPeruForm extends AbstractType
                 'marketingInvest',
                 ChoiceType::class,
                 [
-                    'choices' => $this->sellerSignUpService->getMarketingInvestChoices($options['store']),
+                    'choices' => $this->sellerSignUpService->getMarketingInvestChoices($store),
                 ]
             )
             ->add(
                 'integrationFlag',
                 ChoiceType::class,
                 [
-                    'choices' => $this->sellerSignUpService->getIntegrationFlagChoices($options['store']),
+                    'choices' => $this->sellerSignUpService->getIntegrationFlagChoices($store),
                 ]
             )
             ->add('Submit', SubmitType::class);

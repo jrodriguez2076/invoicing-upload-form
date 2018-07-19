@@ -17,8 +17,8 @@ Warehouse address extra data4: Punto de referencia de tu almacén
 Warehouse city: Ciudad (Por ahora, sólo aceptamos registros de Lima y Callao)
 legal_name_caption: Nombre legal de quien se inscribió en Linio (empresa o persona) EN EL MISMO ORDEN EN QUE APARECE EN EL RUC
 legal_address_caption: Domicilio fiscal de la razón social. Por ahora sólo aceptamos registros de Lima y Callao
-city_caption: ''
-postal_code_caption: ''
+legal_city_caption: ''
+legal_postal_code_caption: ''
 fiscal_id_number_caption: ''
 fiscal_id_additional_doc_caption: ''
 id_additional_doc_caption: Por las dos caras, debe coincidir con la información de la Ficha RUC

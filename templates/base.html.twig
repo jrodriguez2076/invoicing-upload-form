@@ -5,12 +5,8 @@
         <title>{% block title %} {{ 'page_title' | trans }} {% endblock %}</title>
         {% block stylesheets %}
             <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-          <style type="text/css">
-            .custom-file-input ~ .custom-file-label::after {
-              content: "Elegir archivo";
-            }
+            <link rel="stylesheet" href="{{ asset('css/main.css') }}">
 
-          </style>
         {% endblock %}
     </head>
     <body>

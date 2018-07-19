@@ -1,7 +1,7 @@
 Phone number: Teléfono (separa el número de área con un guión)
 Legal address: Dirección
 Legal address2: Departamento
-City: Municipio
+Legal city: Municipio
 Postal code: Código DANE
 Fiscal id number: N.I.T de la Razón Social
 Fiscal id additional doc: Registro Único Tributario - RUT (Expedición mínima año 2016)
@@ -20,8 +20,8 @@ Operative check legally constituted: Empresa legalmente constituída
 Operative check invoices: En capacidad de emitir facturas al cliente final
 phone_number_caption: 'Cod.País  – Teléfono. Ej: 57 - 333 44 44'
 legal_name_caption: Nombre legal de quien se inscribió en Linio (empresa o persona) EN EL MISMO ORDEN EN QUE APARECE EN EL RUT
-city_caption: ''
-postal_code_caption: ''
+legal_city_caption: ''
+legal_postal_code_caption: ''
 fiscal_id_number_caption: 'Sólo usa números. NO Incluyas el dígito de verificación (el que está después de "-" en tu N.I.T.) Por ejemplo: Si tu N.I.T. es 123456789-0, coloca sólo 123456789'
 fiscal_id_additional_doc_caption: ''
 logistic_document_caption: 'Expedido como máximo hace tres meses'

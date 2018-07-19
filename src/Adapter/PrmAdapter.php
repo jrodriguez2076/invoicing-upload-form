@@ -4,7 +4,8 @@ declare(strict_types=1);
 
 namespace App\Adapter;
 
-use App\Entity\SellerSignUp;
+use App\Entity\Account;
+use App\Entity\Contact;
 use App\Exception\PrmException;
 use GuzzleHttp\ClientInterface;
 use GuzzleHttp\Exception\ClientException;
@@ -34,9 +35,9 @@ class PrmAdapter
         $this->clientSecret = $clientSecret;
     }
 
-    public function createAccount(SellerSignUp $sellerSignUp): void
+    public function createAccount(Account $account): void
     {
-        $requestBody = $this->createRequest($sellerSignUp);
+        $requestBody = $this->createAccountRequest($account);
 
         try {
             $this->client->request(
@@ -48,25 +49,61 @@ class PrmAdapter
                 ]
             );
         } catch (ClientException $exception) {
-            $responseBody = json_decode((string) $exception->getResponse()->getBody());
-
-            throw new PrmException($responseBody['message']);
+            throw new PrmException($exception->getMessage());
         } catch (ServerException $exception) {
-            $responseBody = json_decode((string) $exception->getResponse()->getBody());
-
-            throw new PrmException((string) $responseBody['message'], $responseBody);
+            throw new PrmException($exception->getMessage());
         }
     }
 
-    protected function createRequest(SellerSignUp $sellerSignUp)
+    public function createContact(Contact $contact): void
+    {
+        $requestBody = $this->createContactRequest($contact);
+
+        try {
+            $response = $this->client->request(
+                'POST',
+                '/api/rest/latest/contacts',
+                [
+                    'headers' => $this->getWsseHeaders(),
+                    'json' => $requestBody,
+                ]
+            );
+        } catch (ClientException $exception) {
+            throw new PrmException($exception->getMessage());
+        } catch (ServerException $exception) {
+            throw new PrmException($exception->getMessage());
+        }
+
+        if ($response->getStatusCode() != 200 and $response->getStatusCode() != 201) {
+            throw new PrmException('CONTACT_CREATE_ERROR', 500);
+        }
+    }
+
+    protected function createAccountRequest(Account $account): array
     {
         return [
             'account' => [
-                'name' => $sellerSignUp->getAccountName(),
-                'phone' => $sellerSignUp->getPhoneNumber(),
-                'emailAddress' => $sellerSignUp->getEmail(),
-                'countryId' => 'ec',
-                'owner' => 1,
+            ],
+        ];
+    }
+
+    protected function createContactRequest(Contact $contact): array
+    {
+        return [
+            'contact' => [
+                'firstName' => $contact->getFirstName(),
+                'lastName' => $contact->getLastName(),
+                'phones' => [
+                    [
+                        'phone' => $contact->getPhoneNumber(),
+                    ],
+                ],
+                'emails' => [
+                    [
+                        'email' => $contact->getEmail(),
+                        'primary' => true,
+                    ],
+                ],
             ],
         ];
     }

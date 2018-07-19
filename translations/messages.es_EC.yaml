@@ -12,8 +12,8 @@ Warehouse address2: Estado/Provincia
 Warehouse city: Ciudad
 phone_number_caption: 'Colocar número de área. Ej: 593 5 2520890'
 legal_name_caption: Nombre legal de quien se inscribió en Linio (empresa o persona) EN EL MISMO ORDEN EN QUE APARECE EN EL RUT
-city_caption: ''
-postal_code_caption: ''
+legal_city_caption: ''
+legal_postal_code_caption: ''
 fiscal_id_number_caption: ''
 fiscal_id_additional_doc_caption: ''
 logistic_document_caption: ''

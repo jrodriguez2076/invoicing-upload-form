@@ -1,8 +1,8 @@
 Phone number: Teléfono (con clave LADA):
 Legal address: Calle y número, incluir Colonia (No usar punto(.), coma(,), gato(#), punto y coma(;), etc. *
-City: Ciudad o Municipio
+Legal city: Ciudad o Municipio
 Warehouse phone: Teléfono (con clave LADA)
 Operative check legally constituted: Empresa legalmente constituída, en capacidad de emitir facturas
 Operative check invoices: Estoy dispuesto a usar el sistema de Facturación de Linio (Interfacturas del SAT)
-city_caption: ''
-postal_code_caption: ''
+legal_city_caption: ''
+legal_postal_code_caption: ''

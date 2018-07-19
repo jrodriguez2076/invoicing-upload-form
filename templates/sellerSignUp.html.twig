@@ -1,130 +1,135 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
+  <div class="logo-container">
+    <img class="logo-image" src="{{ asset('images/LinioWhiteLogo.png') }}">
+  </div>
   <div class="container">
     <h1>{{ 'form_title' | trans }}</h1><br>
     {{ form_start(form) }}
     <h4>{{ 'section_1_title' | trans }}</h4>
     <br>
-    {{ form_row(form.accountManagerName) }}
-    {{ form_row(form.phoneNumber) }}
-    {{ form_row(form.accountName) }}
-    {{ form_row(form.email) }}
+    {{ form_row(form.contact.firstName) }}
+    {{ form_row(form.contact.lastName) }}
+    {{ form_row(form.contact.phoneNumber) }}
+    {{ form_row(form.account.accountName) }}
+    {{ form_row(form.contact.email) }}
     <p>{{ 'Terms_and_conditions' | trans }}</p>
-    {{ form_row(form.acceptManifest) }}
-    {{ form_row(form.acceptTermsAndConditions) }} <a href=""> Ver términos y condiciones</a><br>
-    {{ form_row(form.acceptCommissionsAndPaymentPolicy) }} <a href=""> Ver comisiones y políticas de pagos</a>
+    {{ form_row(form.contact.acceptManifest) }}
+    {{ form_row(form.contact.acceptTermsAndConditions) }} <a href=""> Ver términos y condiciones</a><br>
+    {{ form_row(form.contact.acceptCommissionsAndPaymentPolicy) }} <a href=""> Ver comisiones y políticas de pagos</a>
     <hr>
     <h4>{{ 'section_2_title' | trans }}</h4>
     <br>
-    {{ form_row(form.legalName) }}
-    {{ form_row(form.contributorType) }}
-    {{ form_row(form.legalAddress) }}
-    {{ form_row(form.legalAddress2) }}
-    {{ form_row(form.city) }}
-    {{ form_row(form.postalCode) }}
-    {% if form.economicActivity is defined %}
-      {{ form_row(form.economicActivity) }}
+    {{ form_row(form.account.legalName) }}
+    {{ form_row(form.account.contributorType) }}
+    {{ form_row(form.account.legalAddress) }}
+    {{ form_row(form.account.legalAddress2) }}
+    {{ form_row(form.account.legalCity) }}
+    {{ form_row(form.account.legalCountry) }}
+    {{ form_row(form.account.legalPostalCode) }}
+    {% if form.account.economicActivity is defined %}
+      {{ form_row(form.account.economicActivity) }}
     {% endif %}
-    {{ form_row(form.legalRepresentative) }}
-    {{ form_row(form.fiscalIdNumber) }}
+    {{ form_row(form.account.legalRepresentative) }}
+    {{ form_row(form.account.fiscalIdNumber) }}
     {{ 'Fiscal id additional doc'| trans }}
-    {{ form_row(form.fiscalIdAdditionalDoc) }}
-    {% if form.logisticDocument is defined %}
+    {{ form_row(form.account.fiscalIdAdditionalDoc) }}
+    {% if form.account.logisticDocument is defined %}
       {{ 'Logistic document'| trans }}
-      {{ form_row(form.logisticDocument) }}
+      {{ form_row(form.account.logisticDocument) }}
     {% endif %}
-    {% if form.idAdditionalDoc is defined %}
+    {% if form.account.idAdditionalDoc is defined %}
       {{ 'Id additional doc'| trans }}
-      {{ form_row(form.idAdditionalDoc) }}
+      {{ form_row(form.account.idAdditionalDoc) }}
     {% endif %}
-    {% if form.financeContactName is defined %}
-      {{ form_row(form.financeContactName) }}
+    {% if form.account.financeContactName is defined %}
+      {{ form_row(form.account.financeContactName) }}
     {% endif %}
-    {% if form.financeContactMail is defined %}
-      {{ form_row(form.financeContactMail) }}
+    {% if form.account.financeContactMail is defined %}
+      {{ form_row(form.account.financeContactMail) }}
     {% endif %}
-    {% if form.financeContactPhone is defined %}
-      {{ form_row(form.financeContactPhone) }}
+    {% if form.account.financeContactPhone is defined %}
+      {{ form_row(form.account.financeContactPhone) }}
     {% endif %}
     <hr>
     <h4>{{ 'section_3_title' | trans }}</h4>
     <br>
-    {{ form_row(form.bankAcctHolder) }}
-    {{ form_row(form.bankAcctNumber) }}
-    {{ form_row(form.bankName) }}
-    {{ form_row(form.bankCode) }}
-    {% if form.bankRegistrationNumber is defined %}
-      {{ form_row(form.bankRegistrationNumber) }}
+    {{ form_row(form.account.bankAcctHolder) }}
+    {{ form_row(form.account.bankAcctNumber) }}
+    {{ form_row(form.account.bankName) }}
+    {{ form_row(form.account.bankCode) }}
+    {% if form.account.bankRegistrationNumber is defined %}
+      {{ form_row(form.account.bankRegistrationNumber) }}
     {% endif %}
-    {{ form_row(form.bankIban) }}
-    {% if form.bankCertificate is defined %}
+    {{ form_row(form.account.bankIban) }}
+    {% if form.account.bankCertificate is defined %}
       {{ 'Bank certificate'| trans }}
-      {{ form_row(form.bankCertificate) }}
+      {{ form_row(form.account.bankCertificate) }}
     {% endif %}
     <hr>
     <h4>{{ 'section_4_title' | trans }}</h4>
     <br>
-    {{ form_row(form.warehouseContact) }}
-    {{ form_row(form.warehouseAddress) }}
-    {% if form.warehouseAddressExtraData is defined %}
-      {{ form_row(form.warehouseAddressExtraData) }}
+    {{ form_row(form.account.warehouseContact) }}
+    {{ form_row(form.account.warehouseAddress) }}
+    {% if form.account.warehouseAddressExtraData is defined %}
+      {{ form_row(form.account.warehouseAddressExtraData) }}
     {% endif %}
-    {% if form.warehouseAddressExtraData2 is defined %}
-      {{ form_row(form.warehouseAddressExtraData2) }}
+    {% if form.account.warehouseAddressExtraData2 is defined %}
+      {{ form_row(form.account.warehouseAddressExtraData2) }}
     {% endif %}
-    {% if form.warehouseAddressExtraData3 is defined %}
-      {{ form_row(form.warehouseAddressExtraData3) }}
+    {% if form.account.warehouseAddressExtraData3 is defined %}
+      {{ form_row(form.account.warehouseAddressExtraData3) }}
     {% endif %}
-    {% if form.warehouseAddressExtraData4 is defined %}
-      {{ form_row(form.warehouseAddressExtraData4) }}
+    {% if form.account.warehouseAddressExtraData4 is defined %}
+      {{ form_row(form.account.warehouseAddressExtraData4) }}
     {% endif %}
-    {{ form_row(form.warehouseAddress2) }}
-    {{ form_row(form.warehouseCity) }}
-    {{ form_row(form.warehousePhone) }}
-    {{ form_row(form.warehousePostalCode) }}
-    {% if form.warehouseMode is defined %}
-      {{ form_row(form.warehouseMode) }}
+    {{ form_row(form.account.warehouseAddress2) }}
+    {{ form_row(form.account.warehouseCity) }}
+    {{ form_row(form.account.warehousePhone) }}
+    {{ form_row(form.account.warehousePostalCode) }}
+    {% if form.account.warehouseMode is defined %}
+      {{ form_row(form.account.warehouseMode) }}
     {% endif %}
-    {% if form.warrantyContact is defined %}
-      {{ form_row(form.warrantyContact) }}
+    {% if form.account.warrantyContact is defined %}
+      {{ form_row(form.account.warrantyContact) }}
     {% endif %}
     <hr>
     <p class="text-justify font-italic">{{ 'section_5_introduction' | trans }}</p>
     <h4>{{ 'section_5_title' | trans }}</h4>
     <br>
-    {{ form_row(form.operativeCheckLegallyConstituted) }}
-    {{ form_row(form.operativeCheckCatalog) }}
-    {{ form_row(form.operativeCheckInventory) }}
-    {{ form_row(form.operativeCheckDelivery) }}
-    {{ form_row(form.operativeCheckReturns) }}
-    {{ form_row(form.operativeCheckShippingAgreement) }}
-    {{ form_row(form.operativeCheckInvoices) }}
-    {{ form_row(form.earningsEstimate) }}
+    {{ form_row(form.opportunity.operativeCheckLegallyConstituted) }}
+    {{ form_row(form.opportunity.operativeCheckCatalog) }}
+    {{ form_row(form.opportunity.operativeCheckInventory) }}
+    {{ form_row(form.opportunity.operativeCheckDelivery) }}
+    {{ form_row(form.opportunity.operativeCheckReturns) }}
+    {{ form_row(form.opportunity.operativeCheckShippingAgreement) }}
+    {{ form_row(form.opportunity.operativeCheckInvoices) }}
+    {{ form_row(form.opportunity.earningsEstimate) }}
     <hr>
     <h4>{{ 'section_6_title' | trans }}</h4>
     <br>
-    {{ form_row(form.mainCategory) }}
-    {{ form_row(form.secondaryCategory) }}
-    {{ form_row(form.potentialCatalog) }}
+    {{ form_row(form.opportunity.mainCategory) }}
+    {{ form_row(form.opportunity.secondaryCategory) }}
+    {{ form_row(form.opportunity.potentialCatalog) }}
     <hr>
     <h4>{{ 'section_7_title' | trans }}</h4>
     <br>
-    {{ form_row(form.website) }}
-    {{ form_row(form.otherStoresList) }}
-    {{ form_row(form.otherStoreName) }}
-    {{ form_row(form.otherStoresAddress) }}
-    {{ form_row(form.otherStoresRating) }}
+    {{ form_row(form.opportunity.website) }}
+    {{ form_row(form.opportunity.otherStoresList) }}
+    {{ form_row(form.opportunity.otherStoreName) }}
+    {{ form_row(form.opportunity.otherStoresAddress) }}
+    {{ form_row(form.opportunity.otherStoresRating) }}
     <hr>
     <h4>{{ 'section_8_title' | trans }}</h4>
     <br>
-    {{ form_row(form.officialDistributorBrand) }}
+    {{ form_row(form.opportunity.officialDistributorBrand) }}
     {{ 'Main brands'| trans }}
-    {{ form_row(form.brand1) }}
-    {{ form_row(form.brand2) }}
-    {{ form_row(form.brand3) }}
-    {{ form_row(form.marketingInvest) }}
-    {{ form_row(form.integrationFlag) }}
+    {{ form_row(form.opportunity.brand1) }}
+    {{ form_row(form.opportunity.brand2) }}
+    {{ form_row(form.opportunity.brand3) }}
+    {{ form_row(form.opportunity.marketingInvest) }}
+    {{ form_row(form.opportunity.integrationFlag) }}
     {{ form_end(form) }}
   </div>
 {% endblock %}

@@ -2,22 +2,19 @@
 
 declare(strict_types=1);
 
-namespace App\Form\Factory;
+namespace App\Form\Store\ec;
 
-use App\Entity\SellerSignUp;
+use App\Entity\Account;
 use App\Service\SellerSignUpService;
 use Symfony\Component\Form\AbstractType;
-use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
-use Symfony\Component\Form\Extension\Core\Type\RepeatedType;
-use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
-class SellerSignUpEcuadorForm extends AbstractType
+class AccountType extends AbstractType
 {
     /**
      * @var SellerSignUpService
@@ -32,30 +29,10 @@ class SellerSignUpEcuadorForm extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $store = $options['store'];
-
         $builder
-            ->add('accountManagerName')
-            ->add(
-                'phoneNumber',
-                TextType::class,
-                [
-                    'help' => 'phone_number_caption',
-                ]
-            )
+
             ->add('accountName', TextType::class, ['help' => 'account_name_caption'])
-            ->add(
-                'email',
-                RepeatedType::class,
-                [
-                    'type' => EmailType::class,
-                    'first_options' => ['label' => 'Email', 'help' => 'email_caption'],
-                    'second_options' => ['label' => 'Repeat Email'],
-                ]
-            )
-            ->add('acceptManifest', CheckboxType::class)
-            ->add('acceptTermsAndConditions', CheckboxType::class)
-            ->add('acceptCommissionsAndPaymentPolicy', CheckboxType::class)
-            //Section 2
+
             ->add(
                 'legalName',
                 TextType::class,
@@ -79,17 +56,25 @@ class SellerSignUpEcuadorForm extends AbstractType
             )
             ->add('legalAddress2')
             ->add(
-                'city',
+                'legalCity',
                 TextType::class,
                 [
-                    'help' => 'city_caption',
+                    'help' => 'legal_city_caption',
                 ]
             )
             ->add(
-                'postalCode',
+                'legalCountry',
+                ChoiceType::class,
+                [
+                    'help' => 'legal_country_caption',
+                    'choices' => $this->sellerSignUpService->getLegalCountries(),
+                ]
+            )
+            ->add(
+                'legalPostalCode',
                 TextType::class,
                 [
-                    'help' => 'postal_code_caption',
+                    'help' => 'legal_postal_code_caption',
                 ]
             )
             ->add(
@@ -196,83 +181,14 @@ class SellerSignUpEcuadorForm extends AbstractType
                     'help' => 'warehouse_postal_code_caption',
                 ]
             )
-            ->add('warrantyContact', EmailType::class)
-            //Section 5
-            ->add('operativeCheckLegallyConstituted', CheckboxType::class)
-            ->add('operativeCheckCatalog', CheckboxType::class)
-            ->add('operativeCheckInventory', CheckboxType::class)
-            ->add('operativeCheckDelivery', CheckboxType::class)
-            ->add('operativeCheckReturns', CheckboxType::class)
-            ->add('operativeCheckShippingAgreement', CheckboxType::class)
-            ->add('operativeCheckInvoices', CheckboxType::class)
-            ->add('earningsEstimate')
-            //Section 6
-            ->add(
-                'mainCategory',
-                ChoiceType::class,
-                [
-                    'choices' => $this->sellerSignUpService->getMainCategoriesChoices($store),
-                ]
-            )
-            ->add(
-                'secondaryCategory',
-                ChoiceType::class,
-                [
-                    'choices' => $this->sellerSignUpService->getSecondaryCategoriesChoices($store),
-                ]
-            )
-            ->add(
-                'potentialCatalog',
-                ChoiceType::class,
-                [
-                    'choices' => $this->sellerSignUpService->getPotentialCatalogChoices($store),
-                ]
-            )
-            //Section 7
-            ->add('website')
-            ->add(
-                'otherStoresList',
-                ChoiceType::class,
-                [
-                    'choices' => $this->sellerSignUpService->getOtherStoresListChoices($store),
-                ]
-            )
-            ->add('otherStoreName')
-            ->add('otherStoresAddress')
-            ->add(
-                'otherStoresRating',
-                ChoiceType::class,
-                [
-                    'choices' => $this->sellerSignUpService->getOtherStoresRatingChoices($store),
-                ]
-            )
-            //Section 8
-            ->add('officialDistributorBrand')
-            ->add('brand1')
-            ->add('brand2')
-            ->add('brand3')
-            ->add(
-                'marketingInvest',
-                ChoiceType::class,
-                [
-                    'choices' => $this->sellerSignUpService->getMarketingInvestChoices($store),
-                ]
-            )
-            ->add(
-                'integrationFlag',
-                ChoiceType::class,
-                [
-                    'choices' => $this->sellerSignUpService->getIntegrationFlagChoices($store),
-                ]
-            )
-            ->add('Submit', SubmitType::class);
+            ->add('warrantyContact', EmailType::class);
     }
 
     public function configureOptions(OptionsResolver $resolver): void
     {
         $resolver->setDefaults(
             [
-                'data_class' => SellerSignUp::class,
+                'data_class' => Account::class,
                 'store' => 'ec',
             ]
         );

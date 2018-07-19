@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace App\Controller;
 
-use App\Adapter\PrmAdapter;
 use App\Entity\SellerSignUp;
 use App\Form\SellerSignUpFormFactory;
+use App\Service\PrmService;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -14,13 +14,13 @@ use Symfony\Component\HttpFoundation\Response;
 class SellerSignUpController extends AbstractController
 {
     /**
-     * @var PrmAdapter
+     * @var PrmService
      */
-    protected $prmAdapter;
+    protected $prmService;
 
-    public function __construct(PrmAdapter $prmAdapter)
+    public function __construct(PrmService $prmService)
     {
-        $this->prmAdapter = $prmAdapter;
+        $this->prmService = $prmService;
     }
 
     public function index(Request $request, string $store): Response
@@ -35,7 +35,7 @@ class SellerSignUpController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $this->prmAdapter->createAccount($sellerSignUp);
+            $this->prmService->createContact($sellerSignUp->getContact());
         }
 
         return $this->render(

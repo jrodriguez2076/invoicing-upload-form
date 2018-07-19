@@ -4,13 +4,13 @@ declare(strict_types=1);
 
 namespace App\Form;
 
-use App\Form\Factory\SellerSignUpArgentinaForm;
-use App\Form\Factory\SellerSignUpChileForm;
-use App\Form\Factory\SellerSignUpColombiaForm;
-use App\Form\Factory\SellerSignUpEcuadorForm;
-use App\Form\Factory\SellerSignUpInternationalForm;
-use App\Form\Factory\SellerSignUpMexicoForm;
-use App\Form\Factory\SellerSignUpPeruForm;
+use App\Form\Store\ar\SellerSignUpForm as SellerSignUpArgentinaForm;
+use App\Form\Store\cl\SellerSignUpForm as SellerSignUpChileForm;
+use App\Form\Store\co\SellerSignUpForm as SellerSignUpColombiaForm;
+use App\Form\Store\ec\SellerSignUpForm as SellerSignUpEcuadorForm;
+use App\Form\Store\international\SellerSignUpForm as SellerSignUpInternationalForm;
+use App\Form\Store\mx\SellerSignUpForm as SellerSignUpMexicoForm;
+use App\Form\Store\pe\SellerSignUpForm as SellerSignUpPeruForm;
 
 class SellerSignUpFormFactory
 {

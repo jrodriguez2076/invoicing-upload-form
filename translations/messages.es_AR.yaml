@@ -8,7 +8,7 @@ section_5_introduction: En Linio estamos evolucionando hacia un Marketplace Prem
 Phone number: Teléfono (separa el número de área con un guión)
 Legal address: Calle
 Legal address2: Número de puerta|Piso|Letra o Número (Completar en el orden indicado)
-City: Ciudad|Provincia
+Legal city: Ciudad|Provincia
 Fiscal id number: CUIT
 Fiscal id additional doc: Adjuntar Archivo de Constancia de Ingresos Brutos
 Id additional doc: Adjuntar Estatuto actualizado de la empresa y DNI del representante legal
@@ -44,9 +44,9 @@ warehouse_address_caption: Calle en la cual se encuentra el depósito de tus pro
 warehouse_address2_caption: 'Ej: 2772'
 warehouse_phone_caption: 'Cod.País - Cod.Área – Teléfono. Ej: 54-11-69792755'
 warehouse_mode_caption: Si eliges Pickup, retiraremos los productos de tu depósito, y si eliges Dropoff despacharás los productos en la sucursal más cercana de nuestros proveedores logísticos aliados
-city_caption: 'Ej: CABA|CABA , ITUZAINGO|BSAS'
+legal_city_caption: 'Ej: CABA|CABA , ITUZAINGO|BSAS'
 phone_number_caption: 'Cod.País - Cod.Área – Teléfono. Ej: 54-11-69792755'
-postal_code_caption: Código postal del domicilio de la razón social
+legal_postal_code_caption: Código postal del domicilio de la razón social
 account_name_caption: Elegí un nombre de fantasía que represente a tu comercio
 bank_iban_caption: ''
 

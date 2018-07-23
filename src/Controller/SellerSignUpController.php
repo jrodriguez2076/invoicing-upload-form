@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace App\Controller;
 
 use App\Entity\SellerSignUp;
+use App\Exception\PrmException;
 use App\Form\SellerSignUpFormFactory;
 use App\Service\PrmService;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -26,7 +27,6 @@ class SellerSignUpController extends AbstractController
     public function index(Request $request, string $store): Response
     {
         $sellerSignUp = new SellerSignUp();
-
         $form = $this->createForm(
             SellerSignUpFormFactory::fromStore($store),
             $sellerSignUp
@@ -35,10 +35,14 @@ class SellerSignUpController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $this->prmService->processFormData(
-                $sellerSignUp,
-                $store
-            );
+            try {
+                $this->prmService->processFormData(
+                    $sellerSignUp,
+                    $store
+                );
+            } catch (PrmException $exception) {
+                $this->addFlash('error', $exception->getMessage());
+            }
         }
 
         return $this->render(

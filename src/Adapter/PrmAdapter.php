@@ -39,7 +39,7 @@ class PrmAdapter
 
     public function createAccount(Account $account, Contact $contact, string $store): int
     {
-        $requestBody = $this->createAccountRequest($account, $contact, $store);
+        $requestBody = $this->buildAccountRequestBody($account, $contact, $store);
 
         try {
             $response = $this->client->request(
@@ -50,21 +50,29 @@ class PrmAdapter
                     'multipart' => $requestBody,
                 ]
             );
-
-            $responseContent = $response->getBody()->getContents();
-            $jsonResponseContent = json_decode($responseContent, true);
-
-            return $jsonResponseContent['id'] ?? 0;
         } catch (ClientException $exception) {
             throw new PrmException($exception->getMessage());
         } catch (ServerException $exception) {
             throw new PrmException($exception->getMessage());
         }
+
+        if ($response->getStatusCode() != 201) {
+            throw new PrmException('ACCOUNT_CREATE_ERROR', 500);
+        }
+
+        $responseContent = $response->getBody()->getContents();
+        $jsonResponseContent = json_decode($responseContent, true);
+
+        if (!isset($jsonResponseContent['id'])) {
+            throw new PrmException('ACCOUNT_CREATE_ERROR', 500);
+        }
+
+        return $jsonResponseContent['id'];
     }
 
     public function createContact(Contact $contact): int
     {
-        $requestBody = $this->createContactRequest($contact);
+        $requestBody = $this->buildContactRequestBody($contact);
 
         try {
             $response = $this->client->request(
@@ -88,12 +96,16 @@ class PrmAdapter
         $responseContent = $response->getBody()->getContents();
         $jsonResponseContent = json_decode($responseContent, true);
 
-        return $jsonResponseContent['id'] ?? 0;
+        if (!isset($jsonResponseContent['id'])) {
+            throw new PrmException('CONTACT_CREATE_ERROR', 500);
+        }
+
+        return $jsonResponseContent['id'];
     }
 
     public function createOpportunity(Opportunity $opportunity, Account $account, Contact $contact): void
     {
-        $requestBody = $this->createOpportunityRequest($opportunity, $account, $contact);
+        $requestBody = $this->buildOpportunityRequestBody($opportunity, $account, $contact);
 
         try {
             $response = $this->client->request(
@@ -111,11 +123,11 @@ class PrmAdapter
         }
 
         if ($response->getStatusCode() != 200 and $response->getStatusCode() != 201) {
-            throw new PrmException('CONTACT_CREATE_ERROR', 500);
+            throw new PrmException('OPPORTUNITY_CREATE_ERROR', 500);
         }
     }
 
-    protected function createContactRequest(Contact $contact): array
+    protected function buildContactRequestBody(Contact $contact): array
     {
         return [
             'contact' => [
@@ -136,7 +148,7 @@ class PrmAdapter
         ];
     }
 
-    protected function createAccountRequest(Account $account, Contact $contact, string $store): array
+    protected function buildAccountRequestBody(Account $account, Contact $contact, string $store): array
     {
         $request = [
             ['name' => 'account[name]', 'contents' => $account->getAccountName()],
@@ -200,7 +212,7 @@ class PrmAdapter
         return $request;
     }
 
-    protected function createOpportunityRequest(Opportunity $opportunity, Account $account, Contact $contact): array
+    protected function buildOpportunityRequestBody(Opportunity $opportunity, Account $account, Contact $contact): array
     {
         return [
             'opportunity' => [

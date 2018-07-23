@@ -1,0 +1,17 @@
+{% set alertClass='info' %}
+{% for label, messages in app.flashes %}
+  {% for message in messages %}
+    {% if label == 'success' %}
+      {% set alertClass='success' %}
+    {% elseif label == 'warning' %}
+      {% set alertClass='warning' %}
+    {% elseif label == 'error' %}
+      {% set alertClass='danger' %}
+    {% elseif label == 'notice' %}
+      {% set alertClass='info' %}
+    {% endif %}
+    <div class="alert alert-{{ alertClass }}">
+      <div class="alert-text">{{ message|trans }}</div>
+    </div>
+  {% endfor %}
+{% endfor %}

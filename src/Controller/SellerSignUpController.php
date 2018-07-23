@@ -35,7 +35,10 @@ class SellerSignUpController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $this->prmService->createContact($sellerSignUp->getContact());
+            $this->prmService->processFormData(
+                $sellerSignUp,
+                $store
+            );
         }
 
         return $this->render(

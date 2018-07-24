@@ -7,6 +7,10 @@ namespace App\Entity;
 class Contact
 {
     /**
+     * @var int
+     */
+    protected $id;
+    /**
      * @var string
      */
     protected $firstName = '';
@@ -64,5 +68,15 @@ class Contact
     public function setEmail(string $email): void
     {
         $this->email = $email;
+    }
+
+    public function getId(): int
+    {
+        return $this->id;
+    }
+
+    public function setId(int $id): void
+    {
+        $this->id = $id;
     }
 }

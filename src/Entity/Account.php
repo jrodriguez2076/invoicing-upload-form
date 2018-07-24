@@ -4,8 +4,17 @@ declare(strict_types=1);
 
 namespace App\Entity;
 
+use Symfony\Component\HttpFoundation\File\UploadedFile;
+
 class Account
 {
+    const DEFAULT_OWNER = 1;
+
+    /**
+     * @var int
+     */
+    protected $id;
+
     /**
      * @var string
      */
@@ -62,9 +71,9 @@ class Account
     protected $bankIban = '';
 
     /**
-     * @var string
+     * @var UploadedFile
      */
-    protected $bankCertificate = '';
+    protected $bankCertificate;
 
     /**
      * @var string
@@ -177,14 +186,14 @@ class Account
     protected $fiscalIdNumber = '';
 
     /**
-     * @var string
+     * @var UploadedFile
      */
-    protected $idAdditionalDoc = '';
+    protected $idAdditionalDoc;
 
     /**
-     * @var string
+     * @var UploadedFile
      */
-    protected $fiscalIdAdditionalDoc = '';
+    protected $fiscalIdAdditionalDoc;
 
     /**
      * @var string
@@ -202,9 +211,9 @@ class Account
     protected $financeContactPhone = '';
 
     /**
-     * @var string
+     * @var UploadedFile
      */
-    protected $logisticDocument = '';
+    protected $logisticDocument;
 
     public function getFirstName(): string
     {
@@ -316,12 +325,12 @@ class Account
         $this->bankIban = $bankIban;
     }
 
-    public function getBankCertificate(): string
+    public function getBankCertificate(): ?UploadedFile
     {
         return $this->bankCertificate;
     }
 
-    public function setBankCertificate(?string $bankCertificate = ''): void
+    public function setBankCertificate(UploadedFile $bankCertificate): void
     {
         $this->bankCertificate = $bankCertificate;
     }
@@ -546,32 +555,32 @@ class Account
         $this->fiscalIdNumber = $fiscalIdNumber;
     }
 
-    public function getIdAdditionalDoc(): string
+    public function getIdAdditionalDoc(): ?UploadedFile
     {
         return $this->idAdditionalDoc;
     }
 
-    public function setIdAdditionalDoc(?string $idAdditionalDoc = ''): void
+    public function setIdAdditionalDoc(UploadedFile $idAdditionalDoc): void
     {
         $this->idAdditionalDoc = $idAdditionalDoc;
     }
 
-    public function getFiscalIdAdditionalDoc(): string
+    public function getFiscalIdAdditionalDoc(): ?UploadedFile
     {
         return $this->fiscalIdAdditionalDoc;
     }
 
-    public function setFiscalIdAdditionalDoc(?string $fiscalIdAdditionalDoc = ''): void
+    public function setFiscalIdAdditionalDoc(UploadedFile $fiscalIdAdditionalDoc): void
     {
         $this->fiscalIdAdditionalDoc = $fiscalIdAdditionalDoc;
     }
 
-    public function getLogisticDocument(): string
+    public function getLogisticDocument(): ?UploadedFile
     {
         return $this->logisticDocument;
     }
 
-    public function setLogisticDocument(?string $logisticDocument = ''): void
+    public function setLogisticDocument(UploadedFile $logisticDocument): void
     {
         $this->logisticDocument = $logisticDocument;
     }
@@ -604,5 +613,15 @@ class Account
     public function setFinanceContactPhone(string $financeContactPhone): void
     {
         $this->financeContactPhone = $financeContactPhone;
+    }
+
+    public function getId(): int
+    {
+        return $this->id;
+    }
+
+    public function setId(int $id): void
+    {
+        $this->id = $id;
     }
 }

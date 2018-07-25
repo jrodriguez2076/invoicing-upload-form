@@ -42,7 +42,7 @@ class LocaleSubscriber implements EventSubscriberInterface
             $request->getSession()->set('_locale', $locale);
         } else {
             $store = $request->attributes->get('store', $this->defaultLocale);
-            $locale = $this->getLocaleFromStore($store);
+            $locale = $this->getLocaleFromStore(strtolower($store));
             $request->setLocale($locale);
         }
     }

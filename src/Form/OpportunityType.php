@@ -41,6 +41,7 @@ class OpportunityType extends AbstractType
                 ChoiceType::class,
                 [
                     'choices' => $this->sellerSignUpService->getMainCategoriesChoices($store),
+                    'placeholder' => 'Choose an option',
                 ]
             )
             ->add(
@@ -48,6 +49,7 @@ class OpportunityType extends AbstractType
                 ChoiceType::class,
                 [
                     'choices' => $this->sellerSignUpService->getSecondaryCategoriesChoices($store),
+                    'placeholder' => 'Choose an option',
                 ]
             )
             ->add(
@@ -55,6 +57,7 @@ class OpportunityType extends AbstractType
                 ChoiceType::class,
                 [
                     'choices' => $this->sellerSignUpService->getPotentialCatalogChoices($store),
+                    'placeholder' => 'Choose an option',
                 ]
             )
             ->add('website')
@@ -63,6 +66,7 @@ class OpportunityType extends AbstractType
                 ChoiceType::class,
                 [
                     'choices' => $this->sellerSignUpService->getOtherStoresListChoices($store),
+                    'placeholder' => 'Choose an option',
                 ]
             )
             ->add('otherStoreName')
@@ -72,6 +76,7 @@ class OpportunityType extends AbstractType
                 ChoiceType::class,
                 [
                     'choices' => $this->sellerSignUpService->getOtherStoresRatingChoices($store),
+                    'placeholder' => 'Choose an option',
                 ]
             )
             ->add('officialDistributorBrand')
@@ -83,6 +88,7 @@ class OpportunityType extends AbstractType
                 ChoiceType::class,
                 [
                     'choices' => $this->sellerSignUpService->getMarketingInvestChoices($store),
+                    'placeholder' => 'Choose an option',
                 ]
             )
             ->add(
@@ -90,6 +96,7 @@ class OpportunityType extends AbstractType
                 ChoiceType::class,
                 [
                     'choices' => $this->sellerSignUpService->getIntegrationFlagChoices($store),
+                    'placeholder' => 'Choose an option',
                 ]
             );
     }

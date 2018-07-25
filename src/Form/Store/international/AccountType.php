@@ -43,6 +43,7 @@ class AccountType extends AbstractType
                 ChoiceType::class,
                 [
                     'choices' => $this->sellerSignUpService->getContributorTypesChoices($store),
+                    'placeholder' => 'Choose an option',
                 ]
             )
             ->add(
@@ -66,6 +67,7 @@ class AccountType extends AbstractType
                 [
                     'help' => 'legal_country_caption',
                     'choices' => $this->sellerSignUpService->getLegalCountries(),
+                    'placeholder' => 'Choose an option',
                 ]
             )
             ->add(

@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Form\Store\mx;
 
-use App\Entity\Account;
+use App\Form\EntityFactory;
 use App\Service\SellerSignUpService;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
@@ -149,6 +149,7 @@ class AccountType extends AbstractType
                 'warehousePostalCode',
                 TextType::class,
                 [
+                    'attr' => ['pattern' => '[0-9]+'],
                     'help' => 'warehouse_postal_code_caption',
                 ]
             )
@@ -193,7 +194,7 @@ class AccountType extends AbstractType
     {
         $resolver->setDefaults(
             [
-                'data_class' => Account::class,
+                'data_class' => EntityFactory::accountEntityFromStore('mx'),
                 'store' => 'mx',
             ]
         );

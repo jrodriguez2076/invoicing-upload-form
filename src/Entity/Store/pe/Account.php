@@ -4,7 +4,9 @@ declare(strict_types=1);
 
 namespace App\Entity\Store\pe;
 
-class Account extends \App\Entity\Account
+use App\Entity\Account as AccountEntity;
+
+class Account extends AccountEntity
 {
     public function getWarehouseAddress(): string
     {

@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Form\Store\ar;
 
-use App\Form\EntityFactory;
+use App\Entity\Store\ar\Account;
 use App\Service\SellerSignUpService;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
@@ -199,7 +199,7 @@ class AccountType extends AbstractType
     {
         $resolver->setDefaults(
             [
-                'data_class' => EntityFactory::accountEntityFromStore('ar'),
+                'data_class' => Account::class,
                 'store' => 'ar',
             ]
         );

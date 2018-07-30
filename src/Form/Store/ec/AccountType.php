@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Form\Store\ec;
 
-use App\Entity\Account;
+use App\Entity\Store\ec\Account;
 use App\Service\SellerSignUpService;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;

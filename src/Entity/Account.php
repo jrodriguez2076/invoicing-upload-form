@@ -123,6 +123,16 @@ class Account
     /**
      * @var string
      */
+    protected $warehouseAddress2ExtraData = '';
+
+    /**
+     * @var string
+     */
+    protected $warehouseAddress2ExtraData2 = '';
+
+    /**
+     * @var string
+     */
     protected $warehousePhone = '';
 
     /**
@@ -134,6 +144,11 @@ class Account
      * @var string
      */
     protected $warehouseCity = '';
+
+    /**
+     * @var string
+     */
+    protected $warehouseCity2 = '';
 
     /**
      * @var string
@@ -425,6 +440,26 @@ class Account
         $this->warehouseAddress2 = $warehouseAddress2;
     }
 
+    public function getWarehouseAddress2ExtraData(): string
+    {
+        return $this->warehouseAddress2ExtraData;
+    }
+
+    public function setWarehouseAddress2ExtraData(string $warehouseAddress2ExtraData): void
+    {
+        $this->warehouseAddress2ExtraData = $warehouseAddress2ExtraData;
+    }
+
+    public function getWarehouseAddress2ExtraData2(): string
+    {
+        return $this->warehouseAddress2ExtraData2;
+    }
+
+    public function setWarehouseAddress2ExtraData2(string $warehouseAddress2ExtraData2): void
+    {
+        $this->warehouseAddress2ExtraData2 = $warehouseAddress2ExtraData2;
+    }
+
     public function getWarehousePhone(): string
     {
         return $this->warehousePhone;
@@ -453,6 +488,16 @@ class Account
     public function setWarehouseCity(string $warehouseCity): void
     {
         $this->warehouseCity = $warehouseCity;
+    }
+
+    public function getWarehouseCity2(): string
+    {
+        return $this->warehouseCity2;
+    }
+
+    public function setWarehouseCity2(string $warehouseCity2): void
+    {
+        $this->warehouseCity2 = $warehouseCity2;
     }
 
     public function getWarehouseMode(): string

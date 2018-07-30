@@ -46,9 +46,9 @@ parameters:
             '2/5': '2'
             '1/5': '1'
         other_stores:
-            'Amazon': 'Amazon'
-            'Mercado Libre': 'Mercado Libre'
-            'Walmart': 'Walmart'
+            'Frávega': 'Frávega'
+            'MercadoLibre': 'MercadoLibre'
+            'Falabella': 'Falabella'
             'Otra': 'Otra'
             'No vendo': 'No vendo'
         marketing_invest:
@@ -111,9 +111,9 @@ parameters:
             '2/5': '2'
             '1/5': '1'
         other_stores:
-            'Amazon': 'Amazon'
-            'Mercado Libre': 'Mercado Libre'
-            'Walmart': 'Walmart'
+            'Falabella': 'Falabella'
+            'MercadoLibre': 'MercadoLibre'
+            'Ripley': 'Ripley'
             'Otra': 'Otra'
             'No vendo': 'No vendo'
         marketing_invest:
@@ -172,9 +172,9 @@ parameters:
             '2/5': '2'
             '1/5': '1'
         other_stores:
-            'Amazon': 'Amazon'
-            'Mercado Libre': 'Mercado Libre'
-            'Walmart': 'Walmart'
+            'Alkosto': 'Alkosto'
+            'MercadoLibre': 'MercadoLibre'
+            'Falabella': 'Falabella'
             'Otra': 'Otra'
             'No vendo': 'No vendo'
         marketing_invest:
@@ -232,9 +232,9 @@ parameters:
             '2/5': '2'
             '1/5': '1'
         other_stores:
-            'Amazon': 'Amazon'
-            'Mercado Libre': 'Mercado Libre'
-            'Walmart': 'Walmart'
+            'Yaesta.com': 'Yaesta.com'
+            'MercadoLibre': 'MercadoLibre'
+            'Falabella': 'Falabella'
             'Otra': 'Otra'
             'No vendo': 'No vendo'
         marketing_invest:
@@ -313,7 +313,7 @@ parameters:
             '1/5': '1'
         other_stores:
             'Amazon': 'Amazon'
-            'Mercado Libre': 'Mercado Libre'
+            'MercadoLibre': 'MercadoLibre'
             'Walmart': 'Walmart'
             'Otra': 'Otra'
             'No vendo': 'No vendo'
@@ -375,9 +375,9 @@ parameters:
             '2/5': '2'
             '1/5': '1'
         other_stores:
-            'Amazon': 'Amazon'
-            'Mercado Libre': 'Mercado Libre'
-            'Walmart': 'Walmart'
+            'MercadoLibre': 'MercadoLibre'
+            'Falabella': 'Falabella'
+            'Ripley': 'Ripley'
             'Otra': 'Otra'
             'No vendo': 'No vendo'
         marketing_invest:
@@ -437,7 +437,7 @@ parameters:
             '1/5': '1'
         other_stores:
             'Amazon': 'Amazon'
-            'Mercado Libre': 'Mercado Libre'
+            'MercadoLibre': 'MercadoLibre'
             'Walmart': 'Walmart'
             'Otra': 'Otra'
             'No vendo': 'No vendo'

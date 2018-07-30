@@ -45,6 +45,7 @@ Warehouse contact: Persona de contacto
 Warehouse address: Calle y número, incluir Colonia (No usar punto(.), coma(,), gato(#), punto y coma(;), etc. 
 Warehouse address2: Estado
 Warehouse city: Ciudad o Municipio
+Warehouse city2: Ciudad o Municipio
 Warehouse phone: Teléfono (separa el número de área con un guión):
 Warehouse postal code: Código Postal
 Warranty contact: Email para tramitar garantías

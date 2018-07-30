@@ -85,7 +85,16 @@
       {{ form_row(form.account.warehouseAddressExtraData4) }}
     {% endif %}
     {{ form_row(form.account.warehouseAddress2) }}
+    {% if form.account.warehouseAddress2ExtraData is defined %}
+      {{ form_row(form.account.warehouseAddress2ExtraData) }}
+    {% endif %}
+    {% if form.account.warehouseAddress2ExtraData2 is defined %}
+      {{ form_row(form.account.warehouseAddress2ExtraData2) }}
+    {% endif %}
     {{ form_row(form.account.warehouseCity) }}
+    {% if form.account.warehouseCity2 is defined %}
+      {{ form_row(form.account.warehouseCity2) }}
+    {% endif %}
     {{ form_row(form.account.warehousePhone) }}
     {{ form_row(form.account.warehousePostalCode) }}
     {% if form.account.warehouseMode is defined %}

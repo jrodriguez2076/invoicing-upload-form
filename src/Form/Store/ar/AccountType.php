@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Form\Store\ar;
 
-use App\Entity\Account;
+use App\Entity\Store\ar\Account;
 use App\Service\SellerSignUpService;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
@@ -164,7 +164,12 @@ class AccountType extends AbstractType
                 ]
             )
             ->add('warehouseAddress2')
+            ->add('warehouseAddress2ExtraData')
+            ->add('warehouseAddress2ExtraData2', TextType::class, [
+                'required' => false,
+            ])
             ->add('warehouseCity')
+            ->add('warehouseCity2')
             ->add(
                 'warehousePhone',
                 TextType::class,

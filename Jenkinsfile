@@ -25,10 +25,6 @@ pipeline {
                         sh "vendor/bin/php-cs-fixer fix --dry-run -vv --format=junit > reports/php-cs-fixer.xml"
                     },
 
-                    "phpunit": {
-                        sh "vendor/bin/phpunit --log-junit reports/phpunit.xml"
-                    },
-
                     "yaml": {
                         sh "bin/console lint:yaml config"
                         sh "bin/console lint:yaml translations"

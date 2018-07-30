@@ -36,10 +36,6 @@ pipeline {
 
                     "twig": {
                         sh "bin/console lint:twig templates"
-                    },
-
-                    "security": {
-                        sh "vendor/bin/security-checker security:check"
                     }
                 )
             }

@@ -13,6 +13,10 @@ pipeline {
 
                     "PHP": {
                         sh "composer install"
+                    },
+
+                    "Ruby": {
+                        sh "bundle install --path=vendor/bundle --with=development"
                     }
                 )
             }
@@ -34,6 +38,19 @@ pipeline {
                         sh "bin/console lint:twig templates"
                     }
                 )
+            }
+        }
+
+        stage("Deploy") {
+            when {
+                expression {
+                    currentBuild.result == null || currentBuild.result == "SUCCESS"
+                }
+            }
+
+            steps {
+                deploy("master", "development01")
+                deploy("production", "staging01")
             }
         }
     }

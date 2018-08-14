@@ -103,9 +103,9 @@ class PrmAdapter
         return $jsonResponseContent['id'];
     }
 
-    public function createOpportunity(Opportunity $opportunity, Account $account, Contact $contact): void
+    public function createOpportunity(Opportunity $opportunity, Account $account, Contact $contact, string $store): void
     {
-        $requestBody = $this->buildOpportunityRequestBody($opportunity, $account, $contact);
+        $requestBody = $this->buildOpportunityRequestBody($opportunity, $account, $contact, $store);
 
         try {
             $response = $this->client->request(
@@ -212,7 +212,7 @@ class PrmAdapter
         return $request;
     }
 
-    protected function buildOpportunityRequestBody(Opportunity $opportunity, Account $account, Contact $contact): array
+    protected function buildOpportunityRequestBody(Opportunity $opportunity, Account $account, Contact $contact, string $store): array
     {
         return [
             'opportunity' => [
@@ -240,6 +240,7 @@ class PrmAdapter
                 'website' => $opportunity->getWebsite(),
                 'contact' => $contact->getId(),
                 'accountId' => $account->getId(),
+                'countryId' => $store,
             ],
         ];
     }

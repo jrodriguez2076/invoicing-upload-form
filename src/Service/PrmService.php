@@ -41,6 +41,6 @@ class PrmService
         $accountId = $this->adapter->createAccount($account, $contact, $store);
         $account->setId($accountId);
 
-        $this->adapter->createOpportunity($opportunity, $account, $contact);
+        $this->adapter->createOpportunity($opportunity, $account, $contact, $store);
     }
 }

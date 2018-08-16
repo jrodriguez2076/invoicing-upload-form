@@ -26,6 +26,7 @@ class SellerSignUpController extends AbstractController
 
     public function index(Request $request, string $store): Response
     {
+        $store = strtolower($store);
         $sellerSignUp = new SellerSignUp();
         $form = $this->createForm(
             SellerSignUpFormFactory::fromStore($store),

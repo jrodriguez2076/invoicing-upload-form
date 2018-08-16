@@ -29,13 +29,27 @@ class OpportunityType extends AbstractType
     {
         $store = $options['store'];
         $builder
-            ->add('operativeCheckLegallyConstituted', CheckboxType::class)
-            ->add('operativeCheckCatalog', CheckboxType::class)
-            ->add('operativeCheckInventory', CheckboxType::class)
-            ->add('operativeCheckDelivery', CheckboxType::class)
-            ->add('operativeCheckReturns', CheckboxType::class)
-            ->add('operativeCheckShippingAgreement', CheckboxType::class)
-            ->add('operativeCheckInvoices', CheckboxType::class)
+            ->add('operativeCheckLegallyConstituted', CheckboxType::class, [
+                'required' => false,
+            ])
+            ->add('operativeCheckCatalog', CheckboxType::class, [
+                'required' => false,
+            ])
+            ->add('operativeCheckInventory', CheckboxType::class, [
+                'required' => false,
+            ])
+            ->add('operativeCheckDelivery', CheckboxType::class, [
+                'required' => false,
+            ])
+            ->add('operativeCheckReturns', CheckboxType::class, [
+                'required' => false,
+            ])
+            ->add('operativeCheckShippingAgreement', CheckboxType::class, [
+                'required' => false,
+            ])
+            ->add('operativeCheckInvoices', CheckboxType::class, [
+                'required' => false,
+            ])
             ->add('earningsEstimate')
             ->add(
                 'mainCategory',
@@ -61,7 +75,9 @@ class OpportunityType extends AbstractType
                     'placeholder' => 'Choose an option',
                 ]
             )
-            ->add('website')
+            ->add('website', TextType::class, [
+                'required' => false,
+            ])
             ->add(
                 'otherStoresList',
                 ChoiceType::class,
@@ -82,7 +98,9 @@ class OpportunityType extends AbstractType
                     'placeholder' => 'Choose an option',
                 ]
             )
-            ->add('officialDistributorBrand')
+            ->add('officialDistributorBrand', TextType::class, [
+                'required' => false,
+            ])
             ->add('brand1')
             ->add('brand2')
             ->add('brand3')

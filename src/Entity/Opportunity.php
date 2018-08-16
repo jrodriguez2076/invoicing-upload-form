@@ -116,64 +116,64 @@ class Opportunity
      */
     protected $operativeCheckCatalog = false;
 
-    public function isOperativeCheckLegallyConstituted(): ?bool
+    public function isOperativeCheckLegallyConstituted(): bool
     {
         return $this->operativeCheckLegallyConstituted;
     }
 
     public function setOperativeCheckLegallyConstituted(?bool $operativeCheckLegallyConstituted): void
     {
-        $this->operativeCheckLegallyConstituted = $operativeCheckLegallyConstituted;
+        $this->operativeCheckLegallyConstituted = (bool) $operativeCheckLegallyConstituted;
     }
 
-    public function isOperativeCheckInventory(): ?bool
+    public function isOperativeCheckInventory(): bool
     {
         return $this->operativeCheckInventory;
     }
 
     public function setOperativeCheckInventory(?bool $operativeCheckInventory): void
     {
-        $this->operativeCheckInventory = $operativeCheckInventory;
+        $this->operativeCheckInventory = (bool) $operativeCheckInventory;
     }
 
-    public function isOperativeCheckDelivery(): ?bool
+    public function isOperativeCheckDelivery(): bool
     {
         return $this->operativeCheckDelivery;
     }
 
     public function setOperativeCheckDelivery(?bool $operativeCheckDelivery): void
     {
-        $this->operativeCheckDelivery = $operativeCheckDelivery;
+        $this->operativeCheckDelivery = (bool) $operativeCheckDelivery;
     }
 
-    public function isOperativeCheckReturns(): ?bool
+    public function isOperativeCheckReturns(): bool
     {
         return $this->operativeCheckReturns;
     }
 
     public function setOperativeCheckReturns(?bool $operativeCheckReturns): void
     {
-        $this->operativeCheckReturns = $operativeCheckReturns;
+        $this->operativeCheckReturns = (bool) $operativeCheckReturns;
     }
 
-    public function isOperativeCheckShippingAgreement(): ?bool
+    public function isOperativeCheckShippingAgreement(): bool
     {
         return $this->operativeCheckShippingAgreement;
     }
 
     public function setOperativeCheckShippingAgreement(?bool $operativeCheckShippingAgreement): void
     {
-        $this->operativeCheckShippingAgreement = $operativeCheckShippingAgreement;
+        $this->operativeCheckShippingAgreement = (bool) $operativeCheckShippingAgreement;
     }
 
-    public function isOperativeCheckInvoices(): ?bool
+    public function isOperativeCheckInvoices(): bool
     {
         return $this->operativeCheckInvoices;
     }
 
     public function setOperativeCheckInvoices(?bool $operativeCheckInvoices): void
     {
-        $this->operativeCheckInvoices = $operativeCheckInvoices;
+        $this->operativeCheckInvoices = (bool) $operativeCheckInvoices;
     }
 
     public function getEarningsEstimate(): ?string
@@ -326,13 +326,13 @@ class Opportunity
         $this->integrationFlag = $integrationFlag;
     }
 
-    public function isOperativeCheckCatalog(): ?bool
+    public function isOperativeCheckCatalog(): bool
     {
         return $this->operativeCheckCatalog;
     }
 
     public function setOperativeCheckCatalog(?bool $operativeCheckCatalog): void
     {
-        $this->operativeCheckCatalog = $operativeCheckCatalog;
+        $this->operativeCheckCatalog = (bool) $operativeCheckCatalog;
     }
 }

@@ -103,9 +103,9 @@ class PrmAdapter
         return $jsonResponseContent['id'];
     }
 
-    public function createOpportunity(Opportunity $opportunity, Account $account, Contact $contact, string $store): void
+    public function createOpportunity(Opportunity $opportunity, Account $account, Contact $contact, string $store, string $hunter): void
     {
-        $requestBody = $this->buildOpportunityRequestBody($opportunity, $account, $contact, $store);
+        $requestBody = $this->buildOpportunityRequestBody($opportunity, $account, $contact, $store, $hunter);
 
         try {
             $response = $this->client->request(
@@ -212,9 +212,9 @@ class PrmAdapter
         return $request;
     }
 
-    protected function buildOpportunityRequestBody(Opportunity $opportunity, Account $account, Contact $contact, string $store): array
+    protected function buildOpportunityRequestBody(Opportunity $opportunity, Account $account, Contact $contact, string $store, string $hunter): array
     {
-        return [
+        $requestBody = [
             'opportunity' => [
                 'name' => $account->getAccountName(),
                 'brand1' => $opportunity->getBrand1(),
@@ -241,8 +241,16 @@ class PrmAdapter
                 'contact' => $contact->getId(),
                 'accountId' => $account->getId(),
                 'countryId' => $store,
+                'registrationType' => Opportunity::ORGANIC_REGISTRATION_TYPE,
             ],
         ];
+
+        if (!empty($hunter)) {
+            $requestBody['opportunity']['registrationType'] = Opportunity::HUNTED_REGISTRATION_TYPE;
+            $requestBody['opportunity']['accountHunter'] = $hunter;
+        }
+
+        return $requestBody;
     }
 
     protected function getWsseHeaders(): array

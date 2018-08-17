@@ -27,6 +27,7 @@ class SellerSignUpController extends AbstractController
     public function index(Request $request, string $store): Response
     {
         $store = strtolower($store);
+        $hunter = $request->get('hunter', '');
         $sellerSignUp = new SellerSignUp();
         $form = $this->createForm(
             SellerSignUpFormFactory::fromStore($store),
@@ -39,7 +40,8 @@ class SellerSignUpController extends AbstractController
             try {
                 $this->prmService->processFormData(
                     $sellerSignUp,
-                    $store
+                    $store,
+                    $hunter
                 );
             } catch (PrmException $exception) {
                 $this->addFlash('error', $exception->getMessage());
@@ -50,6 +52,7 @@ class SellerSignUpController extends AbstractController
             'sellerSignUp.html.twig',
             [
                 'form' => $form->createView(),
+                'hunter' => $hunter,
             ]
         );
     }

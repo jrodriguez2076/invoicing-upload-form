@@ -5,6 +5,9 @@
     <img class="logo-image" src="{{ asset('images/LinioWhiteLogo.png') }}">
   </div>
   <div class="container">
+    {% if hunter is not empty %}
+      <div class="account-hunter">{{ 'account_hunter' | trans ~ hunter }}</div>
+    {% endif %}
     <h1>{{ 'form_title' | trans }}</h1><br>
     {{ form_start(form) }}
     <h4>{{ 'section_1_title' | trans }}</h4>

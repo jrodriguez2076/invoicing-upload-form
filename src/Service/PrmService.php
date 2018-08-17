@@ -29,7 +29,7 @@ class PrmService
         $this->adapter->createContact($contact);
     }
 
-    public function processFormData(SellerSignUp $sellerSignUp, string $store): void
+    public function processFormData(SellerSignUp $sellerSignUp, string $store, string $hunter): void
     {
         $contact = $sellerSignUp->getContact();
         $account = $sellerSignUp->getAccount();
@@ -41,6 +41,6 @@ class PrmService
         $accountId = $this->adapter->createAccount($account, $contact, $store);
         $account->setId($accountId);
 
-        $this->adapter->createOpportunity($opportunity, $account, $contact, $store);
+        $this->adapter->createOpportunity($opportunity, $account, $contact, $store, $hunter);
     }
 }

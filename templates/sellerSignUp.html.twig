@@ -6,23 +6,23 @@
   </div>
   <div class="container">
     {% if hunter is not empty %}
-      <div class="account-hunter">{{ 'account_hunter' | trans ~ hunter }}</div>
+      <div class="account-hunter">{{ 'account_hunter'|trans ~ hunter }}</div>
     {% endif %}
-    <h1>{{ 'form_title' | trans }}</h1><br>
+    <h1>{{ 'form_title'|trans }}</h1><br>
     {{ form_start(form) }}
-    <h4>{{ 'section_1_title' | trans }}</h4>
+    <h4>{{ 'section_1_title'|trans }}</h4>
     <br>
     {{ form_row(form.contact.firstName) }}
     {{ form_row(form.contact.lastName) }}
     {{ form_row(form.contact.phoneNumber) }}
     {{ form_row(form.account.accountName) }}
     {{ form_row(form.contact.email) }}
-    <p>{{ 'Terms_and_conditions' | trans }}</p>
+    <p>{{ 'Terms_and_conditions'|trans }}</p>
     {{ form_row(form.contact.acceptManifest) }}
     {{ form_row(form.contact.acceptTermsAndConditions) }} <a href=""> Ver términos y condiciones</a><br>
     {{ form_row(form.contact.acceptCommissionsAndPaymentPolicy) }} <a href=""> Ver comisiones y políticas de pagos</a>
     <hr>
-    <h4>{{ 'section_2_title' | trans }}</h4>
+    <h4>{{ 'section_2_title'|trans }}</h4>
     <br>
     {{ form_row(form.account.legalName) }}
     {{ form_row(form.account.contributorType) }}
@@ -36,14 +36,14 @@
     {% endif %}
     {{ form_row(form.account.legalRepresentative) }}
     {{ form_row(form.account.fiscalIdNumber) }}
-    {{ 'Fiscal id additional doc'| trans }}
+    {{ 'Fiscal id additional doc'|trans }}
     {{ form_row(form.account.fiscalIdAdditionalDoc) }}
     {% if form.account.logisticDocument is defined %}
-      {{ 'Logistic document'| trans }}
+      {{ 'Logistic document'|trans }}
       {{ form_row(form.account.logisticDocument) }}
     {% endif %}
     {% if form.account.idAdditionalDoc is defined %}
-      {{ 'Id additional doc'| trans }}
+      {{ 'Id additional doc'|trans }}
       {{ form_row(form.account.idAdditionalDoc) }}
     {% endif %}
     {% if form.account.financeContactName is defined %}
@@ -56,7 +56,7 @@
       {{ form_row(form.account.financeContactPhone) }}
     {% endif %}
     <hr>
-    <h4>{{ 'section_3_title' | trans }}</h4>
+    <h4>{{ 'section_3_title'|trans }}</h4>
     <br>
     {{ form_row(form.account.bankAcctHolder) }}
     {{ form_row(form.account.bankAcctNumber) }}
@@ -67,11 +67,11 @@
     {% endif %}
     {{ form_row(form.account.bankIban) }}
     {% if form.account.bankCertificate is defined %}
-      {{ 'Bank certificate'| trans }}
+      {{ 'Bank certificate'|trans }}
       {{ form_row(form.account.bankCertificate) }}
     {% endif %}
     <hr>
-    <h4>{{ 'section_4_title' | trans }}</h4>
+    <h4>{{ 'section_4_title'|trans }}</h4>
     <br>
     {{ form_row(form.account.warehouseContact) }}
     {{ form_row(form.account.warehouseAddress) }}
@@ -107,8 +107,8 @@
       {{ form_row(form.account.warrantyContact) }}
     {% endif %}
     <hr>
-    <p class="text-justify font-italic">{{ 'section_5_introduction' | trans }}</p>
-    <h4>{{ 'section_5_title' | trans }}</h4>
+    <p class="text-justify font-italic">{{ 'section_5_introduction'|trans }}</p>
+    <h4>{{ 'section_5_title'|trans }}</h4>
     <br>
     {{ form_row(form.opportunity.operativeCheckLegallyConstituted) }}
     {{ form_row(form.opportunity.operativeCheckCatalog) }}
@@ -119,13 +119,13 @@
     {{ form_row(form.opportunity.operativeCheckInvoices) }}
     {{ form_row(form.opportunity.earningsEstimate) }}
     <hr>
-    <h4>{{ 'section_6_title' | trans }}</h4>
+    <h4>{{ 'section_6_title'|trans }}</h4>
     <br>
     {{ form_row(form.opportunity.mainCategory) }}
     {{ form_row(form.opportunity.secondaryCategory) }}
     {{ form_row(form.opportunity.potentialCatalog) }}
     <hr>
-    <h4>{{ 'section_7_title' | trans }}</h4>
+    <h4>{{ 'section_7_title'|trans }}</h4>
     <br>
     {{ form_row(form.opportunity.website) }}
     {{ form_row(form.opportunity.otherStoresList) }}
@@ -133,10 +133,10 @@
     {{ form_row(form.opportunity.otherStoresAddress) }}
     {{ form_row(form.opportunity.otherStoresRating) }}
     <hr>
-    <h4>{{ 'section_8_title' | trans }}</h4>
+    <h4>{{ 'section_8_title'|trans }}</h4>
     <br>
     {{ form_row(form.opportunity.officialDistributorBrand) }}
-    {{ 'Main brands'| trans }}
+    {{ 'Main brands'|trans }}
     {{ form_row(form.opportunity.brand1) }}
     {{ form_row(form.opportunity.brand2) }}
     {{ form_row(form.opportunity.brand3) }}

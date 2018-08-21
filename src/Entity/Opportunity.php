@@ -6,6 +6,9 @@ namespace App\Entity;
 
 class Opportunity
 {
+    public const ORGANIC_REGISTRATION_TYPE = 'Orgánica';
+    public const HUNTED_REGISTRATION_TYPE = 'Hunteada';
+
     /**
      * @var bool
      */

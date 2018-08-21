@@ -18,3 +18,7 @@ body {
 .custom-file-input ~ .custom-file-label::after {
     content: "Elegir archivo";
 }
+
+.account-hunter {
+    text-align: right;
+}

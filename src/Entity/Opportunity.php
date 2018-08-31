@@ -119,6 +119,21 @@ class Opportunity
      */
     protected $operativeCheckCatalog = false;
 
+    /**
+     * @var string
+     */
+    protected $processingTime = '';
+
+    /**
+     * @var string
+     */
+    protected $surveyComment = '';
+
+    /**
+     * @var array
+     */
+    protected $opportunityCountries = [];
+
     public function isOperativeCheckLegallyConstituted(): bool
     {
         return $this->operativeCheckLegallyConstituted;
@@ -337,5 +352,35 @@ class Opportunity
     public function setOperativeCheckCatalog(?bool $operativeCheckCatalog): void
     {
         $this->operativeCheckCatalog = (bool) $operativeCheckCatalog;
+    }
+
+    public function getProcessingTime(): string
+    {
+        return $this->processingTime;
+    }
+
+    public function setProcessingTime(string $processingTime): void
+    {
+        $this->processingTime = $processingTime;
+    }
+
+    public function getSurveyComment(): string
+    {
+        return $this->surveyComment;
+    }
+
+    public function setSurveyComment(string $surveyComment): void
+    {
+        $this->surveyComment = $surveyComment;
+    }
+
+    public function getOpportunityCountries(): array
+    {
+        return $this->opportunityCountries;
+    }
+
+    public function setOpportunityCountries(array $opportunityCountries): void
+    {
+        $this->opportunityCountries = $opportunityCountries;
     }
 }

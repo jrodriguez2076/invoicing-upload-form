@@ -9,6 +9,7 @@ section_6_title: Cuéntanos acerca de tu catálogo
 section_7_title: Cuéntanos acerca de tu experiencia Online
 section_8_title: Cuéntanos acerca de las marcas que vendes
 section_5_introduction: En Linio estamos evolucionando hacia un Marketplace Premium que responda a las exigencias del eCommerce en nuestro país, el cual nos demanda ser comercial y operativamente impecables para ofrecer la mejor experiencia de compra a nuestros clientes. Para lograrlo, necesitamos unir esfuerzos con Socios que tengan esta misma visión y estén dispuestos a afrontar los retos y rebasar las expectativas de esta industria. ¿Eres ese socio? Cuéntanos sobre ti
+submit: Enviar información
 account_hunter: 'Registrado por: '
 Choose an option: Elige una opción
 First name: Nombre del encargado de la cuenta en Linio:
@@ -96,4 +97,6 @@ Submit: Enviar
 CONTACT_CREATE_ERROR: Hubo un error al procesar la información, intente nuevamente más tarde.
 OPPORTUNITY_CREATE_ERROR: Hubo un error al procesar la información, intente nuevamente más tarde.
 ACCOUNT_CREATE_ERROR: Hubo un error al procesar la información, intente nuevamente más tarde.
-
+MANDATORY_FIELD: Este campo es requerido.
+THANKS_MESSAGE: 'Gracias por tu interés en vender con nosotros'
+SUCCESS_MESSAGE: 'Revisaremos tu solicitud y te contactaremos al correo que nos proporcionaste.'

@@ -6,6 +6,7 @@ namespace App\Controller;
 
 use App\Entity\SellerSignUp;
 use App\Exception\PrmException;
+use App\Form\FormTemplateFactory;
 use App\Form\SellerSignUpFormFactory;
 use App\Service\PrmService;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -27,6 +28,7 @@ class SellerSignUpController extends AbstractController
     public function index(Request $request, string $store): Response
     {
         $store = strtolower($store);
+
         $hunter = $request->get('hunter', '');
         $sellerSignUp = new SellerSignUp();
         $form = $this->createForm(
@@ -46,10 +48,12 @@ class SellerSignUpController extends AbstractController
             } catch (PrmException $exception) {
                 $this->addFlash('error', $exception->getMessage());
             }
+
+            return $this->render('success.html.twig');
         }
 
         return $this->render(
-            'sellerSignUp.html.twig',
+            FormTemplateFactory::fromStore($store),
             [
                 'form' => $form->createView(),
                 'hunter' => $hunter,

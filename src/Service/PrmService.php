@@ -41,6 +41,12 @@ class PrmService
         $accountId = $this->adapter->createAccount($account, $contact, $store);
         $account->setId($accountId);
 
-        $this->adapter->createOpportunity($opportunity, $account, $contact, $store, $hunter);
+        if ($store == 'international') {
+            foreach ($opportunity->getOpportunityCountries() as $country) {
+                $this->adapter->createOpportunity($opportunity, $account, $contact, $country, $hunter);
+            }
+        } else {
+            $this->adapter->createOpportunity($opportunity, $account, $contact, $store, $hunter);
+        }
     }
 }

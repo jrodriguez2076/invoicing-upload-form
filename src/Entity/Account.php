@@ -148,6 +148,11 @@ class Account
     /**
      * @var string
      */
+    protected $warehouseCountry = '';
+
+    /**
+     * @var string
+     */
     protected $warehouseCity2 = '';
 
     /**
@@ -224,6 +229,16 @@ class Account
      * @var string
      */
     protected $financeContactPhone = '';
+
+    /**
+     * @var string
+     */
+    protected $secondaryPhone = '';
+
+    /**
+     * @var string
+     */
+    protected $socialNetworks = '';
 
     /**
      * @var UploadedFile
@@ -668,5 +683,35 @@ class Account
     public function setId(int $id): void
     {
         $this->id = $id;
+    }
+
+    public function getSecondaryPhone(): string
+    {
+        return $this->secondaryPhone;
+    }
+
+    public function setSecondaryPhone(string $secondaryPhone): void
+    {
+        $this->secondaryPhone = $secondaryPhone;
+    }
+
+    public function getSocialNetworks(): string
+    {
+        return $this->socialNetworks;
+    }
+
+    public function setSocialNetworks(string $socialNetworks): void
+    {
+        $this->socialNetworks = $socialNetworks;
+    }
+
+    public function getWarehouseCountry(): string
+    {
+        return $this->warehouseCountry;
+    }
+
+    public function setWarehouseCountry(string $warehouseCountry): void
+    {
+        $this->warehouseCountry = $warehouseCountry;
     }
 }

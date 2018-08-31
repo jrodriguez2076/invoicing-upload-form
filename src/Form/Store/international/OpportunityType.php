@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace App\Form;
+namespace App\Form\Store\international;
 
-use App\Entity\Opportunity;
+use App\Entity\Store\international\Opportunity;
 use App\Service\SellerSignUpService;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
@@ -29,28 +29,8 @@ class OpportunityType extends AbstractType
     {
         $store = $options['store'];
         $builder
-            ->add('operativeCheckLegallyConstituted', CheckboxType::class, [
-                'required' => false,
-            ])
-            ->add('operativeCheckCatalog', CheckboxType::class, [
-                'required' => false,
-            ])
-            ->add('operativeCheckInventory', CheckboxType::class, [
-                'required' => false,
-            ])
-            ->add('operativeCheckDelivery', CheckboxType::class, [
-                'required' => false,
-            ])
-            ->add('operativeCheckReturns', CheckboxType::class, [
-                'required' => false,
-            ])
-            ->add('operativeCheckShippingAgreement', CheckboxType::class, [
-                'required' => false,
-            ])
-            ->add('operativeCheckInvoices', CheckboxType::class, [
-                'required' => false,
-            ])
-            ->add('earningsEstimate')
+            ->add('operativeCheckLegallyConstituted', CheckboxType::class)
+            ->add('operativeCheckCatalog', CheckboxType::class)
             ->add(
                 'mainCategory',
                 ChoiceType::class,
@@ -75,9 +55,7 @@ class OpportunityType extends AbstractType
                     'placeholder' => 'Choose an option',
                 ]
             )
-            ->add('website', TextType::class, [
-                'required' => false,
-            ])
+            ->add('website')
             ->add(
                 'otherStoresList',
                 ChoiceType::class,
@@ -86,10 +64,10 @@ class OpportunityType extends AbstractType
                     'placeholder' => 'Choose an option',
                 ]
             )
+            ->add('otherStoresAddress')
             ->add('otherStoreName', TextType::class, [
                 'required' => false,
             ])
-            ->add('otherStoresAddress')
             ->add(
                 'otherStoresRating',
                 ChoiceType::class,
@@ -98,32 +76,30 @@ class OpportunityType extends AbstractType
                     'placeholder' => 'Choose an option',
                 ]
             )
-            ->add('officialDistributorBrand', TextType::class, [
-                'required' => false,
-            ])
             ->add('brand1')
-            ->add('brand2', TextType::class, [
-                'required' => false,
+            ->add('brand2')
+            ->add('brand3')
+            ->add('brand4')
+            ->add('brand5')
+            ->add('opportunityCountries', ChoiceType::class, [
+                'choices' => $this->sellerSignUpService->getOpportunityCountries(),
+                'placeholder' => 'Choose an option',
+                'expanded' => true,
+                'multiple' => true,
             ])
-            ->add('brand3', TextType::class, [
-                'required' => false,
+            ->add('processingTime', TextType::class, [
+                'help' => 'processing_time_caption',
             ])
-            ->add(
-                'marketingInvest',
-                ChoiceType::class,
-                [
-                    'choices' => $this->sellerSignUpService->getMarketingInvestChoices($store),
-                    'placeholder' => 'Choose an option',
-                ]
-            )
-            ->add(
-                'integrationFlag',
-                ChoiceType::class,
-                [
-                    'choices' => $this->sellerSignUpService->getIntegrationFlagChoices($store),
-                    'placeholder' => 'Choose an option',
-                ]
-            );
+            ->add('surveyComment')
+            ->add('marketingInvest', ChoiceType::class, [
+                'choices' => $this->sellerSignUpService->getMarketingInvestChoices($store),
+                'placeholder' => 'Choose an option',
+            ])
+            ->add('integrationFlag', ChoiceType::class, [
+                'choices' => $this->sellerSignUpService->getIntegrationFlagChoices($store),
+                'placeholder' => 'Choose an option',
+            ])
+            ->add('earningsEstimate');
     }
 
     public function configureOptions(OptionsResolver $resolver): void

@@ -1,0 +1,105 @@
+page_title: Sell in Linio
+form_title: Sell with us
+section_1_title: General Information
+section_2_title: Dispatch Information
+section_3_title: Payment Information
+subsection_1_title: Company Information
+subsection_2_title: Contact Information
+subsection_3_title: Merchandise Information
+subsection_4_title: I want to sell in the following countries
+subsection_5_title: Warehouse address
+subsection_6_title: Processing time
+subsection_7_title: Comments
+subsection_8_title: Payment Information
+subsection_9_title: Invoice address
+subsection_10_title: Acknowledgement
+submit: Submit Information
+Choose an option: Choose an option
+account_hunter: 'Hunted by: '
+restricted_products: Restricted products
+see_terms_and_conditions: See terms and conditions
+see_commissions_and_payment_policy: Show Fees and Payment Policy
+First name: Primary Contact First Name:
+Last name: Primary Contact Last Name:
+Phone number: Mobile phone number:
+Secondary phone: Office phone number
+Social networks: Skype Id
+Account name: Linio Shop Name
+Terms_and_conditions: 'Terms and conditions:'
+Accept terms and conditions: I accept the Terms and Conditions
+Accept commissions and payment policy: I accept the Fees and Payment Policy
+Other stores address: URL storefront in other platforms
+Email: Email address:
+Repeat Email: Confirm your Email address:
+Legal name: Name of legal entity (Legal Name)
+Marketing invest: Are you interested on investing in Co-Marketing?
+Earnings estimate: What are your annual estimated earnings in other marketplaces? (In USD)
+Integration flag: 'Would you like to integrate your catalog and inventory systems with Linio? (Via API, ERP, Pluggin)'
+Other stores rating: 'What is your rating in that store (if any)'
+Opportunity countries: 'Select the countries where you want to sell your products'
+Legal address: Building number and street
+Legal address2: State
+Legal city: City
+Legal postal code: Zip code
+Legal country: Country
+Legal representative: Name of legal representative
+Fiscal id number: Tax Id / Business Registration Number
+Bank acct holder: Name of Seller's Legal entity
+Bank acct number: Email of the payment method selected.
+Bank name: 'You have two options to receive Linio''s payments:'
+Warehouse address: Building number and street
+Warehouse address2: State
+Warehouse city: City
+Warehouse phone: Phone number
+Warehouse postal code: Zip code
+Warehouse country: Country
+Processing time: Order processing time
+Survey comment: Comments and additional information
+Main category: Main product category
+Secondary category: Secondary product category
+Potential catalog: How many unique products (SKU's) do you want to upload?
+Operative check legally constituted: My business is legally incorporated
+Operative check catalog: I agree not to sell any restricted products on linio international marketplace
+Website: Website
+Other stores list: Do you sell in any of these marketplaces?
+Other store name: (Others) Write the name of the other e-commerce.
+Main brands: What are the 5 top selling brands in your catalog?
+Brand1: Brand 1
+Brand2: Brand 2
+Brand3: Brand 3
+Brand4: Brand 4
+Brand5: Brand 5
+Payoneer transfer: 'Payoneer transfer (Note: If you do not have an existing Payoneer account, you will be able to create one through Linio’s Seller Center platform once your registration is complete. Please note: The business name you register in Payoneer and your official business name as registered with Linio must match 100%)'
+WorldFirst: 'WorldFirst (Note: Great exchange rates and award-winning customer service from WorldFirst plus an exclusive offer for all Linio sellers. Please note - the business name you register with WorldFirst, and your official business name as registered with Linio, must match exactly)'
+processing_time_caption: Number of working days between the time the order is received and the carrier accepts the package. (We advise a quick dispatch to minimize order cancelations)
+legal_name_caption: ''
+legal_address_caption: ''
+legal_representative_caption: ''
+logistic_document_caption: ''
+fiscal_id_number_caption: ''
+fiscal_id_additional_doc_caption: ''
+id_additional_doc_caption: ''
+bank_account_holder_caption: ''
+bank_account_number_caption: ''
+bank_code_caption: ''
+bank_iban_caption: ''
+bank_certificate_caption: ''
+warehouse_contact_caption: ''
+warehouse_address_caption: ''
+warehouse_postal_code_caption: ''
+warehouse_phone_caption: ''
+email_caption: 'The word "Linio", "info", "sales", "ventas", "venta" are not allowed in the email address'
+account_name_caption: ''
+phone_number_caption: ''
+legal_country_caption: ''
+legal_postal_code_caption: ''
+legal_city_caption: ''
+Submit: Submit
+CONTACT_CREATE_ERROR: There was an error processing the information, please try again later.
+OPPORTUNITY_CREATE_ERROR: There was an error processing the information, please try again later.
+ACCOUNT_CREATE_ERROR: There was an error processing the information, please try again later.
+MANDATORY_FIELD: This field is mandatory.
+THANKS_MESSAGE: 'Thanks for your interest in selling with us'
+SUCCESS_MESSAGE: 'We will review your request and we will be in touch with you through the email that you provided.'
+
+

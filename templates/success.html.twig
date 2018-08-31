@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+  <div class="logo-container">
+    <img class="logo-image" src="{{ asset('images/LinioWhiteLogo.png') }}">
+  </div>
+  <div class="container">
+    <div class="row text-center">
+    <div class="col-12">
+    <h2>{{ 'THANKS_MESSAGE'|trans }}</h2>
+    </div>
+      <div class="mt-2 col-12">
+    <h5>{{ 'SUCCESS_MESSAGE'|trans }}</h5>
+      </div>
+    </div>
+  </div>
+{% endblock %}

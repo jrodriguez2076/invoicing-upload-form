@@ -8,8 +8,4 @@ use App\Entity\Account as AccountEntity;
 
 class Account extends AccountEntity
 {
-    public function getWarehouseCity(): string
-    {
-        return $this->warehouseCity . '|' . $this->getWarehouseCity2();
-    }
 }

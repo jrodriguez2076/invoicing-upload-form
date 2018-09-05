@@ -72,4 +72,14 @@ class SellerSignUpService
     {
         return $this->params->get('countries');
     }
+
+    public function getOpportunityCountries(): array
+    {
+        return $this->params->get('opportunity_countries');
+    }
+
+    public function getInternationalPaymentMethods(): array
+    {
+        return $this->params->get('international_payment_methods');
+    }
 }

@@ -8,8 +8,6 @@ use App\Entity\Store\international\Account;
 use App\Service\SellerSignUpService;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
-use Symfony\Component\Form\Extension\Core\Type\EmailType;
-use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -28,7 +26,6 @@ class AccountType extends AbstractType
 
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
-        $store = $options['store'];
         $builder
             ->add('accountName', TextType::class, ['help' => 'account_name_caption'])
             ->add(
@@ -36,14 +33,6 @@ class AccountType extends AbstractType
                 TextType::class,
                 [
                     'help' => 'legal_name_caption',
-                ]
-            )
-            ->add(
-                'contributorType',
-                ChoiceType::class,
-                [
-                    'choices' => $this->sellerSignUpService->getContributorTypesChoices($store),
-                    'placeholder' => 'Choose an option',
                 ]
             )
             ->add(
@@ -98,36 +87,11 @@ class AccountType extends AbstractType
                     'help' => 'bank_account_number_caption',
                 ]
             )
-            ->add('bankName')
-            ->add(
-                'bankCode',
-                TextType::class,
-                [
-                    'help' => 'bank_code_caption',
-                ]
-            )
-            ->add(
-                'bankIban',
-                TextType::class,
-                [
-                    'required' => false,
-                    'help' => 'bank_iban_caption',
-                ]
-            )
-            ->add(
-                'bankCertificate',
-                FileType::class,
-                [
-                    'label_format' => 'bank_certificate_caption',
-                ]
-            )
-            ->add(
-                'warehouseContact',
-                TextType::class,
-                [
-                    'help' => 'warehouse_contact_caption',
-                ]
-            )
+            ->add('bankName', ChoiceType::class, [
+                'choices' => $this->sellerSignUpService->getInternationalPaymentMethods(),
+                'placeholder' => 'Choose an option',
+                'expanded' => true,
+            ])
             ->add(
                 'warehouseAddress',
                 TextType::class,
@@ -136,6 +100,10 @@ class AccountType extends AbstractType
                 ]
             )
             ->add('warehouseAddress2')
+            ->add('warehouseCountry', ChoiceType::class, [
+                'choices' => $this->sellerSignUpService->getLegalCountries(),
+                'placeholder' => 'Choose an option',
+            ])
             ->add('warehouseCity')
             ->add(
                 'warehousePhone',
@@ -151,7 +119,6 @@ class AccountType extends AbstractType
                     'help' => 'warehouse_postal_code_caption',
                 ]
             )
-            ->add('warrantyContact', EmailType::class)
             ->add(
                 'fiscalIdNumber',
                 TextType::class,
@@ -159,30 +126,8 @@ class AccountType extends AbstractType
                     'help' => 'fiscal_id_number_caption',
                 ]
             )
-            ->add(
-                'fiscalIdAdditionalDoc',
-                FileType::class,
-                [
-                    'label_format' => 'fiscal_id_additional_doc_caption',
-                ]
-            )
-            ->add(
-                'logisticDocument',
-                FileType::class,
-                [
-                    'label_format' => 'logistic_document_caption',
-                ]
-            )
-            ->add(
-                'idAdditionalDoc',
-                FileType::class,
-                [
-                    'label_format' => 'id_additional_doc_caption',
-                ]
-            )
-            ->add('financeContactName')
-            ->add('financeContactMail')
-            ->add('financeContactPhone');
+            ->add('secondaryPhone')
+            ->add('socialNetworks');
     }
 
     public function configureOptions(OptionsResolver $resolver): void

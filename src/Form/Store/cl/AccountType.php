@@ -69,6 +69,8 @@ class AccountType extends AbstractType
                     'help' => 'legal_country_caption',
                     'choices' => $this->sellerSignUpService->getLegalCountries(),
                     'placeholder' => 'Choose an option',
+                    'data' => 'Chile',
+                    'disabled' => true,
                 ]
             )
             ->add(

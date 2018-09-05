@@ -5,11 +5,8 @@ declare(strict_types=1);
 namespace App\Form\Store\international;
 
 use App\Entity\SellerSignUp;
-use App\Form\ContactType;
-use App\Form\OpportunityType;
 use App\Service\SellerSignUpService;
 use Symfony\Component\Form\AbstractType;
-use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -32,8 +29,7 @@ class SellerSignUpForm extends AbstractType
         $builder
             ->add('contact', ContactType::class)
             ->add('account', AccountType::class, ['store' => $store])
-            ->add('opportunity', OpportunityType::class, ['store' => $store])
-            ->add('Submit', SubmitType::class);
+            ->add('opportunity', OpportunityType::class, ['store' => $store]);
     }
 
     public function configureOptions(OptionsResolver $resolver): void

@@ -1,5 +1,10 @@
 body {
     background-color: rgba(255,153,51,1.00);
+    font-size: .9rem;
+}
+
+.form-control {
+    font-size: .9rem;
 }
 .container {
     background-color: white;
@@ -17,6 +22,10 @@ body {
 }
 .custom-file-input ~ .custom-file-label::after {
     content: "Elegir archivo";
+}
+
+label.required:after {
+    content: " * ";
 }
 
 .account-hunter {

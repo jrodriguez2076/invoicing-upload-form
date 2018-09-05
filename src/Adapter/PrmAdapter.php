@@ -242,6 +242,8 @@ class PrmAdapter
                 'accountId' => $account->getId(),
                 'countryId' => $store,
                 'registrationType' => Opportunity::ORGANIC_REGISTRATION_TYPE,
+                'processingTime' => $opportunity->getProcessingTime(),
+                'surveyComment' => $opportunity->getSurveyComment(),
             ],
         ];
 

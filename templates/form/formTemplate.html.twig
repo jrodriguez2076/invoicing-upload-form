@@ -1,8 +1,18 @@
 {% extends 'bootstrap_4_layout.html.twig' %}
 
-{% block form_label %}
-  {{ parent() }}
-  {% if required %}
-    <span class="required" title="This field is required">(*)</span>
-  {% endif %}
-{% endblock %}
+{% block form_row %}
+  {% set containerClass = form.vars.attr.containerClass is defined ? form.vars.attr.containerClass : 'col-md-6' %}
+
+  {%- if compound is defined and compound -%}
+    {%- set element = 'fieldset' -%}
+  {%- endif -%}
+  {%- set widget_attr = {} -%}
+  {%- if help is not empty -%}
+    {%- set widget_attr = {attr: {'aria-describedby': id ~"_help"}} -%}
+  {%- endif -%}
+  <div class="{{ containerClass|raw }} form-group">
+    {{- form_label(form) -}}
+    {{- form_widget(form, widget_attr) -}}
+    {{- form_help(form) -}}
+  </div>
+{% endblock form_row %}

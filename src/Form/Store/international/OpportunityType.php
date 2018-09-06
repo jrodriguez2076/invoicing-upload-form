@@ -76,11 +76,55 @@ class OpportunityType extends AbstractType
                     'placeholder' => 'Choose an option',
                 ]
             )
-            ->add('brand1')
-            ->add('brand2')
-            ->add('brand3')
-            ->add('brand4')
-            ->add('brand5')
+            ->add(
+                'brand1',
+                TextType::class,
+                [
+                    'attr' => [
+                        'containerClass' => 'col-md-7',
+                    ],
+                ]
+            )
+            ->add(
+                'brand2',
+                TextType::class,
+                [
+                    'required' => false,
+                    'attr' => [
+                        'containerClass' => 'col-md-7',
+                    ],
+                ]
+            )
+            ->add(
+                'brand3',
+                TextType::class,
+                [
+                    'required' => false,
+                    'attr' => [
+                        'containerClass' => 'col-md-7',
+                    ],
+                ]
+            )
+            ->add(
+                'brand4',
+                TextType::class,
+                [
+                    'required' => false,
+                    'attr' => [
+                        'containerClass' => 'col-md-7',
+                    ],
+                ]
+            )
+            ->add(
+                'brand5',
+                TextType::class,
+                [
+                    'required' => false,
+                    'attr' => [
+                        'containerClass' => 'col-md-7',
+                    ],
+                ]
+            )
             ->add('opportunityCountries', ChoiceType::class, [
                 'choices' => $this->sellerSignUpService->getOpportunityCountries(),
                 'placeholder' => 'Choose an option',

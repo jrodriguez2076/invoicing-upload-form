@@ -1,4 +1,14 @@
-{% extends 'bootstrap_4_layout.html.twig' %}
+{% block form_help -%}
+  {%- if help is not empty -%}
+    <small id="{{ id }}_help" class="form-text text-muted">
+      {%- if translation_domain is same as(false) -%}
+        {{- help -}}
+      {%- else -%}
+        {{- help|trans({}, translation_domain)|raw -}}
+      {%- endif -%}
+    </small>
+  {%- endif -%}
+{%- endblock form_help %}
 
 {% block form_row %}
   {% set containerClass = form.vars.attr.containerClass is defined ? form.vars.attr.containerClass : 'col-md-6' %}

@@ -91,6 +91,7 @@ class AccountType extends AbstractType
                 'choices' => $this->sellerSignUpService->getInternationalPaymentMethods(),
                 'placeholder' => 'Choose an option',
                 'expanded' => true,
+                'help' => 'bank_name_caption',
             ])
             ->add(
                 'warehouseAddress',

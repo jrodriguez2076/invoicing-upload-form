@@ -245,112 +245,112 @@ class Account
      */
     protected $logisticDocument;
 
-    public function getFirstName(): string
+    public function getFirstName(): ?string
     {
         return $this->firstName;
     }
 
-    public function setFirstName(string $firstName): void
+    public function setFirstName(?string $firstName): void
     {
         $this->firstName = $firstName;
     }
 
-    public function getLastName(): string
+    public function getLastName(): ?string
     {
         return $this->lastName;
     }
 
-    public function setLastName(string $lastName): void
+    public function setLastName(?string $lastName): void
     {
         $this->lastName = $lastName;
     }
 
-    public function getPhoneNumber(): string
+    public function getPhoneNumber(): ?string
     {
         return $this->phoneNumber;
     }
 
-    public function setPhoneNumber(string $phoneNumber): void
+    public function setPhoneNumber(?string $phoneNumber): void
     {
         $this->phoneNumber = $phoneNumber;
     }
 
-    public function getEmail(): string
+    public function getEmail(): ?string
     {
         return $this->email;
     }
 
-    public function setEmail(string $email): void
+    public function setEmail(?string $email): void
     {
         $this->email = $email;
     }
 
-    public function getAccountName(): string
+    public function getAccountName(): ?string
     {
         return $this->accountName;
     }
 
-    public function setAccountName(string $accountName): void
+    public function setAccountName(?string $accountName): void
     {
         $this->accountName = $accountName;
     }
 
-    public function getBankAcctHolder(): string
+    public function getBankAcctHolder(): ?string
     {
         return $this->bankAcctHolder;
     }
 
-    public function setBankAcctHolder(string $bankAcctHolder): void
+    public function setBankAcctHolder(?string $bankAcctHolder): void
     {
         $this->bankAcctHolder = $bankAcctHolder;
     }
 
-    public function getBankAcctNumber(): string
+    public function getBankAcctNumber(): ?string
     {
         return $this->bankAcctNumber;
     }
 
-    public function setBankAcctNumber(string $bankAcctNumber): void
+    public function setBankAcctNumber(?string $bankAcctNumber): void
     {
         $this->bankAcctNumber = $bankAcctNumber;
     }
 
-    public function getBankName(): string
+    public function getBankName(): ?string
     {
         return $this->bankName;
     }
 
-    public function setBankName(string $bankName): void
+    public function setBankName(?string $bankName): void
     {
         $this->bankName = $bankName;
     }
 
-    public function getBankCode(): string
+    public function getBankCode(): ?string
     {
         return $this->bankCode;
     }
 
-    public function setBankCode(string $bankCode): void
+    public function setBankCode(?string $bankCode): void
     {
         $this->bankCode = $bankCode;
     }
 
-    public function getBankRegistrationNumber(): string
+    public function getBankRegistrationNumber(): ?string
     {
         return $this->bankRegistrationNumber;
     }
 
-    public function setBankRegistrationNumber(string $bankRegistrationNumber): void
+    public function setBankRegistrationNumber(?string $bankRegistrationNumber): void
     {
         $this->bankRegistrationNumber = $bankRegistrationNumber;
     }
 
-    public function getBankIban(): string
+    public function getBankIban(): ?string
     {
         return $this->bankIban;
     }
 
-    public function setBankIban(string $bankIban): void
+    public function setBankIban(?string $bankIban): void
     {
         $this->bankIban = $bankIban;
     }
@@ -365,252 +365,252 @@ class Account
         $this->bankCertificate = $bankCertificate;
     }
 
-    public function getContributorType(): string
+    public function getContributorType(): ?string
     {
         return $this->contributorType;
     }
 
-    public function setContributorType(string $contributorType): void
+    public function setContributorType(?string $contributorType): void
     {
         $this->contributorType = $contributorType;
     }
 
-    public function getEconomicActivity(): string
+    public function getEconomicActivity(): ?string
     {
         return $this->economicActivity;
     }
 
-    public function setEconomicActivity(string $economicActivity): void
+    public function setEconomicActivity(?string $economicActivity): void
     {
         $this->economicActivity = $economicActivity;
     }
 
-    public function getWarehouseContact(): string
+    public function getWarehouseContact(): ?string
     {
         return $this->warehouseContact;
     }
 
-    public function setWarehouseContact(string $warehouseContact): void
+    public function setWarehouseContact(?string $warehouseContact): void
     {
         $this->warehouseContact = $warehouseContact;
     }
 
-    public function getWarehouseAddress(): string
+    public function getWarehouseAddress(): ?string
     {
         return $this->warehouseAddress;
     }
 
-    public function setWarehouseAddress(string $warehouseAddress): void
+    public function setWarehouseAddress(?string $warehouseAddress): void
     {
         $this->warehouseAddress = $warehouseAddress;
     }
 
-    public function getWarehouseAddressExtraData(): string
+    public function getWarehouseAddressExtraData(): ?string
     {
         return $this->warehouseAddressExtraData;
     }
 
-    public function setWarehouseAddressExtraData(string $warehouseAddressExtraData): void
+    public function setWarehouseAddressExtraData(?string $warehouseAddressExtraData): void
     {
         $this->warehouseAddressExtraData = $warehouseAddressExtraData;
     }
 
-    public function getWarehouseAddressExtraData2(): string
+    public function getWarehouseAddressExtraData2(): ?string
     {
         return $this->warehouseAddressExtraData2;
     }
 
-    public function setWarehouseAddressExtraData2(string $warehouseAddressExtraData2): void
+    public function setWarehouseAddressExtraData2(?string $warehouseAddressExtraData2): void
     {
         $this->warehouseAddressExtraData2 = $warehouseAddressExtraData2;
     }
 
-    public function getWarehouseAddressExtraData3(): string
+    public function getWarehouseAddressExtraData3(): ?string
     {
         return $this->warehouseAddressExtraData3;
     }
 
-    public function setWarehouseAddressExtraData3(string $warehouseAddressExtraData3): void
+    public function setWarehouseAddressExtraData3(?string $warehouseAddressExtraData3): void
     {
         $this->warehouseAddressExtraData3 = $warehouseAddressExtraData3;
     }
 
-    public function getWarehouseAddressExtraData4(): string
+    public function getWarehouseAddressExtraData4(): ?string
     {
         return $this->warehouseAddressExtraData4;
     }
 
-    public function setWarehouseAddressExtraData4(string $warehouseAddressExtraData4): void
+    public function setWarehouseAddressExtraData4(?string $warehouseAddressExtraData4): void
     {
         $this->warehouseAddressExtraData4 = $warehouseAddressExtraData4;
     }
 
-    public function getWarehouseAddress2(): string
+    public function getWarehouseAddress2(): ?string
     {
         return $this->warehouseAddress2;
     }
 
-    public function setWarehouseAddress2(string $warehouseAddress2): void
+    public function setWarehouseAddress2(?string $warehouseAddress2): void
     {
         $this->warehouseAddress2 = $warehouseAddress2;
     }
 
-    public function getWarehouseAddress2ExtraData(): string
+    public function getWarehouseAddress2ExtraData(): ?string
     {
         return $this->warehouseAddress2ExtraData;
     }
 
-    public function setWarehouseAddress2ExtraData(string $warehouseAddress2ExtraData): void
+    public function setWarehouseAddress2ExtraData(?string $warehouseAddress2ExtraData): void
     {
         $this->warehouseAddress2ExtraData = $warehouseAddress2ExtraData;
     }
 
-    public function getWarehouseAddress2ExtraData2(): string
+    public function getWarehouseAddress2ExtraData2(): ?string
     {
         return $this->warehouseAddress2ExtraData2;
     }
 
-    public function setWarehouseAddress2ExtraData2(string $warehouseAddress2ExtraData2): void
+    public function setWarehouseAddress2ExtraData2(?string $warehouseAddress2ExtraData2): void
     {
         $this->warehouseAddress2ExtraData2 = $warehouseAddress2ExtraData2;
     }
 
-    public function getWarehousePhone(): string
+    public function getWarehousePhone(): ?string
     {
         return $this->warehousePhone;
     }
 
-    public function setWarehousePhone(string $warehousePhone): void
+    public function setWarehousePhone(?string $warehousePhone): void
     {
         $this->warehousePhone = $warehousePhone;
     }
 
-    public function getWarehousePostalCode(): string
+    public function getWarehousePostalCode(): ?string
     {
         return $this->warehousePostalCode;
     }
 
-    public function setWarehousePostalCode(string $warehousePostalCode): void
+    public function setWarehousePostalCode(?string $warehousePostalCode): void
     {
         $this->warehousePostalCode = $warehousePostalCode;
     }
 
-    public function getWarehouseCity(): string
+    public function getWarehouseCity(): ?string
     {
         return $this->warehouseCity;
     }
 
-    public function setWarehouseCity(string $warehouseCity): void
+    public function setWarehouseCity(?string $warehouseCity): void
     {
         $this->warehouseCity = $warehouseCity;
     }
 
-    public function getWarehouseCity2(): string
+    public function getWarehouseCity2(): ?string
     {
         return $this->warehouseCity2;
     }
 
-    public function setWarehouseCity2(string $warehouseCity2): void
+    public function setWarehouseCity2(?string $warehouseCity2): void
     {
         $this->warehouseCity2 = $warehouseCity2;
     }
 
-    public function getWarehouseMode(): string
+    public function getWarehouseMode(): ?string
     {
         return $this->warehouseMode;
     }
 
-    public function setWarehouseMode(string $warehouseMode): void
+    public function setWarehouseMode(?string $warehouseMode): void
     {
         $this->warehouseMode = $warehouseMode;
     }
 
-    public function getWarrantyContact(): string
+    public function getWarrantyContact(): ?string
     {
         return $this->warrantyContact;
     }
 
-    public function setWarrantyContact(string $warrantyContact): void
+    public function setWarrantyContact(?string $warrantyContact): void
     {
         $this->warrantyContact = $warrantyContact;
     }
 
-    public function getLegalName(): string
+    public function getLegalName(): ?string
     {
         return $this->legalName;
     }
 
-    public function setLegalName(string $legalName): void
+    public function setLegalName(?string $legalName): void
     {
         $this->legalName = $legalName;
     }
 
-    public function getLegalAddress(): string
+    public function getLegalAddress(): ?string
     {
         return $this->legalAddress;
     }
 
-    public function setLegalAddress(string $legalAddress): void
+    public function setLegalAddress(?string $legalAddress): void
     {
         $this->legalAddress = $legalAddress;
     }
 
-    public function getLegalAddress2(): string
+    public function getLegalAddress2(): ?string
     {
         return $this->legalAddress2;
     }
 
-    public function setLegalAddress2(string $legalAddress2): void
+    public function setLegalAddress2(?string $legalAddress2): void
     {
         $this->legalAddress2 = $legalAddress2;
     }
 
-    public function getLegalPostalCode(): string
+    public function getLegalPostalCode(): ?string
     {
         return $this->legalPostalCode;
     }
 
-    public function setLegalPostalCode(string $legalPostalCode): void
+    public function setLegalPostalCode(?string $legalPostalCode): void
     {
         $this->legalPostalCode = $legalPostalCode;
     }
 
-    public function getLegalCountry(): string
+    public function getLegalCountry(): ?string
     {
         return $this->legalCountry;
     }
 
-    public function setLegalCountry(string $legalCountry): void
+    public function setLegalCountry(?string $legalCountry): void
     {
         $this->legalCountry = $legalCountry;
     }
 
-    public function getLegalCity(): string
+    public function getLegalCity(): ?string
     {
         return $this->legalCity;
     }
 
-    public function setLegalCity(string $legalCity): void
+    public function setLegalCity(?string $legalCity): void
     {
         $this->legalCity = $legalCity;
     }
 
-    public function getLegalRepresentative(): string
+    public function getLegalRepresentative(): ?string
     {
         return $this->legalRepresentative;
     }
 
-    public function setLegalRepresentative(string $legalRepresentative): void
+    public function setLegalRepresentative(?string $legalRepresentative): void
     {
         $this->legalRepresentative = $legalRepresentative;
     }
 
-    public function getFiscalIdNumber(): string
+    public function getFiscalIdNumber(): ?string
     {
         return $this->fiscalIdNumber;
     }
 
-    public function setFiscalIdNumber(string $fiscalIdNumber): void
+    public function setFiscalIdNumber(?string $fiscalIdNumber): void
     {
         $this->fiscalIdNumber = $fiscalIdNumber;
     }
@@ -645,32 +645,32 @@ class Account
         $this->logisticDocument = $logisticDocument;
     }
 
-    public function getFinanceContactName(): string
+    public function getFinanceContactName(): ?string
     {
         return $this->financeContactName;
     }
 
-    public function setFinanceContactName(string $financeContactName): void
+    public function setFinanceContactName(?string $financeContactName): void
     {
         $this->financeContactName = $financeContactName;
     }
 
-    public function getFinanceContactMail(): string
+    public function getFinanceContactMail(): ?string
     {
         return $this->financeContactMail;
     }
 
-    public function setFinanceContactMail(string $financeContactMail): void
+    public function setFinanceContactMail(?string $financeContactMail): void
     {
         $this->financeContactMail = $financeContactMail;
     }
 
-    public function getFinanceContactPhone(): string
+    public function getFinanceContactPhone(): ?string
     {
         return $this->financeContactPhone;
     }
 
-    public function setFinanceContactPhone(string $financeContactPhone): void
+    public function setFinanceContactPhone(?string $financeContactPhone): void
     {
         $this->financeContactPhone = $financeContactPhone;
     }
@@ -685,32 +685,32 @@ class Account
         $this->id = $id;
     }
 
-    public function getSecondaryPhone(): string
+    public function getSecondaryPhone(): ?string
     {
         return $this->secondaryPhone;
     }
 
-    public function setSecondaryPhone(string $secondaryPhone): void
+    public function setSecondaryPhone(?string $secondaryPhone): void
     {
         $this->secondaryPhone = $secondaryPhone;
     }
 
-    public function getSocialNetworks(): string
+    public function getSocialNetworks(): ?string
     {
         return $this->socialNetworks;
     }
 
-    public function setSocialNetworks(string $socialNetworks): void
+    public function setSocialNetworks(?string $socialNetworks): void
     {
         $this->socialNetworks = $socialNetworks;
     }
 
-    public function getWarehouseCountry(): string
+    public function getWarehouseCountry(): ?string
     {
         return $this->warehouseCountry;
     }
 
-    public function setWarehouseCountry(string $warehouseCountry): void
+    public function setWarehouseCountry(?string $warehouseCountry): void
     {
         $this->warehouseCountry = $warehouseCountry;
     }

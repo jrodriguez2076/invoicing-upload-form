@@ -69,8 +69,9 @@ Brand2: Brand 2
 Brand3: Brand 3
 Brand4: Brand 4
 Brand5: Brand 5
-Payoneer transfer: 'Payoneer transfer (Note: If you do not have an existing Payoneer account, you will be able to create one through Linio’s Seller Center platform once your registration is complete. Please note: The business name you register in Payoneer and your official business name as registered with Linio must match 100%)'
-WorldFirst: 'WorldFirst (Note: Great exchange rates and award-winning customer service from WorldFirst plus an exclusive offer for all Linio sellers. Please note - the business name you register with WorldFirst, and your official business name as registered with Linio, must match exactly)'
+Payoneer transfer: 'Payoneer transfer'
+WorldFirst: 'WorldFirst'
+bank_name_caption: 'Payoneer transfer: (Note: If you do not have an existing Payoneer account, you will be able to create one through Linio’s Seller Center platform once your registration is complete. Please note: The business name you register in Payoneer and your official business name as registered with Linio must match 100%) <br><br> WorldFirst: (Note: Great exchange rates and award-winning customer service from WorldFirst plus an exclusive offer for all Linio sellers. Want a WorldFirst account? – <a href="https://welcome.worldfirst.com/lp-us/ecom-201803-linio/?&utm_source=linio&utm_medium=partner&utm_campaign=unbounce/" target="_blank"> click here to claim your offer and get started</a> Already got one? Fill in your details* Please note - the business name you register with WorldFirst, and your official business name as registered with Linio, must match exactly)'
 processing_time_caption: Number of working days between the time the order is received and the carrier accepts the package. (We advise a quick dispatch to minimize order cancelations)
 legal_name_caption: ''
 legal_address_caption: ''

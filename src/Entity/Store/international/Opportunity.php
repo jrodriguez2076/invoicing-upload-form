@@ -19,27 +19,27 @@ class Opportunity extends OpportunityEntity
      */
     protected $brand5 = '';
 
-    public function getBrand3(): string
+    public function getBrand3(): ?string
     {
         return sprintf('%s|%s|%s', $this->brand3, $this->brand4, $this->brand5);
     }
 
-    public function getBrand4(): string
+    public function getBrand4(): ?string
     {
         return $this->brand4;
     }
 
-    public function setBrand4(string $brand4): void
+    public function setBrand4(?string $brand4): void
     {
         $this->brand4 = $brand4;
     }
 
-    public function getBrand5(): string
+    public function getBrand5(): ?string
     {
         return $this->brand5;
     }
 
-    public function setBrand5(string $brand5): void
+    public function setBrand5(?string $brand5): void
     {
         $this->brand5 = $brand5;
     }

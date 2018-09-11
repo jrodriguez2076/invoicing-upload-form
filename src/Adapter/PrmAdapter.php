@@ -37,9 +37,9 @@ class PrmAdapter
         $this->clientSecret = $clientSecret;
     }
 
-    public function createAccount(Account $account, Contact $contact, string $store): int
+    public function createAccount(Account $account, Contact $contact, Opportunity $opportunity, string $store): int
     {
-        $requestBody = $this->buildAccountRequestBody($account, $contact, $store);
+        $requestBody = $this->buildAccountRequestBody($account, $contact, $opportunity, $store);
 
         try {
             $response = $this->client->request(
@@ -148,11 +148,12 @@ class PrmAdapter
         ];
     }
 
-    protected function buildAccountRequestBody(Account $account, Contact $contact, string $store): array
+    protected function buildAccountRequestBody(Account $account, Contact $contact, Opportunity $opportunity, string $store): array
     {
         $request = [
             ['name' => 'account[name]', 'contents' => $account->getAccountName()],
-            ['name' => 'account[phone]', 'contents' => $account->getPhoneNumber()],
+            ['name' => 'account[businessName]', 'contents' => $account->getAccountName()],
+            ['name' => 'account[phone]', 'contents' => $contact->getPhoneNumber()],
             ['name' => 'account[owner]', 'contents' => $account::DEFAULT_OWNER],
             ['name' => 'account[countryId]', 'contents' => $store],
             ['name' => 'account[bankAcctHolder]', 'contents' => $account->getBankAcctHolder()],
@@ -171,7 +172,7 @@ class PrmAdapter
             ['name' => 'account[default_contact]', 'contents' => $contact->getId()],
             ['name' => 'account[contributorType]', 'contents' => $account->getContributorType()],
             ['name' => 'account[economicActivity]', 'contents' => $account->getEconomicActivity()],
-            ['name' => 'account[emailAddress]', 'contents' => $account->getEmail()],
+            ['name' => 'account[emailAddress]', 'contents' => $contact->getEmail()],
             ['name' => 'account[fiscalIdNumber]', 'contents' => $account->getFiscalIdNumber()],
             ['name' => 'account[warehouseAddress]', 'contents' => $account->getWarehouseAddress()],
             ['name' => 'account[warehouseAddress2]', 'contents' => $account->getWarehouseAddress2()],
@@ -179,10 +180,13 @@ class PrmAdapter
             ['name' => 'account[warehouseContact]', 'contents' => $account->getWarehouseContact()],
             ['name' => 'account[warehousePhone]', 'contents' => $account->getWarehousePhone()],
             ['name' => 'account[warehousePostalCode]', 'contents' => $account->getWarehousePostalCode()],
+            ['name' => 'account[warehouseCountry]', 'contents' => $account->getWarehouseCountry()],
             ['name' => 'account[warrantyContact]', 'contents' => $account->getWarrantyContact()],
             ['name' => 'account[financeContactName]', 'contents' => $account->getFinanceContactName()],
             ['name' => 'account[financeContactMail]', 'contents' => $account->getFinanceContactMail()],
             ['name' => 'account[financeContactPhone]', 'contents' => $account->getFinanceContactPhone()],
+            ['name' => 'account[supplyGeography]', 'contents' => $account->getSupplyGeography()],
+            ['name' => 'account[website]', 'contents' => $opportunity->getWebsite()],
         ];
 
         $bankCertificate = $account->getBankCertificate();

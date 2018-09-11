@@ -67,10 +67,12 @@ class AccountType extends AbstractType
                 ChoiceType::class,
                 [
                     'help' => 'legal_country_caption',
-                    'choices' => $this->sellerSignUpService->getLegalCountries(),
+                    'choices' => $this->sellerSignUpService->getLegalCountries($store),
                     'placeholder' => 'Choose an option',
                     'data' => 'Chile',
-                    'disabled' => true,
+                    'attr' => [
+                        'readonly' => true,
+                    ],
                 ]
             )
             ->add(

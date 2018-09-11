@@ -68,9 +68,9 @@ class SellerSignUpService
         return $this->params->get($store)['warehouse_cities'];
     }
 
-    public function getLegalCountries(): array
+    public function getLegalCountries(string $store): array
     {
-        return $this->params->get('countries');
+        return $this->params->get($store)['countries'];
     }
 
     public function getOpportunityCountries(): array

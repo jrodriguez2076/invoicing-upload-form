@@ -8,4 +8,8 @@ use App\Entity\Account as AccountEntity;
 
 class Account extends AccountEntity
 {
+    public function getSupplyGeography(): string
+    {
+        return 'Internacional';
+    }
 }

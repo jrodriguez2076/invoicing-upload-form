@@ -29,7 +29,6 @@ class AccountType extends AbstractType
     {
         $store = $options['store'];
         $builder
-
             ->add('accountName', TextType::class, ['help' => 'account_name_caption'])
 
             ->add(
@@ -60,10 +59,12 @@ class AccountType extends AbstractType
                 ChoiceType::class,
                 [
                     'help' => 'legal_country_caption',
-                    'choices' => $this->sellerSignUpService->getLegalCountries(),
+                    'choices' => $this->sellerSignUpService->getLegalCountries($store),
                     'placeholder' => 'Choose an option',
                     'data' => 'Peru',
-                    'disabled' => true,
+                    'attr' => [
+                        'readonly' => true,
+                    ],
                 ]
             )
             ->add(

@@ -38,7 +38,7 @@ class PrmService
         $contactId = $this->adapter->createContact($contact);
         $contact->setId($contactId);
 
-        $accountId = $this->adapter->createAccount($account, $contact, $store);
+        $accountId = $this->adapter->createAccount($account, $contact, $opportunity, $store);
         $account->setId($accountId);
 
         if ($store == 'international') {

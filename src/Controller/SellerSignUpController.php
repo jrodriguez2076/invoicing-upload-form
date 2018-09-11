@@ -47,6 +47,14 @@ class SellerSignUpController extends AbstractController
                 );
             } catch (PrmException $exception) {
                 $this->addFlash('error', $exception->getMessage());
+
+                return $this->render(
+                    FormTemplateFactory::fromStore($store),
+                    [
+                        'form' => $form->createView(),
+                        'hunter' => $hunter,
+                    ]
+                );
             }
 
             return $this->render('success.html.twig');

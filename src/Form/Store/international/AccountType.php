@@ -26,6 +26,7 @@ class AccountType extends AbstractType
 
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
+        $store = $options['store'];
         $builder
             ->add('accountName', TextType::class, ['help' => 'account_name_caption'])
             ->add(
@@ -55,7 +56,7 @@ class AccountType extends AbstractType
                 ChoiceType::class,
                 [
                     'help' => 'legal_country_caption',
-                    'choices' => $this->sellerSignUpService->getLegalCountries(),
+                    'choices' => $this->sellerSignUpService->getLegalCountries($store),
                     'placeholder' => 'Choose an option',
                 ]
             )
@@ -102,7 +103,7 @@ class AccountType extends AbstractType
             )
             ->add('warehouseAddress2')
             ->add('warehouseCountry', ChoiceType::class, [
-                'choices' => $this->sellerSignUpService->getLegalCountries(),
+                'choices' => $this->sellerSignUpService->getLegalCountries($store),
                 'placeholder' => 'Choose an option',
             ])
             ->add('warehouseCity')

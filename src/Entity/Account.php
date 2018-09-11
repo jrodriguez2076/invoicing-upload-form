@@ -714,4 +714,9 @@ class Account
     {
         $this->warehouseCountry = $warehouseCountry;
     }
+
+    public function getSupplyGeography(): string
+    {
+        return 'Nacional';
+    }
 }

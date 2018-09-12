@@ -1,0 +1,7 @@
+monolog:
+    handlers:
+        main:
+            type: stream
+            path: "%logs_path%/%kernel.environment%.log"
+            level: debug
+            channels: ["!event"]

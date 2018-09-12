@@ -9,6 +9,7 @@
         "ext-iconv": "*",
         "ext-json": "*",
         "guzzlehttp/guzzle": "^6.3",
+        "linio/log-php-sdk": "^0.2.1",
         "sensiolabs/security-checker": "^4.1",
         "symfony/asset": "^4.1",
         "symfony/console": "^4.1",
@@ -16,6 +17,7 @@
         "symfony/form": "^4.1",
         "symfony/framework-bundle": "^4.1",
         "symfony/lts": "^4@dev",
+        "symfony/monolog-bundle": "^3.3",
         "symfony/translation": "^4.1",
         "symfony/twig-bundle": "^4.1",
         "symfony/yaml": "^4.1"
@@ -67,5 +69,11 @@
         "symfony": {
             "allow-contrib": false
         }
-    }
+    },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "git@github.com:LinioIT/log-php-sdk.git"
+        }
+    ]
 }

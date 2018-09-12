@@ -9,6 +9,7 @@ use App\Exception\PrmException;
 use App\Form\FormTemplateFactory;
 use App\Form\SellerSignUpFormFactory;
 use App\Service\PrmService;
+use Psr\Log\LoggerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -20,9 +21,15 @@ class SellerSignUpController extends AbstractController
      */
     protected $prmService;
 
-    public function __construct(PrmService $prmService)
+    /**
+     * @var LoggerInterface
+     */
+    protected $logger;
+
+    public function __construct(PrmService $prmService, LoggerInterface $logger)
     {
         $this->prmService = $prmService;
+        $this->logger = $logger;
     }
 
     public function index(Request $request, string $store): Response
@@ -46,7 +53,8 @@ class SellerSignUpController extends AbstractController
                     $hunter
                 );
             } catch (PrmException $exception) {
-                $this->addFlash('error', $exception->getMessage());
+                $this->logger->error($exception->getMessage());
+                $this->addFlash('error', 'GENERAL_ERROR');
 
                 return $this->render(
                     FormTemplateFactory::fromStore($store),

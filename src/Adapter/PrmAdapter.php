@@ -11,6 +11,7 @@ use App\Exception\PrmException;
 use GuzzleHttp\ClientInterface;
 use GuzzleHttp\Exception\ClientException;
 use GuzzleHttp\Exception\ServerException;
+use Psr\Log\LoggerInterface;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 
 class PrmAdapter
@@ -30,11 +31,17 @@ class PrmAdapter
      */
     protected $clientSecret;
 
-    public function __construct(ClientInterface $client, string $clientId, string $clientSecret)
+    /**
+     * @var LoggerInterface
+     */
+    protected $logger;
+
+    public function __construct(ClientInterface $client, string $clientId, string $clientSecret, LoggerInterface $logger)
     {
         $this->client = $client;
         $this->clientId = $clientId;
         $this->clientSecret = $clientSecret;
+        $this->logger = $logger;
     }
 
     public function createAccount(Account $account, Contact $contact, Opportunity $opportunity, string $store): int
@@ -42,6 +49,7 @@ class PrmAdapter
         $requestBody = $this->buildAccountRequestBody($account, $contact, $opportunity, $store);
 
         try {
+            $this->logger->info('Attempt to create Account');
             $response = $this->client->request(
                 'POST',
                 '/api/rest/latest/accounts',
@@ -51,12 +59,15 @@ class PrmAdapter
                 ]
             );
         } catch (ClientException $exception) {
+            $this->logger->error($exception->getResponse()->getBody()->getContents());
             throw new PrmException($exception->getMessage());
         } catch (ServerException $exception) {
+            $this->logger->error($exception->getResponse()->getBody()->getContents());
             throw new PrmException($exception->getMessage());
         }
 
         if ($response->getStatusCode() != 201) {
+            $this->logger->error($response->getBody()->getContents());
             throw new PrmException('ACCOUNT_CREATE_ERROR', 500);
         }
 
@@ -66,6 +77,8 @@ class PrmAdapter
         if (!isset($jsonResponseContent['id'])) {
             throw new PrmException('ACCOUNT_CREATE_ERROR', 500);
         }
+
+        $this->logger->info('Account created');
 
         return $jsonResponseContent['id'];
     }
@@ -75,6 +88,7 @@ class PrmAdapter
         $requestBody = $this->buildContactRequestBody($contact);
 
         try {
+            $this->logger->info('Attempt to create Contact');
             $response = $this->client->request(
                 'POST',
                 '/api/rest/latest/contacts',
@@ -84,12 +98,15 @@ class PrmAdapter
                 ]
             );
         } catch (ClientException $exception) {
+            $this->logger->error($exception->getResponse()->getBody()->getContents());
             throw new PrmException($exception->getMessage());
         } catch (ServerException $exception) {
+            $this->logger->error($exception->getResponse()->getBody()->getContents());
             throw new PrmException($exception->getMessage());
         }
 
         if ($response->getStatusCode() != 200 and $response->getStatusCode() != 201) {
+            $this->logger->error($response->getBody()->getContents());
             throw new PrmException('CONTACT_CREATE_ERROR', 500);
         }
 
@@ -100,6 +117,8 @@ class PrmAdapter
             throw new PrmException('CONTACT_CREATE_ERROR', 500);
         }
 
+        $this->logger->info('Contact created');
+
         return $jsonResponseContent['id'];
     }
 
@@ -108,6 +127,7 @@ class PrmAdapter
         $requestBody = $this->buildOpportunityRequestBody($opportunity, $account, $contact, $store, $hunter);
 
         try {
+            $this->logger->info('Attempt to create Opportunity');
             $response = $this->client->request(
                 'POST',
                 '/api/rest/latest/opportunities',
@@ -117,14 +137,18 @@ class PrmAdapter
                 ]
             );
         } catch (ClientException $exception) {
+            $this->logger->error($exception->getResponse()->getBody()->getContents());
             throw new PrmException($exception->getMessage());
         } catch (ServerException $exception) {
+            $this->logger->error($exception->getResponse()->getBody()->getContents());
             throw new PrmException($exception->getMessage());
         }
 
         if ($response->getStatusCode() != 200 and $response->getStatusCode() != 201) {
+            $this->logger->error($response->getBody()->getContents());
             throw new PrmException('OPPORTUNITY_CREATE_ERROR', 500);
         }
+        $this->logger->info('Opportunity created');
     }
 
     protected function buildContactRequestBody(Contact $contact): array

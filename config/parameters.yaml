@@ -1,5 +1,6 @@
 parameters:
     locale: 'en_US'
+    logs_path: '%kernel.logs_dir%'
     ar:
         contributor_types:
             'Sociedad de Responsabilidad limitada ': 'Sociedad de Responsabilidad limitada '

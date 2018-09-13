@@ -2,6 +2,6 @@ monolog:
     handlers:
         main:
             type: stream
-            path: "%logs_path%/%kernel.environment%.log"
+            path: '%env(resolve:LOG_PATH)%'
             level: debug
             channels: ["!event"]

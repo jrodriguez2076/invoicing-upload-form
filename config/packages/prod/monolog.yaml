@@ -9,7 +9,7 @@ monolog:
                 - ^/
         nested:
             type: stream
-            path: "%logs_path%/%kernel.environment%.log"
+            path: '%env(resolve:LOG_PATH)%'
             level: debug
             formatter: Linio\Log\LinioStandardsFormatter
         console:
@@ -18,7 +18,7 @@ monolog:
             channels: ["!event", "!doctrine"]
         deprecation:
             type: stream
-            path: "%logs_path%/%kernel.environment%.deprecations.log"
+            path: '%env(resolve:LOG_PATH)%.deprecations.log'
         deprecation_filter:
             type: filter
             handler: deprecation

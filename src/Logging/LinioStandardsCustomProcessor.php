@@ -6,7 +6,7 @@ namespace App\Logging;
 
 use Symfony\Component\HttpFoundation\RequestStack;
 
-class RequestIdMonologProcessor
+class LinioStandardsCustomProcessor
 {
     /**
      * @var RequestStack
@@ -27,13 +27,16 @@ class RequestIdMonologProcessor
     {
         // Ensure we have a request (maybe we're in a console command)
         if (!$this->requestStack->getCurrentRequest()) {
-            $record['extra']['request_id'] = bin2hex(random_bytes(10));
+            $record['extra']['request_id'] = uniqid('', true);
+            $record['extra']['store'] = 'UNKNOWN';
 
             return $record;
         }
 
-        $record['extra']['request_id'] = $this->requestStack->getMasterRequest()->headers->get('X-Request-ID');
-        $record['extra']['store'] = $this->requestStack->getMasterRequest()->get('store');
+        $request = $this->requestStack->getCurrentRequest();
+
+        $record['extra']['request_id'] = $request->headers->get('X-Request-ID', uniqid('', true));
+        $record['extra']['store'] = $request->getRequestUri() != '/' ? trim($request->getRequestUri(), '/') : 'UNKNOWN';
 
         return $record;
     }

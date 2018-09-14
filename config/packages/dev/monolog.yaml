@@ -5,6 +5,7 @@ monolog:
             path: '%env(resolve:LOG_PATH)%/%kernel.environment%.log'
             level: debug
             channels: ["!event"]
+            formatter: Linio\Log\LinioStandardsFormatter
         # uncomment to get logging in your browser
         # you may have to allow bigger header sizes in your Web server configuration
         #firephp:

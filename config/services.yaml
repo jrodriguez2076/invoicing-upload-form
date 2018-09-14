@@ -46,7 +46,7 @@ services:
             - { name: kernel.event_listener, event: kernel.request, priority: 100 }
             - { name: kernel.event_listener, event: kernel.response }
 
-    App\Logging\RequestIdMonologProcessor:
+    App\Logging\LinioStandardsCustomProcessor:
         tags:
             - { name: monolog.processor }
 

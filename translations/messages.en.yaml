@@ -99,6 +99,7 @@ Submit: Submit
 CONTACT_CREATE_ERROR: There was an error processing the information, please try again later.
 OPPORTUNITY_CREATE_ERROR: There was an error processing the information, please try again later.
 ACCOUNT_CREATE_ERROR: There was an error processing the information, please try again later.
+GENERAL_ERROR: There was an error processing the information, please try again later.
 MANDATORY_FIELD: This field is mandatory.
 THANKS_MESSAGE: 'Thanks for your interest in selling with us'
 SUCCESS_MESSAGE: 'We will review your request and we will be in touch with you through the email that you provided.'

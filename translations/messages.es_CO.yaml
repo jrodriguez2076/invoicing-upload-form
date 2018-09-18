@@ -19,8 +19,8 @@ Warehouse postal code: Código DANE
 Operative check legally constituted: Empresa legalmente constituída
 Operative check invoices: En capacidad de emitir facturas al cliente final
 phone_number_caption: 'Cod.País  – Teléfono. Ej: 57 - 333 44 44'
-legal_name_caption: Nombre legal de quien se inscribió en Linio (empresa o persona) EN EL MISMO ORDEN EN QUE APARECE EN EL RUT
-legal_city_caption: ''
+legal_name_caption: Nombre legal de quien se inscribió en Linio (empresa o persona) En el mismo orden en que aparece en el RUT.
+legal_city_caption: 'Recuerda que si tu departamento es Bogotá, en municipio debe ir Bogotá.'
 legal_postal_code_caption: ''
 fiscal_id_number_caption: 'Sólo usa números. NO Incluyas el dígito de verificación (el que está después de "-" en tu N.I.T.) Por ejemplo: Si tu N.I.T. es 123456789-0, coloca sólo 123456789'
 fiscal_id_additional_doc_caption: ''
@@ -29,7 +29,8 @@ id_additional_doc_caption: Por las dos caras, con suficiente nitidez
 bank_code_caption: ''
 bank_registration_number_caption: Debe coincidir con el R.U.T de la Razón Social
 bank_iban_caption: ''
-bank_certificate_caption: ''
+bank_certificate_caption: 'Vigencia de los últimos 3 meses y la razón social debe coincidir con la razón social del R.U.T'
 warehouse_address_caption: Calle en la cual se encuentra el depósito de tus productos
 warehouse_phone_caption: 'Cod.País  – Teléfono. Ej: 57 - 333 44 44'
 warehouse_postal_code_caption: 'Sólo usa números (Ej. 4588)'
+warehouse_city_caption: 'Recuerda que si tu departamento es Bogotá, en municipio debe ir Bogotá.'

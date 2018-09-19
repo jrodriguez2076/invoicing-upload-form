@@ -1,5 +1,5 @@
 index:
-    path: /{store}
-    controller: App\Controller\SellerSignUpController::index
-    defaults:
-        store: international
+  path: /{store}
+  controller: App\Controller\SellerSignUpController::index
+  defaults:
+    store: international

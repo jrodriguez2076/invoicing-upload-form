@@ -1,1 +1,8 @@
 * @LinioIT/relationship-management
+/.env.dist @LinioIT/DevOps @nesl247
+/.dockerignore @LinioIT/DevOps @nesl247
+/docker/ @LinioIT/DevOps @nesl247
+/docker-compose* @LinioIT/DevOps @nesl247
+/config/deploy @LinioIT/DevOps @nesl247
+/Jenkinsfile @LinioIT/DevOps @nesl247
+/Rakefile @LinioIT/DevOps @nesl247

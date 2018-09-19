@@ -1,4 +1,8 @@
 /.idea
+/docker-compose.override.yml
+/node_modules
+/yarn-error.log
+
 ###> symfony/framework-bundle ###
 /.env
 /public/bundles/

@@ -1,33 +1,33 @@
 body {
-    background-color: rgba(255,153,51,1.00);
-    font-size: .9rem;
+  background-color: rgba(255, 153, 51, 1);
+  font-size: 0.9rem;
 }
 
 .form-control {
-    font-size: .9rem;
+  font-size: 0.9rem;
 }
 .container {
-    background-color: white;
-    border-radius: 25px;
-    padding: 30px 30px 30px 30px;
+  background-color: white;
+  border-radius: 25px;
+  padding: 30px 30px 30px 30px;
 }
 .logo-image {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 30%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 30%;
 }
 .logo-container {
-    vertical-align: middle;
+  vertical-align: middle;
 }
 .custom-file-input ~ .custom-file-label::after {
-    content: "Elegir archivo";
+  content: 'Elegir archivo';
 }
 
 label.required:after {
-    content: " * ";
+  content: ' * ';
 }
 
 .account-hunter {
-    text-align: right;
+  text-align: right;
 }

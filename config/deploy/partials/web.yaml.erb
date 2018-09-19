@@ -1,0 +1,63 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: seller-signup-form
+spec:
+  replicas: <%= replicas %>
+  template:
+    metadata:
+      labels:
+        k8s.linio.com/app: seller-signup-form
+        k8s.linio.com/environment: <%= ENV['ENVIRONMENT'] %>
+    spec:
+      nodeSelector:
+        k8s.linio.com/environment: <%= ENV['ENVIRONMENT'] %>
+        k8s.linio.com/group: web
+      containers:
+        - name: php
+          image: 137361304112.dkr.ecr.us-east-1.amazonaws.com/seller-signup-form-php:<%= current_sha %>
+          envFrom:
+            - secretRef:
+                name: parameters
+        - name: nginx
+          image: 137361304112.dkr.ecr.us-east-1.amazonaws.com/seller-signup-form-nginx:<%= current_sha %>
+          ports:
+            - containerPort: 80
+            - containerPort: 1443
+          env:
+            - name: NGINX_HOST
+              value: seller-signup-form.<%= domain %>
+            - name: PHP_FPM_HOST
+              value: localhost
+          envFrom:
+            - secretRef:
+                name: parameters
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: seller-signup-form
+  namespace: seller-signup-form-<%= ENV['ENVIRONMENT'] %>
+  labels:
+    k8s.linio.com/app: seller-signup-form
+    k8s.linio.com/environment: <%= ENV['ENVIRONMENT'] %>
+  annotations:
+    dns.alpha.kubernetes.io/external: seller-signup-form.<%= domain %>
+    service.beta.kubernetes.io/aws-load-balancer-additional-resource-tags: Application=seller-signup-form,Environment=<%= ENV['ENVIRONMENT'] %>,CostCenter=regional,CostDepartment=it
+    service.beta.kubernetes.io/aws-load-balancer-backend-protocol: http
+    service.beta.kubernetes.io/aws-load-balancer-internal: 0.0.0.0/0
+    service.beta.kubernetes.io/aws-load-balancer-ssl-cert: <%= elbCertificateArn %>
+    service.beta.kubernetes.io/aws-load-balancer-ssl-ports: https
+spec:
+  type: LoadBalancer
+  ports:
+    - name: http
+      port: 80
+    - name: https
+      port: 443
+      targetPort: 1443
+  selector:
+    k8s.linio.com/app: seller-signup-form
+    k8s.linio.com/environment: <%= ENV['ENVIRONMENT'] %>

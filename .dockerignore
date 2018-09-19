@@ -1,0 +1,13 @@
+.git
+/var/cache
+/var/log
+/.env
+/.php_cs.cache
+/node_modules
+/docker-compose.override.yml
+/build
+/.bundle
+/deploy
+/reports
+/yarn-error.log
+/vendor

@@ -1,0 +1,19 @@
+version: '3.7'
+services:
+  php:
+    volumes:
+      - .:/application
+    environment:
+      LINIO_ENV: local
+      XDEBUG_CONFIG: remote_host=host.docker.internal
+
+  nginx:
+    ports:
+      - '8014:1443'
+    environment:
+      VIRTUAL_HOST: seller-signup-form.localhost
+      VIRTUAL_PORT: 1443
+      NGINX_HOST: seller-signup-form.localhost
+      PHP_FPM_HOST: php
+    volumes:
+      - .:/application

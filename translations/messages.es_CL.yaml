@@ -16,15 +16,15 @@ Warehouse postal code: Número de calle (sólo valores numéricos)
 Warehouse city: Por favor, indica la provincia desde la cual despacharás tus productos
 Operative check legally constituted: Empresa legalmente constituída
 Operative check invoices: En capacidad de emitir facturas al cliente final
-phone_number_caption: "Cod.País  – Teléfono. Ej: 56 – 9 – 2 33336754"
+phone_number_caption: 'Cod.País  – Teléfono. Ej: 56 – 9 – 2 33336754'
 legal_name_caption: Nombre legal de quien se inscribió en Linio (empresa o persona)
-fiscal_id_number_caption: "Debe ser escrito sin guiones"
+fiscal_id_number_caption: 'Debe ser escrito sin guiones'
 legal_postal_code_caption: Sólo usa números (Ej. 4588)
-fiscal_id_additional_doc_caption: "Para poder vender debes emitir factura de forma obligatoria"
-bank_code_caption: ""
+fiscal_id_additional_doc_caption: 'Para poder vender debes emitir factura de forma obligatoria'
+bank_code_caption: ''
 bank_registration_number_caption: Debe coincidir con el R.U.T de la Razón Social
-bank_iban_caption: ""
+bank_iban_caption: ''
 warehouse_address_caption: Calle en la cual se encuentra el depósito de tus productos
-warehouse_phone_caption: "Cod.País  – Teléfono. Ej: 56 – 9 – 2 33336754"
+warehouse_phone_caption: 'Cod.País  – Teléfono. Ej: 56 – 9 – 2 33336754'
 warehouse_postal_code_caption: Sólo usa números (Ej. 4588)
-legal_city_caption: ""
+legal_city_caption: ''

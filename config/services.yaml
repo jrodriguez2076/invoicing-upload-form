@@ -38,9 +38,9 @@ services:
       - '%env(ORO_PRM_CLIENT_ID)%'
       - '%env(ORO_PRM_CLIENT_SECRET)%'
 
-  ? App\Event\Subscriber\LocaleSubscriber
+  App\Event\Subscriber\LocaleSubscriber: ~
 
-  ? Linio\Log\LinioStandardsFormatter
+  Linio\Log\LinioStandardsFormatter: ~
 
   App\Event\Listener\RequestIdListener:
     tags:

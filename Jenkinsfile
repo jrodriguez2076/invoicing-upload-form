@@ -81,9 +81,6 @@ pipeline {
                     "lint:prettier": {
                         sh "docker-compose -f docker-compose.cli.yml run --rm -v \${PWD}:/application --name lint-misc-" + shortCommit + " yarn lint:check"
                     },
-                    "test:php": {
-                        sh "IMAGE_TAG=" + shortCommit + " docker-compose run --rm -e LINIO_ENV=production --name test-php-" + shortCommit + " php vendor/bin/phpunit"
-                    },
                     "lint:php": {
                         sh "IMAGE_TAG=" + shortCommit + " docker-compose run --rm -e LINIO_ENV=production --name lint-php-" + shortCommit + " php composer lint:check"
                     },

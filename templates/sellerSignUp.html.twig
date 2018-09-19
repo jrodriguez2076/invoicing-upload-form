@@ -57,22 +57,13 @@
             {% endif %}
             {{ form_row(form.account.legalRepresentative) }}
             {{ form_row(form.account.fiscalIdNumber) }}
-            <div class="col-12">
-              {{ 'Fiscal id additional doc'|trans }}
-              {{ form_row(form.account.fiscalIdAdditionalDoc) }}
-            </div>
-            <div class="col-12">
-              {% if form.account.logisticDocument is defined %}
-                {{ 'Logistic document'|trans }}
-                {{ form_row(form.account.logisticDocument) }}
-              {% endif %}
-            </div>
-            <div class="col-12">
-              {% if form.account.idAdditionalDoc is defined %}
-                {{ 'Id additional doc'|trans }}
-                {{ form_row(form.account.idAdditionalDoc) }}
-              {% endif %}
-            </div>
+            {{ form_row(form.account.fiscalIdAdditionalDoc) }}
+            {% if form.account.logisticDocument is defined %}
+              {{ form_row(form.account.logisticDocument) }}
+            {% endif %}
+            {% if form.account.idAdditionalDoc is defined %}
+              {{ form_row(form.account.idAdditionalDoc) }}
+            {% endif %}
             {% if form.account.financeContactName is defined %}
               {{ form_row(form.account.financeContactName) }}
             {% endif %}
@@ -102,9 +93,6 @@
             {% endif %}
             {{ form_row(form.account.bankIban) }}
             {% if form.account.bankCertificate is defined %}
-              <div class="col-12">
-                {{ 'Bank certificate'|trans }}
-              </div>
               {{ form_row(form.account.bankCertificate) }}
             {% endif %}
           </div>

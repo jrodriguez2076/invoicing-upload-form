@@ -93,6 +93,7 @@ email_caption: Ten en cuenta que no está permitida la palabra "Linio" en el cor
 account_name_caption: Elige un nombre de fantasía que represente a tu comercio
 phone_number_caption: 'Cod.País  – Teléfono. Ej: 51 - 1 333 44 44'
 legal_country_caption: ''
+warehouse_city_caption: ''
 Submit: Enviar
 CONTACT_CREATE_ERROR: Hubo un error al procesar la información, intente nuevamente más tarde.
 OPPORTUNITY_CREATE_ERROR: Hubo un error al procesar la información, intente nuevamente más tarde.

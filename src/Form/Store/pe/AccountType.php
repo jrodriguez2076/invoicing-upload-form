@@ -99,21 +99,21 @@ class AccountType extends AbstractType
                 'fiscalIdAdditionalDoc',
                 FileType::class,
                 [
-                    'label_format' => 'fiscal_id_additional_doc_caption',
+                    'help' => 'fiscal_id_additional_doc_caption',
                 ]
             )
             ->add(
                 'logisticDocument',
                 FileType::class,
                 [
-                    'label_format' => 'logistic_document_caption',
+                    'help' => 'logistic_document_caption',
                 ]
             )
             ->add(
                 'idAdditionalDoc',
                 FileType::class,
                 [
-                    'label_format' => 'id_additional_doc_caption',
+                    'help' => 'id_additional_doc_caption',
                 ]
             )
             //Section 3
@@ -158,7 +158,7 @@ class AccountType extends AbstractType
                 'bankCertificate',
                 FileType::class,
                 [
-                    'label_format' => 'bank_certificate_caption',
+                    'help' => 'bank_certificate_caption',
                 ]
             )
             //Section 4

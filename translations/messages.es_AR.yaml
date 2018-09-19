@@ -43,14 +43,15 @@ fiscal_id_number_caption: ''
 fiscal_id_additional_doc_caption: ''
 id_additional_doc_caption: ''
 bank_registration_number_caption: Debe coincidir con el CUIT de la razón social
-bank_certificate_caption: (Vigencia no mayor a 3 meses, debe salir el código completo)
+bank_certificate_caption: 'No mayor a 3 meses, debe contener el código completo, nombre del banco, razón social o nombre del titular y fecha). También puedes adjuntar el extracto bancario actualizado'
 warehouse_address_caption: Calle en la cual se encuentra el depósito de tus productos
 warehouse_address2_caption: 'Ej: 2772'
-warehouse_phone_caption: 'Cod.País - Cod.Área – Teléfono. Ej: 54-11-69792755'
+warehouse_phone_caption: 'Cod.País - Cod.Área – Teléfono. Ej: 54-9xx-69792755'
 warehouse_mode_caption: Si eliges Pickup, retiraremos los productos de tu depósito, y si eliges Dropoff despacharás los productos en la sucursal más cercana de nuestros proveedores logísticos aliados
 legal_city_caption: 'Ej: CABA|CABA , ITUZAINGO|BSAS'
-phone_number_caption: 'Cod.País - Cod.Área – Teléfono. Ej: 54-11-69792755'
+phone_number_caption: 'Cod.País - Cod.Área – Teléfono. Ej: 54-9xx-69792755'
 legal_postal_code_caption: Código postal del domicilio de la razón social
 account_name_caption: Elegí un nombre de fantasía que represente a tu comercio
 bank_iban_caption: ''
+bank_code_caption: ''
 

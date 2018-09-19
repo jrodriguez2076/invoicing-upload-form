@@ -1,6 +1,6 @@
 Legal address2: Distrito
 Fiscal id number: RUC
-Fiscal id additional doc: Ficha RUC (con representante legal y dirección visibles)
+Fiscal id additional doc: Ficha RUC completa
 Logistic document: Guía de Remisión
 Id additional doc: DNI del representante legal
 Bank acct holder: Titular de la Cuenta (Debe coincidir con la persona física o jurídica)
@@ -8,25 +8,25 @@ Bank acct number: Número de Cuenta (EN SOLES)
 Bank code: Tipo de Cuenta
 Bank registration number: Código de Cuenta Interbancario
 Bank iban: DNI o RUC del titular de la cuenta
-Bank certificate: Documento bancario (Referencia bancaria firmada y sellada por la institución bancaria con el Código de Cuenta Interbancario Visible ó Estado de cuentas con el titular y Código de cuenta Interbancario visibles. Ambos documentos deben tener fecha visible, y estar emitidos hace menos de seis meses.)
+Bank certificate: Documento bancario
 Warehouse address: Calle, avenida o Jirón en que se encuentra tu almacén
 Warehouse address extra data: Número (del lugar, interior, departamento, etc)
 Warehouse address extra data2: Urbanización en la que se encuentra tu almacén
 Warehouse address extra data3: Distrito en el cual se encuentra tu almacén
 Warehouse address extra data4: Punto de referencia de tu almacén
 Warehouse city: Ciudad (Por ahora, sólo aceptamos registros de Lima y Callao)
-legal_name_caption: Nombre legal de quien se inscribió en Linio (empresa o persona) EN EL MISMO ORDEN EN QUE APARECE EN EL RUC
+legal_name_caption: Colocar el nombre legal de quien se inscribirá en Linio (empresa o persona), en el mismo orden que aparece en el RUC.
 legal_address_caption: Domicilio fiscal de la razón social. Por ahora sólo aceptamos registros de Lima y Callao
 legal_city_caption: ''
 legal_postal_code_caption: ''
 fiscal_id_number_caption: ''
-fiscal_id_additional_doc_caption: ''
+fiscal_id_additional_doc_caption: 'Con representante legal y dirección visible'
 id_additional_doc_caption: Por las dos caras, debe coincidir con la información de la Ficha RUC
-logistic_document_caption: ''
+logistic_document_caption: 'Debe tener visible la dirección de despacho.'
 bank_code_caption: ''
-bank_registration_number_caption: Todos los dígitos de tu CCI
+bank_registration_number_caption: 'Todos los dígitos de tu CCI (preferiblemente sin guiones)'
 bank_iban_caption: ''
-bank_certificate_caption: ''
+bank_certificate_caption: 'Referencia bancaria (firmada y sellada por la institución) o estado de cuenta bancario. El documento adjunto debe tener Código de Cuenta Interbancario visible, razón social, fecha legible y estar emitido hace menos de seis meses. También funcionaría la constancia actualizada de apertura de cuenta y que contenga el CCI'
 warehouse_address_extra_data_caption: 'Sólo números. Ej: 3455'
 warehouse_address_extra_data2_caption: ''
 warehouse_address_extra_data3_caption: ''

@@ -101,7 +101,7 @@ class AccountType extends AbstractType
                 'fiscalIdAdditionalDoc',
                 FileType::class,
                 [
-                    'label_format' => 'fiscal_id_additional_doc_caption',
+                    'help' => 'fiscal_id_additional_doc_caption',
                 ]
             )
             //Section 3

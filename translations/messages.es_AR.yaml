@@ -29,7 +29,7 @@ Operative check legally constituted: Empresa legalmente constituída
 Operative check shipping agreement: Estoy dispuesto a utilizar las guías automáticas que genera Linio para entregar mis productos
 Operative check invoices: En capacidad de emitir facturas al cliente final
 Earnings estimate: Indicanos (en USD) cuánto estimas vender en Linio los primeros doce meses
-Website: ¿Contás con página web propia? Indicanos su dirección:
+Website: '¿Contás con página web propia? Indicanos su dirección:'
 Other stores list: ¿Vendés tus productos en otro e-commerce?
 Other store name: (Otros) Por favor, indicanos el nombre del e-commerce
 Other stores address: Escribí la dirección a tu tienda virtual en este espacio, por favor
@@ -54,4 +54,3 @@ legal_postal_code_caption: Código postal del domicilio de la razón social
 account_name_caption: Elegí un nombre de fantasía que represente a tu comercio
 bank_iban_caption: ''
 bank_code_caption: ''
-

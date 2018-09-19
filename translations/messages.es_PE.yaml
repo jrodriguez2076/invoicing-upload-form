@@ -17,19 +17,19 @@ Warehouse address extra data4: Punto de referencia de tu almacén
 Warehouse city: Ciudad (Por ahora, sólo aceptamos registros de Lima y Callao)
 legal_name_caption: Colocar el nombre legal de quien se inscribirá en Linio (empresa o persona), en el mismo orden que aparece en el RUC.
 legal_address_caption: Domicilio fiscal de la razón social. Por ahora sólo aceptamos registros de Lima y Callao
-legal_city_caption: ''
-legal_postal_code_caption: ''
-fiscal_id_number_caption: ''
-fiscal_id_additional_doc_caption: 'Con representante legal y dirección visible'
+legal_city_caption: ""
+legal_postal_code_caption: ""
+fiscal_id_number_caption: ""
+fiscal_id_additional_doc_caption: "Con representante legal y dirección visible"
 id_additional_doc_caption: Por las dos caras, debe coincidir con la información de la Ficha RUC
-logistic_document_caption: 'Debe tener visible la dirección de despacho.'
-bank_code_caption: ''
-bank_registration_number_caption: 'Todos los dígitos de tu CCI (preferiblemente sin guiones)'
-bank_iban_caption: ''
-bank_certificate_caption: 'Referencia bancaria (firmada y sellada por la institución) o estado de cuenta bancario. El documento adjunto debe tener Código de Cuenta Interbancario visible, razón social, fecha legible y estar emitido hace menos de seis meses. También funcionaría la constancia actualizada de apertura de cuenta y que contenga el CCI'
-warehouse_address_extra_data_caption: 'Sólo números. Ej: 3455'
-warehouse_address_extra_data2_caption: ''
-warehouse_address_extra_data3_caption: ''
-warehouse_address_extra_data4_caption: 'Ayudanos a ubicar tu almacén cuando Linio vaya a buscar tus productos para entregarlos.'
-warehouse_phone_caption: 'Cod.País  – Teléfono. Ej: 51 - 1 333 44 44'
-warehouse_postal_code_caption: '5 dígitos numéricos. Ej: 07001. Consulta el tuyo aquí: http://www.codigopostal.gob.pe/comoBuscar.html'
+logistic_document_caption: "Debe tener visible la dirección de despacho."
+bank_code_caption: ""
+bank_registration_number_caption: "Todos los dígitos de tu CCI (preferiblemente sin guiones)"
+bank_iban_caption: ""
+bank_certificate_caption: "Referencia bancaria (firmada y sellada por la institución) o estado de cuenta bancario. El documento adjunto debe tener Código de Cuenta Interbancario visible, razón social, fecha legible y estar emitido hace menos de seis meses. También funcionaría la constancia actualizada de apertura de cuenta y que contenga el CCI"
+warehouse_address_extra_data_caption: "Sólo números. Ej: 3455"
+warehouse_address_extra_data2_caption: ""
+warehouse_address_extra_data3_caption: ""
+warehouse_address_extra_data4_caption: "Ayudanos a ubicar tu almacén cuando Linio vaya a buscar tus productos para entregarlos."
+warehouse_phone_caption: "Cod.País  – Teléfono. Ej: 51 - 1 333 44 44"
+warehouse_postal_code_caption: "5 dígitos numéricos. Ej: 07001. Consulta el tuyo aquí: http://www.codigopostal.gob.pe/comoBuscar.html"

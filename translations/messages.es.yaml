@@ -12,16 +12,16 @@ section_5_introduction: En Linio estamos evolucionando hacia un Marketplace Prem
 submit: Enviar información
 account_hunter: 'Registrado por: '
 Choose an option: Elige una opción
-First name: Nombre del encargado de la cuenta en Linio:
-Last name: Apellido del encargado de la cuenta en Linio:
-Phone number: Teléfono (separa el número de área con un guión):
-Account name: Nombre comercial de la tienda en Linio:
-Terms_and_conditions: Términos y condiciones:
+First name: 'Nombre del encargado de la cuenta en Linio:'
+Last name: 'Apellido del encargado de la cuenta en Linio:'
+Phone number: 'Teléfono (separa el número de área con un guión):'
+Account name: 'Nombre comercial de la tienda en Linio:'
+Terms_and_conditions: 'Términos y condiciones:'
 Accept manifest: Bajo protesta de decir verdad manifiesto que los documentos y datos aportados en mi cuenta cumplen con los requisitos legales aplicables vigentes, liberando a Linio de cualquier responsabilidad que de estos pueda surgir.
 Accept terms and conditions: Acepto los Términos y Condiciones
 Accept commissions and payment policy: Acepto las Comisiones y Políticas de pagos
-Email: Correo electrónico:
-Repeat Email: Repite tu correo electrónico:
+Email: 'Correo electrónico:'
+Repeat Email: 'Repite tu correo electrónico:'
 Legal name: Razón Social
 Contributor type: Tipo de sociedad
 Legal address: Dirección
@@ -48,7 +48,7 @@ Warehouse address: Calle y número, incluir Colonia
 Warehouse address2: Estado
 Warehouse city: Ciudad o Municipio
 Warehouse city2: Ciudad o Municipio
-Warehouse phone: Teléfono (separa el número de área con un guión):
+Warehouse phone: 'Teléfono (separa el número de área con un guión):'
 Warehouse postal code: Código Postal
 Warranty contact: Email para tramitar garantías
 Main category: Indícanos a qué categoría pertenecen la mayoría de los productos que deseas vender en Linio

@@ -19,9 +19,9 @@ account_hunter: 'Hunted by: '
 restricted_products: Restricted products
 see_terms_and_conditions: See terms and conditions
 see_commissions_and_payment_policy: Show Fees and Payment Policy
-First name: Primary Contact First Name:
-Last name: Primary Contact Last Name:
-Phone number: Mobile phone number:
+First name: 'Primary Contact First Name:'
+Last name: 'Primary Contact Last Name:'
+Phone number: 'Mobile phone number:'
 Secondary phone: Office phone number
 Social networks: Skype Id
 Account name: Linio Shop Name
@@ -29,8 +29,8 @@ Terms_and_conditions: 'Terms and conditions:'
 Accept terms and conditions: I accept the Terms and Conditions
 Accept commissions and payment policy: I accept the Fees and Payment Policy
 Other stores address: URL storefront in other platforms
-Email: Email address:
-Repeat Email: Confirm your Email address:
+Email: 'Email address:'
+Repeat Email: 'Confirm your Email address:'
 Legal name: Name of legal entity (Legal Name)
 Marketing invest: Are you interested on investing in Co-Marketing?
 Earnings estimate: What are your annual estimated earnings in other marketplaces? (In USD)
@@ -103,5 +103,3 @@ GENERAL_ERROR: There was an error processing the information, please try again l
 MANDATORY_FIELD: This field is mandatory.
 THANKS_MESSAGE: 'Thanks for your interest in selling with us'
 SUCCESS_MESSAGE: 'We will review your request and we will be in touch with you through the email that you provided.'
-
-

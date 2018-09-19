@@ -8,15 +8,15 @@ section_6_title: Cuéntanos acerca de tu catálogo
 section_7_title: Cuéntanos acerca de tu experiencia Online
 section_8_title: Cuéntanos acerca de las marcas que vendes
 section_5_introduction: En Linio estamos evolucionando hacia un Marketplace Premium que responda a las exigencias del eCommerce en nuestro país, el cual nos demanda ser comercial y operativamente impecables para ofrecer la mejor experiencia de compra a nuestros clientes. Para lograrlo, necesitamos unir esfuerzos con Socios que tengan esta misma visión y estén dispuestos a afrontar los retos y rebasar las expectativas de esta industria. ¿Eres ese socio? Cuéntanos sobre ti
-Account manager name: Nombre y Apellido del encargado de la cuenta en Linio:
-Phone number: Teléfono (con clave LADA):
-Account name: Nombre comercial de la tienda en Linio:
-Terms_and_conditions: Términos y condiciones:
+Account manager name: 'Nombre y Apellido del encargado de la cuenta en Linio:'
+Phone number: 'Teléfono (con clave LADA):'
+Account name: 'Nombre comercial de la tienda en Linio:'
+Terms_and_conditions: 'Términos y condiciones:'
 Accept manifest: Manifiesto bajo protesta de decir verdad manifiesto que los documentos y datos aportados en mi cuenta cumplen con los requisitos legales aplicables vigentes, liberando a Linio de cualquier responsabilidad que de estos pueda surgir.
 Accept terms and conditions: Acepto los Términos y Condiciones
 Accept commissions and payment policy: Acepto las Comisiones y Políticas de pagos
-Email: Correo electrónico:
-Repeat Email: Repite tu correo electrónico:
+Email: 'Correo electrónico:'
+Repeat Email: 'Repite tu correo electrónico:'
 Legal name: Razón Social
 Contributor type: Tipo de sociedad
 Legal address: Calle y número, incluir Colonia (No usar punto(.), coma(,), gato(#), punto y coma(;), etc.
@@ -85,4 +85,3 @@ warehouse_postal_code_caption: Sólo usa números (Ej. 67214)
 email_caption: Ten en cuenta que no está permitida la palabra "Linio" en el correo electrónico
 account_name_caption: Elige un nombre de fantasía que represente a tu comercio
 Submit: Enviar
-

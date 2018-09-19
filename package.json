@@ -1,7 +1,7 @@
 {
   "scripts": {
     "lint": "prettier --write \"./**/*.{js,ts,json,css,scss,md,yml,yaml}\"",
-    "lint:check": "prettier --list-different \"./**/*.{js,ts,json,css,scss,md,yml,yaml}\"",
+    "lint:check": "prettier --list-different \"./**/*.{js,ts,json,css,scss,md,yml,yaml}\""
   },
   "husky": {
     "hooks": {

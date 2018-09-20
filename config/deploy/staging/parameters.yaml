@@ -7,5 +7,5 @@ data:
   APP_SECRET: '46934c34e21e0d3247a84c0cedcadc60edf719fb'
   ORO_PRM_BASE_URL: 'https://prm01.linio-staging.com/'
   ORO_PRM_CLIENT_ID: 'seller-signup-form'
-  ORO_PRM_CLIENT_SECRET: 'df4bbec9bf418243b11eefb7c5599a27942d8210'
+  ORO_PRM_CLIENT_SECRET: 'e7d135476331c4428153301dee35e810e5d4aebe'
   LOG_PATH: '/tmp/stdout'

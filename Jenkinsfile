@@ -107,7 +107,7 @@ pipeline {
 
             steps {
                 sh "docker tag 137361304112.dkr.ecr.us-east-1.amazonaws.com/seller-signup-form-php:" + shortCommit + " 137361304112.dkr.ecr.us-east-1.amazonaws.com/seller-signup-form-php:latest"
-                sh "docker-compose -f docker-compose.cli.yml push"
+                sh "docker-compose -f docker-compose.yml -f docker-compose.cli.yml push"
             }
         }
 

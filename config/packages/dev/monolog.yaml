@@ -2,7 +2,7 @@ monolog:
   handlers:
     main:
       type: stream
-      path: '%env(resolve:LOG_PATH)%/%kernel.environment%.log'
+      path: '%env(resolve:LOG_PATH)%.log'
       level: debug
       channels: ['!event']
       formatter: Linio\Log\LinioStandardsFormatter

@@ -8,4 +8,4 @@ data:
   ORO_PRM_BASE_URL: 'https://prm01.linio-staging.com/'
   ORO_PRM_CLIENT_ID: 'seller-signup-form'
   ORO_PRM_CLIENT_SECRET: 'e7d135476331c4428153301dee35e810e5d4aebe'
-  LOG_PATH: '/linio/logs/seller-signup-form'
+  LOG_PATH: '/tmp/stdout'

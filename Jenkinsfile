@@ -14,21 +14,6 @@ pipeline {
     }
 
     stages {
-        stage("build:tools") {
-            when {
-                expression {
-                    env.BRANCH_NAME != "production"
-                }
-            }
-
-            steps {
-                sh "echo Pulling tools to save rebuilding"
-                sh "docker-compose -f docker-compose.cli.yml pull || true"
-                sh "echo Building node - php will be build in build:prod"
-                sh "docker-compose -f docker-compose.cli.yml build node"
-            }
-        }
-
         stage("build:prep") {
             when {
                 expression {
@@ -108,7 +93,7 @@ pipeline {
             steps {
                 sh "docker tag 137361304112.dkr.ecr.us-east-1.amazonaws.com/seller-signup-form-php:" + shortCommit + " 137361304112.dkr.ecr.us-east-1.amazonaws.com/seller-signup-form-php:latest"
                 sh "docker tag 137361304112.dkr.ecr.us-east-1.amazonaws.com/seller-signup-form-nginx:" + shortCommit + " 137361304112.dkr.ecr.us-east-1.amazonaws.com/seller-signup-form-nginx:latest"
-                sh "docker-compose -f docker-compose.yml -f docker-compose.cli.yml push"
+                sh "docker-compose -f docker-compose.yml push"
             }
         }
 

@@ -201,6 +201,7 @@ class AccountType extends AbstractType
                 'warehouseAddressExtraData4',
                 TextType::class,
                 [
+                    'required' => false,
                     'help' => 'warehouse_address_extra_data4_caption',
                 ]
             )
@@ -211,6 +212,13 @@ class AccountType extends AbstractType
                 [
                     'choices' => $this->sellerSignUpService->getWarehouseCities($store),
                     'placeholder' => 'Choose an option',
+                ]
+            )
+            ->add(
+                'warehouseReferencePoint',
+                TextType::class,
+                [
+                    'help' => 'warehouse_reference_point',
                 ]
             )
             ->add(

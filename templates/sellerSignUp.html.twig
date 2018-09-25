@@ -127,6 +127,9 @@
             {% if form.account.warehouseAddress2ExtraData2 is defined %}
               {{ form_row(form.account.warehouseAddress2ExtraData2) }}
             {% endif %}
+            {% if form.account.warehouseReferencePoint is defined %}
+              {{ form_row(form.account.warehouseReferencePoint) }}
+            {% endif %}
             {{ form_row(form.account.warehouseCity) }}
             {% if form.account.warehouseCity2 is defined %}
               {{ form_row(form.account.warehouseCity2) }}

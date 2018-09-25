@@ -161,6 +161,11 @@ class Account
     protected $warehouseMode = '';
 
     /**
+     * @var
+     */
+    protected $warehouseReferencePoint = '';
+
+    /**
      * @var string
      */
     protected $warrantyContact = '';
@@ -523,6 +528,16 @@ class Account
     public function setWarehouseMode(?string $warehouseMode): void
     {
         $this->warehouseMode = $warehouseMode;
+    }
+
+    public function getWarehouseReferencePoint(): ?string
+    {
+        return $this->warehouseReferencePoint;
+    }
+
+    public function setWarehouseReferencePoint(?string $warehouseReferencePoint): void
+    {
+        $this->warehouseReferencePoint = $warehouseReferencePoint;
     }
 
     public function getWarrantyContact(): ?string

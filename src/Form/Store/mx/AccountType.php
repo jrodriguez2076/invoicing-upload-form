@@ -157,6 +157,14 @@ class AccountType extends AbstractType
                     'help' => 'warehouse_postal_code_caption',
                 ]
             )
+            ->add(
+                'warehouseReferencePoint',
+                TextType::class,
+                [
+                    'required' => false,
+                    'help' => 'warehouse_reference_point',
+                ]
+            )
             ->add('warrantyContact', EmailType::class)
             ->add(
                 'fiscalIdNumber',

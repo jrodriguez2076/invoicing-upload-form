@@ -182,6 +182,14 @@ class AccountType extends AbstractType
                 ]
             )
             ->add(
+                'warehouseReferencePoint',
+                TextType::class,
+                [
+                    'required' => false,
+                    'help' => 'warehouse_reference_point',
+                ]
+            )
+            ->add(
                 'warehousePostalCode',
                 TextType::class,
                 [

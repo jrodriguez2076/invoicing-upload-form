@@ -30,6 +30,6 @@ bank_certificate_caption: 'Referencia bancaria (firmada y sellada por la institu
 warehouse_address_extra_data_caption: 'Sólo números. Ej: 3455'
 warehouse_address_extra_data2_caption: ''
 warehouse_address_extra_data3_caption: ''
-warehouse_address_extra_data4_caption: 'Ayudanos a ubicar tu almacén cuando Linio vaya a buscar tus productos para entregarlos.'
+warehouse_reference_point: 'Ayúdanos a ubicar tu almacén cuando Linio vaya a buscar tus productos para entregarlos.'
 warehouse_phone_caption: 'Cod.País  – Teléfono. Ej: 51 - 1 333 44 44'
 warehouse_postal_code_caption: '5 dígitos numéricos. Ej: 07001. Consulta el tuyo aquí: http://www.codigopostal.gob.pe/comoBuscar.html'

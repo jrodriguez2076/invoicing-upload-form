@@ -251,6 +251,7 @@ class PrmAdapter
             ['name' => 'account[warehousePostalCode]', 'contents' => $account->getWarehousePostalCode()],
             ['name' => 'account[warehouseCountry]', 'contents' => $account->getWarehouseCountry()],
             ['name' => 'account[warrantyContact]', 'contents' => $account->getWarrantyContact()],
+            ['name' => 'account[warehouseReferencePoint]', 'contents' => $account->getWarehouseReferencePoint()],
             ['name' => 'account[financeContactName]', 'contents' => $account->getFinanceContactName()],
             ['name' => 'account[financeContactMail]', 'contents' => $account->getFinanceContactMail()],
             ['name' => 'account[financeContactPhone]', 'contents' => $account->getFinanceContactPhone()],

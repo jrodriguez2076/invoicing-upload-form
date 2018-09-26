@@ -161,7 +161,7 @@ class Account
     protected $warehouseMode = '';
 
     /**
-     * @var
+     * @var string
      */
     protected $warehouseReferencePoint = '';
 

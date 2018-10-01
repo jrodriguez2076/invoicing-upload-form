@@ -1,4 +1,4 @@
-FROM 137361304112.dkr.ecr.us-east-1.amazonaws.com/docker-php:7.2-0.1 AS BUILD
+FROM 137361304112.dkr.ecr.us-east-1.amazonaws.com/docker-php:7.2-0.3
 
 WORKDIR /application
 
@@ -8,7 +8,7 @@ ARG GITHUB_TOKEN
 RUN test -n "${GITHUB_TOKEN}" && composer config -g github-oauth.github.com ${GITHUB_TOKEN} || true
 RUN composer install -o --no-scripts
 
-FROM 137361304112.dkr.ecr.us-east-1.amazonaws.com/docker-php:7.2-0.1
+FROM 137361304112.dkr.ecr.us-east-1.amazonaws.com/docker-php:7.2-0.3
 
 WORKDIR /application
 

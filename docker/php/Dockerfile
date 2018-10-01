@@ -1,6 +1,4 @@
-FROM 137361304112.dkr.ecr.us-east-1.amazonaws.com/docker-php:7.2-0.3
-
-WORKDIR /application
+FROM 137361304112.dkr.ecr.us-east-1.amazonaws.com/docker-php:7.2-0.3 AS BUILD
 
 COPY composer.json composer.lock ./
 
@@ -9,8 +7,6 @@ RUN test -n "${GITHUB_TOKEN}" && composer config -g github-oauth.github.com ${GI
 RUN composer install -o --no-scripts
 
 FROM 137361304112.dkr.ecr.us-east-1.amazonaws.com/docker-php:7.2-0.3
-
-WORKDIR /application
 
 COPY docker/php/php.ini /usr/local/etc/php/conf.d/overrides.ini
 

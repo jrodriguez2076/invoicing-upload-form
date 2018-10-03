@@ -35,11 +35,17 @@ class SellerSignUpController extends AbstractController
     public function index(Request $request, string $store): Response
     {
         $store = strtolower($store);
+        $slimForm = false;
 
         $hunter = $request->get('hunter', '');
+
+        if ($hunter) {
+            $slimForm = true;
+        }
+
         $sellerSignUp = new SellerSignUp();
         $form = $this->createForm(
-            SellerSignUpFormFactory::fromStore($store),
+            SellerSignUpFormFactory::fromStore($store, $slimForm),
             $sellerSignUp
         );
 
@@ -57,7 +63,7 @@ class SellerSignUpController extends AbstractController
                 $this->addFlash('error', 'GENERAL_ERROR');
 
                 return $this->render(
-                    FormTemplateFactory::fromStore($store),
+                    FormTemplateFactory::fromStore($store, $slimForm),
                     [
                         'form' => $form->createView(),
                         'hunter' => $hunter,
@@ -69,7 +75,7 @@ class SellerSignUpController extends AbstractController
         }
 
         return $this->render(
-            FormTemplateFactory::fromStore($store),
+            FormTemplateFactory::fromStore($store, $slimForm),
             [
                 'form' => $form->createView(),
                 'hunter' => $hunter,

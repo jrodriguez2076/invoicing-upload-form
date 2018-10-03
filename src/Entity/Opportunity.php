@@ -8,6 +8,8 @@ class Opportunity
 {
     public const ORGANIC_REGISTRATION_TYPE = 'Orgánica';
     public const HUNTED_REGISTRATION_TYPE = 'Hunteada';
+    public const HUNTED_FORM_SOURCE = 'Form Hunted';
+    public const FORM_SOURCE = 'Form';
 
     /**
      * @var bool

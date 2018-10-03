@@ -318,12 +318,14 @@ class PrmAdapter
                 'registrationType' => Opportunity::ORGANIC_REGISTRATION_TYPE,
                 'processingTime' => $opportunity->getProcessingTime(),
                 'surveyComment' => $opportunity->getSurveyComment(),
+                'source' => Opportunity::FORM_SOURCE,
             ],
         ];
 
         if (!empty($hunter)) {
             $requestBody['opportunity']['registrationType'] = Opportunity::HUNTED_REGISTRATION_TYPE;
             $requestBody['opportunity']['accountHunter'] = $hunter;
+            $requestBody['opportunity']['source'] = Opportunity::HUNTED_FORM_SOURCE;
         }
 
         return $requestBody;

@@ -44,9 +44,9 @@ class PrmAdapter
         $this->logger = $logger;
     }
 
-    public function createAccount(Account $account, Contact $contact, Opportunity $opportunity, string $store): int
+    public function createAccount(Account $account, Contact $contact, Opportunity $opportunity, string $store, $hunter): int
     {
-        $requestBody = $this->buildAccountRequestBody($account, $contact, $opportunity, $store);
+        $requestBody = $this->buildAccountRequestBody($account, $contact, $opportunity, $store, $hunter);
 
         try {
             $this->logger->info('Attempting to create account');
@@ -217,7 +217,7 @@ class PrmAdapter
         ];
     }
 
-    protected function buildAccountRequestBody(Account $account, Contact $contact, Opportunity $opportunity, string $store): array
+    protected function buildAccountRequestBody(Account $account, Contact $contact, Opportunity $opportunity, string $store, $hunter): array
     {
         $request = [
             ['name' => 'account[name]', 'contents' => $account->getAccountName()],
@@ -257,6 +257,7 @@ class PrmAdapter
             ['name' => 'account[financeContactPhone]', 'contents' => $account->getFinanceContactPhone()],
             ['name' => 'account[supplyGeography]', 'contents' => $account->getSupplyGeography()],
             ['name' => 'account[website]', 'contents' => $opportunity->getWebsite()],
+            ['name' => 'account[source]', 'contents' => Account::FORM_SOURCE],
         ];
 
         $bankCertificate = $account->getBankCertificate();
@@ -281,6 +282,10 @@ class PrmAdapter
         $logisticDocumentFileRequest = $this->getMultipartRequestFile($logisticDocument, 'logisticDocument');
         if (!empty($logisticDocumentFileRequest)) {
             $request[] = $logisticDocumentFileRequest;
+        }
+
+        if (!empty($hunter)) {
+            $request[] = ['name' => 'account[source]', 'contents' => Account::HUNTED_FORM_SOURCE];
         }
 
         return $request;
@@ -318,14 +323,12 @@ class PrmAdapter
                 'registrationType' => Opportunity::ORGANIC_REGISTRATION_TYPE,
                 'processingTime' => $opportunity->getProcessingTime(),
                 'surveyComment' => $opportunity->getSurveyComment(),
-                'source' => Opportunity::FORM_SOURCE,
             ],
         ];
 
         if (!empty($hunter)) {
             $requestBody['opportunity']['registrationType'] = Opportunity::HUNTED_REGISTRATION_TYPE;
             $requestBody['opportunity']['accountHunter'] = $hunter;
-            $requestBody['opportunity']['source'] = Opportunity::HUNTED_FORM_SOURCE;
         }
 
         return $requestBody;

@@ -770,7 +770,6 @@ parameters:
     'Colombia': 'co'
     'Mexico': 'mx'
     'Argentina': 'ar'
-    'Panama': 'pa'
     'Ecuador': 'ec'
   international_payment_methods:
     'Payoneer transfer': 'Payoneer transfer'

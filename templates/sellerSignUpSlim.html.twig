@@ -19,14 +19,129 @@
         </div>
         <div id="collapseOne">
           <div class="card-body row">
-            {{ form_row(form.account.legalName) }}
             {{ form_row(form.contact.firstName) }}
             {{ form_row(form.contact.lastName) }}
             {{ form_row(form.contact.phoneNumber) }}
-            {{ form_row(form.account.secondaryPhone) }}
             {{ form_row(form.account.accountName) }}
             {{ form_row(form.contact.email) }}
-            {{ form_row(form.opportunity.opportunityCountries) }}
+            <div class="col-12">
+              <h6>{{ 'Terms_and_conditions'|trans }}</h6>
+            </div>
+            <div class="col-12">
+              {{ form_row(form.contact.acceptManifest) }}
+              {{ form_row(form.contact.acceptTermsAndConditions) }}
+              {{ form_row(form.contact.acceptCommissionsAndPaymentPolicy) }}
+              <a href=""> Ver comisiones y políticas de pagos</a><br>
+              <a href=""> Ver términos y condiciones</a><br>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header">
+          <h5 class="mb-0">
+            {{ 'section_2_title' | trans }}
+          </h5>
+        </div>
+        <div id="collapseTwo">
+          <div class="card-body row">
+            {{ form_row(form.account.legalName) }}
+            {{ form_row(form.account.contributorType) }}
+            {{ form_row(form.account.legalAddress) }}
+            {{ form_row(form.account.legalAddress2) }}
+            {{ form_row(form.account.legalCity) }}
+            {{ form_row(form.account.legalCountry) }}
+            {{ form_row(form.account.legalPostalCode) }}
+            {% if form.account.economicActivity is defined %}
+              {{ form_row(form.account.economicActivity) }}
+            {% endif %}
+            {{ form_row(form.account.legalRepresentative) }}
+            {{ form_row(form.account.fiscalIdNumber) }}
+            {{ form_row(form.account.fiscalIdAdditionalDoc) }}
+            {% if form.account.logisticDocument is defined %}
+              {{ form_row(form.account.logisticDocument) }}
+            {% endif %}
+            {% if form.account.idAdditionalDoc is defined %}
+              {{ form_row(form.account.idAdditionalDoc) }}
+            {% endif %}
+            {% if form.account.financeContactName is defined %}
+              {{ form_row(form.account.financeContactName) }}
+            {% endif %}
+            {% if form.account.financeContactMail is defined %}
+              {{ form_row(form.account.financeContactMail) }}
+            {% endif %}
+            {% if form.account.financeContactPhone is defined %}
+              {{ form_row(form.account.financeContactPhone) }}
+            {% endif %}
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header">
+          <h5 class="mb-0">
+            {{ 'section_3_title' | trans }}
+          </h5>
+        </div>
+        <div id="collapseThree">
+          <div class="card-body row">
+            {{ form_row(form.account.bankAcctHolder) }}
+            {{ form_row(form.account.bankAcctNumber) }}
+            {{ form_row(form.account.bankName) }}
+            {{ form_row(form.account.bankCode) }}
+            {% if form.account.bankRegistrationNumber is defined %}
+              {{ form_row(form.account.bankRegistrationNumber) }}
+            {% endif %}
+            {{ form_row(form.account.bankIban) }}
+            {% if form.account.bankCertificate is defined %}
+              {{ form_row(form.account.bankCertificate) }}
+            {% endif %}
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header">
+          <h5 class="mb-0">
+            {{ 'section_4_title' | trans }}
+          </h5>
+        </div>
+        <div id="collapseFour">
+          <div class="card-body row">
+            {{ form_row(form.account.warehouseContact) }}
+            {{ form_row(form.account.warehouseAddress) }}
+            {% if form.account.warehouseAddressExtraData is defined %}
+              {{ form_row(form.account.warehouseAddressExtraData) }}
+            {% endif %}
+            {% if form.account.warehouseAddressExtraData2 is defined %}
+              {{ form_row(form.account.warehouseAddressExtraData2) }}
+            {% endif %}
+            {% if form.account.warehouseAddressExtraData3 is defined %}
+              {{ form_row(form.account.warehouseAddressExtraData3) }}
+            {% endif %}
+            {% if form.account.warehouseAddressExtraData4 is defined %}
+              {{ form_row(form.account.warehouseAddressExtraData4) }}
+            {% endif %}
+            {{ form_row(form.account.warehouseAddress2) }}
+            {% if form.account.warehouseAddress2ExtraData is defined %}
+              {{ form_row(form.account.warehouseAddress2ExtraData) }}
+            {% endif %}
+            {% if form.account.warehouseAddress2ExtraData2 is defined %}
+              {{ form_row(form.account.warehouseAddress2ExtraData2) }}
+            {% endif %}
+            {% if form.account.warehouseReferencePoint is defined %}
+              {{ form_row(form.account.warehouseReferencePoint) }}
+            {% endif %}
+            {{ form_row(form.account.warehouseCity) }}
+            {% if form.account.warehouseCity2 is defined %}
+              {{ form_row(form.account.warehouseCity2) }}
+            {% endif %}
+            {{ form_row(form.account.warehousePhone) }}
+            {{ form_row(form.account.warehousePostalCode) }}
+            {% if form.account.warehouseMode is defined %}
+              {{ form_row(form.account.warehouseMode) }}
+            {% endif %}
+            {% if form.account.warrantyContact is defined %}
+              {{ form_row(form.account.warrantyContact) }}
+            {% endif %}
           </div>
         </div>
       </div>
@@ -34,7 +149,7 @@
       <div class="col-md-12 text-right">
         <input type="submit" class="btn btn-primary btn-block col-md-4 offset-md-4" value="{{ 'submit'|trans }}"/>
       </div>
-      {{ form_end(form) }}
+      {{ form_end(form, {'render_rest': false}) }}
     </div>
   </div>
 {% endblock %}

@@ -8,10 +8,8 @@ spec:
     metadata:
       labels:
         k8s.linio.com/app: seller-signup-form
-        k8s.linio.com/environment: <%= ENV['ENVIRONMENT'] %>
     spec:
       nodeSelector:
-        k8s.linio.com/environment: <%= ENV['ENVIRONMENT'] %>
         k8s.linio.com/group: web
       containers:
         - name: php
@@ -42,7 +40,6 @@ metadata:
   namespace: seller-signup-form-<%= ENV['ENVIRONMENT'] %>
   labels:
     k8s.linio.com/app: seller-signup-form
-    k8s.linio.com/environment: <%= ENV['ENVIRONMENT'] %>
   annotations:
     dns.alpha.kubernetes.io/external: seller-signup-form.<%= domain %>
     service.beta.kubernetes.io/aws-load-balancer-additional-resource-tags: Application=seller-signup-form,Environment=<%= ENV['ENVIRONMENT'] %>,CostCenter=regional,CostDepartment=it
@@ -60,4 +57,3 @@ spec:
       targetPort: 1443
   selector:
     k8s.linio.com/app: seller-signup-form
-    k8s.linio.com/environment: <%= ENV['ENVIRONMENT'] %>

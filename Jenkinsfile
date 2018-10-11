@@ -22,7 +22,7 @@ pipeline {
             }
 
             steps {
-                sh "echo Installing yarn dependencies"
+                echo "Installing yarn dependencies"
                 sh "docker-compose -f docker-compose.cli.yml run --rm -v \${PWD}:/application --name dep-js-" + shortCommit + " yarn"
             }
         }
@@ -47,9 +47,9 @@ pipeline {
             }
 
             steps {
-                sh "echo Creating services so the network is not duplicated"
+                echo "Creating services so the network is not duplicated"
                 sh "IMAGE_TAG=" + shortCommit + " docker-compose up --no-start"
-                sh "echo Copying .env.dist to .env"
+                echo "Copying .env.dist to .env"
                 sh "cp .env.dist .env"
             }
         }

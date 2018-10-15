@@ -705,7 +705,7 @@
         },
         {
             "name": "symfony/cache",
-            "version": "v4.1.5",
+            "version": "v4.1.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/cache.git",
@@ -961,16 +961,16 @@
         },
         {
             "name": "symfony/dependency-injection",
-            "version": "v4.1.5",
+            "version": "v4.1.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/dependency-injection.git",
-                "reference": "985ebee0d4cadaadef4d81aaccf0018443cf2560"
+                "reference": "f6b9d893ad28aefd8942dc0469c8397e2216fe30"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/dependency-injection/zipball/985ebee0d4cadaadef4d81aaccf0018443cf2560",
-                "reference": "985ebee0d4cadaadef4d81aaccf0018443cf2560",
+                "url": "https://api.github.com/repos/symfony/dependency-injection/zipball/f6b9d893ad28aefd8942dc0469c8397e2216fe30",
+                "reference": "f6b9d893ad28aefd8942dc0469c8397e2216fe30",
                 "shasum": ""
             },
             "require": {
@@ -1028,7 +1028,7 @@
             ],
             "description": "Symfony DependencyInjection Component",
             "homepage": "https://symfony.com",
-            "time": "2018-09-21T12:49:42+00:00"
+            "time": "2018-10-02T12:40:59+00:00"
         },
         {
             "name": "symfony/event-dispatcher",
@@ -1145,16 +1145,16 @@
         },
         {
             "name": "symfony/finder",
-            "version": "v4.1.5",
+            "version": "v4.1.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/finder.git",
-                "reference": "f0b042d445c155501793e7b8007457f9f5bb1c8c"
+                "reference": "1f17195b44543017a9c9b2d437c670627e96ad06"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/finder/zipball/f0b042d445c155501793e7b8007457f9f5bb1c8c",
-                "reference": "f0b042d445c155501793e7b8007457f9f5bb1c8c",
+                "url": "https://api.github.com/repos/symfony/finder/zipball/1f17195b44543017a9c9b2d437c670627e96ad06",
+                "reference": "1f17195b44543017a9c9b2d437c670627e96ad06",
                 "shasum": ""
             },
             "require": {
@@ -1190,7 +1190,7 @@
             ],
             "description": "Symfony Finder Component",
             "homepage": "https://symfony.com",
-            "time": "2018-09-21T12:49:42+00:00"
+            "time": "2018-10-03T08:47:56+00:00"
         },
         {
             "name": "symfony/flex",
@@ -1322,16 +1322,16 @@
         },
         {
             "name": "symfony/framework-bundle",
-            "version": "v4.1.5",
+            "version": "v4.1.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/framework-bundle.git",
-                "reference": "462c6acc8c7eeff5066b94d9943422fccdf11fd8"
+                "reference": "3a0f2ec035c6ecc0f751fda1a76b02310bc9bbfe"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/framework-bundle/zipball/462c6acc8c7eeff5066b94d9943422fccdf11fd8",
-                "reference": "462c6acc8c7eeff5066b94d9943422fccdf11fd8",
+                "url": "https://api.github.com/repos/symfony/framework-bundle/zipball/3a0f2ec035c6ecc0f751fda1a76b02310bc9bbfe",
+                "reference": "3a0f2ec035c6ecc0f751fda1a76b02310bc9bbfe",
                 "shasum": ""
             },
             "require": {
@@ -1435,7 +1435,7 @@
             ],
             "description": "Symfony FrameworkBundle",
             "homepage": "https://symfony.com",
-            "time": "2018-09-30T03:38:13+00:00"
+            "time": "2018-10-03T08:47:56+00:00"
         },
         {
             "name": "symfony/http-foundation",
@@ -2080,16 +2080,16 @@
         },
         {
             "name": "symfony/routing",
-            "version": "v4.1.5",
+            "version": "v4.1.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/routing.git",
-                "reference": "d998113cf6db1e8262fdd8d5db9774c9a7be33b0"
+                "reference": "537803f0bdfede36b9acef052d2e4d447d9fa0e9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/routing/zipball/d998113cf6db1e8262fdd8d5db9774c9a7be33b0",
-                "reference": "d998113cf6db1e8262fdd8d5db9774c9a7be33b0",
+                "url": "https://api.github.com/repos/symfony/routing/zipball/537803f0bdfede36b9acef052d2e4d447d9fa0e9",
+                "reference": "537803f0bdfede36b9acef052d2e4d447d9fa0e9",
                 "shasum": ""
             },
             "require": {
@@ -2153,7 +2153,7 @@
                 "uri",
                 "url"
             ],
-            "time": "2018-09-08T13:24:10+00:00"
+            "time": "2018-10-02T12:40:59+00:00"
         },
         {
             "name": "symfony/translation",

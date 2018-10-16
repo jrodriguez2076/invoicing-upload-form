@@ -1,5 +1,5 @@
 server {
-  listen 1443;
+  listen 80;
 
   server_name ${NGINX_HOST};
 
@@ -24,11 +24,4 @@ server {
       include fastcgi_params;
       internal;
   }
-}
-
-server {
-  listen 80;
-  server_name ${NGINX_HOST};
-
-  return 301 https://$server_name$request_uri;
 }

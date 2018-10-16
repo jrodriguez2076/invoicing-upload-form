@@ -21,7 +21,6 @@ spec:
           image: 137361304112.dkr.ecr.us-east-1.amazonaws.com/seller-signup-form-nginx:<%= current_sha %>
           ports:
             - containerPort: 80
-            - containerPort: 1443
           env:
             - name: NGINX_HOST
               value: seller-signup-form.<%= domain %>
@@ -39,20 +38,40 @@ metadata:
   name: seller-signup-form
   labels:
     k8s.linio.com/app: seller-signup-form
-  annotations:
-    dns.alpha.kubernetes.io/external: seller-signup-form.<%= domain %>
-    service.beta.kubernetes.io/aws-load-balancer-additional-resource-tags: Application=seller-signup-form,Environment=<%= ENV['ENVIRONMENT'] %>,CostCenter=regional,CostDepartment=it
-    service.beta.kubernetes.io/aws-load-balancer-backend-protocol: http
-    service.beta.kubernetes.io/aws-load-balancer-internal: 0.0.0.0/0
-    service.beta.kubernetes.io/aws-load-balancer-ssl-cert: <%= elbCertificateArn %>
-    service.beta.kubernetes.io/aws-load-balancer-ssl-ports: https
 spec:
-  type: LoadBalancer
+  type: NodePort
   ports:
     - name: http
       port: 80
-    - name: https
-      port: 443
-      targetPort: 1443
   selector:
     k8s.linio.com/app: seller-signup-form
+
+---
+
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: seller-signup-form
+  namespace: seller-signup-form
+  annotations:
+    kubernetes.io/ingress.class: alb
+    alb.ingress.kubernetes.io/target-type: instance
+    alb.ingress.kubernetes.io/scheme: internal
+    alb.ingress.kubernetes.io/certificate-arn: <%= elb_certificate_arn %>
+    alb.ingress.kubernetes.io/tags: Application=seller-signup-form,Environment=<%= ENV["ENVIRONMENT"] %>,CostCenter=regional,CostDepartment=it
+    alb.ingress.kubernetes.io/listen-ports: '[{"HTTP":80,"HTTPS": 443}]'
+    alb.ingress.kubernetes.io/security-groups: http, https
+    alb.ingress.kubernetes.io/actions.redirect: '{"Type": "redirect", "RedirectConfig": {"Protocol": "HTTPS", "Port": "443", "StatusCode": "HTTP_301"}}'
+spec:
+  rules:
+    - host: seller-signup-form.<%= domain %>
+      http:
+        paths:
+          - path: /*
+            backend:
+              serviceName: redirect
+              servicePort: use-annotation
+          - path: /*
+            backend:
+              serviceName: seller-signup-form
+              servicePort: 80

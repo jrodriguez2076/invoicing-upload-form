@@ -9,8 +9,8 @@ use Symfony\Component\HttpFoundation\File\UploadedFile;
 class Account
 {
     const DEFAULT_OWNER = 1;
-    const HUNTED_FORM_SOURCE = 'Hunted Form';
-    const FORM_SOURCE = 'Form';
+    const HUNTED_FORM_SOURCE = 'source_signup_hunted_form';
+    const FORM_SOURCE = 'source_signup_form';
 
     /**
      * @var int

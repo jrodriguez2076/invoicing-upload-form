@@ -8,6 +8,7 @@ spec:
     metadata:
       labels:
         k8s.linio.com/app: seller-signup-form
+        k8s.linio.com/service: seller-signup-form
     spec:
       nodeSelector:
         k8s.linio.com/group: web
@@ -45,6 +46,7 @@ spec:
       port: 80
   selector:
     k8s.linio.com/app: seller-signup-form
+    k8s.linio.com/service: seller-signup-form
 
 ---
 

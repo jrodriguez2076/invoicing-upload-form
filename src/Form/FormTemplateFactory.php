@@ -33,7 +33,7 @@ class FormTemplateFactory
     public static function fromStore(string $store, $slim = false): string
     {
         if ($slim) {
-            return static::LOCALE_SLIM_FORM_MAP[$store] ?? 'sellerSignUpSlim.html.twig';
+            return static::LOCALE_SLIM_FORM_MAP[$store] ?? 'sellerSignUpInternationalSlim.html.twig';
         }
 
         return static::LOCALE_FORM_MAP[$store] ?? 'sellerSignUpInternational.html.twig';

@@ -10,6 +10,7 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Validator\Constraints\Choice;
 
 class OpportunitySlimType extends AbstractType
 {
@@ -31,6 +32,14 @@ class OpportunitySlimType extends AbstractType
                 'placeholder' => 'Choose an option',
                 'expanded' => true,
                 'multiple' => true,
+                'constraints' => [
+                    new Choice([
+                        'choices' => array_values($this->sellerSignUpService->getOpportunityCountries()),
+                        'multiple' => true,
+                        'min' => 1,
+                        'minMessage' => 'You need to select at least one country',
+                    ]),
+                ],
             ]);
     }
 

@@ -12,6 +12,7 @@ use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Validator\Constraints\Choice;
 
 class OpportunityType extends AbstractType
 {
@@ -130,6 +131,14 @@ class OpportunityType extends AbstractType
                 'placeholder' => 'Choose an option',
                 'expanded' => true,
                 'multiple' => true,
+                'constraints' => [
+                    new Choice([
+                        'choices' => array_values($this->sellerSignUpService->getOpportunityCountries()),
+                        'multiple' => true,
+                        'min' => 1,
+                        'minMessage' => 'You need to select at least one country',
+                    ]),
+                ],
             ])
             ->add('processingTime', TextType::class, [
                 'help' => 'processing_time_caption',

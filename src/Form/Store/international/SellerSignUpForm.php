@@ -37,7 +37,7 @@ class SellerSignUpForm extends AbstractType
         $resolver->setDefaults(
             [
                 'data_class' => SellerSignUp::class,
-                'store' => 'international',
+                'store' => 'intl',
             ]
         );
     }

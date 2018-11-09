@@ -447,7 +447,7 @@ parameters:
       'Callao': 'Callao|Callao|Callao'
     countries:
       'Peru': 'Peru'
-  international:
+  intl:
     contributor_types:
       'International seller': 'International seller'
     main_categories:

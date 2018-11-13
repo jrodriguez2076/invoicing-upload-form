@@ -115,11 +115,6 @@ class Account
     /**
      * @var string
      */
-    protected $warehouseAddressExtraData4 = '';
-
-    /**
-     * @var string
-     */
     protected $warehouseAddress2 = '';
 
     /**
@@ -440,16 +435,6 @@ class Account
     public function setWarehouseAddressExtraData3(?string $warehouseAddressExtraData3): void
     {
         $this->warehouseAddressExtraData3 = $warehouseAddressExtraData3;
-    }
-
-    public function getWarehouseAddressExtraData4(): ?string
-    {
-        return $this->warehouseAddressExtraData4;
-    }
-
-    public function setWarehouseAddressExtraData4(?string $warehouseAddressExtraData4): void
-    {
-        $this->warehouseAddressExtraData4 = $warehouseAddressExtraData4;
     }
 
     public function getWarehouseAddress2(): ?string

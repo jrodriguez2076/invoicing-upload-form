@@ -31,8 +31,8 @@
               {{ form_row(form.contact.acceptManifest) }}
               {{ form_row(form.contact.acceptTermsAndConditions) }}
               {{ form_row(form.contact.acceptCommissionsAndPaymentPolicy) }}
-              <a href=""> Ver comisiones y políticas de pagos</a><br>
-              <a href=""> Ver términos y condiciones</a><br>
+              {{ 'terms_and_conditions'|trans|raw }}<br>
+              {{ 'comissions_and_payment_polices'|trans|raw }}
             </div>
           </div>
         </div>

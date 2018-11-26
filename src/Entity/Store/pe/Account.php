@@ -11,11 +11,10 @@ class Account extends AccountEntity
     public function getWarehouseAddress(): string
     {
         return sprintf(
-            '%s|%s|%s|%s',
+            '%s|%s|%s',
             $this->warehouseAddress,
             $this->getWarehouseAddressExtraData(),
-            $this->getWarehouseAddressExtraData2(),
-            $this->getWarehouseAddressExtraData3()
+            $this->getWarehouseAddressExtraData2()
         );
     }
 }

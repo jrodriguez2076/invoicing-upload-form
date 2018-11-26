@@ -97,6 +97,8 @@ account_name_caption: Elige un nombre de fantasía que represente a tu comercio
 phone_number_caption: 'Cod.País  – Teléfono. Ej: 51 - 1 333 44 44'
 legal_country_caption: ''
 warehouse_city_caption: ''
+terms_and_conditions: '<a href="#" target="_blank">Ver términos y condiciones</a>'
+comissions_and_payment_polices: '<a href="#" target="_blank">Ver comisiones y políticas de pagos</a>'
 Submit: Enviar
 CONTACT_CREATE_ERROR: Hubo un error al procesar la información, intente nuevamente más tarde.
 GENERAL_ERROR: Hubo un error al procesar la información, intente nuevamente más tarde.

@@ -190,13 +190,6 @@ class AccountType extends AbstractType
                     'help' => 'warehouse_address_extra_data2_caption',
                 ]
             )
-            ->add(
-                'warehouseAddressExtraData3',
-                TextType::class,
-                [
-                    'help' => 'warehouse_address_extra_data3_caption',
-                ]
-            )
             ->add('warehouseAddress2')
             ->add(
                 'warehouseCity',

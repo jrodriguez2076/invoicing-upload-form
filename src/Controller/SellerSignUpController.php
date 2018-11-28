@@ -82,4 +82,9 @@ class SellerSignUpController extends AbstractController
             ]
         );
     }
+
+    public function healthCheckAction(): Response
+    {
+        return new Response('OK!');
+    }
 }

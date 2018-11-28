@@ -58,7 +58,7 @@ metadata:
     kubernetes.io/ingress.class: alb
     alb.ingress.kubernetes.io/target-type: instance
     alb.ingress.kubernetes.io/scheme: internal
-    alb.ingress.kubernetes.io/certificate-arn: <%= elb_certificate_arn %>
+    alb.ingress.kubernetes.io/certificate-arn: <%= elb_certificate %>
     alb.ingress.kubernetes.io/tags: Application=seller-signup-form,Environment=<%= ENV["ENVIRONMENT"] %>,CostCenter=regional,CostDepartment=it
     alb.ingress.kubernetes.io/listen-ports: '[{"HTTP":80,"HTTPS": 443}]'
     alb.ingress.kubernetes.io/security-groups: http, https

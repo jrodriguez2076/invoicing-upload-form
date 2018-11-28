@@ -1,3 +1,7 @@
+healthCheck:
+  path: /_healthcheck
+  controller: App\Controller\SellerSignUpController::healthCheckAction
+
 index:
   path: /{store}
   controller: App\Controller\SellerSignUpController::index

@@ -91,8 +91,8 @@ pipeline {
             }
 
             steps {
-                sh "docker tag 137361304112.dkr.ecr.us-east-1.amazonaws.com/seller-signup-form-php:" + shortCommit + " 137361304112.dkr.ecr.us-east-1.amazonaws.com/seller-signup-form-php:latest"
-                sh "docker tag 137361304112.dkr.ecr.us-east-1.amazonaws.com/seller-signup-form-nginx:" + shortCommit + " 137361304112.dkr.ecr.us-east-1.amazonaws.com/seller-signup-form-nginx:latest"
+                sh "docker tag 137361304112.dkr.ecr.us-east-1.amazonaws.com/psc-form-php:" + shortCommit + " 137361304112.dkr.ecr.us-east-1.amazonaws.com/psc-form-php:latest"
+                sh "docker tag 137361304112.dkr.ecr.us-east-1.amazonaws.com/psc-form-nginx:" + shortCommit + " 137361304112.dkr.ecr.us-east-1.amazonaws.com/psc-form-nginx:latest"
                 sh "docker-compose -f docker-compose.yml push"
             }
         }

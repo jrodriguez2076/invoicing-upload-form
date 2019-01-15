@@ -6,7 +6,7 @@ namespace App\Service;
 
 use Symfony\Component\DependencyInjection\ParameterBag\ParameterBagInterface;
 
-class SellerSignUpService
+class ContactService
 {
     /**
      * @var ParameterBagInterface

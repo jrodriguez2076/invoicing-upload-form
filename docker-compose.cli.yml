@@ -1,7 +1,7 @@
 version: '3.7'
 services:
   php-cs-fixer:
-    image: 137361304112.dkr.ecr.us-east-1.amazonaws.com/seller-signup-form-php:latest
+    image: 137361304112.dkr.ecr.us-east-1.amazonaws.com/psc-form-php:latest
     init: true
     volumes:
       - .:/application
@@ -9,7 +9,7 @@ services:
     command: fix --verbose --show-progress=estimating
 
   composer:
-    image: 137361304112.dkr.ecr.us-east-1.amazonaws.com/seller-signup-form-php:latest
+    image: 137361304112.dkr.ecr.us-east-1.amazonaws.com/psc-form-php:latest
     init: true
     volumes:
       - .:/application
@@ -18,7 +18,7 @@ services:
     entrypoint: composer
 
   php:
-    image: 137361304112.dkr.ecr.us-east-1.amazonaws.com/seller-signup-form-php:latest
+    image: 137361304112.dkr.ecr.us-east-1.amazonaws.com/psc-form-php:latest
     init: true
     volumes:
       - .:/application

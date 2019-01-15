@@ -6,12 +6,12 @@ services:
       dockerfile: docker/php/Dockerfile
       args:
         - GITHUB_TOKEN
-    image: 137361304112.dkr.ecr.us-east-1.amazonaws.com/seller-signup-form-php:${IMAGE_TAG:-latest}
+    image: 137361304112.dkr.ecr.us-east-1.amazonaws.com/psc-form-php:${IMAGE_TAG:-latest}
 
   nginx:
     build:
       context: .
       dockerfile: docker/nginx/Dockerfile
-    image: 137361304112.dkr.ecr.us-east-1.amazonaws.com/seller-signup-form-nginx:${IMAGE_TAG:-latest}
+    image: 137361304112.dkr.ecr.us-east-1.amazonaws.com/psc-form-nginx:${IMAGE_TAG:-latest}
     depends_on:
       - php

@@ -6,9 +6,6 @@
   </div>
   <div class="container">
     <div class="accordion" id="accordionForm">
-      {% if hunter is not empty %}
-        <div class="account-hunter">{{ 'account_hunter'|trans ~ hunter }}</div>
-      {% endif %}
       <h1>{{ 'form_title'|trans }}</h1><br>
       {{ form_start(form) }}
       <div class="card">
@@ -19,22 +16,25 @@
         </div>
         <div id="collapseOne">
           <div class="card-body row">
-            {{ form_row(form.account.legalName) }}
-            {{ form_row(form.contact.firstName) }}
-            {{ form_row(form.contact.lastName) }}
-            {{ form_row(form.contact.phoneNumber) }}
-            {{ form_row(form.account.secondaryPhone) }}
-            {{ form_row(form.account.accountName) }}
-            {{ form_row(form.contact.email) }}
-            {{ form_row(form.opportunity.opportunityCountries) }}
+            {{ form_row(form.generalInfo.accountName, { 'label': 'general_info.account_name.label' } ) }}
+            {{ form_row(form.generalInfo.sellerCenterId, { 'label': 'general_info.seller_center_id.label' } ) }}
+            {{ form_row(form.generalInfo.email, { 'label': 'general_info.email.label' } ) }}
+            {{ form_row(form.generalInfo.reason, { 'label': 'general_info.reason.label' }) }}
           </div>
         </div>
       </div>
       <br>
       <div class="col-md-12 text-right">
-        <input type="submit" class="btn btn-primary btn-block col-md-4 offset-md-4" value="{{ 'submit'|trans }}"/>
+        <input type="submit" class="btn btn-primary btn-block col-md-4 offset-md-4" disabled value="{{ 'submit'|trans }}"/>
       </div>
       {{ form_end(form) }}
     </div>
   </div>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script>
+
+    </script>
 {% endblock %}

@@ -1,41 +1,5 @@
-First name: 'Nombre del encargado de la cuenta:'
-Last name: 'Apellido del encargado de la cuenta:'
-Legal address2: Distrito
-Fiscal id number: RUC
-Fiscal id additional doc: Ficha RUC completa
-Logistic document: Guía de Remisión
-Id additional doc: DNI del representante legal
-Bank acct holder: Titular de la Cuenta (Debe coincidir con la persona física o jurídica)
-Bank acct number: Número de Cuenta (EN SOLES)
-Bank code: Tipo de Cuenta
-Bank registration number: Código de Cuenta Interbancario
-Bank iban: DNI o RUC del titular de la cuenta
-Bank certificate: Documento bancario
-Warehouse address: Calle, avenida o Jirón en que se encuentra tu almacén
-Warehouse address2: Distrito en el cual se encuentra tu almacén
-Warehouse address extra data: Número (del lugar, interior, departamento, etc)
-Warehouse address extra data2: Urbanización en la que se encuentra tu almacén
-Warehouse address extra data4: Punto de referencia de tu almacén
-Warehouse city: Ciudad (Por ahora, sólo aceptamos registros de Lima y Callao)
-Accept terms and conditions: Acepto los Términos y Condiciones
-Accept commissions and payment policy: Acepto las Comisiones y Políticas de pagos
-legal_name_caption: Colocar el nombre legal tal cual aparece en la SUNAT
-legal_address_caption: Domicilio fiscal de la razón social. Por ahora sólo aceptamos registros de Lima y Callao
-legal_city_caption: ''
-legal_postal_code_caption: 'Consulta tu código postal <a href="http://www.codigopostal.gob.pe/pages/invitado/consulta.jsf" target="_blank"> aquí </a>'
-fiscal_id_number_caption: ''
-fiscal_id_additional_doc_caption: 'Con representante legal y dirección visible'
-id_additional_doc_caption: Por las dos caras, debe coincidir con la información de la Ficha RUC
-logistic_document_caption: 'Debe tener visible la dirección de despacho.'
-bank_code_caption: ''
-bank_registration_number_caption: 'Todos los dígitos de tu CCI (preferiblemente sin guiones)'
-bank_iban_caption: ''
-bank_certificate_caption: 'Referencia bancaria (firmada y sellada por la institución) o estado de cuenta bancario. El documento adjunto debe tener Código de Cuenta Interbancario visible, razón social, fecha legible y estar emitido hace menos de seis meses. También funcionaría la constancia actualizada de apertura de cuenta y que contenga el CCI'
-warehouse_address_extra_data_caption: 'Sólo números. Ej: 3455'
-warehouse_address_extra_data2_caption: ''
-warehouse_address_extra_data3_caption: ''
-warehouse_reference_point: 'Ayúdanos a ubicar tu almacén cuando Linio vaya a buscar tus productos para entregarlos.'
-warehouse_phone_caption: 'Cod.País  – Teléfono. Ej: 51 - 1 333 44 44'
-warehouse_postal_code_caption: '5 dígitos numéricos. Ej: 07001. Consulta el tuyo aquí: http://www.codigopostal.gob.pe/comoBuscar.html'
-terms_and_conditions: '<a href="http://comunicacion.linio.com/PE/comunicados/MARZO/20180314_TyCs_PE_VF.pdf" target="_blank">Ver términos y condiciones</a>'
-comissions_and_payment_polices: '<a href="http://comunicacion.linio.com/PE/comunicados/Noviembre/20181120_Comisiones_Sellers%20Locales_PE.pdf" target="_blank">Ver comisiones y políticas de pagos</a>'
+general_info:
+  account_name.label: Nombre de la Cuenta
+  seller_center_id.label: ID del Vendedor (SC)
+  email.label: Correo Electrónico de Contacto
+  reason.label: Tipo de Solicitud

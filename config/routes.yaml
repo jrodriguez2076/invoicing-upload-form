@@ -1,9 +1,9 @@
 healthCheck:
   path: /_healthcheck
-  controller: App\Controller\SellerSignUpController::healthCheckAction
+  controller: App\Controller\ContactController::healthCheckAction
 
 index:
   path: /{store}
-  controller: App\Controller\SellerSignUpController::index
+  controller: App\Controller\ContactController::index
   defaults:
-    store: intl
+    store: mx

@@ -10,32 +10,16 @@ class FormTemplateFactory
      * @var array
      */
     protected const LOCALE_FORM_MAP = [
-        'ar' => 'sellerSignUp.html.twig',
-        'cl' => 'sellerSignUp.html.twig',
-        'co' => 'sellerSignUp.html.twig',
-        'ec' => 'sellerSignUp.html.twig',
-        'mx' => 'sellerSignUp.html.twig',
-        'pe' => 'sellerSignUp.html.twig',
+        'ar' => 'contact.html.twig',
+        'cl' => 'contact.html.twig',
+        'co' => 'contact.html.twig',
+        'ec' => 'contact.html.twig',
+        'mx' => 'contact.html.twig',
+        'pe' => 'contact.html.twig',
     ];
 
-    /**
-     * @var array
-     */
-    protected const LOCALE_SLIM_FORM_MAP = [
-        'ar' => 'sellerSignUpSlim.html.twig',
-        'cl' => 'sellerSignUpSlim.html.twig',
-        'co' => 'sellerSignUpSlim.html.twig',
-        'ec' => 'sellerSignUpSlim.html.twig',
-        'mx' => 'sellerSignUpSlim.html.twig',
-        'pe' => 'sellerSignUpSlim.html.twig',
-    ];
-
-    public static function fromStore(string $store, $slim = false): string
+    public static function fromStore(string $store): string
     {
-        if ($slim) {
-            return static::LOCALE_SLIM_FORM_MAP[$store] ?? 'sellerSignUpInternationalSlim.html.twig';
-        }
-
-        return static::LOCALE_FORM_MAP[$store] ?? 'sellerSignUpInternational.html.twig';
+        return static::LOCALE_FORM_MAP[$store];
     }
 }

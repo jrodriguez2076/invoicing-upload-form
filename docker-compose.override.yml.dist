@@ -11,8 +11,8 @@ services:
     ports:
       - '8014:80'
     environment:
-      VIRTUAL_HOST: seller-signup-form.localhost
-      NGINX_HOST: seller-signup-form.localhost
+      VIRTUAL_HOST: psc-form.localhost
+      NGINX_HOST: psc-form.localhost
       PHP_FPM_HOST: php
     volumes:
       - .:/application

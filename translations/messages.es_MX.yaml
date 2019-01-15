@@ -1,8 +1,5 @@
-Phone number: 'Teléfono (con clave LADA):'
-Legal address: Calle y número, incluir Colonia
-Legal city: Ciudad o Municipio
-Warehouse phone: Teléfono (con clave LADA)
-Operative check legally constituted: Empresa legalmente constituída, en capacidad de emitir facturas
-Operative check invoices: Estoy dispuesto a usar el sistema de Facturación de Linio (Interfacturas del SAT)
-legal_city_caption: ''
-legal_postal_code_caption: ''
+general_info:
+    account_name.label: Nombre de la Cuenta
+    seller_center_id.label: ID del Vendedor (SC)
+    email.label: Correo Electrónico de Contacto
+    reason.label: Tipo de Solicitud

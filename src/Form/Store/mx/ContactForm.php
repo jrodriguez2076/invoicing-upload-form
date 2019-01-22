@@ -6,29 +6,18 @@ namespace App\Form\Store\mx;
 
 use App\Entity\Contact;
 use App\Form\GeneralInfoType;
-use App\Service\ContactService;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
 class ContactForm extends AbstractType
 {
-    /**
-     * @var ContactService
-     */
-    protected $contactService;
-
-    public function __construct(ContactService $contactService)
-    {
-        $this->contactService = $contactService;
-    }
-
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
-        $store = $options['store'];
+        $reasons = $options['reasons'];
 
         $builder
-            ->add('generalInfo', GeneralInfoType::class);
+            ->add('generalInfo', GeneralInfoType::class, ['reasons' => $reasons]);
     }
 
     public function configureOptions(OptionsResolver $resolver): void
@@ -37,6 +26,7 @@ class ContactForm extends AbstractType
             [
                 'data_class' => Contact::class,
                 'store' => 'mx',
+                'reasons' => null,
             ]
         );
     }

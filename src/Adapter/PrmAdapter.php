@@ -4,11 +4,11 @@ declare(strict_types=1);
 
 namespace App\Adapter;
 
-use GuzzleHttp\ClientInterface;
-use Psr\Log\LoggerInterface;
 use App\Exception\PrmException;
+use GuzzleHttp\ClientInterface;
 use GuzzleHttp\Exception\ClientException;
 use GuzzleHttp\Exception\ServerException;
+use Psr\Log\LoggerInterface;
 
 class PrmAdapter
 {
@@ -66,7 +66,7 @@ class PrmAdapter
             $reasonCategories[$item['category']] = $item['category'];
         }
 
-        $reasonCategories = array_map("unserialize", array_unique(array_map("serialize", $reasonCategories)));
+        $reasonCategories = array_map('unserialize', array_unique(array_map('serialize', $reasonCategories)));
 
         foreach ($reasonCategories as $reasonCategory) {
             foreach ($responseBody as $item) {
@@ -90,6 +90,7 @@ class PrmAdapter
             $nonce,
             $createdAt
         );
+
         return [
             'Authorization' => 'WSSE profile="UsernameToken"',
             'X-WSSE' => $wsse,

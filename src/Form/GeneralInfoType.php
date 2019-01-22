@@ -24,15 +24,15 @@ class GeneralInfoType extends AbstractType
                 'email',
                 EmailType::class
             )
-            ->add('reason',
+            ->add(
+                'reason',
                 ChoiceType::class,
                 [
                     'choices' => $reasons,
                     'placeholder' => 'Choose an option',
                     'empty_data' => null,
                 ]
-            )
-        ;
+            );
     }
 
     public function configureOptions(OptionsResolver $resolver): void

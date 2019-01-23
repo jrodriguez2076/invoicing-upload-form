@@ -11,7 +11,6 @@ class Contact
      */
     protected $generalInfo;
 
-
     public function getGeneralInfo(): ?GeneralInfo
     {
         return $this->generalInfo;

@@ -58,22 +58,12 @@ class PrmAdapter
             $errorMessage = $responseBody['message'] ?? '';
             throw new PrmException((string) $errorMessage, $responseBody);
         }
+
         $responseBody = json_decode((string) $response->getBody(), true);
-        $reasonCategories = [];
         $reasons = [];
 
-        foreach ($responseBody as $item) {
-            $reasonCategories[$item['category']] = $item['category'];
-        }
-
-        $reasonCategories = array_map('unserialize', array_unique(array_map('serialize', $reasonCategories)));
-
-        foreach ($reasonCategories as $reasonCategory) {
-            foreach ($responseBody as $item) {
-                if ($item['category'] == $reasonCategory) {
-                    $reasons[$reasonCategory][$item['name']] = $item['id'];
-                }
-            }
+        foreach ($responseBody as $row) {
+            $reasons[$row['category']][$row['name']] = $row['id'];
         }
 
         return $reasons;

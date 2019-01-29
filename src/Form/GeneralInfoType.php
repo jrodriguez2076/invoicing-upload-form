@@ -15,6 +15,8 @@ class GeneralInfoType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
+        $reasons = $options['reasons'];
+
         $builder
             ->add('accountName')
             ->add('sellerCenterId')
@@ -26,8 +28,9 @@ class GeneralInfoType extends AbstractType
                 'reason',
                 ChoiceType::class,
                 [
-                    'choices' => [
-                    ],
+                    'choices' => $reasons,
+                    'placeholder' => 'Choose an option',
+                    'empty_data' => null,
                 ]
             );
     }
@@ -39,5 +42,7 @@ class GeneralInfoType extends AbstractType
                 'data_class' => Contact::class,
             ]
         );
+
+        $resolver->setRequired('reasons');
     }
 }

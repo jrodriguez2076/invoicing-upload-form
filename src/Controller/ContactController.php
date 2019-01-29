@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace App\Controller;
 
+use App\Adapter\PrmAdapter;
 use App\Entity\Contact;
 use App\Form\ContactFormFactory;
 use App\Form\FormTemplateFactory;
@@ -21,30 +22,39 @@ class ContactController extends AbstractController
     protected $prmService;
 
     /**
+     * @var PrmAdapter
+     */
+    protected $prmAdapter;
+
+    /**
      * @var LoggerInterface
      */
     protected $logger;
 
-    public function __construct(PrmService $prmService, LoggerInterface $logger)
+    public function __construct(PrmService $prmService, LoggerInterface $logger, PrmAdapter $prmAdapter)
     {
         $this->prmService = $prmService;
         $this->logger = $logger;
+        $this->prmAdapter = $prmAdapter;
     }
 
     public function index(Request $request, string $store): Response
     {
         $store = strtolower($store);
+        $reasons = $this->prmAdapter->getReasons($store);
 
         $contact = new Contact();
         $form = $this->createForm(
-            ContactFormFactory::fromStore($store),
-            $contact
+            ContactFormFactory::fromStore($store, $reasons),
+            $contact,
+            ['reasons' => $reasons]
         );
 
         return $this->render(
             FormTemplateFactory::fromStore($store),
             [
                 'form' => $form->createView(),
+                'reasons' => $reasons,
             ]
         );
     }

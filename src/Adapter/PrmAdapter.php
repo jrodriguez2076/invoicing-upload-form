@@ -50,13 +50,13 @@ class PrmAdapter
                 ],
             ]);
         } catch (ClientException $exception) {
-            $responseBody = json_decode((string) $exception->getResponse()->getBody());
+            $responseBody = json_decode((string) $exception->getResponse()->getBody(), true);
             $errorMessage = $responseBody['message'] ?? $exception->getMessage();
             throw new PrmException((string) $errorMessage);
         } catch (ServerException $exception) {
-            $responseBody = json_decode((string) $exception->getResponse()->getBody());
+            $responseBody = json_decode((string) $exception->getResponse()->getBody(), true);
             $errorMessage = $responseBody['message'] ?? '';
-            throw new PrmException((string) $errorMessage, $responseBody);
+            throw new PrmException((string) $errorMessage);
         }
 
         $responseBody = json_decode((string) $response->getBody(), true);

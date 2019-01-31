@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace App\Form;
 
-use App\Entity\Contact;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
@@ -25,7 +24,7 @@ class GeneralInfoType extends AbstractType
                 EmailType::class
             )
             ->add(
-                'reason',
+                'reasons',
                 ChoiceType::class,
                 [
                     'choices' => $reasons,
@@ -37,12 +36,6 @@ class GeneralInfoType extends AbstractType
 
     public function configureOptions(OptionsResolver $resolver): void
     {
-        $resolver->setDefaults(
-            [
-                'data_class' => Contact::class,
-            ]
-        );
-
         $resolver->setRequired('reasons');
     }
 }

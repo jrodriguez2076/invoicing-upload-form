@@ -1,8 +1,60 @@
 submit: Enviar información
-Choose an option: Elige una opción
 page_title: Formulario de Contacto - Linio
 form_title: Formulario de Contacto
 section_1_title: Completa la siguiente información
+dates_caption: DD/MM/AA - separados por comas
+order_numbers_caption: Separados por comas
+amounts_caption: Separados por comas
+billing_numbers_caption: Separados por comas
+sku_caption: Separados por comas
+supplies_caption: 'Nombre y cantidad de cada insumo. Ej. Bolas grandes: 50, Caja pequeña: 300'
 MANDATORY_FIELD: Este campo es requerido.
-THANKS_MESSAGE: 'Gracias por tu interés en vender con nosotros'
-SUCCESS_MESSAGE: 'Revisaremos tu solicitud y te contactaremos al correo que nos proporcionaste.'
+THANKS_MESSAGE: 'Gracias por contactarnos'
+SUCCESS_MESSAGE: 'Se ha generado un ticket con tu solicitud. Te estaremos respondiendo a la mayor brevedad posible.'
+
+'Choose an option': Elige una opción
+'envelopes': Sobres
+'bags': Bolsas
+'boxes': Cajas
+'envelopes_bags': Sobres y Bolsas
+'envelopes_boxes': Sobres y Cajas
+'bags_boxes': Bolsas y Cajas
+'all': Todos
+'international': Internacional
+'local': Local
+'blind_fee': Comisión ciega
+'interfactura': Interfactura
+'own_invoicing': Facturación propia
+
+general_info:
+  account_name.label: Nombre de Cuenta
+  seller_center_id.label: ID en Seller Center
+  email.label: Correo de contacto
+  reason.label: Razón de contacto
+
+additional_info:
+  cutoff_dates.label: Fechas de Corte
+  shipping_company.label: Transportadora
+  person_in_charge.label: Nombre de la persona que recibirá el link
+  order_numbers.label: Números de orden
+  amounts.label: Montos
+  invoicing_types.label: Esquema de facturación
+  po_number.label: Número de PO
+  id_number.label: RFC
+  legal_name.label: Razón social
+  responsible_name.label: Nombre del encargado
+  error_description.label: ¿Cuál es el error?
+  billing_numbers.label: Números de las facturas
+  billing_dates.label: Fechas de las facturas
+  tracking_number.label: Número de guía o rastreo
+  phone.label: Número de teléfono de contacto
+  reason.label: Motivo
+  bank_account_number.label: Número de cuenta bancaria
+  warehouse_address.label: Dirección de almacén
+  supplies.label: Insumos
+  packaging_type.label: Tipo de paquetes
+  package_qty.label: Cantidad de paquetes
+  package_size.label: Tamaño de paquetes (cm3)
+  package_weight.label: Peso total de paquetes (Kg)
+  origin.label: Internacional o Local
+  sku.label: SKU del vendedor

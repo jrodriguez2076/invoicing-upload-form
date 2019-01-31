@@ -1,5 +1,54 @@
+submit: Submit information
+page_title: Contact Form - Linio
+form_title: Contact Form
+Choose an option: Choose an option
+section_1_title: Fill the following information
+MANDATORY_FIELD: This field is required.
+THANKS_MESSAGE: Thanks for contacting us!
+SUCCESS_MESSAGE: We are going to check your request and we will contact you by email.
+
+'envelopes': Envelopes
+'bags': Bags
+'boxes': Boxes
+'envelopes_bags': Envelopes & Bags
+'envelopes_boxes': Envelopes & Boxes
+'bags_boxes': Bags & Boxes
+'all': All
+'international': International
+'local': Local
+'blind_fee': Blind Fee
+'interfactura': Interfactura
+'own_invoicing': Own Invoicing
+
 general_info:
   account_name.label: Account Name
   seller_center_id.label: Seller Center ID
   email.label: Contact Email
   reason.label: Contact Reason
+
+additional_info:
+  cutoff_dates.label: Cutoff Dates
+  shipping_company.label: Courier
+  person_in_charge.label: Person in charge
+  order_numbers.label: Order Numbers
+  amounts.label: Amounts
+  invoicing_types.label: Invoicing Types
+  po_number.label: PO Number
+  id_number.label: ID Number
+  legal_name.label: Legal Name
+  responsible_name.label: Responsible Name
+  error_description.label: Error Description
+  billing_numbers.label: Billing Numbers
+  billing_dates.label: Billing Dates
+  tracking_number.label: Tracking Number
+  phone.label: Phone
+  reason.label: Reason
+  bank_account_number.label: Bank Account Number
+  warehouse_address.label: Warehouse Address
+  supplies.label: Supplies
+  packaging_type.label: Packaging Type
+  package_qty.label: Package Quantity
+  package_size.label: Package Size
+  package_weight.label: Package Weight
+  origin.label: Origin
+  sku.label: SKU

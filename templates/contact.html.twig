@@ -6,7 +6,7 @@
   </div>
   <div class="container">
     <div class="accordion" id="accordionForm">
-      <h1>{{ 'form_title'|trans }}</h1><br>
+      <h1 align="center">{{ 'form_title'|trans }}</h1><br>
       {{ form_start(form) }}
       <div class="card">
         <div class="card-header">
@@ -19,13 +19,100 @@
             {{ form_row(form.generalInfo.accountName, { 'label': 'general_info.account_name.label' } ) }}
             {{ form_row(form.generalInfo.sellerCenterId, { 'label': 'general_info.seller_center_id.label' } ) }}
             {{ form_row(form.generalInfo.email, { 'label': 'general_info.email.label' } ) }}
-            {{ form_row(form.generalInfo.reason, { 'label': 'general_info.reason.label' }) }}
+            {{ form_row(form.generalInfo.reasons, { 'label': 'general_info.reason.label', 'id': 'reasons' }) }}
+          </div>
+        </div>
+      </div>
+
+      <div class="card hide", id="additionalInfoBlock">
+        <div class="card-header">
+          <h5 class="mb-0">
+              {{ 'Datos Adicionales' | trans }}
+          </h5>
+        </div>
+        <div id="collapseTwo">
+          <div class="card-body row">
+            {% if form.additionalInfo.cutoffDates is defined %}
+              {{ form_row(form.additionalInfo.cutoffDates) }}
+            {% endif %}
+            {% if form.additionalInfo.orderNumbers is defined %}
+              {{ form_row(form.additionalInfo.orderNumbers) }}
+            {% endif %}
+            {% if form.additionalInfo.amounts is defined %}
+              {{ form_row(form.additionalInfo.amounts) }}
+            {% endif %}
+            {% if form.additionalInfo.invoicingType is defined %}
+              {{ form_row(form.additionalInfo.invoicingType) }}
+            {% endif %}
+            {% if form.additionalInfo.poNumber is defined %}
+              {{ form_row(form.additionalInfo.poNumber) }}
+            {% endif %}
+            {% if form.additionalInfo.idNumber is defined %}
+              {{ form_row(form.additionalInfo.idNumber) }}
+            {% endif %}
+            {% if form.additionalInfo.legalName is defined %}
+              {{ form_row(form.additionalInfo.legalName) }}
+            {% endif %}
+            {% if form.additionalInfo.responsibleName is defined %}
+              {{ form_row(form.additionalInfo.responsibleName) }}
+            {% endif %}
+            {% if form.additionalInfo.errorDescription is defined %}
+              {{ form_row(form.additionalInfo.errorDescription) }}
+            {% endif %}
+            {% if form.additionalInfo.billingNumbers is defined %}
+              {{ form_row(form.additionalInfo.billingNumbers) }}
+            {% endif %}
+            {% if form.additionalInfo.billingDates is defined %}
+              {{ form_row(form.additionalInfo.billingDates) }}
+            {% endif %}
+            {% if form.additionalInfo.trackingNumber is defined %}
+              {{ form_row(form.additionalInfo.trackingNumber) }}
+            {% endif %}
+            {% if form.additionalInfo.phone is defined %}
+              {{ form_row(form.additionalInfo.phone) }}
+            {% endif %}
+            {% if form.additionalInfo.reason is defined %}
+              {{ form_row(form.additionalInfo.reason) }}
+            {% endif %}
+            {% if form.additionalInfo.bankAccountNumber is defined %}
+              {{ form_row(form.additionalInfo.bankAccountNumber) }}
+            {% endif %}
+            {% if form.additionalInfo.warehouseAddress is defined %}
+              {{ form_row(form.additionalInfo.warehouseAddress) }}
+            {% endif %}
+            {% if form.additionalInfo.supplies is defined %}
+              {{ form_row(form.additionalInfo.supplies) }}
+            {% endif %}
+            {% if form.additionalInfo.packagingType is defined %}
+              {{ form_row(form.additionalInfo.packagingType) }}
+            {% endif %}
+            {% if form.additionalInfo.packageQty is defined %}
+              {{ form_row(form.additionalInfo.packageQty) }}
+            {% endif %}
+            {% if form.additionalInfo.packageSize is defined %}
+              {{ form_row(form.additionalInfo.packageSize) }}
+            {% endif %}
+            {% if form.additionalInfo.packageWeight is defined %}
+              {{ form_row(form.additionalInfo.packageWeight) }}
+            {% endif %}
+            {% if form.additionalInfo.origin is defined %}
+              {{ form_row(form.additionalInfo.origin) }}
+            {% endif %}
+            {% if form.additionalInfo.sku is defined %}
+              {{ form_row(form.additionalInfo.sku) }}
+            {% endif %}
+            {% if form.additionalInfo.personInCharge is defined %}
+              {{ form_row(form.additionalInfo.personInCharge) }}
+            {% endif %}
+            {% if form.additionalInfo.shippingCompany is defined %}
+              {{ form_row(form.additionalInfo.shippingCompany) }}
+            {% endif %}
           </div>
         </div>
       </div>
       <br>
       <div class="col-md-12 text-right">
-        <input type="submit" class="btn btn-primary btn-block col-md-4 offset-md-4" disabled value="{{ 'submit'|trans }}"/>
+        <input type="submit" id="submitButton" class="btn btn-primary btn-block col-md-4 offset-md-4" disabled value="{{ 'submit'|trans }}"/>
       </div>
       {{ form_end(form) }}
     </div>
@@ -35,6 +122,8 @@
 {% block javascripts %}
     {{ parent() }}
     <script>
-
+        var reasonFields = {{ reasonsEnabledFields|json_encode|raw }};
     </script>
+    <script src="{{ asset('js/toggle-fields.js') }}"></script>
+    <script src="{{ asset('js/show-error-fields.js') }}"></script>
 {% endblock %}

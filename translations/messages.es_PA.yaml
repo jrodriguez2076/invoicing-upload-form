@@ -1,5 +1,0 @@
-general_info:
-  account_name.label: Nombre de la Cuenta
-  seller_center_id.label: ID del Vendedor (SC)
-  email.label: Correo Electrónico de Contacto
-  reason.label: Tipo de Solicitud

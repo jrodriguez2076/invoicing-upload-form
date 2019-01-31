@@ -1,5 +1,54 @@
+submit: Enviar información
+page_title: Formulario de Contacto - Linio
+form_title: Formulario de Contacto
+section_1_title: Completa la siguiente información
+MANDATORY_FIELD: Este campo es requerido.
+THANKS_MESSAGE: 'Gracias por tu interés en vender con nosotros'
+SUCCESS_MESSAGE: 'Revisaremos tu solicitud y te contactaremos al correo que nos proporcionaste.'
+
+'Choose an option': Elige una opción
+'envelopes': Sobres
+'bags': Bolsas
+'boxes': Cajas
+'envelopes_bags': Sobres y Bolsas
+'envelopes_boxes': Sobres y Cajas
+'bags_boxes': Bolsas y Cajas
+'all': Todos
+'international': Internacional
+'local': Local
+'blind_fee': Comisión ciega
+'interfactura': Interfactura
+'own_invoicing': Facturación propia
+
 general_info:
-  account_name.label: Nombre de la Cuenta
-  seller_center_id.label: ID del Vendedor (SC)
-  email.label: Correo Electrónico de Contacto
-  reason.label: Tipo de Solicitud
+  account_name.label: Nombre de Cuenta
+  seller_center_id.label: ID en Seller Center
+  email.label: Correo de contacto
+  reason.label: Razón de contacto
+
+additional_info:
+  cutoff_dates.label: Fechas de Corte
+  shipping_company.label: Paquetería
+  person_in_charge.label: Nombre de la persona que recibirá el link
+  order_numbers.label: Números de orden
+  amounts.label: Montos
+  invoicing_types.label: Esquema de facturación
+  po_number.label: Número de PO
+  id_number.label: RUT
+  legal_name.label: Razón social
+  responsible_name.label: Nombre del encargado
+  error_description.label: ¿Cuál es el error?
+  billing_numbers.label: Números de las facturas
+  billing_dates.label: Fechas de las facturas
+  tracking_number.label: Número de guía
+  phone.label: Número de teléfono de contacto
+  reason.label: Motivo
+  bank_account_number.label: Número de cuenta bancaria
+  warehouse_address.label: Dirección de almacén
+  supplies.label: Insumos
+  packaging_type.label: Tipo de paquetes
+  package_qty.label: Cantidad de paquetes
+  package_size.label: Tamaño de paquetes (cm3)
+  package_weight.label: Peso total de paquetes (Kg)
+  origin.label: Internacional o Local
+  sku.label: SKU del vendedor

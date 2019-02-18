@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: parameters
+data:
+  APP_ENV: 'prod'
+  APP_SECRET: 'e08b6d1a878f42f5a592ef06f770475546f656b3'
+  ORO_PRM_BASE_URL: 'https://prm01.linio-development.com/'
+  ORO_PRM_CLIENT_ID: 'psc-form'
+  ORO_PRM_CLIENT_SECRET: 'deab9b9beac65e1c896864f645ac4d91d78d19ef'
+  LOG_PATH: '/tmp/stdout'

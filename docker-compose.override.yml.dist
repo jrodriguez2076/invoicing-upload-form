@@ -9,7 +9,7 @@ services:
 
   nginx:
     ports:
-      - '8014:80'
+      - '8025:80'
     environment:
       VIRTUAL_HOST: psc-form.localhost
       NGINX_HOST: psc-form.localhost

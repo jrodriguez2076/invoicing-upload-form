@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace App\Form\Store\cl;
 
+use App\Service\ParameterService;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
@@ -12,8 +13,20 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 
 class AdditionalInfoType extends AbstractType
 {
+    /**
+     * @var ParameterService
+     */
+    protected $parameterService;
+
+    public function __construct(ParameterService $parameterService)
+    {
+        $this->parameterService = $parameterService;
+    }
+
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
+        $store = $options['store'];
+
         $builder
             ->add(
                 'cutoffDates',
@@ -67,21 +80,7 @@ class AdditionalInfoType extends AbstractType
                     'label_attr' => [
                         'class' => 'additionalField hide shippingCompany',
                     ],
-                    'choices' => [
-                        '4-72' => '4-72',
-                        'Bluexpress' => 'Bluexpress',
-                        'Correo de Chile' => 'Correo de Chile',
-                        'Deprisa' => 'Deprisa',
-                        'DHL' => 'DHL',
-                        'Estafeta' => 'Estafeta',
-                        'Fedex' => 'Fedex',
-                        'Oca' => 'Oca',
-                        'Own Fleet' => 'Own Fleet',
-                        'Saferbo' => 'Saferbo',
-                        'Servientrega' => 'Servientrega',
-                        'TCC' => 'TCC',
-                        'Urbano' => 'Urbano',
-                    ],
+                    'choices' => $this->parameterService->getShippingCompanyChoices($store),
                     'empty_data' => null,
                     'placeholder' => 'Choose an option',
                 ]
@@ -204,10 +203,7 @@ class AdditionalInfoType extends AbstractType
                     'label_attr' => [
                         'class' => 'additionalField hide origin',
                     ],
-                    'choices' => [
-                        'international' => 'international',
-                        'local' => 'local',
-                    ],
+                    'choices' => $this->parameterService->getOriginChoices($store),
                     'empty_data' => null,
                     'placeholder' => 'Choose an option',
                 ]
@@ -230,5 +226,10 @@ class AdditionalInfoType extends AbstractType
 
     public function configureOptions(OptionsResolver $resolver): void
     {
+        $resolver->setDefaults(
+            [
+                'store' => 'cl'
+            ]
+        );
     }
 }

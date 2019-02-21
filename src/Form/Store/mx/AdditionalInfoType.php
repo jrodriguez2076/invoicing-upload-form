@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace App\Form\Store\mx;
 
+use App\Service\ParameterService;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
@@ -12,8 +13,20 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 
 class AdditionalInfoType extends AbstractType
 {
+    /**
+     * @var ParameterService
+     */
+    protected $parameterService;
+
+    public function __construct(ParameterService $parameterService)
+    {
+        $this->parameterService = $parameterService;
+    }
+
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
+        $store = $options['store'];
+
         $builder
             ->add(
                 'cutoffDates',
@@ -68,11 +81,7 @@ class AdditionalInfoType extends AbstractType
                     'label_attr' => [
                         'class' => 'additionalField hide invoicingType',
                     ],
-                    'choices' => [
-                        'blind_fee' => 'blind_fee',
-                        'interfactura' => 'interfactura',
-                        'own_invoicing' => 'own_invoicing',
-                    ],
+                    'choices' => $this->parameterService->getInvoicingTypeChoices($store),
                     'empty_data' => null,
                     'placeholder' => 'Choose an option',
                 ]
@@ -260,15 +269,7 @@ class AdditionalInfoType extends AbstractType
                     'label_attr' => [
                         'class' => 'additionalField hide packagingType',
                     ],
-                    'choices' => [
-                        'envelopes' => 'envelopes',
-                        'bags' => 'bags',
-                        'boxes' => 'boxes',
-                        'envelopes_bags' => 'envelopes_bags',
-                        'envelopes_boxes' => 'envelopes_boxes',
-                        'bags_boxes' => 'bags_boxes',
-                        'all' => 'all',
-                    ],
+                    'choices' => $this->parameterService->getPackagingTypeChoices($store),
                     'empty_data' => null,
                     'placeholder' => 'Choose an option',
                 ]
@@ -323,10 +324,7 @@ class AdditionalInfoType extends AbstractType
                     'label_attr' => [
                         'class' => 'additionalField hide origin',
                     ],
-                    'choices' => [
-                        'international' => 'international',
-                        'local' => 'local',
-                    ],
+                    'choices' => $this->parameterService->getOriginChoices($store),
                     'empty_data' => null,
                     'placeholder' => 'Choose an option',
                 ]
@@ -349,5 +347,10 @@ class AdditionalInfoType extends AbstractType
 
     public function configureOptions(OptionsResolver $resolver): void
     {
+        $resolver->setDefaults(
+            [
+                'store' => 'mx'
+            ]
+        );
     }
 }

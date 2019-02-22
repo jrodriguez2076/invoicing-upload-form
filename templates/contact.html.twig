@@ -6,20 +6,20 @@
   </div>
   <div class="container">
     <div class="accordion" id="accordionForm">
-      <h1 align="center">{{ 'form_title'|trans }}</h1><br>
+      <h1 align="center">{{ 'FORM_TITLE'|trans }}</h1><br>
       {{ form_start(form) }}
       <div class="card">
         <div class="card-header">
           <h5 class="mb-0">
-            {{ 'section_1_title' | trans }}
+            {{ 'SECTION_1_TITLE' | trans }}
           </h5>
         </div>
         <div id="collapseOne">
           <div class="card-body row">
-            {{ form_row(form.generalInfo.accountName, { 'label': 'general_info.account_name.label' } ) }}
-            {{ form_row(form.generalInfo.sellerCenterId, { 'label': 'general_info.seller_center_id.label' } ) }}
-            {{ form_row(form.generalInfo.email, { 'label': 'general_info.email.label' } ) }}
-            {{ form_row(form.generalInfo.reasons, { 'label': 'general_info.reason.label', 'id': 'reasons' }) }}
+            {{ form_row(form.generalInfo.accountName, { 'label': 'ACCOUNT_NAME_LABEL' } ) }}
+            {{ form_row(form.generalInfo.sellerCenterId, { 'label': 'SELLER_CENTER_ID_LABEL' } ) }}
+            {{ form_row(form.generalInfo.email, { 'label': 'EMAIL_LABEL' } ) }}
+            {{ form_row(form.generalInfo.reasons, { 'label': 'REASONS_LABEL', 'id': 'reasons' }) }}
           </div>
         </div>
       </div>

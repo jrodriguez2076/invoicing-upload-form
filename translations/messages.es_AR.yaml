@@ -1,11 +1,12 @@
-submit: Enviar información
-page_title: Formulario de Contacto - Linio
-form_title: Formulario de Contacto
-section_1_title: Completa la siguiente información
+PAGE_TITLE: Formulario de Contacto - Linio
+FORM_TITLE: Formulario de Contacto
+SECTION_1_TITLE: Completa la siguiente información
 MANDATORY_FIELD: Este campo es requerido.
 THANKS_MESSAGE: 'Gracias por tu interés en vender con nosotros'
 SUCCESS_MESSAGE: 'Revisaremos tu solicitud y te contactaremos al correo que nos proporcionaste.'
 
+# CHOICE VALUES AND BUTTON LABELS
+'submit': Enviar información
 'Choose an option': Elige una opción
 'envelopes': Sobres
 'bags': Bolsas
@@ -20,35 +21,35 @@ SUCCESS_MESSAGE: 'Revisaremos tu solicitud y te contactaremos al correo que nos 
 'interfactura': Interfactura
 'own_invoicing': Facturación propia
 
-general_info:
-  account_name.label: Nombre de Cuenta
-  seller_center_id.label: ID en Seller Center
-  email.label: Correo de contacto
-  reason.label: Razón de contacto
+# GENERAL INFORMATION FORM FIELD LABELS
+ACCOUNT_NAME_LABEL: Nombre de Cuenta
+SELLER_CENTER_ID_LABEL: ID en Seller Center
+EMAIL_LABEL: Correo de contacto
+REASONS_LABEL: Razón de contacto
 
-additional_info:
-  cutoff_dates.label: Fechas de Corte
-  shipping_company.label: Transportadora
-  person_in_charge.label: Nombre de la persona que recibirá el link
-  order_numbers.label: Números de orden
-  amounts.label: Montos
-  invoicing_types.label: Esquema de facturación
-  po_number.label: Número de PO
-  id_number.label: DNI/Estatuto
-  legal_name.label: Razón social
-  responsible_name.label: Nombre del encargado
-  error_description.label: ¿Cuál es el error?
-  billing_numbers.label: Números de las facturas
-  billing_dates.label: Fechas de las facturas
-  tracking_number.label: Número de rastreo
-  phone.label: Número de teléfono de contacto
-  reason.label: Motivo
-  bank_account_number.label: Número de cuenta bancaria
-  warehouse_address.label: Dirección de almacén
-  supplies.label: Insumos
-  packaging_type.label: Tipo de paquetes
-  package_qty.label: Cantidad de paquetes
-  package_size.label: Tamaño de paquetes (cm3)
-  package_weight.label: Peso total de paquetes (Kg)
-  origin.label: Internacional o Local
-  sku.label: SKU del vendedor
+# ADDITIONAL INFORMATION FORM FIELD LABELS
+CUTOFF_DATES_LABEL: Fechas de Corte
+SHIPPING_COMPANY_LABEL: Transportadora
+PERSON_IN_CHARGE_LABEL: Nombre de la persona que recibirá el link
+ORDER_NUMBERS_LABEL: Números de orden
+AMOUNTS_LABEL: Montos
+INVOICING_TYPES_LABEL: Esquema de facturación
+PO_NUMBER_LABEL: Número de PO
+ID_NUMBER_LABEL: DNI/Estatuto
+LEGAL_NAME_LABEL: Razón social
+RESPONSIBLE_NAME_LABEL: Nombre del encargado
+ERROR_DESCRIPTION_LABEL: ¿Cuál es el error?
+BILLING_NUMBERS_LABEL: Números de las facturas
+BILLING_DATES_LABEL: Fechas de las facturas
+TRACKING_NUMBER_LABEL: Número de rastreo
+PHONE_LABEL: Número de teléfono de contacto
+REASON_LABEL: Motivo
+BANK_ACCOUNT_NUMBER_LABEL: Número de cuenta bancaria
+WAREHOUSE_ADDRESS_LABEL: Dirección de almacén
+SUPPLIES_LABEL: Insumos
+PACKAGING_TYPE_LABEL: Tipo de paquetes
+PACKAGE_QTY_LABEL: Cantidad de paquetes
+PACKAGE_SIZE_LABEL: Tamaño de paquetes (cm3)
+PACKAGE_WEIGHT_LABEL: Peso total de paquetes (Kg)
+ORIGIN_LABEL: Internacional o Local
+SKU_LABEL: SKU del vendedor

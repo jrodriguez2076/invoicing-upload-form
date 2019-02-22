@@ -1,12 +1,13 @@
-submit: Submit information
-page_title: Contact Form - Linio
-form_title: Contact Form
-Choose an option: Choose an option
-section_1_title: Fill the following information
+PAGE_TITLE: Contact Form - Linio
+FORM_TITLE: Contact Form
+SECTION_1_TITLE: Fill the following information
 MANDATORY_FIELD: This field is required.
 THANKS_MESSAGE: Thanks for contacting us!
 SUCCESS_MESSAGE: We are going to check your request and we will contact you by email.
 
+# CHOICE VALUES AND BUTTON LABELS
+'submit': Submit information
+'Choose an option': Choose an option
 'envelopes': Envelopes
 'bags': Bags
 'boxes': Boxes
@@ -20,35 +21,35 @@ SUCCESS_MESSAGE: We are going to check your request and we will contact you by e
 'interfactura': Interfactura
 'own_invoicing': Own Invoicing
 
-general_info:
-  account_name.label: Account Name
-  seller_center_id.label: Seller Center ID
-  email.label: Contact Email
-  reason.label: Contact Reason
+# GENERAL INFORMATION FORM FIELD LABELS
+ACCOUNT_NAME_LABEL: Account Name
+SELLER_CENTER_ID_LABEL: Seller Center ID
+EMAIL_LABEL: Contact Email
+REASONS_LABEL: Contact Reason
 
-additional_info:
-  cutoff_dates.label: Cutoff Dates
-  shipping_company.label: Courier
-  person_in_charge.label: Person in charge
-  order_numbers.label: Order Numbers
-  amounts.label: Amounts
-  invoicing_types.label: Invoicing Types
-  po_number.label: PO Number
-  id_number.label: ID Number
-  legal_name.label: Legal Name
-  responsible_name.label: Responsible Name
-  error_description.label: Error Description
-  billing_numbers.label: Billing Numbers
-  billing_dates.label: Billing Dates
-  tracking_number.label: Tracking Number
-  phone.label: Phone
-  reason.label: Reason
-  bank_account_number.label: Bank Account Number
-  warehouse_address.label: Warehouse Address
-  supplies.label: Supplies
-  packaging_type.label: Packaging Type
-  package_qty.label: Package Quantity
-  package_size.label: Package Size
-  package_weight.label: Package Weight
-  origin.label: Origin
-  sku.label: SKU
+# ADDITIONAL INFORMATION FORM FIELD LABELS
+CUTOFF_DATES_LABEL: Cutoff Dates
+SHIPPING_COMPANY_LABEL: Courier
+PERSON_IN_CHARGE_LABEL: Person in charge
+ORDER_NUMBERS_LABEL: Order Numbers
+AMOUNTS_LABEL: Amounts
+INVOICING_TYPES_LABEL: Invoicing Types
+PO_NUMBER_LABEL: PO Number
+ID_NUMBER_LABEL: ID Number
+LEGAL_NAME_LABEL: Legal Name
+RESPONSIBLE_NAME_LABEL: Responsible Name
+ERROR_DESCRIPTION_LABEL: Error Description
+BILLING_NUMBERS_LABEL: Billing Numbers
+BILLING_DATES_LABEL: Billing Dates
+TRACKING_NUMBER_LABEL: Tracking Number
+PHONE_LABEL: Phone
+REASON_LABEL: Reason
+BANK_ACCOUNT_NUMBER_LABEL: Bank Account Number
+WAREHOUSE_ADDRESS_LABEL: Warehouse Address
+SUPPLIES_LABEL: Supplies
+PACKAGING_TYPE_LABEL: Packaging Type
+PACKAGE_QTY_LABEL: Package Quantity
+PACKAGE_SIZE_LABEL: Package Size
+PACKAGE_WEIGHT_LABEL: Package Weight
+ORIGIN_LABEL: Origin
+SKU_LABEL: SKU

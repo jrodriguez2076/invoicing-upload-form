@@ -32,49 +32,49 @@ class AdditionalInfoType extends AbstractType
                 'cutoffDates',
                 TextType::class,
                 [
-                    'label' => 'additional_info.cutoff_dates.label',
+                    'label' => 'CUTOFF_DATES_LABEL',
                     'attr' => [
                         'class' => 'additionalField hide cutoffDates',
                     ],
                     'label_attr' => [
                         'class' => 'additionalField hide cutoffDates',
                     ],
-                    'help' => 'dates_caption',
+                    'help' => 'DATES_CAPTION',
                 ]
             )
             ->add(
                 'orderNumbers',
                 TextType::class,
                 [
-                    'label' => 'additional_info.order_numbers.label',
+                    'label' => 'ORDER_NUMBERS_LABEL',
                     'attr' => [
                         'class' => 'additionalField hide orderNumbers',
                     ],
                     'label_attr' => [
                         'class' => 'additionalField hide orderNumbers',
                     ],
-                    'help' => 'order_numbers_caption',
+                    'help' => 'ORDER_NUMBERS_CAPTION',
                 ]
             )
             ->add(
                 'amounts',
                 TextType::class,
                 [
-                    'label' => 'additional_info.amounts.label',
+                    'label' => 'AMOUNTS_LABEL',
                     'attr' => [
                         'class' => 'additionalField hide amounts',
                     ],
                     'label_attr' => [
                         'class' => 'additionalField hide amounts',
                     ],
-                    'help' => 'amounts_caption',
+                    'help' => 'AMOUNTS_CAPTION',
                 ]
             )
             ->add(
                 'invoicingType',
                 ChoiceType::class,
                 [
-                    'label' => 'additional_info.invoicing_types.label',
+                    'label' => 'INVOICING_TYPES_LABEL',
                     'attr' => [
                         'class' => 'additionalField hide invoicingType',
                     ],
@@ -90,7 +90,7 @@ class AdditionalInfoType extends AbstractType
                 'poNumber',
                 TextType::class,
                 [
-                    'label' => 'additional_info.po_number.label',
+                    'label' => 'PO_NUMBER_LABEL',
                     'attr' => [
                         'class' => 'additionalField hide poNumber',
                     ],
@@ -103,7 +103,7 @@ class AdditionalInfoType extends AbstractType
                 'idNumber',
                 TextType::class,
                 [
-                    'label' => 'additional_info.id_number.label',
+                    'label' => 'ID_NUMBER_LABEL',
                     'attr' => [
                         'class' => 'additionalField hide idNumber',
                     ],
@@ -116,7 +116,7 @@ class AdditionalInfoType extends AbstractType
                 'legalName',
                 TextType::class,
                 [
-                    'label' => 'additional_info.legal_name.label',
+                    'label' => 'LEGAL_NAME_LABEL',
                     'attr' => [
                         'class' => 'additionalField hide legalName',
                     ],
@@ -129,7 +129,7 @@ class AdditionalInfoType extends AbstractType
                 'responsibleName',
                 TextType::class,
                 [
-                    'label' => 'additional_info.responsible_name.label',
+                    'label' => 'RESPONSIBLE_NAME_LABEL',
                     'attr' => [
                         'class' => 'additionalField hide responsibleName',
                     ],
@@ -142,7 +142,7 @@ class AdditionalInfoType extends AbstractType
                 'errorDescription',
                 TextType::class,
                 [
-                    'label' => 'additional_info.error_description.label',
+                    'label' => 'ERROR_DESCRIPTION_LABEL',
                     'attr' => [
                         'class' => 'additionalField hide errorDescription',
                     ],
@@ -155,35 +155,35 @@ class AdditionalInfoType extends AbstractType
                 'billingNumbers',
                 TextType::class,
                 [
-                    'label' => 'additional_info.billing_numbers.label',
+                    'label' => 'BILLING_NUMBERS_LABEL',
                     'attr' => [
                         'class' => 'additionalField hide billingNumbers',
                     ],
                     'label_attr' => [
                         'class' => 'additionalField hide billingNumbers',
                     ],
-                    'help' => 'billing_numbers_caption',
+                    'help' => 'BILLING_NUMBERS_CAPTION',
                 ]
             )
             ->add(
                 'billingDates',
                 TextType::class,
                 [
-                    'label' => 'additional_info.billing_dates.label',
+                    'label' => 'BILLING_DATES_LABEL',
                     'attr' => [
                         'class' => 'additionalField hide billingDates',
                     ],
                     'label_attr' => [
                         'class' => 'additionalField hide billingDates',
                     ],
-                    'help' => 'dates_caption',
+                    'help' => 'DATES_CAPTION',
                 ]
             )
             ->add(
                 'trackingNumber',
                 TextType::class,
                 [
-                    'label' => 'additional_info.tracking_number.label',
+                    'label' => 'TRACKING_NUMBER_LABEL',
                     'attr' => [
                         'class' => 'additionalField hide trackingNumber',
                     ],
@@ -196,7 +196,7 @@ class AdditionalInfoType extends AbstractType
                 'phone',
                 TextType::class,
                 [
-                    'label' => 'additional_info.phone.label',
+                    'label' => 'PHONE_LABEL',
                     'attr' => [
                         'class' => 'additionalField hide phone',
                     ],
@@ -209,7 +209,7 @@ class AdditionalInfoType extends AbstractType
                 'reason',
                 TextType::class,
                 [
-                    'label' => 'additional_info.reason.label',
+                    'label' => 'REASON_LABEL',
                     'attr' => [
                         'class' => 'additionalField hide reason',
                     ],
@@ -222,7 +222,7 @@ class AdditionalInfoType extends AbstractType
                 'bankAccountNumber',
                 TextType::class,
                 [
-                    'label' => 'additional_info.bank_account_number.label',
+                    'label' => 'BANK_ACCOUNT_NUMBER_LABEL',
                     'attr' => [
                         'class' => 'additionalField hide bankAccountNumber',
                     ],
@@ -235,7 +235,7 @@ class AdditionalInfoType extends AbstractType
                 'warehouseAddress',
                 TextType::class,
                 [
-                    'label' => 'additional_info.warehouse_address.label',
+                    'label' => 'WAREHOUSE_ADDRESS_LABEL',
                     'attr' => [
                         'class' => 'additionalField hide warehouseAddress',
                     ],
@@ -248,21 +248,21 @@ class AdditionalInfoType extends AbstractType
                 'supplies',
                 TextType::class,
                 [
-                    'label' => 'additional_info.supplies.label',
+                    'label' => 'SUPPLIES_LABEL',
                     'attr' => [
                         'class' => 'additionalField hide supplies',
                     ],
                     'label_attr' => [
                         'class' => 'additionalField hide supplies',
                     ],
-                    'help' => 'supplies_caption',
+                    'help' => 'SUPPLIES_CAPTION',
                 ]
             )
             ->add(
                 'packagingType',
                 ChoiceType::class,
                 [
-                    'label' => 'additional_info.packaging_type.label',
+                    'label' => 'PACKAGING_TYPE_LABEL',
                     'attr' => [
                         'class' => 'additionalField hide packagingType',
                     ],
@@ -278,7 +278,7 @@ class AdditionalInfoType extends AbstractType
                 'packageQty',
                 TextType::class,
                 [
-                    'label' => 'additional_info.package_qty.label',
+                    'label' => 'PACKAGE_QTY_LABEL',
                     'attr' => [
                         'class' => 'additionalField hide packageQty',
                     ],
@@ -291,7 +291,7 @@ class AdditionalInfoType extends AbstractType
                 'packageSize',
                 TextType::class,
                 [
-                    'label' => 'additional_info.package_size.label',
+                    'label' => 'PACKAGE_SIZE_LABEL',
                     'attr' => [
                         'class' => 'additionalField hide packageSize',
                     ],
@@ -304,7 +304,7 @@ class AdditionalInfoType extends AbstractType
                 'packageWeight',
                 TextType::class,
                 [
-                    'label' => 'additional_info.package_weight.label',
+                    'label' => 'PACKAGE_WEIGHT_LABEL',
                     'attr' => [
                         'class' => 'additionalField hide packageWeight',
                     ],
@@ -317,7 +317,7 @@ class AdditionalInfoType extends AbstractType
                 'origin',
                 ChoiceType::class,
                 [
-                    'label' => 'additional_info.origin.label',
+                    'label' => 'ORIGIN_LABEL',
                     'attr' => [
                         'class' => 'additionalField hide origin',
                     ],
@@ -333,14 +333,14 @@ class AdditionalInfoType extends AbstractType
                 'sku',
                 TextType::class,
                 [
-                    'label' => 'additional_info.sku.label',
+                    'label' => 'SKU_LABEL',
                     'attr' => [
                         'class' => 'additionalField hide sku',
                     ],
                     'label_attr' => [
                         'class' => 'additionalField hide sku',
                     ],
-                    'help' => 'sku_caption',
+                    'help' => 'SKU_CAPTION',
                 ]
             );
     }
@@ -349,7 +349,7 @@ class AdditionalInfoType extends AbstractType
     {
         $resolver->setDefaults(
             [
-                'store' => 'mx'
+                'store' => 'mx',
             ]
         );
     }

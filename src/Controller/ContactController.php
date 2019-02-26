@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace App\Controller;
 
 use App\Adapter\PrmAdapter;
-use App\Entity\Contact;
 use App\Form\ContactFormFactory;
 use App\Form\FormTemplateFactory;
 use App\Service\PrmService;
@@ -41,20 +40,30 @@ class ContactController extends AbstractController
     public function index(Request $request, string $store): Response
     {
         $store = strtolower($store);
-        $reasons = $this->prmAdapter->getReasons($store);
+        $reasonsInformation = $this->prmAdapter->getReasons($store);
 
-        $contact = new Contact();
         $form = $this->createForm(
-            ContactFormFactory::fromStore($store, $reasons),
-            $contact,
-            ['reasons' => $reasons]
+            ContactFormFactory::fromStore($store),
+            null,
+            [
+                'reasons' => $reasonsInformation['reasons'],
+                'store' => $store,
+                'reasonsEnabledFields' => $reasonsInformation['reasonsEnabledFields'],
+            ]
         );
+
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            return $this->render('success.html.twig');
+        }
 
         return $this->render(
             FormTemplateFactory::fromStore($store),
             [
                 'form' => $form->createView(),
-                'reasons' => $reasons,
+                'reasons' => $reasonsInformation['reasons'],
+                'reasonsEnabledFields' => $reasonsInformation['reasonsEnabledFields'],
             ]
         );
     }

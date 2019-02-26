@@ -1,2 +1,152 @@
 parameters:
-  locale: 'en_US'
+  locale: en_US
+  ar:
+    invoincing_type:
+      blind_fee: blind_fee
+      interfactura: interfactura
+      own_invoicing: own_invoicing
+    origin:
+      international: international
+      local: local
+    packaging_types:
+      envelopes: envelopes
+      bags: bags
+      boxes: boxes
+      envelopes_bags: envelopes_bags
+      envelopes_boxes: envelopes_boxes
+      bags_boxes: bags_boxes
+      all: all
+    shipping_companies:
+      4-72: 4-72
+      Bluexpress: Bluexpress
+      Correo de Chile: Correo de Chile
+      Deprisa: Deprisa
+      DHL: DHL
+      Estafeta: Estafeta
+      Fedex: Fedex
+      Oca: Oca
+      Own Fleet: Own Fleet
+      Saferbo: Saferbo
+      Servientrega: Servientrega
+      TCC: TCC
+      Urbano: Urbano
+  cl:
+    invoincing_type:
+      blind_fee: blind_fee
+      interfactura: interfactura
+      own_invoicing: own_invoicing
+    origin:
+      international: international
+      local: local
+    packaging_types:
+      envelopes: envelopes
+      bags: bags
+      boxes: boxes
+      envelopes_bags: envelopes_bags
+      envelopes_boxes: envelopes_boxes
+      bags_boxes: bags_boxes
+      all: all
+    shipping_companies:
+      4-72: 4-72
+      Bluexpress: Bluexpress
+      Correo de Chile: Correo de Chile
+      Deprisa: Deprisa
+      DHL: DHL
+      Estafeta: Estafeta
+      Fedex: Fedex
+      Oca: Oca
+      Own Fleet: Own Fleet
+      Saferbo: Saferbo
+      Servientrega: Servientrega
+      TCC: TCC
+      Urbano: Urbano
+  co:
+    invoincing_type:
+      blind_fee: blind_fee
+      interfactura: interfactura
+      own_invoicing: own_invoicing
+    origin:
+      international: international
+      local: local
+    packaging_types:
+      envelopes: envelopes
+      bags: bags
+      boxes: boxes
+      envelopes_bags: envelopes_bags
+      envelopes_boxes: envelopes_boxes
+      bags_boxes: bags_boxes
+      all: all
+    shipping_companies:
+      4-72: 4-72
+      Bluexpress: Bluexpress
+      Correo de Chile: Correo de Chile
+      Deprisa: Deprisa
+      DHL: DHL
+      Estafeta: Estafeta
+      Fedex: Fedex
+      Oca: Oca
+      Own Fleet: Own Fleet
+      Saferbo: Saferbo
+      Servientrega: Servientrega
+      TCC: TCC
+      Urbano: Urbano
+  mx:
+    invoincing_type:
+      blind_fee: blind_fee
+      interfactura: interfactura
+      own_invoicing: own_invoicing
+    origin:
+      international: international
+      local: local
+    packaging_types:
+      envelopes: envelopes
+      bags: bags
+      boxes: boxes
+      envelopes_bags: envelopes_bags
+      envelopes_boxes: envelopes_boxes
+      bags_boxes: bags_boxes
+      all: all
+    shipping_companies:
+      4-72: 4-72
+      Bluexpress: Bluexpress
+      Correo de Chile: Correo de Chile
+      Deprisa: Deprisa
+      DHL: DHL
+      Estafeta: Estafeta
+      Fedex: Fedex
+      Oca: Oca
+      Own Fleet: Own Fleet
+      Saferbo: Saferbo
+      Servientrega: Servientrega
+      TCC: TCC
+      Urbano: Urbano
+  pe:
+    invoincing_type:
+      blind_fee: blind_fee
+      interfactura: interfactura
+      own_invoicing: own_invoicing
+    origin:
+      international: international
+      local: local
+    packaging_types:
+      envelopes: envelopes
+      bags: bags
+      boxes: boxes
+      envelopes_bags: envelopes_bags
+      envelopes_boxes: envelopes_boxes
+      bags_boxes: bags_boxes
+      all: all
+    shipping_companies:
+      4-72: 4-72
+      Bluexpress: Bluexpress
+      Correo de Chile: Correo de Chile
+      Deprisa: Deprisa
+      DHL: DHL
+      Estafeta: Estafeta
+      Fedex: Fedex
+      Oca: Oca
+      Own Fleet: Own Fleet
+      Saferbo: Saferbo
+      Servientrega: Servientrega
+      TCC: TCC
+      Urbano: Urbano

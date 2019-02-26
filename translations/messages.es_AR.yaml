@@ -1,5 +1,55 @@
-general_info:
-  account_name.label: Nombre de la Cuenta
-  seller_center_id.label: ID del Vendedor (SC)
-  email.label: Correo Electrónico de Contacto
-  reason.label: Tipo de Solicitud
+PAGE_TITLE: Formulario de Contacto - Linio
+FORM_TITLE: Formulario de Contacto
+SECTION_1_TITLE: Completa la siguiente información
+MANDATORY_FIELD: Este campo es requerido.
+THANKS_MESSAGE: 'Gracias por tu interés en vender con nosotros'
+SUCCESS_MESSAGE: 'Revisaremos tu solicitud y te contactaremos al correo que nos proporcionaste.'
+
+# CHOICE VALUES AND BUTTON LABELS
+'submit': Enviar información
+'Choose an option': Elige una opción
+'envelopes': Sobres
+'bags': Bolsas
+'boxes': Cajas
+'envelopes_bags': Sobres y Bolsas
+'envelopes_boxes': Sobres y Cajas
+'bags_boxes': Bolsas y Cajas
+'all': Todos
+'international': Internacional
+'local': Local
+'blind_fee': Comisión ciega
+'interfactura': Interfactura
+'own_invoicing': Facturación propia
+
+# GENERAL INFORMATION FORM FIELD LABELS
+ACCOUNT_NAME_LABEL: Nombre de Cuenta
+SELLER_CENTER_ID_LABEL: ID en Seller Center
+EMAIL_LABEL: Correo de contacto
+REASONS_LABEL: Razón de contacto
+
+# ADDITIONAL INFORMATION FORM FIELD LABELS
+CUTOFF_DATES_LABEL: Fechas de Corte
+SHIPPING_COMPANY_LABEL: Transportadora
+PERSON_IN_CHARGE_LABEL: Nombre de la persona que recibirá el link
+ORDER_NUMBERS_LABEL: Números de orden
+AMOUNTS_LABEL: Montos
+INVOICING_TYPES_LABEL: Esquema de facturación
+PO_NUMBER_LABEL: Número de PO
+ID_NUMBER_LABEL: DNI/Estatuto
+LEGAL_NAME_LABEL: Razón social
+RESPONSIBLE_NAME_LABEL: Nombre del encargado
+ERROR_DESCRIPTION_LABEL: ¿Cuál es el error?
+BILLING_NUMBERS_LABEL: Números de las facturas
+BILLING_DATES_LABEL: Fechas de las facturas
+TRACKING_NUMBER_LABEL: Número de rastreo
+PHONE_LABEL: Número de teléfono de contacto
+REASON_LABEL: Motivo
+BANK_ACCOUNT_NUMBER_LABEL: Número de cuenta bancaria
+WAREHOUSE_ADDRESS_LABEL: Dirección de almacén
+SUPPLIES_LABEL: Insumos
+PACKAGING_TYPE_LABEL: Tipo de paquetes
+PACKAGE_QTY_LABEL: Cantidad de paquetes
+PACKAGE_SIZE_LABEL: Tamaño de paquetes (cm3)
+PACKAGE_WEIGHT_LABEL: Peso total de paquetes (Kg)
+ORIGIN_LABEL: Internacional o Local
+SKU_LABEL: SKU del vendedor

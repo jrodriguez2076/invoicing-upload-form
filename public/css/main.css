@@ -25,9 +25,14 @@ body {
 }
 
 label.required:after {
-  content: ' * ';
+  content: ' *';
+  color: red;
 }
 
-.account-hunter {
-  text-align: right;
+.form-title {
+  text-align: center;
+}
+
+.hide {
+  display: none;
 }

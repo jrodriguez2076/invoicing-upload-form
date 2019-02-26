@@ -61,12 +61,14 @@ class PrmAdapter
 
         $responseBody = json_decode((string) $response->getBody(), true);
         $reasons = [];
+        $reasonsEnabledFields = [];
 
         foreach ($responseBody as $row) {
             $reasons[$row['category']][$row['name']] = $row['id'];
+            $reasonsEnabledFields[$row['id']] = explode(',', $row['contactFormFields']);
         }
 
-        return $reasons;
+        return ['reasons' => $reasons, 'reasonsEnabledFields' => $reasonsEnabledFields];
     }
 
     protected function getWsseHeaders(): array

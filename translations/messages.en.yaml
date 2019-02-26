@@ -1,5 +1,55 @@
-general_info:
-  account_name.label: Account Name
-  seller_center_id.label: Seller Center ID
-  email.label: Contact Email
-  reason.label: Contact Reason
+PAGE_TITLE: Contact Form - Linio
+FORM_TITLE: Contact Form
+SECTION_1_TITLE: Fill the following information
+MANDATORY_FIELD: This field is required.
+THANKS_MESSAGE: Thanks for contacting us!
+SUCCESS_MESSAGE: We are going to check your request and we will contact you by email.
+
+# CHOICE VALUES AND BUTTON LABELS
+'submit': Submit information
+'Choose an option': Choose an option
+'envelopes': Envelopes
+'bags': Bags
+'boxes': Boxes
+'envelopes_bags': Envelopes & Bags
+'envelopes_boxes': Envelopes & Boxes
+'bags_boxes': Bags & Boxes
+'all': All
+'international': International
+'local': Local
+'blind_fee': Blind Fee
+'interfactura': Interfactura
+'own_invoicing': Own Invoicing
+
+# GENERAL INFORMATION FORM FIELD LABELS
+ACCOUNT_NAME_LABEL: Account Name
+SELLER_CENTER_ID_LABEL: Seller Center ID
+EMAIL_LABEL: Contact Email
+REASONS_LABEL: Contact Reason
+
+# ADDITIONAL INFORMATION FORM FIELD LABELS
+CUTOFF_DATES_LABEL: Cutoff Dates
+SHIPPING_COMPANY_LABEL: Courier
+PERSON_IN_CHARGE_LABEL: Person in charge
+ORDER_NUMBERS_LABEL: Order Numbers
+AMOUNTS_LABEL: Amounts
+INVOICING_TYPES_LABEL: Invoicing Types
+PO_NUMBER_LABEL: PO Number
+ID_NUMBER_LABEL: ID Number
+LEGAL_NAME_LABEL: Legal Name
+RESPONSIBLE_NAME_LABEL: Responsible Name
+ERROR_DESCRIPTION_LABEL: Error Description
+BILLING_NUMBERS_LABEL: Billing Numbers
+BILLING_DATES_LABEL: Billing Dates
+TRACKING_NUMBER_LABEL: Tracking Number
+PHONE_LABEL: Phone
+REASON_LABEL: Reason
+BANK_ACCOUNT_NUMBER_LABEL: Bank Account Number
+WAREHOUSE_ADDRESS_LABEL: Warehouse Address
+SUPPLIES_LABEL: Supplies
+PACKAGING_TYPE_LABEL: Packaging Type
+PACKAGE_QTY_LABEL: Package Quantity
+PACKAGE_SIZE_LABEL: Package Size
+PACKAGE_WEIGHT_LABEL: Package Weight
+ORIGIN_LABEL: Origin
+SKU_LABEL: SKU

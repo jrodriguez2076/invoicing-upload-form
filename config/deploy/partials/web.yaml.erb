@@ -8,11 +8,13 @@ spec:
     matchLabels:
       app.kubernetes.io/name: psc-form
       app.kubernetes.io/managed-by: kubernetes-deploy
+      app.kubernetes.io/component: webserver
   template:
     metadata:
       labels:
         app.kubernetes.io/name: psc-form
         app.kubernetes.io/managed-by: kubernetes-deploy
+        app.kubernetes.io/component: webserver
     spec:
       nodeSelector:
         k8s.linio.com/group: web
@@ -51,6 +53,7 @@ spec:
       port: 80
   selector:
     app.kubernetes.io/name: psc-form
+    app.kubernetes.io/component: webserver
 
 ---
 

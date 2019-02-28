@@ -38,11 +38,17 @@
     "guzzlehttp/psr7": {
         "version": "1.4.2"
     },
+    "jean85/pretty-package-versions": {
+        "version": "1.2"
+    },
     "linio/log-php-sdk": {
         "version": "0.2.1"
     },
     "monolog/monolog": {
         "version": "1.23.0"
+    },
+    "ocramius/package-versions": {
+        "version": "1.4.0"
     },
     "php-cs-fixer/diff": {
         "version": "v1.3.0"
@@ -69,6 +75,18 @@
             "branch": "master",
             "version": "4.0",
             "ref": "421933bf8f0e75546ac8e00cb3eb12904fa2ac1a"
+        }
+    },
+    "sentry/sentry": {
+        "version": "1.10.0"
+    },
+    "sentry/sentry-symfony": {
+        "version": "1.0",
+        "recipe": {
+            "repo": "github.com/symfony/recipes-contrib",
+            "branch": "master",
+            "version": "1.0",
+            "ref": "fa1a2dfc020798cd7076b5419596e72dca07047a"
         }
     },
     "symfony/asset": {
@@ -181,6 +199,9 @@
             "version": "4.0",
             "ref": "cda8b550123383d25827705d05a42acf6819fe4e"
         }
+    },
+    "symfony/security-core": {
+        "version": "v4.2.3"
     },
     "symfony/stopwatch": {
         "version": "v4.1.1"

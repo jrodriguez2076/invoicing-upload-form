@@ -24,6 +24,9 @@ spec:
           envFrom:
             - <%= ENV['ENVIRONMENT'] == 'production' ? 'secret' : 'configMap' %>Ref:
                 name: parameters
+          env:
+            - name: LINIO_ENV
+              value: <%= ENV['ENVIRONMENT'] %>
         - name: nginx
           image: 137361304112.dkr.ecr.us-east-1.amazonaws.com/psc-form-nginx:<%= current_sha %>
           ports:

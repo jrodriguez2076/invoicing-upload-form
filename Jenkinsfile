@@ -106,7 +106,7 @@ pipeline {
 
             steps {
                 sh "docker pull 137361304112.dkr.ecr.us-east-1.amazonaws.com/docker-rake:latest"
-                sh "docker run --rm -e REVISION=" + deployCommit + " -v \${HOME}/.kube/config:/root/.kube/config -v \${PWD}:/application -e RELEASE_CONTROL_API_KEY 137361304112.dkr.ecr.us-east-1.amazonaws.com/docker-rake:latest deploy:staging"
+                sh "docker run --rm -e REVISION=" + deployCommit + " -v \${HOME}/.kube/config:/root/.kube/config -v \${PWD}:/application -e RELEASE_CONTROL_API_KEY -e SENTRY_API_TOKEN 137361304112.dkr.ecr.us-east-1.amazonaws.com/docker-rake:latest deploy:staging"
             }
         }
 
@@ -120,7 +120,7 @@ pipeline {
             steps {
                 sh "IMAGE_TAG=" + shortCommit + " docker-compose push"
                 sh "docker pull 137361304112.dkr.ecr.us-east-1.amazonaws.com/docker-rake:latest"
-                sh "docker run --rm -e REVISION=" + shortCommit + " -v \${HOME}/.kube/config:/root/.kube/config -v \${PWD}:/application -e RELEASE_CONTROL_API_KEY 137361304112.dkr.ecr.us-east-1.amazonaws.com/docker-rake:latest deploy:development"
+                sh "docker run --rm -e REVISION=" + shortCommit + " -v \${HOME}/.kube/config:/root/.kube/config -v \${PWD}:/application -e RELEASE_CONTROL_API_KEY -e SENTRY_API_TOKEN 137361304112.dkr.ecr.us-east-1.amazonaws.com/docker-rake:latest deploy:development"
             }
         }
     }

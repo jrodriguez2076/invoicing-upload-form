@@ -12,6 +12,7 @@
         "guzzlehttp/guzzle": "^6.3",
         "linio/log-php-sdk": "^0.2.1",
         "sensiolabs/security-checker": "^5.0",
+        "sentry/sentry-symfony": "^2.3",
         "symfony/asset": "^4.1",
         "symfony/console": "^4.1",
         "symfony/flex": "^1.0",
@@ -71,7 +72,7 @@
     },
     "extra": {
         "symfony": {
-            "allow-contrib": false
+            "allow-contrib": "true"
         }
     },
     "repositories": [

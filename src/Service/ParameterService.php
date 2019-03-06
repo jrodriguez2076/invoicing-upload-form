@@ -37,4 +37,9 @@ class ParameterService
     {
         return $this->params->get($store)['shipping_companies'] ?? [];
     }
+
+    public function getGenericAccountEmail(string $store): string
+    {
+        return $this->params->get($store)['email'] ?? '';
+    }
 }

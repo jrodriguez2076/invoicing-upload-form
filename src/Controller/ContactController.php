@@ -7,7 +7,6 @@ namespace App\Controller;
 use App\Adapter\PrmAdapter;
 use App\Form\ContactFormFactory;
 use App\Form\FormTemplateFactory;
-use App\Service\PrmService;
 use Psr\Log\LoggerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -15,11 +14,6 @@ use Symfony\Component\HttpFoundation\Response;
 
 class ContactController extends AbstractController
 {
-    /**
-     * @var PrmService
-     */
-    protected $prmService;
-
     /**
      * @var PrmAdapter
      */
@@ -30,9 +24,8 @@ class ContactController extends AbstractController
      */
     protected $logger;
 
-    public function __construct(PrmService $prmService, LoggerInterface $logger, PrmAdapter $prmAdapter)
+    public function __construct(LoggerInterface $logger, PrmAdapter $prmAdapter)
     {
-        $this->prmService = $prmService;
         $this->logger = $logger;
         $this->prmAdapter = $prmAdapter;
     }
@@ -41,6 +34,7 @@ class ContactController extends AbstractController
     {
         $store = strtolower($store);
         $reasonsInformation = $this->prmAdapter->getReasons($store);
+        $accountId = $this->prmAdapter->getGenericAccountId($store);
 
         $form = $this->createForm(
             ContactFormFactory::fromStore($store),
@@ -55,6 +49,22 @@ class ContactController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            try {
+                $this->prmAdapter->createCase($form->getData(), $reasonsInformation['reasonsEnabledFields'], $store, $accountId);
+            } catch (PrmException $exception) {
+                $this->logger->error($exception->getMessage());
+                $this->addFlash('error', 'GENERAL_ERROR');
+
+                return $this->render(
+                    FormTemplateFactory::fromStore($store),
+                    [
+                        'form' => $form->createView(),
+                        'reasons' => $reasonsInformation['reasons'],
+                        'reasonsEnabledFields' => $reasonsInformation['reasonsEnabledFields'],
+                    ]
+                );
+            }
+
             return $this->render('success.html.twig');
         }
 

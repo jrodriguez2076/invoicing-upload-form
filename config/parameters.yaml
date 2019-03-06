@@ -30,6 +30,7 @@ parameters:
       Servientrega: Servientrega
       TCC: TCC
       Urbano: Urbano
+    email: psc.ar@linio.com
   cl:
     invoincing_type:
       blind_fee: blind_fee
@@ -60,6 +61,7 @@ parameters:
       Servientrega: Servientrega
       TCC: TCC
       Urbano: Urbano
+    email: psc.cl@linio.com
   co:
     invoincing_type:
       blind_fee: blind_fee
@@ -90,6 +92,7 @@ parameters:
       Servientrega: Servientrega
       TCC: TCC
       Urbano: Urbano
+    email: psc.co@linio.com
   mx:
     invoincing_type:
       blind_fee: blind_fee
@@ -120,6 +123,7 @@ parameters:
       Servientrega: Servientrega
       TCC: TCC
       Urbano: Urbano
+    email: psc.mx@linio.com
   pe:
     invoincing_type:
       blind_fee: blind_fee
@@ -150,3 +154,4 @@ parameters:
       Servientrega: Servientrega
       TCC: TCC
       Urbano: Urbano
+    email: psc.pe@linio.com

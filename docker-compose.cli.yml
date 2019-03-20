@@ -40,5 +40,7 @@ services:
     entrypoint: yarn
 
 volumes:
-  composer-cache: ~
-  yarn-cache: ~
+  composer-cache:
+    name: composer-cache
+  yarn-cache:
+    name: yarn-cache

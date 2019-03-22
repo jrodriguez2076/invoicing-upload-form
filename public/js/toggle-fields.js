@@ -27,8 +27,8 @@ $(document).ready(function() {
           $(this).required = true;
           $(this).removeAttr('disabled');
           if ($(this).hasClass('files')) {
-              $(this).fileinput('enable');
-              attachmentsBlockShow = true;
+            $(this).fileinput('enable');
+            attachmentsBlockShow = true;
           }
           break;
         } else {
@@ -40,7 +40,9 @@ $(document).ready(function() {
           $(this).attr('disabled', 'disabled');
           $(this).val('');
           if ($(this).hasClass('files')) {
-            $(this).fileinput('clear').fileinput('disable');
+            $(this)
+              .fileinput('clear')
+              .fileinput('disable');
           }
         }
       }

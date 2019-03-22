@@ -1,6 +1,8 @@
 PAGE_TITLE: Contact Form - Linio
 FORM_TITLE: Contact Form
 SECTION_1_TITLE: Fill the following information
+SECTION_2_TITLE: Additional information
+SECTION_3_TITLE: Attachments
 MANDATORY_FIELD: This field is required.
 THANKS_MESSAGE: Thanks for contacting us!
 SUCCESS_MESSAGE: We are going to check your request and we will contact you by email.

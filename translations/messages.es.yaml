@@ -1,6 +1,8 @@
 PAGE_TITLE: Formulario de Contacto - Linio
 FORM_TITLE: Formulario de Contacto
 SECTION_1_TITLE: Completa la siguiente información
+SECTION_2_TITLE: Datos Adicionales
+SECTION_3_TITLE: Adjuntos
 DATES_CAPTION: DD/MM/AA - separados por comas
 ORDER_NUMBERS_CAPTION: Separados por comas
 AMOUNTS_CAPTION: Separados por comas
@@ -61,3 +63,24 @@ PACKAGE_SIZE_LABEL: Tamaño de paquetes (cm3)
 PACKAGE_WEIGHT_LABEL: Peso total de paquetes (Kg)
 ORIGIN_LABEL: Internacional o Local
 SKU_LABEL: SKU del vendedor
+PAYMENT_DETAILS_LABEL: Detalle ajuste de pago u ordenes pendiente de pago
+TAX_DOCUMENT_LABEL: Documento tributario
+ID_DOCUMENT_LABEL: Documento de Identificación
+COMPANY_DOCUMENT_LABEL: Documento de registro para la empresa
+ACCOUNT_BALANCE_LABEL: Estado de cuenta
+INVOICES_LABEL: Facturas en formatos XML y PDF
+ACCOUNT_RECEIVABLE_LABEL: Cuenta de cobro
+INTERFACTURA_EVIDENCE_LABEL: Evidencia del error registrando a interfactura
+EVIDENCE_LABEL: Evidencias
+FBL_SKU_LIST_LABEL: Listado de SKU que desea ingresar a FBL
+SKU_LIST_LABEL: Listado de SKU´s
+SHOPPING_ERROR_LABEL: Error al momento de comprar
+EVENTS_FORM_LABEL: Formulario de novedades
+ORDER_SHIPMENT_DOCUMENT_LABEL: Soporte de envío de orden
+CBU_DOCUMENT_LABEL: Constancia de Ingresos Brutos
+REQUESTED_SUPPLIES_LABEL: Excel con información de insumos necesarios
+INVOICE_PROOF_LABEL: Constancia de Factura
+ALTERNATE_IMAGE_LABEL: Adjuntar imagen de la alternativa
+TECHNICAL_REPORT_LABEL: Informe tecnico en caso que aplique
+CCCI_DOCUMENT_LABEL: Constancia CCCI
+SHIPPING_LABEL_LABEL: Guía de Remisión

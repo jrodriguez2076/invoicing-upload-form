@@ -23,4 +23,3 @@ mergeable:
         payload:
           title: The PR is not ready to be merged.
           summary: The pull request is not ready to be merged.
-

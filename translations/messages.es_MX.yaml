@@ -60,7 +60,7 @@ COMPANY_DOCUMENT_LABEL: Acta Constitutiva
 ACCOUNT_BALANCE_LABEL: Estado de cuenta
 INVOICES_LABEL: Facturas en formatos XML y PDF
 ACCOUNT_RECEIVABLE_LABEL: Cuenta de cobro
-INTERFACTURA_EVIDENCE_LABEL: Evidencia del error registrando a interfactura
+INTERFACTURA_EVIDENCE_LABEL: Evidencia del error registrando a Interfactura
 EVIDENCE_LABEL: Evidencias
 FBL_SKU_LIST_LABEL: Listado de SKU que desea ingresar a FBL
 SKU_LIST_LABEL: Listado de SKU´s

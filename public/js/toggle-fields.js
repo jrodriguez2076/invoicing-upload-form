@@ -20,16 +20,19 @@ $(document).ready(function() {
           if ($(this).hasClass('file')) {
             filesMustShow = true;
           }
+
           $(this)
             .parent()
             .show();
           $(this).show();
           $(this).required = true;
           $(this).removeAttr('disabled');
+
           if ($(this).hasClass('files')) {
             $(this).fileinput('enable');
             attachmentsBlockShow = true;
           }
+
           break;
         } else {
           $(this)
@@ -39,6 +42,7 @@ $(document).ready(function() {
           $(this).required = false;
           $(this).attr('disabled', 'disabled');
           $(this).val('');
+
           if ($(this).hasClass('files')) {
             $(this)
               .fileinput('clear')

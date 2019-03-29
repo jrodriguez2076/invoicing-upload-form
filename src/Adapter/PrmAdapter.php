@@ -170,6 +170,7 @@ class PrmAdapter
             if (!is_string($data['additionalInfo'][$enabledField])) {
                 continue;
             }
+
             $fieldLabel = preg_split('/(?=[A-Z])/', $enabledField);
             $fieldLabel = implode(' ', $fieldLabel);
             $formattedCaseDescription .= '<strong>' . ucfirst($fieldLabel) . ': </strong>' . $data['additionalInfo'][$enabledField] . "<br>\n";
@@ -178,7 +179,7 @@ class PrmAdapter
         return $formattedCaseDescription;
     }
 
-    protected function buildFilesRequestArray(array $enabledFields, array $data): array
+    protected function buildFilesRequest(array $enabledFields, array $data): array
     {
         $filesRequestArray = [];
 
@@ -203,7 +204,7 @@ class PrmAdapter
     protected function buildContactRequestBody(array $data, array $enabledFields, string $store, string $accountId): array
     {
         $caseDescription = $this->getFormattedCaseDescription($enabledFields, $data);
-        $filesArray = $this->buildFilesRequestArray($enabledFields, $data);
+        $filesArray = $this->buildFilesRequest($enabledFields, $data);
 
         $requestBody = [
             ['name' => 'case[subject]', 'contents' => $data['generalInfo']['accountName']],

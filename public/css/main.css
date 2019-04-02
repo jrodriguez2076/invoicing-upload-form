@@ -20,9 +20,6 @@ body {
 .logo-container {
   vertical-align: middle;
 }
-.custom-file-input ~ .custom-file-label::after {
-  content: 'Elegir archivo';
-}
 
 label.required:after {
   content: ' *';

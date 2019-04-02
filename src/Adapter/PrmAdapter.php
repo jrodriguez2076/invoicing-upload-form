@@ -10,6 +10,7 @@ use GuzzleHttp\ClientInterface;
 use GuzzleHttp\Exception\ClientException;
 use GuzzleHttp\Exception\ServerException;
 use Psr\Log\LoggerInterface;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
 
 class PrmAdapter
 {
@@ -124,6 +125,12 @@ class PrmAdapter
 
         foreach ($responseBody as $row) {
             $reasons[$row['category']][$row['name']] = $row['id'];
+
+            if (!$row['contactFormFields']) {
+                $reasonsEnabledFields[$row['id']] = $row['contactFormFields'];
+                continue;
+            }
+
             $reasonsEnabledFields[$row['id']] = explode(',', $row['contactFormFields']);
         }
 
@@ -160,6 +167,10 @@ class PrmAdapter
         $formattedCaseDescription = '<strong>Account Name: </strong>' . $data['generalInfo']['accountName'] . "<br>\n";
         $formattedCaseDescription .= '<strong>Seller Center ID: </strong>' . $data['generalInfo']['sellerCenterId'] . "<br>\n";
         foreach ($enabledFields[$data['generalInfo']['reasons']] as $enabledField) {
+            if (!is_string($data['additionalInfo'][$enabledField])) {
+                continue;
+            }
+
             $fieldLabel = preg_split('/(?=[A-Z])/', $enabledField);
             $fieldLabel = implode(' ', $fieldLabel);
             $formattedCaseDescription .= '<strong>' . ucfirst($fieldLabel) . ': </strong>' . $data['additionalInfo'][$enabledField] . "<br>\n";
@@ -168,11 +179,34 @@ class PrmAdapter
         return $formattedCaseDescription;
     }
 
+    protected function buildFilesRequest(array $enabledFields, array $data): array
+    {
+        $filesRequestArray = [];
+
+        foreach ($enabledFields[$data['generalInfo']['reasons']] as $enabledField) {
+            if (is_string($data['additionalInfo'][$enabledField])) {
+                continue;
+            }
+
+            if (!is_array($data['additionalInfo'][$enabledField])) {
+                $filesRequestArray[] = $data['additionalInfo'][$enabledField];
+                continue;
+            }
+
+            foreach ($data['additionalInfo'][$enabledField] as $file) {
+                $filesRequestArray[] = $file;
+            }
+        }
+
+        return $filesRequestArray;
+    }
+
     protected function buildContactRequestBody(array $data, array $enabledFields, string $store, string $accountId): array
     {
         $caseDescription = $this->getFormattedCaseDescription($enabledFields, $data);
+        $filesArray = $this->buildFilesRequest($enabledFields, $data);
 
-        return [
+        $requestBody = [
             ['name' => 'case[subject]', 'contents' => $data['generalInfo']['accountName']],
             ['name' => 'case[storeId]', 'contents' => $store],
             ['name' => 'case[source]', 'contents' => self::FORM_CASE_SOURCE_NAME],
@@ -181,6 +215,42 @@ class PrmAdapter
             ['name' => 'case[reasonId]', 'contents' => $data['generalInfo']['reasons']],
             ['name' => 'case[relatedAccount]', 'contents' => $accountId],
         ];
+
+        foreach ($filesArray as $index => $file) {
+            $requestBody[] = $this->getMultipartRequestFile($file, $index);
+        }
+
+        return $requestBody;
+    }
+
+    protected function getMultipartRequestFile(?UploadedFile $uploadedFile, int $index): array
+    {
+        if (!isset($uploadedFile)) {
+            return [];
+        }
+
+        if ($uploadedFile instanceof UploadedFile) {
+            $originalFileName = $uploadedFile->getClientOriginalName();
+            $defaultFileName = sprintf('uploadedFile.%s', $uploadedFile->guessExtension());
+            $uploadedFilePath = sprintf(
+                '%s/%s%s',
+                $uploadedFile->getPath(),
+                $uploadedFile->getFilename(),
+                $uploadedFile->getExtension()
+            );
+
+            $uploadedOpenedFile = fopen($uploadedFilePath, 'r');
+
+            if (isset($uploadedOpenedFile)) {
+                return [
+                    'name' => sprintf('file[%s][content]', $index),
+                    'contents' => $uploadedOpenedFile,
+                    'filename' => $originalFileName ?? $defaultFileName,
+                ];
+            }
+        }
+
+        return [];
     }
 
     protected function getWsseHeaders(): array

@@ -88,6 +88,7 @@ class PrmAdapter
                     'body' => $response->getBody()->getContents(),
                 ],
             ]);
+
             throw new PrmException('CASE_CREATE_ERROR', 500);
         }
 
@@ -97,6 +98,7 @@ class PrmAdapter
         if (!isset($jsonResponseContent['id'])) {
             throw new PrmException('CASE_CREATE_ERROR', 500);
         }
+
         $this->logger->info('Case created');
     }
 
@@ -166,6 +168,17 @@ class PrmAdapter
     {
         $formattedCaseDescription = '<strong>Account Name: </strong>' . $data['generalInfo']['accountName'] . "<br>\n";
         $formattedCaseDescription .= '<strong>Seller Center ID: </strong>' . $data['generalInfo']['sellerCenterId'] . "<br>\n";
+
+        if (!$enabledFields[$data['generalInfo']['reasons']]) {
+            $formattedCaseDescription .= '<strong>Reason: </strong>' . $data['additionalInfo']['reason'] . "<br>\n";
+
+            return $formattedCaseDescription;
+        }
+
+        if ($data['additionalInfo']['reason']) {
+            $formattedCaseDescription .= '<strong>Reason: </strong>' . $data['additionalInfo']['reason'] . "<br>\n";
+        }
+
         foreach ($enabledFields[$data['generalInfo']['reasons']] as $enabledField) {
             if (!is_string($data['additionalInfo'][$enabledField])) {
                 continue;
@@ -182,6 +195,10 @@ class PrmAdapter
     protected function buildFilesRequest(array $enabledFields, array $data): array
     {
         $filesRequestArray = [];
+
+        if (!$enabledFields[$data['generalInfo']['reasons']]) {
+            return $filesRequestArray;
+        }
 
         foreach ($enabledFields[$data['generalInfo']['reasons']] as $enabledField) {
             if (is_string($data['additionalInfo'][$enabledField])) {
@@ -216,8 +233,10 @@ class PrmAdapter
             ['name' => 'case[relatedAccount]', 'contents' => $accountId],
         ];
 
-        foreach ($filesArray as $index => $file) {
-            $requestBody[] = $this->getMultipartRequestFile($file, $index);
+        if (!empty($filesArray)) {
+            foreach ($filesArray as $index => $file) {
+                $requestBody[] = $this->getMultipartRequestFile($file, $index);
+            }
         }
 
         return $requestBody;

@@ -484,6 +484,7 @@ class AdditionalInfoType extends AbstractType
                 'reason',
                 TextType::class,
                 [
+                    'required' => false,
                     'label' => 'REASON_LABEL',
                     'attr' => [
                         'class' => 'additionalField hide reason',

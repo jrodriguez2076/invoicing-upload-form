@@ -32,6 +32,25 @@ class ContactForm extends AbstractType
         $reasonEnabledFields = $form->getConfig()->getOption('reasonsEnabledFields');
         $selectedReason = $contact['generalInfo']['reasons'];
 
+        if (empty($reasonEnabledFields[$selectedReason])) {
+            $fieldConfig = $form->get('additionalInfo')->get('reason')->getConfig();
+            $fieldOptions = $fieldConfig->getOptions();
+            $additionalInfoForm = $form->get('additionalInfo');
+            $additionalInfoForm->add(
+                'reason',
+                get_class($fieldConfig->getType()->getInnerType()),
+                array_replace(
+                    $fieldOptions,
+                    [
+                        'required' => true,
+                        'constraints' => new NotBlank(),
+                    ]
+                )
+            );
+
+            return;
+        }
+
         foreach ($reasonEnabledFields[$selectedReason] as $enabledField) {
             $fieldConfig = $form->get('additionalInfo')->get($enabledField)->getConfig();
             $fieldOptions = $fieldConfig->getOptions();

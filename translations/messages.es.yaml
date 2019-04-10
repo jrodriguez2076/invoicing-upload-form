@@ -10,8 +10,8 @@ BILLING_NUMBERS_CAPTION: Separados por comas
 SKU_CAPTION: Separados por comas
 SUPPLIES_CAPTION: 'Nombre y cantidad de cada insumo. Ej. Bolas grandes: 50, Caja pequeña: 300'
 MANDATORY_FIELD: Este campo es requerido.
-THANKS_MESSAGE: Gracias por contactarnos
-SUCCESS_MESSAGE: Se ha generado un ticket con tu solicitud. Te estaremos respondiendo a la mayor brevedad posible.
+THANKS_MESSAGE: Gracias por contactar a Partner Support Center
+SUCCESS_MESSAGE: Hemos recibido tu solicitud. Recibirás un mensaje de confirmación en tu correo con datos adicionales.
 CASE_CREATE_ERROR: Hubo un error al crear su caso, intente nuevamente más tarde.
 GENERAL_ERROR: Hubo un error al procesar la información, intente nuevamente más tarde.
 

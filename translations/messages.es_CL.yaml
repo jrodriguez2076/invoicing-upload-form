@@ -2,8 +2,6 @@ PAGE_TITLE: Formulario de Contacto - Linio
 FORM_TITLE: Formulario de Contacto
 SECTION_1_TITLE: Completa la siguiente información
 MANDATORY_FIELD: Este campo es requerido.
-THANKS_MESSAGE: 'Gracias por tu interés en vender con nosotros'
-SUCCESS_MESSAGE: 'Revisaremos tu solicitud y te contactaremos al correo que nos proporcionaste.'
 
 # CHOICE VALUES AND BUTTON LABELS
 'submit': Enviar información

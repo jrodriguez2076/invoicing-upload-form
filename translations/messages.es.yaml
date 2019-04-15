@@ -14,6 +14,7 @@ THANKS_MESSAGE: Gracias por contactar a Partner Support Center
 SUCCESS_MESSAGE: Hemos recibido tu solicitud. Recibirás un mensaje de confirmación en tu correo con datos adicionales.
 CASE_CREATE_ERROR: Hubo un error al crear su caso, intente nuevamente más tarde.
 GENERAL_ERROR: Hubo un error al procesar la información, intente nuevamente más tarde.
+SELLER_CENTER_ID_HELP_CAPTION: Tu ID lo puedes ubicar en tu <a href="https://sellercenter.linio.com.mx/user/profile/account">Perfil de Seller Center</a>
 
 # CHOICE VALUES AND BUTTON LABELS
 'submit': Enviar información

@@ -224,7 +224,7 @@ class PrmAdapter
         $filesArray = $this->buildFilesRequest($enabledFields, $data);
 
         $requestBody = [
-            ['name' => 'case[subject]', 'contents' => $data['generalInfo']['contactFullName']],
+            ['name' => 'case[subject]', 'contents' => $data['generalInfo']['sellerCenterId']],
             ['name' => 'case[storeId]', 'contents' => $store],
             ['name' => 'case[source]', 'contents' => self::FORM_CASE_SOURCE_NAME],
             ['name' => 'case[contactId]', 'contents' => $data['generalInfo']['email']],

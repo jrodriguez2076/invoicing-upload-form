@@ -26,7 +26,7 @@ GENERAL_ERROR: There was an error processing the information, please try again l
 'own_invoicing': Own Invoicing
 
 # GENERAL INFORMATION FORM FIELD LABELS
-ACCOUNT_NAME_LABEL: Account Name
+CONTACT_FULL_NAME_LABEL: Contact Full Name
 SELLER_CENTER_ID_LABEL: Seller Center ID
 EMAIL_LABEL: Contact Email
 REASONS_LABEL: Contact Reason

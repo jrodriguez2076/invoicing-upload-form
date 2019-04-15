@@ -166,7 +166,7 @@ class PrmAdapter
 
     protected function getFormattedCaseDescription(array $enabledFields, array $data): string
     {
-        $formattedCaseDescription = '<strong>Account Name: </strong>' . $data['generalInfo']['accountName'] . "<br>\n";
+        $formattedCaseDescription = '<strong>Account Name: </strong>' . $data['generalInfo']['contactFullName'] . "<br>\n";
         $formattedCaseDescription .= '<strong>Seller Center ID: </strong>' . $data['generalInfo']['sellerCenterId'] . "<br>\n";
 
         if (!$enabledFields[$data['generalInfo']['reasons']]) {
@@ -224,7 +224,7 @@ class PrmAdapter
         $filesArray = $this->buildFilesRequest($enabledFields, $data);
 
         $requestBody = [
-            ['name' => 'case[subject]', 'contents' => $data['generalInfo']['accountName']],
+            ['name' => 'case[subject]', 'contents' => $data['generalInfo']['contactFullName']],
             ['name' => 'case[storeId]', 'contents' => $store],
             ['name' => 'case[source]', 'contents' => self::FORM_CASE_SOURCE_NAME],
             ['name' => 'case[contactId]', 'contents' => $data['generalInfo']['email']],

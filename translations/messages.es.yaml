@@ -32,8 +32,8 @@ GENERAL_ERROR: Hubo un error al procesar la información, intente nuevamente má
 'own_invoicing': Facturación propia
 
 # GENERAL INFORMATION FORM FIELD LABELS
-ACCOUNT_NAME_LABEL: Nombre de Cuenta
-SELLER_CENTER_ID_LABEL: ID en Seller Center
+CONTACT_FULL_NAME_LABEL: Nombre completo de la persona solicitante
+SELLER_CENTER_ID_LABEL: ID de la cuenta en Seller Center
 EMAIL_LABEL: Correo de contacto
 REASONS_LABEL: Razón de contacto
 

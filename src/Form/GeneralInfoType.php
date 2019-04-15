@@ -17,7 +17,7 @@ class GeneralInfoType extends AbstractType
         $reasons = $options['reasons'];
 
         $builder
-            ->add('accountName')
+            ->add('contactFullName')
             ->add('sellerCenterId')
             ->add(
                 'email',

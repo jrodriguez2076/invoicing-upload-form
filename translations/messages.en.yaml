@@ -32,6 +32,7 @@ PROCESSING_INFORMATION_MODAL_BODY: Processing your information, please wait...
 CONTACT_FULL_NAME_LABEL: Contact Full Name
 SELLER_CENTER_ID_LABEL: Seller Center ID
 EMAIL_LABEL: Contact Email
+REPEAT_EMAIL_LABEL: Repeat Contact Email
 REASONS_LABEL: Contact Reason
 
 # ADDITIONAL INFORMATION FORM FIELD LABELS

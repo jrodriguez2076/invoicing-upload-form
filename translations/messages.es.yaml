@@ -38,6 +38,7 @@ PROCESSING_INFORMATION_MODAL_BODY: Procesando su información, por favor espere.
 CONTACT_FULL_NAME_LABEL: Nombre completo de la persona solicitante
 SELLER_CENTER_ID_LABEL: ID de la cuenta en Seller Center
 EMAIL_LABEL: Correo de contacto
+REPEAT_EMAIL_LABEL: Repita correo de contacto
 REASONS_LABEL: Razón de contacto
 
 # ADDITIONAL INFORMATION FORM FIELD LABELS

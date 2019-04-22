@@ -190,6 +190,16 @@
       </div>
       {{ form_end(form) }}
     </div>
+    <div class="modal fade bd-example-modal-lg" id="processingModal" tabindex="-1" role="dialog" aria-labelledby="submitButton" aria-hidden="true">
+      <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-body">
+            <h4>{{ 'PROCESSING_INFORMATION_MODAL_TITLE'|trans }}</h4>
+            {{ 'PROCESSING_INFORMATION_MODAL_BODY'|trans }}
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 {% endblock %}
 
@@ -202,4 +212,13 @@
     <script src="{{ asset('js/toggle-fields.js') }}"></script>
     <script src="{{ asset('js/show-error-fields.js') }}"></script>
     <script src="{{ asset('js/initialize-file-inputs.js') }}"></script>
+    <script>
+        $('#submitButton').on('click', (function()
+        {
+            var formIsValid = document.getElementsByTagName('form')[0].checkValidity();
+            if (formIsValid) {
+                $('#processingModal').modal('show');
+            }
+        }));
+    </script>
 {% endblock %}

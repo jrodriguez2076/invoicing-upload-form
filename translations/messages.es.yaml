@@ -15,6 +15,8 @@ SUCCESS_MESSAGE: Hemos recibido tu solicitud. Recibirás un mensaje de confirmac
 CASE_CREATE_ERROR: Hubo un error al crear su caso, intente nuevamente más tarde.
 GENERAL_ERROR: Hubo un error al procesar la información, intente nuevamente más tarde.
 SELLER_CENTER_ID_HELP_CAPTION: Tu ID lo puedes ubicar en tu <a href="https://sellercenter.linio.com.mx/user/profile/account">Perfil de Seller Center</a>
+PROCESSING_INFORMATION_MODAL_TITLE: Procesando su información
+PROCESSING_INFORMATION_MODAL_BODY: Procesando su información, por favor espere...
 
 # CHOICE VALUES AND BUTTON LABELS
 'submit': Enviar información

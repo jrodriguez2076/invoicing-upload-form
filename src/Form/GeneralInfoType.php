@@ -7,9 +7,11 @@ namespace App\Form;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
+use Symfony\Component\Form\Extension\Core\Type\RepeatedType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Validator\Constraints\NotBlank;
 
 class GeneralInfoType extends AbstractType
 {
@@ -28,7 +30,15 @@ class GeneralInfoType extends AbstractType
             )
             ->add(
                 'email',
-                EmailType::class
+                RepeatedType::class,
+                [
+                    'required' => true,
+                    'type' => EmailType::class,
+                    'first_options' => ['label' => 'EMAIL_LABEL'],
+                    'second_options' => ['label' => 'REPEAT_EMAIL_LABEL'],
+                    'constraints' => new NotBlank(),
+                    'invalid_message' => 'INVALID_EMAIL_MESSAGE',
+                ]
             )
             ->add(
                 'reasons',

@@ -166,7 +166,7 @@ class PrmAdapter
 
     protected function getFormattedCaseDescription(array $enabledFields, array $data): string
     {
-        $formattedCaseDescription = '<strong>Account Name: </strong>' . $data['generalInfo']['contactFullName'] . "<br>\n";
+        $formattedCaseDescription = '<strong>Contact Name: </strong>' . $data['generalInfo']['contactFullName'] . "<br>\n";
         $formattedCaseDescription .= '<strong>Seller Center ID: </strong>' . $data['generalInfo']['sellerCenterId'] . "<br>\n";
 
         if (!$enabledFields[$data['generalInfo']['reasons']]) {

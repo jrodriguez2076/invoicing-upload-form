@@ -13,7 +13,10 @@ $(document).ready(function() {
 
     $('#additionalInfoBlock').show();
 
-    if (reasonFields[selectedReason].length > 0) {
+    if (
+      reasonFields[selectedReason] &&
+      reasonFields[selectedReason].length > 0
+    ) {
       $('.additionalField').each(function() {
         for (var i = 0; i < reasonFields[selectedReason].length; i++) {
           if ($(this).hasClass(reasonFields[selectedReason][i])) {

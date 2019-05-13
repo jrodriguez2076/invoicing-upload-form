@@ -2,7 +2,7 @@ PAGE_TITLE: Formulario de Contacto - Linio
 FORM_TITLE: Formulario de Contacto
 SECTION_1_TITLE: Completa la siguiente información
 MANDATORY_FIELD: Este campo es requerido.
-SELLER_CENTER_ID_HELP_CAPTION: Tu ID lo puedes ubicar en tu <a href="https://sellercenter.linio.cl/user/profile/account">Perfil de Seller Center</a>
+SELLER_CENTER_ID_HELP_CAPTION: Tu ID lo puedes ubicar en tu <a href="https://sellercenter.linio.cl/user/profile/account" target="_blank">Perfil de Seller Center</a>
 
 # CHOICE VALUES AND BUTTON LABELS
 'submit': Enviar información

@@ -175,10 +175,6 @@ class PrmAdapter
             return $formattedCaseDescription;
         }
 
-        if ($data['additionalInfo']['reason']) {
-            $formattedCaseDescription .= '<strong>Reason: </strong>' . $data['additionalInfo']['reason'] . "<br>\n";
-        }
-
         foreach ($enabledFields[$data['generalInfo']['reasons']] as $enabledField) {
             if (!is_string($data['additionalInfo'][$enabledField])) {
                 continue;

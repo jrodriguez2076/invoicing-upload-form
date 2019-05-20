@@ -185,6 +185,10 @@ class PrmAdapter
             $formattedCaseDescription .= '<strong>' . ucfirst($fieldLabel) . ': </strong>' . $data['additionalInfo'][$enabledField] . "<br>\n";
         }
 
+        if ($data['additionalInfo']['reason'] && !in_array('reason', $enabledFields[$data['generalInfo']['reasons']])) {
+            $formattedCaseDescription .= '<strong>Reason: </strong>' . $data['additionalInfo']['reason'] . "<br>\n";
+        }
+
         return $formattedCaseDescription;
     }
 

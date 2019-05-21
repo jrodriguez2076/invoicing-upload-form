@@ -56,6 +56,19 @@ class AdditionalInfoType extends AbstractType
                 ]
             )
             ->add(
+                'registeredEmail',
+                TextType::class,
+                [
+                    'label' => 'REGISTERED_EMAIL_LABEL',
+                    'attr' => [
+                        'class' => 'additionalField hide registeredEmail',
+                    ],
+                    'label_attr' => [
+                        'class' => 'additionalField hide registeredEmail',
+                    ],
+                ]
+            )
+            ->add(
                 'companyDocument',
                 FileType::class,
                 [

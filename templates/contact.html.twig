@@ -107,6 +107,9 @@
             {% if form.additionalInfo.shippingCompany is defined %}
               {{ form_row(form.additionalInfo.shippingCompany) }}
             {% endif %}
+            {% if form.additionalInfo.registeredEmail is defined %}
+              {{ form_row(form.additionalInfo.registeredEmail) }}
+            {% endif %}
           </div>
         </div>
         <div class="card hide" id="attachmentsBlock">

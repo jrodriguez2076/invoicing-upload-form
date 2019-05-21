@@ -52,7 +52,12 @@ class ContactForm extends AbstractType
         }
 
         foreach ($reasonEnabledFields[$selectedReason] as $enabledField) {
-            $fieldConfig = $form->get('additionalInfo')->get($enabledField)->getConfig();
+            $fieldConfig = $form->get('additionalInfo')->has($enabledField) ? $form->get('additionalInfo')->get($enabledField)->getConfig() : null;
+
+            if (!$fieldConfig) {
+                continue;
+            }
+
             $fieldOptions = $fieldConfig->getOptions();
             $additionalInfoForm = $form->get('additionalInfo');
             $additionalInfoForm->add(

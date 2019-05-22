@@ -176,7 +176,7 @@ class PrmAdapter
         }
 
         foreach ($enabledFields[$data['generalInfo']['reasons']] as $enabledField) {
-            if (!is_string($data['additionalInfo'][$enabledField])) {
+            if (!array_key_exists($enabledField, $data['additionalInfo']) || !is_string($data['additionalInfo'][$enabledField])) {
                 continue;
             }
 
@@ -201,7 +201,7 @@ class PrmAdapter
         }
 
         foreach ($enabledFields[$data['generalInfo']['reasons']] as $enabledField) {
-            if (is_string($data['additionalInfo'][$enabledField])) {
+            if (!array_key_exists($enabledField, $data['additionalInfo']) || is_string($data['additionalInfo'][$enabledField])) {
                 continue;
             }
 

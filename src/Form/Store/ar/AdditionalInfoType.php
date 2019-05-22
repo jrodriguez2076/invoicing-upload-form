@@ -7,6 +7,7 @@ namespace App\Form\Store\ar;
 use App\Service\ParameterService;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -369,6 +370,19 @@ class AdditionalInfoType extends AbstractType
                         'class' => 'additionalField hide billingDates',
                     ],
                     'help' => 'DATES_CAPTION',
+                ]
+            )
+            ->add(
+                'registeredEmail',
+                EmailType::class,
+                [
+                    'label' => 'REGISTERED_EMAIL_LABEL',
+                    'attr' => [
+                        'class' => 'additionalField hide registeredEmail',
+                    ],
+                    'label_attr' => [
+                        'class' => 'additionalField hide registeredEmail',
+                    ],
                 ]
             )
             ->add(

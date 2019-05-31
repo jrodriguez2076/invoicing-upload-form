@@ -32,17 +32,26 @@
         </div>
         <div id="collapseTwo">
           <div class="card-body row">
-            {% if form.additionalInfo.cutoffDates is defined %}
-              {{ form_row(form.additionalInfo.cutoffDates) }}
+            {% if form.additionalInfo.registeredEmail is defined %}
+              {{ form_row(form.additionalInfo.registeredEmail) }}
             {% endif %}
             {% if form.additionalInfo.orderNumbers is defined %}
               {{ form_row(form.additionalInfo.orderNumbers) }}
             {% endif %}
-            {% if form.additionalInfo.amounts is defined %}
-              {{ form_row(form.additionalInfo.amounts) }}
+            {% if form.additionalInfo.billingNumbers is defined %}
+              {{ form_row(form.additionalInfo.billingNumbers) }}
+            {% endif %}
+            {% if form.additionalInfo.billingDates is defined %}
+              {{ form_row(form.additionalInfo.billingDates) }}
             {% endif %}
             {% if form.additionalInfo.invoicingType is defined %}
               {{ form_row(form.additionalInfo.invoicingType) }}
+            {% endif %}
+            {% if form.additionalInfo.amounts is defined %}
+              {{ form_row(form.additionalInfo.amounts) }}
+            {% endif %}
+            {% if form.additionalInfo.cutoffDates is defined %}
+              {{ form_row(form.additionalInfo.cutoffDates) }}
             {% endif %}
             {% if form.additionalInfo.poNumber is defined %}
               {{ form_row(form.additionalInfo.poNumber) }}
@@ -56,29 +65,17 @@
             {% if form.additionalInfo.responsibleName is defined %}
               {{ form_row(form.additionalInfo.responsibleName) }}
             {% endif %}
-            {% if form.additionalInfo.errorDescription is defined %}
-              {{ form_row(form.additionalInfo.errorDescription) }}
-            {% endif %}
-            {% if form.additionalInfo.billingNumbers is defined %}
-              {{ form_row(form.additionalInfo.billingNumbers) }}
-            {% endif %}
-            {% if form.additionalInfo.billingDates is defined %}
-              {{ form_row(form.additionalInfo.billingDates) }}
+            {% if form.additionalInfo.phone is defined %}
+              {{ form_row(form.additionalInfo.phone) }}
             {% endif %}
             {% if form.additionalInfo.trackingNumber is defined %}
               {{ form_row(form.additionalInfo.trackingNumber) }}
             {% endif %}
-            {% if form.additionalInfo.phone is defined %}
-              {{ form_row(form.additionalInfo.phone) }}
-            {% endif %}
-            {% if form.additionalInfo.reason is defined %}
-              {{ form_row(form.additionalInfo.reason) }}
+            {% if form.additionalInfo.shippingCompany is defined %}
+              {{ form_row(form.additionalInfo.shippingCompany) }}
             {% endif %}
             {% if form.additionalInfo.bankAccountNumber is defined %}
               {{ form_row(form.additionalInfo.bankAccountNumber) }}
-            {% endif %}
-            {% if form.additionalInfo.warehouseAddress is defined %}
-              {{ form_row(form.additionalInfo.warehouseAddress) }}
             {% endif %}
             {% if form.additionalInfo.supplies is defined %}
               {{ form_row(form.additionalInfo.supplies) }}
@@ -95,20 +92,23 @@
             {% if form.additionalInfo.packageWeight is defined %}
               {{ form_row(form.additionalInfo.packageWeight) }}
             {% endif %}
+            {% if form.additionalInfo.warehouseAddress is defined %}
+              {{ form_row(form.additionalInfo.warehouseAddress) }}
+            {% endif %}
+            {% if form.additionalInfo.personInCharge is defined %}
+              {{ form_row(form.additionalInfo.personInCharge) }}
+            {% endif %}
             {% if form.additionalInfo.origin is defined %}
               {{ form_row(form.additionalInfo.origin) }}
             {% endif %}
             {% if form.additionalInfo.sku is defined %}
               {{ form_row(form.additionalInfo.sku) }}
             {% endif %}
-            {% if form.additionalInfo.personInCharge is defined %}
-              {{ form_row(form.additionalInfo.personInCharge) }}
+            {% if form.additionalInfo.errorDescription is defined %}
+              {{ form_row(form.additionalInfo.errorDescription) }}
             {% endif %}
-            {% if form.additionalInfo.shippingCompany is defined %}
-              {{ form_row(form.additionalInfo.shippingCompany) }}
-            {% endif %}
-            {% if form.additionalInfo.registeredEmail is defined %}
-              {{ form_row(form.additionalInfo.registeredEmail) }}
+            {% if form.additionalInfo.reason is defined %}
+              {{ form_row(form.additionalInfo.reason) }}
             {% endif %}
           </div>
         </div>
@@ -120,69 +120,69 @@
           </div>
           <div id="collapseThree">
             <div class="card-body row">
-                {% if form.additionalInfo.paymentDetails is defined %}
-                    {{ form_row(form.additionalInfo.paymentDetails, { 'id': 'paymentDetails' }) }}
-                {% endif %}
-                {% if form.additionalInfo.taxDocument is defined %}
-                    {{ form_row(form.additionalInfo.taxDocument, { 'id': 'taxDocument' }) }}
-                {% endif %}
-                {% if form.additionalInfo.companyDocument is defined %}
-                    {{ form_row(form.additionalInfo.companyDocument, { 'id': 'companyDocument' }) }}
-                {% endif %}
-                {% if form.additionalInfo.accountBalance is defined %}
-                    {{ form_row(form.additionalInfo.accountBalance, { 'id': 'accountBalance' }) }}
-                {% endif %}
-                {% if form.additionalInfo.invoices is defined %}
-                    {{ form_row(form.additionalInfo.invoices, { 'id': 'invoices' }) }}
-                {% endif %}
-                {% if form.additionalInfo.accountReceivable is defined %}
-                    {{ form_row(form.additionalInfo.accountReceivable, { 'id': 'accountReceivable' }) }}
-                {% endif %}
-                {% if form.additionalInfo.interfacturaEvidence is defined %}
-                    {{ form_row(form.additionalInfo.interfacturaEvidence, { 'id': 'interfacturaEvidence' }) }}
-                {% endif %}
-                {% if form.additionalInfo.evidence is defined %}
-                    {{ form_row(form.additionalInfo.evidence, { 'id': 'evidence' }) }}
-                {% endif %}
-                {% if form.additionalInfo.fblSkuList is defined %}
-                    {{ form_row(form.additionalInfo.fblSkuList, { 'id': 'fblSkuList' }) }}
-                {% endif %}
-                {% if form.additionalInfo.skuList is defined %}
-                    {{ form_row(form.additionalInfo.skuList, { 'id': 'skuList' }) }}
-                {% endif %}
-                {% if form.additionalInfo.shoppingError is defined %}
-                    {{ form_row(form.additionalInfo.shoppingError, { 'id': 'shoppingError' }) }}
-                {% endif %}
-                {% if form.additionalInfo.eventsForm is defined %}
-                    {{ form_row(form.additionalInfo.eventsForm, { 'id': 'eventsForm' }) }}
-                {% endif %}
-                {% if form.additionalInfo.orderShipmentDocument is defined %}
-                    {{ form_row(form.additionalInfo.orderShipmentDocument, { 'id': 'orderShipmentDocument' }) }}
-                {% endif %}
-                {% if form.additionalInfo.cbuDocument is defined %}
-                    {{ form_row(form.additionalInfo.cbuDocument, { 'id': 'cbuDocument' }) }}
-                {% endif %}
-                {% if form.additionalInfo.requestedSupplies is defined %}
-                    {{ form_row(form.additionalInfo.requestedSupplies, { 'id': 'requestedSupplies' }) }}
-                {% endif %}
-                {% if form.additionalInfo.invoiceProof is defined %}
-                    {{ form_row(form.additionalInfo.invoiceProof, { 'id': 'invoiceProof' }) }}
-                {% endif %}
-                {% if form.additionalInfo.alternateImage is defined %}
-                    {{ form_row(form.additionalInfo.alternateImage, { 'id': 'alternateImage' }) }}
-                {% endif %}
-                {% if form.additionalInfo.technicalReport is defined %}
-                    {{ form_row(form.additionalInfo.technicalReport, { 'id': 'technicalReport' }) }}
-                {% endif %}
-                {% if form.additionalInfo.ccciDocument is defined %}
-                    {{ form_row(form.additionalInfo.ccciDocument, { 'id': 'ccciDocument' }) }}
-                {% endif %}
-                {% if form.additionalInfo.shippingLabel is defined %}
-                    {{ form_row(form.additionalInfo.shippingLabel, { 'id': 'shippingLabel' }) }}
-                {% endif %}
-                {% if form.additionalInfo.idDocument is defined %}
-                    {{ form_row(form.additionalInfo.idDocument, { 'id': 'idDocument' }) }}
-                {% endif %}
+              {% if form.additionalInfo.idDocument is defined %}
+                {{ form_row(form.additionalInfo.idDocument, { 'id': 'idDocument' }) }}
+              {% endif %}
+              {% if form.additionalInfo.companyDocument is defined %}
+                {{ form_row(form.additionalInfo.companyDocument, { 'id': 'companyDocument' }) }}
+              {% endif %}
+              {% if form.additionalInfo.taxDocument is defined %}
+                {{ form_row(form.additionalInfo.taxDocument, { 'id': 'taxDocument' }) }}
+              {% endif %}
+              {% if form.additionalInfo.accountBalance is defined %}
+                {{ form_row(form.additionalInfo.accountBalance, { 'id': 'accountBalance' }) }}
+              {% endif %}
+              {% if form.additionalInfo.paymentDetails is defined %}
+                  {{ form_row(form.additionalInfo.paymentDetails, { 'id': 'paymentDetails' }) }}
+              {% endif %}
+              {% if form.additionalInfo.invoices is defined %}
+                {{ form_row(form.additionalInfo.invoices, { 'id': 'invoices' }) }}
+              {% endif %}
+              {% if form.additionalInfo.invoiceProof is defined %}
+                {{ form_row(form.additionalInfo.invoiceProof, { 'id': 'invoiceProof' }) }}
+              {% endif %}
+              {% if form.additionalInfo.accountReceivable is defined %}
+                  {{ form_row(form.additionalInfo.accountReceivable, { 'id': 'accountReceivable' }) }}
+              {% endif %}
+              {% if form.additionalInfo.eventsForm is defined %}
+                {{ form_row(form.additionalInfo.eventsForm, { 'id': 'eventsForm' }) }}
+              {% endif %}
+              {% if form.additionalInfo.cbuDocument is defined %}
+                {{ form_row(form.additionalInfo.cbuDocument, { 'id': 'cbuDocument' }) }}
+              {% endif %}
+              {% if form.additionalInfo.requestedSupplies is defined %}
+                {{ form_row(form.additionalInfo.requestedSupplies, { 'id': 'requestedSupplies' }) }}
+              {% endif %}
+              {% if form.additionalInfo.alternateImage is defined %}
+                {{ form_row(form.additionalInfo.alternateImage, { 'id': 'alternateImage' }) }}
+              {% endif %}
+              {% if form.additionalInfo.technicalReport is defined %}
+                {{ form_row(form.additionalInfo.technicalReport, { 'id': 'technicalReport' }) }}
+              {% endif %}
+              {% if form.additionalInfo.fblSkuList is defined %}
+                {{ form_row(form.additionalInfo.fblSkuList, { 'id': 'fblSkuList' }) }}
+              {% endif %}
+              {% if form.additionalInfo.skuList is defined %}
+                {{ form_row(form.additionalInfo.skuList, { 'id': 'skuList' }) }}
+              {% endif %}
+              {% if form.additionalInfo.shippingLabel is defined %}
+                {{ form_row(form.additionalInfo.shippingLabel, { 'id': 'shippingLabel' }) }}
+              {% endif %}
+              {% if form.additionalInfo.orderShipmentDocument is defined %}
+                {{ form_row(form.additionalInfo.orderShipmentDocument, { 'id': 'orderShipmentDocument' }) }}
+              {% endif %}
+              {% if form.additionalInfo.ccciDocument is defined %}
+                {{ form_row(form.additionalInfo.ccciDocument, { 'id': 'ccciDocument' }) }}
+              {% endif %}
+              {% if form.additionalInfo.interfacturaEvidence is defined %}
+                  {{ form_row(form.additionalInfo.interfacturaEvidence, { 'id': 'interfacturaEvidence' }) }}
+              {% endif %}
+              {% if form.additionalInfo.shoppingError is defined %}
+                {{ form_row(form.additionalInfo.shoppingError, { 'id': 'shoppingError' }) }}
+              {% endif %}
+              {% if form.additionalInfo.evidence is defined %}
+                  {{ form_row(form.additionalInfo.evidence, { 'id': 'evidence' }) }}
+              {% endif %}
             </div>
           </div>
         </div>

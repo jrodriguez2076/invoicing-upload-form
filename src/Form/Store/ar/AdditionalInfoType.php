@@ -73,6 +73,7 @@ class AdditionalInfoType extends AbstractType
                 'accountBalance',
                 FileType::class,
                 [
+                    'multiple' => true,
                     'label' => 'ACCOUNT_BALANCE_LABEL',
                     'attr' => [
                         'class' => 'additionalField hide accountBalance files',
@@ -86,6 +87,7 @@ class AdditionalInfoType extends AbstractType
                 'invoices',
                 FileType::class,
                 [
+                    'multiple' => true,
                     'label' => 'INVOICES_LABEL',
                     'attr' => [
                         'class' => 'additionalField hide invoices files',
@@ -99,6 +101,7 @@ class AdditionalInfoType extends AbstractType
                 'accountReceivable',
                 FileType::class,
                 [
+                    'multiple' => true,
                     'label' => 'ACCOUNT_RECEIVABLE_LABEL',
                     'attr' => [
                         'class' => 'additionalField hide accountReceivable files',
@@ -191,6 +194,7 @@ class AdditionalInfoType extends AbstractType
                 'orderShipmentDocument',
                 FileType::class,
                 [
+                    'multiple' => true,
                     'label' => 'ORDER_SHIPMENT_DOCUMENT_LABEL',
                     'attr' => [
                         'class' => 'additionalField hide orderShipmentDocument files',
@@ -295,6 +299,7 @@ class AdditionalInfoType extends AbstractType
                 'shippingLabel',
                 FileType::class,
                 [
+                    'multiple' => true,
                     'label' => 'SHIPPING_LABEL_LABEL',
                     'attr' => [
                         'class' => 'additionalField hide shippingLabel files',

@@ -57,7 +57,7 @@ TAX_DOCUMENT_LABEL: RFC
 ID_DOCUMENT_LABEL: IFE o Pasaporte
 COMPANY_DOCUMENT_LABEL: Acta Constitutiva
 ACCOUNT_BALANCE_LABEL: Estado de cuenta
-INVOICES_LABEL: Facturas en formatos XML y PDF
+INVOICES_LABEL: Facturas en formatos XML y PDF (debe adjuntar ambas por cada factura)
 ACCOUNT_RECEIVABLE_LABEL: Cuenta de cobro
 INTERFACTURA_EVIDENCE_LABEL: Evidencia del error registrando a Interfactura
 EVIDENCE_LABEL: Evidencias

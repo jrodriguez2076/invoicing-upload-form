@@ -42,7 +42,7 @@ BILLING_NUMBERS_LABEL: Números de las facturas
 BILLING_DATES_LABEL: Fechas de las facturas
 TRACKING_NUMBER_LABEL: Número de rastreo
 PHONE_LABEL: Número de teléfono de contacto
-REASON_LABEL: Motivo
+REASON_LABEL: Observaciones
 BANK_ACCOUNT_NUMBER_LABEL: Número de cuenta bancaria
 WAREHOUSE_ADDRESS_LABEL: Dirección de almacén
 SUPPLIES_LABEL: Insumos

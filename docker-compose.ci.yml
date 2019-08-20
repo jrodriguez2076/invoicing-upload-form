@@ -1,5 +1,11 @@
 version: '3.7'
 services:
+  yarn:
+    build:
+      context: .
+      dockerfile: docker/nginx/Dockerfile
+      target: development
+
   php:
     env_file:
       - .env.dist

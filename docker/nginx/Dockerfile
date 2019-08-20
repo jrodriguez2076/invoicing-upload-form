@@ -1,6 +1,12 @@
-FROM 137361304112.dkr.ecr.us-east-1.amazonaws.com/docker-nginx:0.4.10
+FROM gcr.io/linio-support/docker-node:10-0.2.9 AS DEVELOPMENT
+
+COPY package.json yarn.lock ./
+RUN yarn install
+
+COPY . .
+
+FROM gcr.io/linio-support/docker-nginx:0.4.12
 
 COPY docker/nginx/conf.d /etc/nginx/conf.d
 
-# Copy our public assets
-COPY public public
+COPY --from=DEVELOPMENT /application/public public

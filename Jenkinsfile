@@ -1,10 +1,10 @@
 node {
   checkout scm
   dockerLogin()
+  project = "psc-form"
   shortCommit = getDeployCommit(env.BRANCH_NAME)
   containers = ["psc-form-php", "psc-form-nginx"]
   buildNeeded = shouldBuild(containers, shortCommit)
-  dockerRegistry = getDockerRegistry()
 }
 
 pipeline {
@@ -15,19 +15,6 @@ pipeline {
     }
 
     stages {
-        stage("build:prep") {
-            when {
-                expression {
-                    buildNeeded
-                }
-            }
-
-            steps {
-                echo "Installing yarn dependencies"
-                sh "docker-compose -f docker-compose.cli.yml run --rm -v \${PWD}:/application --name dep-js-${shortCommit} yarn"
-            }
-        }
-
         stage("build:prod") {
             when {
                 expression {
@@ -36,6 +23,7 @@ pipeline {
             }
 
             steps {
+                sh "IMAGE_TAG=${shortCommit} docker-compose build nginx"
                 dockerComposeBuild(shortCommit)
             }
         }
@@ -49,9 +37,6 @@ pipeline {
 
             steps {
                 dockerComposeCreateNetworkServices(shortCommit)
-
-                echo "Copying .env.dist to .env"
-                sh "cp .env.dist .env"
             }
         }
 
@@ -65,20 +50,20 @@ pipeline {
             steps {
                 parallel(
                     "lint:prettier": {
-                        sh "docker-compose -f docker-compose.cli.yml run --rm -v \${PWD}:/application --name lint-misc-${shortCommit} yarn lint:check"
+                        sh "docker-compose -f docker-compose.yml -f docker-compose.ci.yml run --rm --name lint-misc-${shortCommit} yarn yarn lint:check"
                     },
                     "lint:php": {
-                        sh "IMAGE_TAG=${shortCommit} docker-compose run --rm -e LINIO_ENV=production --name lint-php-${shortCommit} php composer lint:check"
+                        sh "IMAGE_TAG=${shortCommit} docker-compose run --rm --name lint-php-${shortCommit} php composer lint:check"
                     },
                     "security:check": {
-                        sh "IMAGE_TAG=${shortCommit} docker-compose run --rm -e LINIO_ENV=production --name security-check-${shortCommit} php vendor/bin/security-checker security:check"
+                        sh "IMAGE_TAG=${shortCommit} docker-compose run --rm --name security-check-${shortCommit} php vendor/bin/security-checker security:check"
                     },
                     "lint:yaml": {
-                        sh "IMAGE_TAG=${shortCommit} docker-compose -f docker-compose.yml -f docker-compose.ci.yml run --rm -e LINIO_ENV=production -e STORE=mx --name lint-yaml-${shortCommit} php bin/console lint:yaml config"
-                        sh "IMAGE_TAG=${shortCommit} docker-compose -f docker-compose.yml -f docker-compose.ci.yml run --rm -e LINIO_ENV=production -e STORE=mx --name lint-yaml-${shortCommit} php bin/console lint:yaml translations"
+                        sh "IMAGE_TAG=${shortCommit} docker-compose -f docker-compose.yml -f docker-compose.ci.yml run --rm --name lint-yaml-${shortCommit} php bin/console lint:yaml config"
+                        sh "IMAGE_TAG=${shortCommit} docker-compose -f docker-compose.yml -f docker-compose.ci.yml run --rm --name lint-yaml-${shortCommit} php bin/console lint:yaml translations"
                     },
                     "lint:twig": {
-                        sh "IMAGE_TAG=${shortCommit} docker-compose -f docker-compose.yml -f docker-compose.ci.yml run --rm -e LINIO_ENV=production -e STORE=mx --name lint-twig-${shortCommit} php bin/console lint:twig templates"
+                        sh "IMAGE_TAG=${shortCommit} docker-compose -f docker-compose.yml -f docker-compose.ci.yml run --rm --name lint-twig-${shortCommit} php bin/console lint:twig templates"
                     }
                 )
             }
@@ -87,36 +72,36 @@ pipeline {
         stage("deploy:images") {
             when {
                 expression {
-                    buildNeeded && ["master"].contains(env.BRANCH_NAME)
+                    buildNeeded && ["master", "production"].contains(env.BRANCH_NAME)
                 }
             }
 
             steps {
-                pushImages(shortCommit, env.BRANCH_NAME, containers)
-            }
-        }
-
-        stage("deploy:staging") {
-            when {
-                expression {
-                    env.BRANCH_NAME == "production"
-                }
-            }
-
-            steps {
-                dockerRake(shortCommit, "staging")
+                pushImagesGcr(shortCommit, env.BRANCH_NAME, containers)
             }
         }
 
         stage("deploy:development") {
             when {
                 expression {
-                    env.BRANCH_NAME == "master"
+                    ["master"].contains(env.BRANCH_NAME)
                 }
             }
 
             steps {
-                dockerRake(shortCommit, "development")
+                deployGitOps(shortCommit, project, "development")
+            }
+        }
+
+        stage("deploy:staging") {
+            when {
+                expression {
+                    ["production"].contains(env.BRANCH_NAME)
+                }
+            }
+
+            steps {
+                deployGitOps(shortCommit, project, "staging")
             }
         }
     }

@@ -72,7 +72,7 @@ pipeline {
         stage("deploy:images") {
             when {
                 expression {
-                    buildNeeded && ["master", "production"].contains(env.BRANCH_NAME)
+                    buildNeeded && ["master", "production"].contains(env.BRANCH_NAME) && !env.CHANGE_ID
                 }
             }
 
@@ -84,7 +84,7 @@ pipeline {
         stage("deploy:development") {
             when {
                 expression {
-                    ["master"].contains(env.BRANCH_NAME)
+                    ["master"].contains(env.BRANCH_NAME) && !env.CHANGE_ID
                 }
             }
 
@@ -96,7 +96,7 @@ pipeline {
         stage("deploy:staging") {
             when {
                 expression {
-                    ["production"].contains(env.BRANCH_NAME)
+                    ["production"].contains(env.BRANCH_NAME) && !env.CHANGE_ID
                 }
             }
 

@@ -5,7 +5,7 @@ RUN yarn install
 
 COPY . .
 
-FROM gcr.io/linio-support/docker-nginx:0.4.12
+FROM gcr.io/linio-support/docker-nginx:1.0.0
 
 COPY docker/nginx/conf.d /etc/nginx/conf.d
 

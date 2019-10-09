@@ -1,5 +1,6 @@
 PAGE_TITLE: Formulario de Contacto - Linio
-FORM_TITLE: Formulario de Contacto
+FORM_TITLE: '¡Contactanos!'
+FORM_SUBTITLE: 'Argentina'
 SECTION_1_TITLE: Completa la siguiente información
 MANDATORY_FIELD: Este campo es requerido.
 SELLER_CENTER_ID_HELP_CAPTION: Tu ID lo puedes ubicar en tu <a href="https://sellercenter.linio.com.ar/user/profile/account" target="_blank">Perfil de Seller Center</a>

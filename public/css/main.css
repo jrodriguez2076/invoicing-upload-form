@@ -1,35 +1,363 @@
 body {
-  background-color: rgba(255, 153, 51, 1);
+  background-color: #f7f7f7;
+  font-family: Helvetica Neue, Helvetica, Arial, serif;
   font-size: 0.9rem;
+  min-width: 320px;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
-.form-control {
-  font-size: 0.9rem;
-}
 .container {
-  background-color: white;
-  border-radius: 25px;
-  padding: 30px 30px 30px 30px;
+  margin-top: -50px;
+  background-color: #f7f7f7;
+  padding: 0 0 0 0;
+  max-width: 1000px;
 }
+
+.brand-logo-lg {
+  width: 91px;
+  height: 40px;
+  object-fit: contain;
+}
+
+.background-header {
+  width: 1366px;
+  height: 80px;
+  background-color: #ffffff;
+}
+
 .logo-image {
   display: block;
   margin-left: auto;
   margin-right: auto;
   width: 30%;
 }
+
 .logo-container {
   vertical-align: middle;
+  background-color: #ffffff;
+  height: 80px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  text-align: center;
+}
+
+.header-form {
+  height: 300px;
+  background-color: #ff6619;
+}
+
+.header-text {
+  font-size: 3.5rem;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #ffffff;
+  padding-top: 50px;
+  text-align: center;
+}
+
+.subheader-text {
+  font-family: Helvetica Neue, Helvetica, Arial, serif;
+  font-size: 1.8rem;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #ffffff;
+  padding-top: 20px;
+  text-align: center;
+}
+
+.illustration1 {
+  float: left;
+  padding-top: 38px;
+  padding-left: 65px;
+}
+
+.illustration2 {
+  float: right;
+  padding-right: 65px;
+  padding-top: 38px;
+}
+
+.card-header {
+  background-color: #e0e0e0;
+  font-size: 20px;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #4a4a4a;
+}
+
+.custom-file-input ~ .custom-file-label::after {
+  content: 'Elegir archivo';
 }
 
 label.required:after {
-  content: ' *';
+  content: ' * ';
+}
+
+.invalid {
+  border-color: red;
+}
+
+.file-too-large-message {
+  font-size: 0.9rem;
   color: red;
 }
 
-.form-title {
+.terms-and-conditions-link {
+  margin-left: 16px;
+}
+
+.comissions-and-payments-policies-link {
+  margin-left: 16px;
+}
+
+.btn-primary {
+  border-radius: 3px;
+  background-color: #ff6619;
+}
+
+.card {
+  border: 0;
+}
+
+.accordion {
+  margin-bottom: 50px;
+}
+
+.section-number {
+  background: #4a4a4a;
+  border-radius: 0.8em;
+  -moz-border-radius: 0.8em;
+  -webkit-border-radius: 0.8em;
+  color: #ffffff;
+  display: inline-block;
+  font-weight: bold;
+  margin-right: 5px;
+  text-align: center;
+  height: 25px;
+  width: 25px;
+}
+
+.form-control {
+  border-radius: 7px;
+  border: solid 1px #cccccc;
+  background-color: #f7f7f7;
+  font-size: 0.9rem;
+}
+
+.custom-checkbox .custom-control-input:checked ~ .custom-control-label::before {
+  background-color: #ff6619;
+  border: solid 1px #ff6619;
+}
+
+.custom-checkbox .custom-control-input ~ .custom-control-label::before {
+  background-color: white;
+}
+
+.custom-checkbox label.required::after {
+  content: '';
+}
+
+.checkbox-custom.custom-control-label {
+  font-size: 16px;
+  font-weight: 300;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.25;
+  letter-spacing: normal;
+  color: #666666;
+}
+
+.checkbox-custom.custom-control-label::before {
+  width: 25px;
+  height: 25px;
+}
+
+.checkbox-custom.custom-control-label::after {
+  width: 25px;
+  height: 25px;
+  background-size: 60% 60%;
+  margin-right: 40px;
+}
+
+.custom-checkbox .custom-control-label::before {
+  width: 25px;
+  height: 25px;
+  border: solid 1px #757575;
+  border-radius: 3px;
+}
+
+.custom-checkbox .custom-control-label::after {
+  width: 25px;
+  height: 25px;
+  background-size: 60% 60%;
+  margin-right: 40px;
+}
+
+.custom-checkbox .custom-control-label {
+  margin-left: 15px;
+  margin-right: 30px;
+  margin-top: 7px;
+  font-size: 16px;
+  font-weight: 300;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.25;
+  letter-spacing: normal;
+  color: #666666;
+}
+
+.form-group {
+  font-size: 15px;
+  font-weight: 300;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.33;
+  letter-spacing: normal;
+  color: #333333;
+}
+
+.subsection-title {
+  font-size: 18px;
+  font-weight: 400;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #4a4a4a;
+  display: list-item; /* This has to be "list-item"                                               */
+  list-style-type: disc; /* See https://developer.mozilla.org/en-US/docs/Web/CSS/list-style-type     */
+  list-style-position: inside; /* See https://developer.mozilla.org/en-US/docs/Web/CSS/list-style-position */
+  margin-bottom: 27px;
+}
+
+.card-body {
+  padding-top: 29px;
+}
+
+.form-text.text-muted {
+  font-size: 10px;
+}
+
+.submit-btn {
+  margin-top: 10px;
+  font-size: 18px;
+}
+
+.links-terms-and-conditions {
+  margin-left: 50px;
+}
+
+.links-terms-and-conditions a {
+  font-size: 16px;
+  font-weight: 400;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.25;
+  letter-spacing: normal;
+  color: #ff6619;
+}
+
+.terms-and-conditions-checks {
+  margin-bottom: 30px;
+}
+
+.line {
+  margin-left: 30px;
+  margin-right: 30px;
+  display: inline;
+  height: 28px;
+  border: 1px;
+  border-left: 1px solid #cccccc;
+}
+
+.thanks-message {
+  font-size: 3rem;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #ffffff;
+  padding-top: 50px;
+  text-align: center;
+}
+
+.success-message {
+  font-size: 1.5rem;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #ffffff;
+  padding-top: 50px;
   text-align: center;
 }
 
 .hide {
   display: none;
+}
+
+.additionalInfoBlock {
+  padding-bottom: 40px;
+}
+
+@media only screen and (max-width: 900px) {
+  .header-text {
+    font-size: 2.1rem;
+  }
+
+  .header-form {
+    height: 240px;
+  }
+
+  .subheader-text {
+    font-size: 1.2rem !important;
+  }
+}
+
+@media only screen and (max-width: 1100px) {
+  .illustration1 {
+    padding-left: 0 !important;
+    max-height: 230px;
+    max-width: 150px;
+  }
+
+  .illustration2 {
+    max-height: 230px;
+    max-width: 150px;
+    padding-right: 0 !important;
+  }
+}
+
+@media only screen and (min-width: 1101px) {
+  .header-text {
+    font-size: 3.5rem;
+  }
+
+  .subheader-text {
+    font-size: 2rem;
+  }
+
+  .illustration1 {
+    padding-left: 50px !important;
+    max-height: 260px;
+    max-width: 260px;
+  }
+
+  .illustration2 {
+    max-height: 260px;
+    max-width: 260px;
+    padding-right: 50px !important;
+  }
 }

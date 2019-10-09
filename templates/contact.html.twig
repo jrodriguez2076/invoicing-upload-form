@@ -1,18 +1,13 @@
 {% extends 'base.html.twig' %}
 
 {% block content %}
-  <div class="logo-container">
-    <img class="logo-image" src="{{ asset('images/LinioWhiteLogo.png') }}">
-  </div>
   <div class="container">
     <div class="accordion" id="accordionForm">
-      <h1 align="center">{{ 'FORM_TITLE'|trans }}</h1><br>
       {{ form_start(form) }}
       <div class="card">
         <div class="card-header">
-          <h5 class="mb-0">
-            {{ 'SECTION_1_TITLE' | trans }}
-          </h5>
+          <span class="section-number">1</span>
+          {{ 'SECTION_1_TITLE' | trans }}
         </div>
         <div id="collapseOne">
           <div class="card-body row">
@@ -24,11 +19,10 @@
         </div>
       </div>
 
-      <div class="card hide" id="additionalInfoBlock">
+      <div class="card hide additionalInfoBlock" id="additionalInfoBlock">
         <div class="card-header">
-          <h5 class="mb-0">
-              {{ 'SECTION_2_TITLE' | trans }}
-          </h5>
+          <span class="section-number">2</span>
+          {{ 'SECTION_2_TITLE' | trans }}
         </div>
         <div id="collapseTwo">
           <div class="card-body row">
@@ -114,9 +108,8 @@
         </div>
         <div class="card hide" id="attachmentsBlock">
           <div class="card-header">
-              <h5 class="mb-0">
-                  {{ 'SECTION_3_TITLE' | trans }}
-              </h5>
+            <span class="section-number">3</span>
+            {{ 'SECTION_3_TITLE' | trans }}
           </div>
           <div id="collapseThree">
             <div class="card-body row">
@@ -186,11 +179,11 @@
             </div>
           </div>
         </div>
+        <div class="col-md-12 text-right">
+          <input type="submit" id="submitButton" class="btn btn-primary btn-block col-md-4 offset-md-4 submit-btn"  disabled value="{{ 'submit'|trans }}"/>
+        </div>
       </div>
       <br>
-      <div class="col-md-12 text-right">
-        <input type="submit" id="submitButton" class="btn btn-primary btn-block col-md-4 offset-md-4" disabled value="{{ 'submit'|trans }}"/>
-      </div>
       {{ form_end(form) }}
     </div>
     <div class="modal fade bd-example-modal-lg" id="processingModal" tabindex="-1" role="dialog" aria-labelledby="submitButton" aria-hidden="true">

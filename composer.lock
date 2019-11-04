@@ -467,9 +467,6 @@
                 "MIT"
             ],
             "description": "Logging formatters, handlers, etc. to comply with Linio standards.",
-            "support": {
-                "source": "https://github.com/LinioIT/log-php-sdk/tree/0.2.1"
-            },
             "time": "2018-05-08T15:41:08+00:00"
         },
         {
@@ -1013,7 +1010,7 @@
         },
         {
             "name": "symfony/asset",
-            "version": "v4.3.5",
+            "version": "v4.3.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/asset.git",

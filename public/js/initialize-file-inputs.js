@@ -30,7 +30,7 @@ $(document).ready(function() {
   $('#companyDocument').fileinput({
     showUpload: false,
     allowedPreviewTypes: ['image'],
-    allowedFileExtensions: ['jpg','png','pdf'],
+    allowedFileExtensions: ['jpg', 'png', 'pdf'],
     theme: 'explorer-fas',
     language: locale,
     removeFromPreviewOnError: true
@@ -39,7 +39,7 @@ $(document).ready(function() {
   $('#accountBalance').fileinput({
     showUpload: false,
     allowedPreviewTypes: ['image'],
-    allowedFileExtensions: ['jpg', 'png','pdf'],
+    allowedFileExtensions: ['jpg', 'png', 'pdf'],
     theme: 'explorer-fas',
     language: locale,
     removeFromPreviewOnError: true
@@ -66,7 +66,7 @@ $(document).ready(function() {
   $('#interfacturaEvidence').fileinput({
     showUpload: false,
     allowedPreviewTypes: ['image'],
-    allowedFileExtensions: ['jpg','png','pdf'],
+    allowedFileExtensions: ['jpg', 'png', 'pdf'],
     theme: 'explorer-fas',
     language: locale,
     removeFromPreviewOnError: true
@@ -84,7 +84,7 @@ $(document).ready(function() {
   $('#fblSkuList').fileinput({
     showUpload: false,
     allowedPreviewTypes: ['image'],
-    allowedFileExtensions: ['xlsx', 'xls' ,'csv'],
+    allowedFileExtensions: ['xlsx', 'xls', 'csv'],
     theme: 'explorer-fas',
     language: locale,
     removeFromPreviewOnError: true
@@ -93,7 +93,7 @@ $(document).ready(function() {
   $('#skuList').fileinput({
     showUpload: false,
     allowedPreviewTypes: ['image'],
-    allowedFileExtensions: ['xlsx', 'xls' ,'csv'],
+    allowedFileExtensions: ['xlsx', 'xls', 'csv'],
     theme: 'explorer-fas',
     language: locale,
     removeFromPreviewOnError: true

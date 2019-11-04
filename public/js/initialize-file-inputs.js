@@ -3,7 +3,7 @@ $(document).ready(function() {
   $('#paymentDetails').fileinput({
     showUpload: false,
     allowedPreviewTypes: ['image'],
-    allowedFileExtensions: ['xlsx'],
+    allowedFileExtensions: ['xlsx', 'xls', 'csv', 'pdf'],
     theme: 'explorer-fas',
     language: locale,
     removeFromPreviewOnError: true
@@ -12,7 +12,7 @@ $(document).ready(function() {
   $('#taxDocument').fileinput({
     showUpload: false,
     allowedPreviewTypes: ['image'],
-    allowedFileExtensions: ['jpg', 'pdf'],
+    allowedFileExtensions: ['jpg', 'png', 'pdf'],
     theme: 'explorer-fas',
     language: locale,
     removeFromPreviewOnError: true
@@ -21,7 +21,7 @@ $(document).ready(function() {
   $('#idDocument').fileinput({
     showUpload: false,
     allowedPreviewTypes: ['image'],
-    allowedFileExtensions: ['jpg', 'pdf'],
+    allowedFileExtensions: ['jpg', 'png', 'pdf'],
     theme: 'explorer-fas',
     language: locale,
     removeFromPreviewOnError: true
@@ -30,7 +30,7 @@ $(document).ready(function() {
   $('#companyDocument').fileinput({
     showUpload: false,
     allowedPreviewTypes: ['image'],
-    allowedFileExtensions: ['jpg', 'pdf'],
+    allowedFileExtensions: ['jpg','png','pdf'],
     theme: 'explorer-fas',
     language: locale,
     removeFromPreviewOnError: true
@@ -39,7 +39,7 @@ $(document).ready(function() {
   $('#accountBalance').fileinput({
     showUpload: false,
     allowedPreviewTypes: ['image'],
-    allowedFileExtensions: ['pdf'],
+    allowedFileExtensions: ['jpg', 'png','pdf'],
     theme: 'explorer-fas',
     language: locale,
     removeFromPreviewOnError: true
@@ -56,7 +56,7 @@ $(document).ready(function() {
 
   $('#accountReceivable').fileinput({
     showUpload: false,
-    allowedPreviewTypes: ['image'],
+    allowedPreviewTypes: ['xlsx', 'xls', 'csv'],
     allowedFileExtensions: ['xlsx'],
     theme: 'explorer-fas',
     language: locale,
@@ -66,7 +66,7 @@ $(document).ready(function() {
   $('#interfacturaEvidence').fileinput({
     showUpload: false,
     allowedPreviewTypes: ['image'],
-    allowedFileExtensions: ['jpg'],
+    allowedFileExtensions: ['jpg','png','pdf'],
     theme: 'explorer-fas',
     language: locale,
     removeFromPreviewOnError: true
@@ -75,7 +75,7 @@ $(document).ready(function() {
   $('#evidence').fileinput({
     showUpload: false,
     allowedPreviewTypes: ['image'],
-    allowedFileExtensions: ['jpg'],
+    allowedFileExtensions: ['jpg', 'png', 'pdf'],
     theme: 'explorer-fas',
     language: locale,
     removeFromPreviewOnError: true
@@ -84,7 +84,7 @@ $(document).ready(function() {
   $('#fblSkuList').fileinput({
     showUpload: false,
     allowedPreviewTypes: ['image'],
-    allowedFileExtensions: ['xlsx'],
+    allowedFileExtensions: ['xlsx', 'xls' ,'csv'],
     theme: 'explorer-fas',
     language: locale,
     removeFromPreviewOnError: true
@@ -93,7 +93,7 @@ $(document).ready(function() {
   $('#skuList').fileinput({
     showUpload: false,
     allowedPreviewTypes: ['image'],
-    allowedFileExtensions: ['xlsx'],
+    allowedFileExtensions: ['xlsx', 'xls' ,'csv'],
     theme: 'explorer-fas',
     language: locale,
     removeFromPreviewOnError: true
@@ -102,7 +102,7 @@ $(document).ready(function() {
   $('#shoppingError').fileinput({
     showUpload: false,
     allowedPreviewTypes: ['image'],
-    allowedFileExtensions: ['jpg'],
+    allowedFileExtensions: ['jpg', 'png', 'pdf'],
     theme: 'explorer-fas',
     language: locale,
     removeFromPreviewOnError: true
@@ -111,7 +111,7 @@ $(document).ready(function() {
   $('#eventsForm').fileinput({
     showUpload: false,
     allowedPreviewTypes: ['image'],
-    allowedFileExtensions: ['xlsx'],
+    allowedFileExtensions: ['xlsx', 'xls', 'csv'],
     theme: 'explorer-fas',
     language: locale,
     removeFromPreviewOnError: true
@@ -120,7 +120,7 @@ $(document).ready(function() {
   $('#orderShipmentDocument').fileinput({
     showUpload: false,
     allowedPreviewTypes: ['image'],
-    allowedFileExtensions: ['jpg', 'pdf'],
+    allowedFileExtensions: ['jpg', 'png', 'pdf'],
     theme: 'explorer-fas',
     language: locale,
     removeFromPreviewOnError: true
@@ -129,7 +129,7 @@ $(document).ready(function() {
   $('#cbuDocument').fileinput({
     showUpload: false,
     allowedPreviewTypes: ['image'],
-    allowedFileExtensions: ['jpg', 'pdf', 'png', 'txt', 'xlsx'],
+    allowedFileExtensions: ['jpg', 'pdf', 'png', 'txt', 'xls', 'xlsx'],
     theme: 'explorer-fas',
     language: locale,
     removeFromPreviewOnError: true
@@ -138,7 +138,7 @@ $(document).ready(function() {
   $('#requestedSupplies').fileinput({
     showUpload: false,
     allowedPreviewTypes: ['image'],
-    allowedFileExtensions: ['xlsx'],
+    allowedFileExtensions: ['xlsx', 'xls', 'csv'],
     theme: 'explorer-fas',
     language: locale,
     removeFromPreviewOnError: true
@@ -147,7 +147,7 @@ $(document).ready(function() {
   $('#invoiceProof').fileinput({
     showUpload: false,
     allowedPreviewTypes: ['image'],
-    allowedFileExtensions: ['jpg', 'pdf', 'png', 'txt', 'xlsx'],
+    allowedFileExtensions: ['jpg', 'pdf', 'png', 'txt', 'xls', 'xlsx'],
     theme: 'explorer-fas',
     language: locale,
     removeFromPreviewOnError: true
@@ -156,7 +156,7 @@ $(document).ready(function() {
   $('#alternateImage').fileinput({
     showUpload: false,
     allowedPreviewTypes: ['image'],
-    allowedFileExtensions: ['jpg', 'pdf'],
+    allowedFileExtensions: ['jpg', 'png', 'pdf'],
     theme: 'explorer-fas',
     language: locale,
     removeFromPreviewOnError: true
@@ -165,7 +165,7 @@ $(document).ready(function() {
   $('#technicalReport').fileinput({
     showUpload: false,
     allowedPreviewTypes: ['image'],
-    allowedFileExtensions: ['doc', 'docx'],
+    allowedFileExtensions: ['doc', 'docx', 'pdf'],
     theme: 'explorer-fas',
     language: locale,
     removeFromPreviewOnError: true
@@ -183,7 +183,7 @@ $(document).ready(function() {
   $('#shippingLabel').fileinput({
     showUpload: false,
     allowedPreviewTypes: ['image'],
-    allowedFileExtensions: ['jpg', 'pdf', 'doc', 'docx'],
+    allowedFileExtensions: ['jpg', 'png', 'pdf', 'doc', 'docx'],
     theme: 'explorer-fas',
     language: locale,
     removeFromPreviewOnError: true

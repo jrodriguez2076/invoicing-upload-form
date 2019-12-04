@@ -21,10 +21,15 @@ class ContactFormFactory
         'co' => ContactColombiaForm::class,
         'mx' => ContactMexicoForm::class,
         'pe' => ContactPeruForm::class,
+        'default' => ContactMexicoForm::class,
     ];
 
     public static function fromStore(string $store): string
     {
+        if (!array_key_exists($store, self::LOCALE_FORM_MAP)) {
+            return static::LOCALE_FORM_MAP['default'];
+        }
+
         return static::LOCALE_FORM_MAP[$store];
     }
 }

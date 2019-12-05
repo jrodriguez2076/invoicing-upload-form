@@ -20,26 +20,45 @@ class ParameterService
 
     public function getInvoicingTypeChoices(string $store): array
     {
-        return $this->params->get($store)['invoincing_type'] ?? [];
+        $storeId = $this->getStoreId($store);
+
+        return $this->params->get($storeId)['invoincing_type'] ?? [];
     }
 
     public function getOriginChoices(string $store): array
     {
-        return $this->params->get($store)['origin'] ?? [];
+        $storeId = $this->getStoreId($store);
+
+        return $this->params->get($storeId)['origin'] ?? [];
     }
 
     public function getPackagingTypeChoices(string $store): array
     {
-        return $this->params->get($store)['packaging_types'] ?? [];
+        $storeId = $this->getStoreId($store);
+
+        return $this->params->get($storeId)['packaging_types'] ?? [];
     }
 
     public function getShippingCompanyChoices(string $store): array
     {
-        return $this->params->get($store)['shipping_companies'] ?? [];
+        $storeId = $this->getStoreId($store);
+
+        return $this->params->get($storeId)['shipping_companies'] ?? [];
     }
 
     public function getGenericAccountEmail(string $store): string
     {
-        return $this->params->get($store)['email'] ?? '';
+        $storeId = $this->getStoreId($store);
+
+        return $this->params->get($storeId)['email'] ?? '';
+    }
+
+    protected function getStoreId(string $store): string
+    {
+        if ($this->params->has($store)) {
+            return $store;
+        }
+
+        return  $this->params->get('default_store');
     }
 }

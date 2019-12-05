@@ -1,5 +1,6 @@
 parameters:
   locale: en_US
+  default_store: mx
   ar:
     invoincing_type:
       blind_fee: blind_fee

@@ -1,5 +1,5 @@
 ARG IMAGE_TAG=latest
-FROM gcr.io/linio-support/docker-php:7.4-2.1.1 AS BUILD
+FROM gcr.io/linio-support/docker-php:7.4-2.1.2 AS BUILD
 
 COPY composer.json composer.lock ./
 
@@ -9,7 +9,7 @@ RUN composer install --no-scripts -o
 
 FROM gcr.io/linio-support/psc-form-nginx:$IMAGE_TAG AS ASSETS
 
-FROM gcr.io/linio-support/docker-php:7.4-2.1.1
+FROM gcr.io/linio-support/docker-php:7.4-2.1.2
 
 COPY docker/php/php.ini /usr/local/etc/php/conf.d/overrides.ini
 

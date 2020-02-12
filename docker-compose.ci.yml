@@ -8,4 +8,4 @@ services:
 
   php:
     env_file:
-      - .env.dist
+      - .env

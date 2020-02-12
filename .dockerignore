@@ -1,7 +1,9 @@
 .git
 /var/cache
 /var/log
-/.env
+/.env.local
+/.env.local.php
+/.env.*.local
 /.php_cs.cache
 /node_modules
 /docker-compose.override.yml

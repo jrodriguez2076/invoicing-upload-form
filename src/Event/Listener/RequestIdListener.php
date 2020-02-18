@@ -26,6 +26,6 @@ class RequestIdListener
 
     public function onKernelResponse(ResponseEvent $event): void
     {
-        $event->getResponse()->headers->set('X-Request-I    D', $event->getRequest()->headers->get('X-Request-ID'));
+        $event->getResponse()->headers->set('X-Request-ID', $event->getRequest()->headers->get('X-Request-ID'));
     }
 }

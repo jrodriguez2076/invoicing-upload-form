@@ -176,6 +176,9 @@
               {% if form.additionalInfo.evidence is defined %}
                   {{ form_row(form.additionalInfo.evidence, { 'id': 'evidence' }) }}
               {% endif %}
+              {% if form.additionalInfo.attachments is defined %}
+                {{ form_row(form.additionalInfo.attachments, { 'id': 'attachments' }) }}
+              {% endif %}
             </div>
           </div>
         </div>

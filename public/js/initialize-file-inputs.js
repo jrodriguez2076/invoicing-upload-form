@@ -192,7 +192,17 @@ $(document).ready(function() {
   $('#attachments').fileinput({
     showUpload: false,
     allowedPreviewTypes: ['image'],
-    allowedFileExtensions: ['jpg', 'png', 'pdf', 'txt', 'xls', 'xlsx', 'csv', 'json', 'xml'],
+    allowedFileExtensions: [
+      'jpg',
+      'png',
+      'pdf',
+      'txt',
+      'xls',
+      'xlsx',
+      'csv',
+      'json',
+      'xml'
+    ],
     theme: 'explorer-fas',
     language: locale,
     removeFromPreviewOnError: true

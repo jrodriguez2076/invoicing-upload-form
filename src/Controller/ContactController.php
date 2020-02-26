@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace App\Controller;
 
 use App\Adapter\PrmAdapter;
+use App\Exception\PrmException;
 use App\Form\ContactFormFactory;
 use App\Form\FormTemplateFactory;
 use Psr\Log\LoggerInterface;

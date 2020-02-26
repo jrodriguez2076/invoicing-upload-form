@@ -20,6 +20,7 @@ class LocaleSubscriber implements EventSubscriberInterface
         'mx' => 'es_MX',
         'pe' => 'es_PE',
         'international' => 'en_US',
+        'integrations' => 'en_INTEG',
     ];
 
     /**

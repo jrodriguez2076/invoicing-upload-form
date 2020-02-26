@@ -156,3 +156,5 @@ parameters:
       TCC: TCC
       Urbano: Urbano
     email: psc.pe@linio.com
+  integrations:
+    email: psc.integrations@linio.com

@@ -19,6 +19,7 @@ class AdditionalInfoType extends AbstractType
                 'attachments',
                 FileType::class,
                 [
+                    'multiple' => true,
                     'label' => 'ATTACHMENTS_LABEL',
                     'attr' => [
                         'class' => 'additionalField hide attachments files',

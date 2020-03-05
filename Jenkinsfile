@@ -89,7 +89,7 @@ pipeline {
             }
 
             steps {
-                deployGitOps(shortCommit, project, "development")
+                deployGitOps2(shortCommit, project, "development")
             }
         }
 
@@ -101,7 +101,7 @@ pipeline {
             }
 
             steps {
-                deployGitOps(shortCommit, project, "staging")
+                deployGitOps2(shortCommit, project, "staging")
             }
         }
     }

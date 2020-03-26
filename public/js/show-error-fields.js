@@ -14,9 +14,6 @@ $(document).ready(function() {
             $(this).show();
             $(this).required = true;
             $(this).removeAttr('disabled');
-            if ($(this).hasClass('evidence')) {
-              console.log($(this).classList);
-            }
             if ($(this).hasClass('files')) {
               $(this).fileinput('enable');
               attachmentsBlockShow = true;

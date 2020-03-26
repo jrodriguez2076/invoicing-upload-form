@@ -39,7 +39,7 @@ class ContactForm extends AbstractType
             $additionalInfoForm->add(
                 'reason',
                 get_class($fieldConfig->getType()->getInnerType()),
-                array_replace(
+                array_merge(
                     $fieldOptions,
                     [
                         'required' => true,
@@ -59,21 +59,20 @@ class ContactForm extends AbstractType
             }
 
             $fieldOptions = $fieldConfig->getOptions();
+
+            if (array_key_exists('required', $fieldOptions) && !$fieldOptions['required']) {
+                continue;
+            }
+
             $additionalInfoForm = $form->get('additionalInfo');
             $additionalInfoForm->add(
                 $enabledField,
                 get_class($fieldConfig->getType()->getInnerType()),
-                array_replace(
+                array_merge(
                     $fieldOptions,
                     [
                         'constraints' => [
                             new NotBlank(),
-                        ],
-                        'attr' => [
-                            'class' => 'additionalField ' . $enabledField,
-                        ],
-                        'label_attr' => [
-                            'class' => 'additionalField ' . $enabledField,
                         ],
                     ]
                 )

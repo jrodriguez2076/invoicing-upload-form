@@ -3,5 +3,5 @@
 /docker/ @LinioIT/DevOps
 /docker-compose* @LinioIT/DevOps
 /config/deploy @LinioIT/DevOps
-/Jenkinsfile @LinioIT/DevOps
+/codefresh.yml @LinioIT/DevOps
 /Rakefile @LinioIT/DevOps

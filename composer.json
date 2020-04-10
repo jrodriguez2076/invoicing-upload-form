@@ -70,7 +70,18 @@
             "@auto-scripts"
         ],
         "lint": "php-cs-fixer fix --verbose --show-progress=estimating",
-        "lint:check": "php-cs-fixer fix --dry-run --verbose --show-progress=estimating"
+        "lint:check": "php-cs-fixer fix --dry-run --verbose --show-progress=estimating",
+        "lint:config": "bin/console lint:yaml config",
+        "lint:translations": "bin/console lint:yaml translations",
+        "lint:templates": "bin/console lint:twig templates",
+        "security-checker": "bin/console security:check",
+        "test": [
+            "@lint:check",
+            "@lint:config",
+            "@lint:translations",
+            "@lint:templates",
+            "@security-checker"
+        ]
     },
     "conflict": {
         "symfony/symfony": "*"

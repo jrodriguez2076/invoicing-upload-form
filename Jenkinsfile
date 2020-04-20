@@ -72,7 +72,7 @@ pipeline {
         stage("deploy:images") {
             when {
                 expression {
-                    buildNeeded && ["master", "production"].contains(env.BRANCH_NAME) && !env.CHANGE_ID
+                    buildNeeded && ["master"].contains(env.BRANCH_NAME) && !env.CHANGE_ID
                 }
             }
 
@@ -81,22 +81,10 @@ pipeline {
             }
         }
 
-        stage("deploy:development") {
-            when {
-                expression {
-                    ["master"].contains(env.BRANCH_NAME) && !env.CHANGE_ID
-                }
-            }
-
-            steps {
-                deployGitOps2(shortCommit, project, "development")
-            }
-        }
-
         stage("deploy:staging") {
             when {
                 expression {
-                    ["production"].contains(env.BRANCH_NAME) && !env.CHANGE_ID
+                    ["master"].contains(env.BRANCH_NAME) && !env.CHANGE_ID
                 }
             }
 

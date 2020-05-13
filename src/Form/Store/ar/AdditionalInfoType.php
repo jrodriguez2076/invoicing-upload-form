@@ -311,6 +311,20 @@ class AdditionalInfoType extends AbstractType
                 ]
             )
             ->add(
+                'retentionCertificate',
+                FileType::class,
+                [
+                    'multiple' => true,
+                    'label' => 'RETENTION_CERTIFICATE_LABEL',
+                    'attr' => [
+                        'class' => 'additionalField hide retentionCertificate files',
+                    ],
+                    'label_attr' => [
+                        'class' => 'additionalField hide retentionCertificate',
+                    ],
+                ]
+            )
+            ->add(
                 'cutoffDates',
                 TextType::class,
                 [

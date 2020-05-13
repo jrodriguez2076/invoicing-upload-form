@@ -179,6 +179,9 @@
               {% if form.additionalInfo.attachments is defined %}
                 {{ form_row(form.additionalInfo.attachments, { 'id': 'attachments' }) }}
               {% endif %}
+              {% if form.additionalInfo.retentionCertificate is defined %}
+                {{ form_row(form.additionalInfo.retentionCertificate, { 'id': 'retentionCertificate' }) }}
+              {% endif %}
             </div>
           </div>
         </div>

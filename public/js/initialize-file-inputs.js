@@ -189,6 +189,15 @@ $(document).ready(function() {
     removeFromPreviewOnError: true
   });
 
+  $('#retentionCertificate').fileinput({
+    showUpload: false,
+    allowedPreviewTypes: ['image'],
+    allowedFileExtensions: ['xlsx', 'xls', 'csv', 'pdf', 'docx', 'doc'],
+    theme: 'explorer-fas',
+    language: locale,
+    removeFromPreviewOnError: true
+  });
+
   $('#attachments').fileinput({
     showUpload: false,
     allowedPreviewTypes: ['image'],

@@ -11,8 +11,7 @@ services:
     ports:
       - '8025:80'
     environment:
-      VIRTUAL_HOST: psc-form.localhost
-      NGINX_HOST: psc-form.localhost
+      VIRTUAL_HOST: psc-form.localhost      
       PHP_FPM_HOST: php
     volumes:
       - .:/application

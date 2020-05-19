@@ -57,7 +57,7 @@ $(document).ready(function() {
   $('#accountReceivable').fileinput({
     showUpload: false,
     allowedPreviewTypes: ['image'],
-    allowedFileExtensions: ['xlsx', 'xls', 'csv'],
+    allowedFileExtensions: ['xlsx', 'xls', 'csv', 'pdf', 'docx', 'doc'],
     theme: 'explorer-fas',
     language: locale,
     removeFromPreviewOnError: true

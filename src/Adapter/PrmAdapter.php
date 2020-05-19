@@ -233,6 +233,10 @@ class PrmAdapter
             ['name' => 'case[relatedAccount]', 'contents' => $accountId],
         ];
 
+        if (in_array('orderNumbers', $enabledFields[$data['generalInfo']['reasons']])) {
+            $requestBody[] = ['name' => 'case[orderId]', 'contents' => $data['additionalInfo']['orderNumbers']];
+        }
+
         if (!empty($filesArray)) {
             foreach ($filesArray as $index => $file) {
                 $requestBody[] = $this->getMultipartRequestFile($file, $index);

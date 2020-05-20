@@ -169,7 +169,7 @@ class PrmAdapter
         $formattedCaseDescription = '<strong>Contact Name: </strong>' . $data['generalInfo']['contactFullName'] . "<br>\n";
         $formattedCaseDescription .= '<strong>Seller Center ID: </strong>' . $data['generalInfo']['sellerCenterId'] . "<br>\n";
 
-        if (!$enabledFields[$data['generalInfo']['reasons']]) {
+        if (!$this->reasonHasEnabledFields($enabledFields, $data['generalInfo']['reasons'])) {
             $formattedCaseDescription .= '<strong>Reason: </strong>' . $data['additionalInfo']['reason'] . "<br>\n";
 
             return $formattedCaseDescription;
@@ -196,7 +196,7 @@ class PrmAdapter
     {
         $filesRequestArray = [];
 
-        if (!$enabledFields[$data['generalInfo']['reasons']]) {
+        if (!$this->reasonHasEnabledFields($enabledFields, $data['generalInfo']['reasons'])) {
             return $filesRequestArray;
         }
 
@@ -233,6 +233,10 @@ class PrmAdapter
             ['name' => 'case[relatedAccount]', 'contents' => $accountId],
         ];
 
+        if (!$this->reasonHasEnabledFields($enabledFields, $data['generalInfo']['reasons'])) {
+            return $requestBody;
+        }
+
         if (in_array('orderNumbers', $enabledFields[$data['generalInfo']['reasons']])) {
             $requestBody[] = ['name' => 'case[orderId]', 'contents' => $data['additionalInfo']['orderNumbers']];
         }
@@ -244,6 +248,11 @@ class PrmAdapter
         }
 
         return $requestBody;
+    }
+
+    protected function reasonHasEnabledFields(array $enabledFields, string $reason): bool
+    {
+        return (bool) $enabledFields[$reason];
     }
 
     protected function getMultipartRequestFile(?UploadedFile $uploadedFile, int $index): array

@@ -1,4 +1,4 @@
-FROM gcr.io/linio-support/docker-node:10-1.0.1 AS DEVELOPMENT
+FROM gcr.io/linio-support/docker-node:10-1.1.0 AS DEVELOPMENT
 
 COPY package.json yarn.lock ./
 RUN yarn install

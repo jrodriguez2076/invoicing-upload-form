@@ -12,6 +12,8 @@ use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
+use Symfony\Component\Form\FormEvent;
+use Symfony\Component\Form\FormEvents;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
 class AdditionalInfoType extends AbstractType
@@ -340,7 +342,7 @@ class AdditionalInfoType extends AbstractType
             )
             ->add(
                 'orderNumbers',
-                TextType::class,
+                ChoiceType::class,
                 [
                     'label' => 'ORDER_NUMBERS_LABEL',
                     'attr' => [
@@ -350,6 +352,7 @@ class AdditionalInfoType extends AbstractType
                         'class' => 'additionalField hide orderNumbers',
                     ],
                     'help' => 'ORDER_NUMBERS_CAPTION',
+                    'multiple' => true,
                 ]
             )
             ->add(
@@ -626,6 +629,30 @@ class AdditionalInfoType extends AbstractType
                     'help' => 'SKU_CAPTION',
                 ]
             );
+
+        $builder->addEventListener(FormEvents::PRE_SUBMIT, function (FormEvent $event): void {
+            if (!$event->getData()['orderNumbers']) {
+                return;
+            }
+
+            $form = $event->getForm();
+            $data = $event->getData();
+            $orderNumbersString = implode(',', $data['orderNumbers']);
+            $data['orderNumbers'] = $orderNumbersString;
+
+            $event->setData($data);
+
+            $form->remove('orderNumbers');
+            $form->add(
+                'orderNumbers',
+                TextType::class,
+                [
+                    'attr' => [
+                        'class' => 'orderNumbers',
+                    ],
+                ]
+            );
+        });
     }
 
     public function configureOptions(OptionsResolver $resolver): void

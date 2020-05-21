@@ -211,6 +211,18 @@
         var reasonFields = {{ reasonsEnabledFields|json_encode|raw }};
         var locale = '{{ app.request.locale|slice(0, 2) }}';
     </script>
+    <script>
+        $(function() {
+            $("#{{ form.additionalInfo.orderNumbers.vars.id }}").select2(
+                {
+                    tags: true,
+                    tokenSeparators: [','],
+                    width: '100%',
+                    multiple: true
+                }
+            );
+        });
+    </script>
     <script src="{{ asset('js/toggle-fields.js') }}"></script>
     <script src="{{ asset('js/show-error-fields.js') }}"></script>
     <script src="{{ asset('js/initialize-file-inputs.js') }}"></script>

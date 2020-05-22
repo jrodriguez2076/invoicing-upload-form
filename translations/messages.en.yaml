@@ -62,3 +62,6 @@ PACKAGE_WEIGHT_LABEL: Package Weight
 ORIGIN_LABEL: Origin
 SKU_LABEL: SKU
 RETENTION_CERTIFICATE_LABEL: Retention Certificate
+
+# NO RESULT MESSAGE FOR ORDER NUMBERS FIELD
+no_result: Must be numeric with 9 digits

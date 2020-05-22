@@ -93,4 +93,4 @@ REGISTERED_EMAIL_LABEL: Email de registro en Linio
 RETENTION_CERTIFICATE_LABEL: Certificado de retenciones
 
 # NO RESULT MESSAGE FOR ORDER NUMBERS FIELD
-no_result: Debe ser numérico de 9 digitos
+no_result: Debe ser numérico de 9 dígitos

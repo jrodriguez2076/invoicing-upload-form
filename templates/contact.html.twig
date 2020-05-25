@@ -213,13 +213,30 @@
     </script>
     <script>
         $(function() {
+            var noResult = '{{ 'no_result'|trans }}';
             $("#{{ form.additionalInfo.orderNumbers.vars.id }}").select2(
                 {
                     tags: true,
                     tokenSeparators: [','],
                     width: '100%',
                     multiple: true,
-                    selectOnClose: true
+                    selectOnClose: true,
+                    createTag: function (params) {
+                        if (params.term.match(/^(?:[0-9]{9},)*[0-9]{9}$/g) == null) {
+                            return null;
+                        }
+
+                        return {
+                            id: params.term,
+                            text: params.term,
+                            newTag: true
+                        };
+                    },
+                    language: {
+                        noResults: function() {
+                            return noResult;
+                        }
+                    }
                 }
             );
         });

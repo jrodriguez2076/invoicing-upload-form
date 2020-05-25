@@ -520,6 +520,10 @@ class AdditionalInfoType extends AbstractType
             );
 
         $builder->addEventListener(FormEvents::PRE_SUBMIT, function (FormEvent $event): void {
+            if (!array_key_exists('orderNumbers', $event->getData())) {
+                return;
+            }
+
             if (!$event->getData()['orderNumbers']) {
                 return;
             }

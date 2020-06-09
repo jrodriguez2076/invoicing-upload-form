@@ -71,6 +71,6 @@ CBU_DOCUMENT_LABEL: Constancia de Ingresos Brutos
 REQUESTED_SUPPLIES_LABEL: Excel con información de insumos necesarios
 INVOICE_PROOF_LABEL: Constancia de Factura
 ALTERNATE_IMAGE_LABEL: Adjuntar imagen de la alternativa
-TECHNICAL_REPORT_LABEL: Informe tecnico en caso que aplique
+TECHNICAL_REPORT_LABEL: 'Informe Técnico. <a href="https://nam02.safelinks.protection.outlook.com/?url=https%3A%2F%2Fcomunicacion.linio.com%2FPE%2Fcomunicados%2FJunio%2FFormato%2520de%2520conformidad%2520de%2520Rechazo%2520del%2520producto-PDF-1.pdf&data=02%7C01%7Ceduardo.pujol%40linio.com%7C5fa1e5f48055449c647408d80bd463f4%7Cfdc4e15826b649bf8154a37ddf906dd6%7C0%7C0%7C637272354128284430&sdata=g0PgSQ1EtYtWExJ0trZpxHhNdOR3rcj1bGR7Rg54UqU%3D&reserved=0" target="_blank">Descargar modelo aquí</a>'
 CCCI_DOCUMENT_LABEL: Constancia CCCI
 SHIPPING_LABEL_LABEL: Guía de Remisión

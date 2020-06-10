@@ -1,7 +1,0 @@
-/.env @LinioIT/DevOps
-/.dockerignore @LinioIT/DevOps
-/docker/ @LinioIT/DevOps
-/docker-compose* @LinioIT/DevOps
-/config/deploy @LinioIT/DevOps
-/codefresh.yml @LinioIT/DevOps
-/Rakefile @LinioIT/DevOps

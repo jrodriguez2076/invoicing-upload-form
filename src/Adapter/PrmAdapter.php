@@ -50,7 +50,7 @@ class PrmAdapter
         $this->parameterService = $parameterService;
     }
 
-    public function createCase(array $data, array $enabledFields, string $store, string $accountId): void
+    public function createCase(string $accessToken, array $data, array $enabledFields, string $store, string $accountId): void
     {
         $requestBody = $this->buildContactRequestBody($data, $enabledFields, $store, $accountId);
 
@@ -60,7 +60,7 @@ class PrmAdapter
                 'POST',
                 '/api/rest/latest/cases',
                 [
-                    'headers' => $this->getWsseHeaders(),
+                    'headers' => $this->getRequestHeaders($accessToken),
                     'multipart' => $requestBody,
                 ]
             );
@@ -102,11 +102,11 @@ class PrmAdapter
         $this->logger->info('Case created');
     }
 
-    public function getReasons(string $storeCode): array
+    public function getReasons(string $accessToken, string $storeCode): array
     {
         try {
-            $response = $this->client->request('GET', '/api/rest/latest/reasons.json', [
-                'headers' => $this->getWsseHeaders(),
+            $response = $this->client->request('GET', '/api/rest/latest/reasons', [
+                'headers' => $this->getRequestHeaders($accessToken),
                 'query' => [
                     'store' => $storeCode,
                 ],
@@ -139,11 +139,11 @@ class PrmAdapter
         return ['reasons' => $reasons, 'reasonsEnabledFields' => $reasonsEnabledFields];
     }
 
-    public function getGenericAccountId(string $storeCode): string
+    public function getGenericAccountId(string $accessToken, string $storeCode): string
     {
         try {
             $response = $this->client->request('GET', '/api/rest/latest/accountemail', [
-                'headers' => $this->getWsseHeaders(),
+                'headers' => $this->getRequestHeaders($accessToken),
                 'query' => [
                     'email' => $this->parameterService->getGenericAccountEmail($storeCode),
                 ],
@@ -285,21 +285,46 @@ class PrmAdapter
         return [];
     }
 
-    protected function getWsseHeaders(): array
+    protected function getRequestHeaders(string $accessToken): array
     {
-        $nonce = uniqid();
-        $createdAt = date('c');
-        $wsse = sprintf(
-            'UsernameToken Username="%s", PasswordDigest="%s", Nonce="%s", Created="%s"',
-            $this->clientId,
-            base64_encode(sha1(base64_decode($nonce) . $createdAt . $this->clientSecret, true)),
-            $nonce,
-            $createdAt
-        );
-
         return [
-            'Authorization' => 'WSSE profile="UsernameToken"',
-            'X-WSSE' => $wsse,
+            'Authorization' => 'Bearer ' . $accessToken,
         ];
+    }
+
+    public function getAccessToken(): string
+    {
+        try {
+            $this->logger->info('Attempting to request access token');
+            $response = $this->client->request(
+                'POST',
+                '/oauth2-token',
+                [
+                    'form_params' => [
+                        'grant_type' => 'client_credentials',
+                        'client_id' => $this->clientId,
+                        'client_secret' => $this->clientSecret,
+                    ],
+                ]
+            );
+        } catch (ClientException $exception) {
+            $this->logger->error($exception->getMessage(), [
+                'response' => [
+                    'body' => $exception->getResponse()->getBody()->getContents(),
+                ],
+            ]);
+
+            throw new PrmException($exception->getMessage());
+        } catch (ServerException $exception) {
+            $this->logger->error($exception->getMessage(), [
+                'response' => [
+                    'body' => $exception->getResponse()->getBody()->getContents(),
+                ],
+            ]);
+
+            throw new PrmException($exception->getMessage());
+        }
+
+        return json_decode($response->getBody()->getContents(), true)['access_token'];
     }
 }

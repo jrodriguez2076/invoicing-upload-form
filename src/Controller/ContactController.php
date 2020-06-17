@@ -34,8 +34,9 @@ class ContactController extends AbstractController
     public function index(Request $request, string $store): Response
     {
         $store = strtolower($store);
-        $reasonsInformation = $this->prmAdapter->getReasons($store);
-        $accountId = $this->prmAdapter->getGenericAccountId($store);
+        $accessToken = $this->prmAdapter->getAccessToken();
+        $reasonsInformation = $this->prmAdapter->getReasons($accessToken, $store);
+        $accountId = $this->prmAdapter->getGenericAccountId($accessToken, $store);
 
         $form = $this->createForm(
             ContactFormFactory::fromStore($store),
@@ -51,7 +52,7 @@ class ContactController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             try {
-                $this->prmAdapter->createCase($form->getData(), $reasonsInformation['reasonsEnabledFields'], $store, $accountId);
+                $this->prmAdapter->createCase($accessToken, $form->getData(), $reasonsInformation['reasonsEnabledFields'], $store, $accountId);
             } catch (PrmException $exception) {
                 $this->logger->error($exception->getMessage());
                 $this->addFlash('error', 'GENERAL_ERROR');

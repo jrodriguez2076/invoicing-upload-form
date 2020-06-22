@@ -164,6 +164,42 @@ class PrmAdapter
         return (string) $accountId;
     }
 
+    public function getAccessToken(): string
+    {
+        try {
+            $this->logger->info('Attempting to request access token');
+            $response = $this->client->request(
+                'POST',
+                '/oauth2-token',
+                [
+                    'form_params' => [
+                        'grant_type' => 'client_credentials',
+                        'client_id' => $this->clientId,
+                        'client_secret' => $this->clientSecret,
+                    ],
+                ]
+            );
+        } catch (ClientException $exception) {
+            $this->logger->error($exception->getMessage(), [
+                'response' => [
+                    'body' => $exception->getResponse()->getBody()->getContents(),
+                ],
+            ]);
+
+            throw new PrmException($exception->getMessage());
+        } catch (ServerException $exception) {
+            $this->logger->error($exception->getMessage(), [
+                'response' => [
+                    'body' => $exception->getResponse()->getBody()->getContents(),
+                ],
+            ]);
+
+            throw new PrmException($exception->getMessage());
+        }
+
+        return json_decode($response->getBody()->getContents(), true)['access_token'];
+    }
+
     protected function getFormattedCaseDescription(array $enabledFields, array $data): string
     {
         $formattedCaseDescription = '<strong>Contact Name: </strong>' . $data['generalInfo']['contactFullName'] . "<br>\n";
@@ -290,41 +326,5 @@ class PrmAdapter
         return [
             'Authorization' => 'Bearer ' . $accessToken,
         ];
-    }
-
-    public function getAccessToken(): string
-    {
-        try {
-            $this->logger->info('Attempting to request access token');
-            $response = $this->client->request(
-                'POST',
-                '/oauth2-token',
-                [
-                    'form_params' => [
-                        'grant_type' => 'client_credentials',
-                        'client_id' => $this->clientId,
-                        'client_secret' => $this->clientSecret,
-                    ],
-                ]
-            );
-        } catch (ClientException $exception) {
-            $this->logger->error($exception->getMessage(), [
-                'response' => [
-                    'body' => $exception->getResponse()->getBody()->getContents(),
-                ],
-            ]);
-
-            throw new PrmException($exception->getMessage());
-        } catch (ServerException $exception) {
-            $this->logger->error($exception->getMessage(), [
-                'response' => [
-                    'body' => $exception->getResponse()->getBody()->getContents(),
-                ],
-            ]);
-
-            throw new PrmException($exception->getMessage());
-        }
-
-        return json_decode($response->getBody()->getContents(), true)['access_token'];
     }
 }

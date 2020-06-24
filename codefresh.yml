@@ -109,18 +109,57 @@ steps:
       condition:
         all:
           isNotPr: 'includes("${{CF_PULL_REQUEST_NUMBER}}", "CF_PULL_REQUEST_NUMBER") == true'
+  push_review_app_images:
+    type: parallel
+    title: Push Review App images
+    stage: deploy
+    steps:
+      push_review_app_nginx:
+        title: 'Push Review App image: nginx'
+        type: push
+        registry: gcr
+        candidate: ${{build_nginx}}
+        tags:
+          - ${{CF_SHORT_REVISION}}
+      push_review_app_php:
+        title: 'Push Review App image: php'
+        type: push
+        registry: gcr
+        candidate: ${{build_php}}
+        tags:
+          - ${{CF_SHORT_REVISION}}
+    when:
+      condition:
+        all:
+          isPr: 'includes("${{CF_PULL_REQUEST_NUMBER}}", "CF_PULL_REQUEST_NUMBER") == false'
+  deploy_review_app:
+    stage: deploy
+    title: 'Deploy Review App'
+    type: linioit/review-app
+    when:
+      condition:
+        all:
+          isPr: 'includes("${{CF_PULL_REQUEST_NUMBER}}", "CF_PULL_REQUEST_NUMBER") == false'
+  add_comment_for_review_app:
+    title: Comment for link to review app
+    type: kostis-codefresh/github-pr-comment
+    stage: deploy
+    fail_fast: false
+    arguments:
+      PR_COMMENT_TEXT: |
+        Your review app is ready at: https://${{CF_REPO_NAME}}-${{CF_PULL_REQUEST_NUMBER}}.reviewapps.linio-staging.com/
+      GIT_PROVIDER_NAME: github
+    when:
+      condition:
+        all:
+          isPr: 'includes("${{CF_PULL_REQUEST_NUMBER}}", "CF_PULL_REQUEST_NUMBER") == false'
   deploy_staging:
     title: Deploy to staging
     stage: deploy
     type: linioit/deploy-app
     arguments:
-      APP: ${{CF_REPO_NAME}}
       VERSION: ${{CF_SHORT_REVISION}}
       LINIO_ENV: staging
-      GCP_SERVICE_ACCOUNT_CREDENTIALS: ${{GCP_SERVICE_ACCOUNT_CREDENTIALS}}
-      AWS_ACCESS_KEY_ID: ${{AWS_ACCESS_KEY_ID}}
-      AWS_SECRET_ACCESS_KEY: ${{AWS_SECRET_ACCESS_KEY}}
-      PULUMI_ACCESS_TOKEN: ${{PULUMI_ACCESS_TOKEN}}
     when:
       branch:
         only:

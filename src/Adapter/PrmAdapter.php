@@ -17,6 +17,11 @@ class PrmAdapter
     protected const FORM_CASE_SOURCE_NAME = 'web';
 
     /**
+     * @var string|null
+     */
+    protected $accessToken;
+
+    /**
      * @var ClientInterface
      */
     protected $client;
@@ -50,7 +55,7 @@ class PrmAdapter
         $this->parameterService = $parameterService;
     }
 
-    public function createCase(string $accessToken, array $data, array $enabledFields, string $store, string $accountId): void
+    public function createCase(array $data, array $enabledFields, string $store, string $accountId): void
     {
         $requestBody = $this->buildContactRequestBody($data, $enabledFields, $store, $accountId);
 
@@ -60,7 +65,7 @@ class PrmAdapter
                 'POST',
                 '/api/rest/latest/cases',
                 [
-                    'headers' => $this->getRequestHeaders($accessToken),
+                    'headers' => $this->getRequestHeaders($this->getAccessToken()),
                     'multipart' => $requestBody,
                 ]
             );
@@ -102,11 +107,11 @@ class PrmAdapter
         $this->logger->info('Case created');
     }
 
-    public function getReasons(string $accessToken, string $storeCode): array
+    public function getReasons(string $storeCode): array
     {
         try {
             $response = $this->client->request('GET', '/api/rest/latest/reasons', [
-                'headers' => $this->getRequestHeaders($accessToken),
+                'headers' => $this->getRequestHeaders($this->getAccessToken()),
                 'query' => [
                     'store' => $storeCode,
                 ],
@@ -139,11 +144,11 @@ class PrmAdapter
         return ['reasons' => $reasons, 'reasonsEnabledFields' => $reasonsEnabledFields];
     }
 
-    public function getGenericAccountId(string $accessToken, string $storeCode): string
+    public function getGenericAccountId(string $storeCode): string
     {
         try {
             $response = $this->client->request('GET', '/api/rest/latest/accountemail', [
-                'headers' => $this->getRequestHeaders($accessToken),
+                'headers' => $this->getRequestHeaders($this->getAccessToken()),
                 'query' => [
                     'email' => $this->parameterService->getGenericAccountEmail($storeCode),
                 ],
@@ -166,38 +171,7 @@ class PrmAdapter
 
     public function getAccessToken(): string
     {
-        try {
-            $this->logger->info('Attempting to request access token');
-            $response = $this->client->request(
-                'POST',
-                '/oauth2-token',
-                [
-                    'form_params' => [
-                        'grant_type' => 'client_credentials',
-                        'client_id' => $this->clientId,
-                        'client_secret' => $this->clientSecret,
-                    ],
-                ]
-            );
-        } catch (ClientException $exception) {
-            $this->logger->error($exception->getMessage(), [
-                'response' => [
-                    'body' => $exception->getResponse()->getBody()->getContents(),
-                ],
-            ]);
-
-            throw new PrmException($exception->getMessage());
-        } catch (ServerException $exception) {
-            $this->logger->error($exception->getMessage(), [
-                'response' => [
-                    'body' => $exception->getResponse()->getBody()->getContents(),
-                ],
-            ]);
-
-            throw new PrmException($exception->getMessage());
-        }
-
-        return json_decode($response->getBody()->getContents(), true)['access_token'];
+        return $this->accessToken ?? $this->createAccessToken();
     }
 
     protected function getFormattedCaseDescription(array $enabledFields, array $data): string
@@ -326,5 +300,41 @@ class PrmAdapter
         return [
             'Authorization' => 'Bearer ' . $accessToken,
         ];
+    }
+
+    private function createAccessToken(): string
+    {
+        try {
+            $this->logger->info('Attempting to request access token');
+            $response = $this->client->request(
+                'POST',
+                '/oauth2-token',
+                [
+                    'form_params' => [
+                        'grant_type' => 'client_credentials',
+                        'client_id' => $this->clientId,
+                        'client_secret' => $this->clientSecret,
+                    ],
+                ]
+            );
+        } catch (ClientException $exception) {
+            $this->logger->error($exception->getMessage(), [
+                'response' => [
+                    'body' => $exception->getResponse()->getBody()->getContents(),
+                ],
+            ]);
+
+            throw new PrmException($exception->getMessage());
+        } catch (ServerException $exception) {
+            $this->logger->error($exception->getMessage(), [
+                'response' => [
+                    'body' => $exception->getResponse()->getBody()->getContents(),
+                ],
+            ]);
+
+            throw new PrmException($exception->getMessage());
+        }
+
+        return $this->accessToken = json_decode($response->getBody()->getContents(), true)['access_token'];
     }
 }

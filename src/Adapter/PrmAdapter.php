@@ -17,11 +17,6 @@ class PrmAdapter
     protected const FORM_CASE_SOURCE_NAME = 'web';
 
     /**
-     * @var string|null
-     */
-    protected $accessToken;
-
-    /**
      * @var ClientInterface
      */
     protected $client;
@@ -65,7 +60,7 @@ class PrmAdapter
                 'POST',
                 '/api/rest/latest/cases',
                 [
-                    'headers' => $this->getRequestHeaders($this->getAccessToken()),
+                    'headers' => $this->getWsseHeaders(),
                     'multipart' => $requestBody,
                 ]
             );
@@ -110,8 +105,8 @@ class PrmAdapter
     public function getReasons(string $storeCode): array
     {
         try {
-            $response = $this->client->request('GET', '/api/rest/latest/reasons', [
-                'headers' => $this->getRequestHeaders($this->getAccessToken()),
+            $response = $this->client->request('GET', '/api/rest/latest/reasons.json', [
+                'headers' => $this->getWsseHeaders(),
                 'query' => [
                     'store' => $storeCode,
                 ],
@@ -148,7 +143,7 @@ class PrmAdapter
     {
         try {
             $response = $this->client->request('GET', '/api/rest/latest/accountemail', [
-                'headers' => $this->getRequestHeaders($this->getAccessToken()),
+                'headers' => $this->getWsseHeaders(),
                 'query' => [
                     'email' => $this->parameterService->getGenericAccountEmail($storeCode),
                 ],
@@ -167,11 +162,6 @@ class PrmAdapter
         $accountId = $responseBody['account']['id'];
 
         return (string) $accountId;
-    }
-
-    public function getAccessToken(): string
-    {
-        return $this->accessToken ?? $this->createAccessToken();
     }
 
     protected function getFormattedCaseDescription(array $enabledFields, array $data): string
@@ -295,46 +285,21 @@ class PrmAdapter
         return [];
     }
 
-    protected function getRequestHeaders(string $accessToken): array
+    protected function getWsseHeaders(): array
     {
+        $nonce = uniqid();
+        $createdAt = date('c');
+        $wsse = sprintf(
+            'UsernameToken Username="%s", PasswordDigest="%s", Nonce="%s", Created="%s"',
+            $this->clientId,
+            base64_encode(sha1(base64_decode($nonce) . $createdAt . $this->clientSecret, true)),
+            $nonce,
+            $createdAt
+        );
+
         return [
-            'Authorization' => 'Bearer ' . $accessToken,
+            'Authorization' => 'WSSE profile="UsernameToken"',
+            'X-WSSE' => $wsse,
         ];
-    }
-
-    private function createAccessToken(): string
-    {
-        try {
-            $this->logger->info('Attempting to request access token');
-            $response = $this->client->request(
-                'POST',
-                '/oauth2-token',
-                [
-                    'form_params' => [
-                        'grant_type' => 'client_credentials',
-                        'client_id' => $this->clientId,
-                        'client_secret' => $this->clientSecret,
-                    ],
-                ]
-            );
-        } catch (ClientException $exception) {
-            $this->logger->error($exception->getMessage(), [
-                'response' => [
-                    'body' => $exception->getResponse()->getBody()->getContents(),
-                ],
-            ]);
-
-            throw new PrmException($exception->getMessage());
-        } catch (ServerException $exception) {
-            $this->logger->error($exception->getMessage(), [
-                'response' => [
-                    'body' => $exception->getResponse()->getBody()->getContents(),
-                ],
-            ]);
-
-            throw new PrmException($exception->getMessage());
-        }
-
-        return $this->accessToken = json_decode($response->getBody()->getContents(), true)['access_token'];
     }
 }

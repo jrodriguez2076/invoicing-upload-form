@@ -305,7 +305,7 @@ class PrmAdapter
     private function createAccessToken(): string
     {
         try {
-            $this->logger->info('Attempting to request access token', ['client_id' => $this->clientId, 'client_secret' => $this->clientSecret]);
+            $this->logger->debug('Attempting to request access token', ['client_id' => $this->clientId, 'client_secret' => $this->clientSecret]);
             $response = $this->client->request(
                 'POST',
                 '/oauth2-token',

@@ -171,6 +171,10 @@ class PrmAdapter
 
     public function getAccessToken(): string
     {
+        if (apcu_exists('accessToken')) {
+            return apcu_fetch('accessToken');
+        }
+
         return $this->accessToken ?? $this->createAccessToken();
     }
 
@@ -335,6 +339,11 @@ class PrmAdapter
             throw new PrmException($exception->getMessage());
         }
 
-        return $this->accessToken = json_decode($response->getBody()->getContents(), true)['access_token'];
+        $responseContent = json_decode($response->getBody()->getContents(), true);
+
+        $this->accessToken = $responseContent['access_token'];
+        apcu_store('accessToken', $this->accessToken, 3000);
+
+        return $this->accessToken;
     }
 }

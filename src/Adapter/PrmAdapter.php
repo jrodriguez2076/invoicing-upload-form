@@ -7,7 +7,9 @@ namespace App\Adapter;
 use App\Exception\PrmException;
 use App\Service\ParameterService;
 use GuzzleHttp\ClientInterface;
+use GuzzleHttp\Exception\BadResponseException;
 use GuzzleHttp\Exception\ClientException;
+use GuzzleHttp\Exception\ConnectException;
 use GuzzleHttp\Exception\ServerException;
 use Psr\Log\LoggerInterface;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
@@ -116,14 +118,13 @@ class PrmAdapter
                     'store' => $storeCode,
                 ],
             ]);
-        } catch (ClientException $exception) {
+        } catch (BadResponseException $exception) {
             $responseBody = json_decode((string) $exception->getResponse()->getBody(), true);
             $errorMessage = $responseBody['message'] ?? $exception->getMessage();
+
             throw new PrmException((string) $errorMessage);
-        } catch (ServerException $exception) {
-            $responseBody = json_decode((string) $exception->getResponse()->getBody(), true);
-            $errorMessage = $responseBody['message'] ?? '';
-            throw new PrmException((string) $errorMessage);
+        } catch (ConnectException $exception) {
+            throw new PrmException($exception->getMessage());
         }
 
         $responseBody = json_decode((string) $response->getBody(), true);
@@ -153,14 +154,13 @@ class PrmAdapter
                     'email' => $this->parameterService->getGenericAccountEmail($storeCode),
                 ],
             ]);
-        } catch (ClientException $exception) {
+        } catch (BadResponseException $exception) {
             $responseBody = json_decode((string) $exception->getResponse()->getBody(), true);
             $errorMessage = $responseBody['message'] ?? $exception->getMessage();
+
             throw new PrmException((string) $errorMessage);
-        } catch (ServerException $exception) {
-            $responseBody = json_decode((string) $exception->getResponse()->getBody(), true);
-            $errorMessage = $responseBody['message'] ?? '';
-            throw new PrmException((string) $errorMessage);
+        } catch (ConnectException $exception) {
+            throw new PrmException($exception->getMessage());
         }
 
         $responseBody = json_decode((string) $response->getBody(), true);

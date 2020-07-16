@@ -11,7 +11,8 @@ GENERAL_ERROR: There was an error processing the information, please try again l
 SELLER_CENTER_ID_HELP_CAPTION: You can find your ID on <a href="%https://sellercenter.linio.com.mx/user/profile/account%" target="_blank">Seller Center Profile</a>
 PROCESSING_INFORMATION_MODAL_TITLE: Processing your information
 PROCESSING_INFORMATION_MODAL_BODY: Processing your information, please wait...
-
+MAINTENANCE_TITLE: The System is under maintainence.
+MAINTENANCE_MESSAGE: Sorry for the inconvenience, but we’re performing a maintenance at the moment.
 # CHOICE VALUES AND BUTTON LABELS
 'submit': Submit information
 'Choose an option': Choose an option

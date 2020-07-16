@@ -34,8 +34,13 @@ class ContactController extends AbstractController
     public function index(Request $request, string $store): Response
     {
         $store = strtolower($store);
-        $reasonsInformation = $this->prmAdapter->getReasons($store);
-        $accountId = $this->prmAdapter->getGenericAccountId($store);
+
+        try {
+            $reasonsInformation = $this->prmAdapter->getReasons($store);
+            $accountId = $this->prmAdapter->getGenericAccountId($store);
+        } catch (PrmException $exception) {
+            return $this->render('maintenance.html.twig');
+        }
 
         $form = $this->createForm(
             ContactFormFactory::fromStore($store),

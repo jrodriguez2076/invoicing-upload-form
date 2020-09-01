@@ -41,6 +41,16 @@ class GeneralInfoType extends AbstractType
                 ]
             )
             ->add(
+                'contactPhoneNumber',
+                TextType::class,
+                [
+                    'required' => true,
+                    'constraints' => [
+                        new NotBlank(),
+                    ],
+                ]
+            )
+            ->add(
                 'reasons',
                 ChoiceType::class,
                 [

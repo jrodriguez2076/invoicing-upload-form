@@ -182,6 +182,7 @@ class PrmAdapter
     {
         $formattedCaseDescription = '<strong>Contact Name: </strong>' . $data['generalInfo']['contactFullName'] . "<br>\n";
         $formattedCaseDescription .= '<strong>Seller Center ID: </strong>' . $data['generalInfo']['sellerCenterId'] . "<br>\n";
+        $formattedCaseDescription .= '<strong>Phone Number: </strong>' . $data['generalInfo']['contactPhoneNumber'] . "<br>\n";
 
         if (!$this->reasonHasEnabledFields($enabledFields, $data['generalInfo']['reasons'])) {
             $formattedCaseDescription .= '<strong>Reason: </strong>' . $data['additionalInfo']['reason'] . "<br>\n";

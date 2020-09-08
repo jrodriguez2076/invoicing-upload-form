@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "7e56c601463aeeeb58dddb7c553e0629",
+    "content-hash": "f6d6bd796272b182565d1d5702f5a13b",
     "packages": [
         {
             "name": "clue/stream-filter",
@@ -568,12 +568,12 @@
             "version": "0.2.1",
             "source": {
                 "type": "git",
-                "url": "git@github.com:LinioIT/log-php-sdk.git",
+                "url": "git@gitlab.com:LinioIT/log-php-sdk.git",
                 "reference": "5b4c18456b3340dfa433c6c84453597d7798905b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/LinioIT/log-php-sdk/zipball/5b4c18456b3340dfa433c6c84453597d7798905b",
+                "url": "https://gitlab.com/api/v4/projects/LinioIT%2Flog-php-sdk/repository/archive.zip?sha=5b4c18456b3340dfa433c6c84453597d7798905b",
                 "reference": "5b4c18456b3340dfa433c6c84453597d7798905b",
                 "shasum": ""
             },
@@ -599,9 +599,6 @@
                 "MIT"
             ],
             "description": "Logging formatters, handlers, etc. to comply with Linio standards.",
-            "support": {
-                "source": "https://github.com/LinioIT/log-php-sdk/tree/0.2.1"
-            },
             "time": "2018-05-08T15:41:08+00:00"
         },
         {

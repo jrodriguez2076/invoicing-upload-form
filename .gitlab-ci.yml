@@ -1,0 +1,101 @@
+include:
+  - template: 'Workflows/MergeRequest-Pipelines.gitlab-ci.yml'
+  - project: LinioIT/gitlab
+    file: ci/includes/stages.yml
+  - project: LinioIT/gitlab
+    file: ci/templates/review_app.yml
+  - project: LinioIT/gitlab
+    file: ci/templates/deploy_staging.yml
+  - project: LinioIT/gitlab
+    file: ci/templates/deploy_production.yml
+  - project: LinioIT/gitlab
+    file: ci/templates/docker.yml
+
+variables:
+  TEST_IMAGE_JS: gcr.io/linio-support/$CI_PROJECT_NAME-js-test:$CI_COMMIT_SHORT_SHA
+  TEST_IMAGE_PHP: gcr.io/linio-support/$CI_PROJECT_NAME-php-test:$CI_COMMIT_SHORT_SHA
+  PHP_IMAGE: gcr.io/linio-support/$CI_PROJECT_NAME-php:$CI_COMMIT_SHORT_SHA
+  PHP_IMAGE_LATEST: gcr.io/linio-support/$CI_PROJECT_NAME-php:latest
+  NGINX_IMAGE: gcr.io/linio-support/$CI_PROJECT_NAME-nginx:$CI_COMMIT_SHORT_SHA
+  NGINX_IMAGE_LATEST: gcr.io/linio-support/$CI_PROJECT_NAME-nginx:latest
+
+build:js_test:
+  extends: .docker
+  stage: build:test
+  script:
+    - docker build -t $TEST_IMAGE_JS -f docker/nginx/Dockerfile --target DEVELOPMENT --build-arg GITLAB_TOKEN .
+    - docker push $TEST_IMAGE_JS
+  needs: []
+
+build:php_test:
+  extends: .docker
+  stage: build:test
+  script:
+    - docker build -t $TEST_IMAGE_PHP -f docker/php/Dockerfile --target DEVELOPMENT --build-arg GITLAB_TOKEN .
+    - docker push $TEST_IMAGE_PHP
+  needs: []
+
+lint:api:
+  stage: test
+  image: $TEST_IMAGE_JS
+  before_script:
+    - cd /application
+  script:
+    - yarn lint:check
+  needs:
+    - build:js_test
+
+test:php:
+  stage: test
+  image: $TEST_IMAGE_PHP
+  before_script:
+    - cd /application
+  script:
+    - composer test
+  needs:
+    - build:php_test
+
+build:nginx:
+  extends: .docker
+  stage: build:prod
+  script:
+    - docker pull $TEST_IMAGE_JS
+    - docker build -t $NGINX_IMAGE --cache-from=$TEST_IMAGE_JS -f docker/nginx/Dockerfile --build-arg GITLAB_TOKEN .
+    - docker push $NGINX_IMAGE
+  needs:
+    - build:js_test
+
+build:php:
+  extends: .docker
+  stage: build:prod
+  script:
+    - docker pull $TEST_IMAGE_PHP
+    - docker build -t $PHP_IMAGE --cache-from=$TEST_IMAGE_PHP -f docker/php/Dockerfile --build-arg GITLAB_TOKEN .
+    - docker push $PHP_IMAGE
+  needs:
+    - build:php_test
+
+push:latest:
+  extends: .docker
+  stage: deploy
+  script:
+    - docker pull $NGINX_IMAGE
+    - docker tag $NGINX_IMAGE $NGINX_IMAGE_LATEST
+    - docker push $NGINX_IMAGE_LATEST
+    - docker pull $PHP_IMAGE
+    - docker tag $PHP_IMAGE $PHP_IMAGE_LATEST
+    - docker push $PHP_IMAGE_LATEST
+  needs:
+    - build:nginx
+    - build:php
+  except:
+    - merge_requests
+
+deploy:review:
+  extends: .deploy:review
+
+deploy:staging:
+  extends: .deploy:staging
+
+deploy:production:
+  extends: .deploy:production

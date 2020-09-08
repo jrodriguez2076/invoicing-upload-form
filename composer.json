@@ -96,7 +96,7 @@
     "repositories": [
         {
             "type": "vcs",
-            "url": "git@github.com:LinioIT/log-php-sdk.git"
+            "url": "git@gitlab.com:LinioIT/log-php-sdk.git"
         }
     ]
 }

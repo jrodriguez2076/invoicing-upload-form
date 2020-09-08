@@ -5,8 +5,8 @@ FROM gcr.io/linio-support/docker-php:7.4-2.5.0 AS DEPENDENCIES
 
 COPY composer.json composer.lock ./
 
-ARG GITHUB_TOKEN
-RUN test -n "${GITHUB_TOKEN}" && composer config -g github-oauth.github.com ${GITHUB_TOKEN} || true
+ARG GITLAB_TOKEN
+RUN test -n "${GITLAB_TOKEN}" && composer config -g gitlab-token.gitlab.com ${GITLAB_TOKEN} || true
 RUN composer install --no-scripts -o --no-dev
 
 FROM gcr.io/linio-support/docker-php:7.4-2.5.0  AS PRODUCTION
@@ -22,8 +22,8 @@ RUN bin/console cache:clear --env=prod \
 
 FROM PRODUCTION AS DEVELOPMENT
 
-ARG GITHUB_TOKEN
-RUN test -n "${GITHUB_TOKEN}" && composer config -g github-oauth.github.com ${GITHUB_TOKEN} || true
+ARG GITLAB_TOKEN
+RUN test -n "${GITLAB_TOKEN}" && composer config -g gitlab-token.gitlab.com ${GITLAB_TOKEN} || true
 RUN composer install --no-scripts -o
 
 FROM PRODUCTION

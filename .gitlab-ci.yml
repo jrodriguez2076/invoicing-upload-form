@@ -19,11 +19,19 @@ variables:
   NGINX_IMAGE: gcr.io/linio-support/$CI_PROJECT_NAME-nginx:$CI_COMMIT_SHORT_SHA
   NGINX_IMAGE_LATEST: gcr.io/linio-support/$CI_PROJECT_NAME-nginx:latest
 
+build:nginx:
+  extends: .docker
+  stage: setup
+  script:
+    - docker build -t $NGINX_IMAGE -f docker/nginx/Dockerfile --build-arg GITLAB_TOKEN .
+    - docker push $NGINX_IMAGE
+  needs: []
+
 build:js_test:
   extends: .docker
   stage: build:test
   script:
-    - docker build -t $TEST_IMAGE_JS -f docker/nginx/Dockerfile --target DEVELOPMENT --build-arg GITLAB_TOKEN .
+    - docker build -t $TEST_IMAGE_JS -f docker/nginx/Dockerfile --target development --build-arg GITLAB_TOKEN .
     - docker push $TEST_IMAGE_JS
   needs: []
 
@@ -31,9 +39,10 @@ build:php_test:
   extends: .docker
   stage: build:test
   script:
-    - docker build -t $TEST_IMAGE_PHP -f docker/php/Dockerfile --target DEVELOPMENT --build-arg GITLAB_TOKEN .
+    - docker build -t $TEST_IMAGE_PHP -f docker/php/Dockerfile --target development --build-arg NGINX_IMAGE=$NGINX_IMAGE --build-arg GITLAB_TOKEN .
     - docker push $TEST_IMAGE_PHP
-  needs: []
+  needs:
+    - build:nginx
 
 lint:api:
   stage: test
@@ -55,22 +64,11 @@ test:php:
   needs:
     - build:php_test
 
-build:nginx:
-  extends: .docker
-  stage: build:prod
-  script:
-    - docker pull $TEST_IMAGE_JS
-    - docker build -t $NGINX_IMAGE --cache-from=$TEST_IMAGE_JS -f docker/nginx/Dockerfile --build-arg GITLAB_TOKEN .
-    - docker push $NGINX_IMAGE
-  needs:
-    - build:js_test
-
 build:php:
   extends: .docker
   stage: build:prod
   script:
-    - docker pull $TEST_IMAGE_PHP
-    - docker build -t $PHP_IMAGE --cache-from=$TEST_IMAGE_PHP -f docker/php/Dockerfile --build-arg GITLAB_TOKEN .
+    - docker build -t $PHP_IMAGE -f docker/php/Dockerfile --build-arg NGINX_IMAGE=$NGINX_IMAGE --build-arg GITLAB_TOKEN .
     - docker push $PHP_IMAGE
   needs:
     - build:php_test

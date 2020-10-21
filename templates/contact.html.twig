@@ -105,6 +105,9 @@
             {% if form.additionalInfo.reason is defined %}
               {{ form_row(form.additionalInfo.reason) }}
             {% endif %}
+            {% if form.additionalInfo.multiPackageCourier is defined %}
+              {{ form_row(form.additionalInfo.multiPackageCourier) }}
+            {% endif %}
           </div>
         </div>
         <div class="card hide" id="attachmentsBlock">
@@ -191,6 +194,16 @@
               {% endif %}
               {% if form.additionalInfo.retentionCertificate is defined %}
                 {{ form_row(form.additionalInfo.retentionCertificate, { 'id': 'retentionCertificate' }) }}
+              {% endif %}
+              {% if form.additionalInfo.multiPackageList is defined %}
+                {% form_theme form.additionalInfo.multiPackageList _self %}
+                  <div class="col-md-6 form-group">
+                    <label class="additionalField hide multiPackageList required" for="multiPackageList">
+                      {{ 'MULTI_PACKAGE_LIST_LABEL'|trans|raw }}
+                    </label>
+                    {{ form_errors(form.additionalInfo.multiPackageList) }}
+                    {{ form_widget(form.additionalInfo.multiPackageList, { 'id': 'multiPackageList' }) }}
+                  </div>
               {% endif %}
             </div>
           </div>

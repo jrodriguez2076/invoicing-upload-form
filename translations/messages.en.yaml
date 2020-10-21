@@ -13,6 +13,7 @@ PROCESSING_INFORMATION_MODAL_TITLE: Processing your information
 PROCESSING_INFORMATION_MODAL_BODY: Processing your information, please wait...
 MAINTENANCE_TITLE: The System is under maintainence.
 MAINTENANCE_MESSAGE: Sorry for the inconvenience, but we’re performing a maintenance at the moment.
+
 # CHOICE VALUES AND BUTTON LABELS
 'submit': Submit information
 'Choose an option': Choose an option

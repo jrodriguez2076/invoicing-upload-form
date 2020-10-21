@@ -533,6 +533,35 @@ class AdditionalInfoType extends AbstractType
                     ],
                     'help' => 'SKU_CAPTION',
                 ]
+            )
+            ->add(
+                'multiPackageCourier',
+                ChoiceType::class,
+                [
+                    'label' => 'MULTI_PACKAGE_COURIER_LABEL',
+                    'attr' => [
+                        'class' => 'additionalField hide multiPackageCourier',
+                    ],
+                    'label_attr' => [
+                        'class' => 'additionalField hide multiPackageCourier',
+                    ],
+                    'choices' => $this->parameterService->getMultiPackageCourierChoices($store),
+                    'empty_data' => null,
+                    'placeholder' => 'Choose an option',
+                ]
+            )
+            ->add(
+                'multiPackageList',
+                FileType::class,
+                [
+                    'label' => 'MULTI_PACKAGE_LIST_LABEL',
+                    'attr' => [
+                        'class' => 'additionalField hide multiPackageList files',
+                    ],
+                    'label_attr' => [
+                        'class' => 'additionalField hide multiPackageList',
+                    ],
+                ]
             );
 
         $builder->addEventListener(FormEvents::PRE_SUBMIT, function (FormEvent $event): void {

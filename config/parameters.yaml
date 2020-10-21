@@ -63,6 +63,9 @@ parameters:
       TCC: TCC
       Urbano: Urbano
     email: psc.cl@linio.com
+    multi_package_couriers:
+      Bluexpress: Bluexpress
+      Urbano: Urbano
   co:
     invoincing_type:
       blind_fee: blind_fee

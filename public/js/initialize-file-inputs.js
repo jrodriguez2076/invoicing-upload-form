@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    $('.custom-file-label').hide();
+    $('.custom-file-label').remove();
     $('#paymentDetails').fileinput({
         showUpload: false,
         allowedPreviewTypes: ['image'],
@@ -212,6 +212,15 @@ $(document).ready(function() {
             'json',
             'xml'
         ],
+        theme: 'explorer-fas',
+        language: locale,
+        removeFromPreviewOnError: true
+    });
+
+    $('#multiPackageList').fileinput({
+        showUpload: false,
+        allowedPreviewTypes: ['image'],
+        allowedFileExtensions: ['xlsx', 'xls', 'csv'],
         theme: 'explorer-fas',
         language: locale,
         removeFromPreviewOnError: true

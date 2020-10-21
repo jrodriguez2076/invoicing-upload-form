@@ -95,10 +95,6 @@ body {
     color: #4a4a4a;
 }
 
-.custom-file-input ~ .custom-file-label::after {
-    content: 'Elegir archivo';
-}
-
 label.required:after {
     content: ' * ';
     color: red;

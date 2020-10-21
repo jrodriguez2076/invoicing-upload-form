@@ -53,6 +53,13 @@ class ParameterService
         return $this->params->get($storeId)['email'] ?? '';
     }
 
+    public function getMultiPackageCourierChoices(string $store): array
+    {
+        $storeId = $this->getStoreId($store);
+
+        return $this->params->get($storeId)['multi_package_couriers'] ?? [];
+    }
+
     protected function getStoreId(string $store): string
     {
         if ($this->params->has($store)) {

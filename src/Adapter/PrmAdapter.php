@@ -256,6 +256,10 @@ class PrmAdapter
             $requestBody[] = ['name' => 'case[orderId]', 'contents' => $data['additionalInfo']['orderNumbers']];
         }
 
+        if (in_array('multiPackageCourier', $enabledFields[$data['generalInfo']['reasons']])) {
+            $requestBody[] = ['name' => 'case[shippingCompany]', 'contents' => $data['additionalInfo']['multiPackageCourier']];
+        }
+
         if (!empty($filesArray)) {
             foreach ($filesArray as $index => $file) {
                 $requestBody[] = $this->getMultipartRequestFile($file, $index);

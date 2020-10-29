@@ -105,6 +105,9 @@
             {% if form.additionalInfo.multiPackageCourier is defined %}
               {{ form_row(form.additionalInfo.multiPackageCourier) }}
             {% endif %}
+            {% if form.additionalInfo.paymentMethod is defined %}
+              {{ form_row(form.additionalInfo.paymentMethod) }}
+            {% endif %}
             {% if form.additionalInfo.reason is defined %}
               {{ form_row(form.additionalInfo.reason) }}
             {% endif %}

@@ -60,6 +60,13 @@ class ParameterService
         return $this->params->get($storeId)['multi_package_couriers'] ?? [];
     }
 
+    public function getPaymentMethods(string $store): array
+    {
+        $storeId = $this->getStoreId($store);
+
+        return $this->params->get($storeId)['payment_methods'] ?? [];
+    }
+
     protected function getStoreId(string $store): string
     {
         if ($this->params->has($store)) {

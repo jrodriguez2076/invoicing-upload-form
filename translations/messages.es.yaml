@@ -96,6 +96,7 @@ REGISTERED_EMAIL_LABEL: Email de registro en Linio
 RETENTION_CERTIFICATE_LABEL: Certificado de retenciones
 MULTI_PACKAGE_COURIER_LABEL: Carrier que tienes asignado
 MULTI_PACKAGE_LIST_LABEL: Archivo de órdenes multibulto (descargar <a href="https://drive.google.com/u/0/uc?id=1DUWsWKXwYMrigPWCsYSJyjJlmXEybJ10&export=download" target="_blank">plantilla modelo</a>)
+PAYMENT_METHOD_LABEL: Método de pago
 
 # NO RESULT MESSAGE FOR ORDER NUMBERS FIELD
 no_result: Debe ser numérico de 9 dígitos

@@ -656,6 +656,22 @@ class AdditionalInfoType extends AbstractType
                     ],
                     'help' => 'SKU_CAPTION',
                 ]
+            )
+            ->add(
+                'paymentMethod',
+                ChoiceType::class,
+                [
+                    'label' => 'PAYMENT_METHOD_LABEL',
+                    'attr' => [
+                        'class' => 'additionalField hide paymentMethod',
+                    ],
+                    'label_attr' => [
+                        'class' => 'additionalField hide paymentMethod',
+                    ],
+                    'choices' => $this->parameterService->getPaymentMethods($store),
+                    'empty_data' => null,
+                    'placeholder' => 'Choose an option',
+                ]
             );
 
         $builder->addEventListener(FormEvents::PRE_SUBMIT, function (FormEvent $event): void {

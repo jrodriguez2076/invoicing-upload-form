@@ -127,6 +127,11 @@ parameters:
       Servientrega: Servientrega
       TCC: TCC
       Urbano: Urbano
+    payment_methods:
+      Prepago: Prepago
+      Loyalty: Loyalty
+      Club Premier: Club Premier
+      Pago contra entrega: Pago contra entrega
     email: psc.mx@linio.com
   pe:
     invoincing_type:

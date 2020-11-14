@@ -564,44 +564,6 @@
             "time": "2020-06-23T06:23:06+00:00"
         },
         {
-            "name": "linio/log-php-sdk",
-            "version": "0.2.1",
-            "source": {
-                "type": "git",
-                "url": "git@gitlab.com:LinioIT/log-php-sdk.git",
-                "reference": "5b4c18456b3340dfa433c6c84453597d7798905b"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://gitlab.com/api/v4/projects/LinioIT%2Flog-php-sdk/repository/archive.zip?sha=5b4c18456b3340dfa433c6c84453597d7798905b",
-                "reference": "5b4c18456b3340dfa433c6c84453597d7798905b",
-                "shasum": ""
-            },
-            "require": {
-                "monolog/monolog": "^1.23"
-            },
-            "require-dev": {
-                "friendsofphp/php-cs-fixer": "^2.11",
-                "phpunit/phpunit": "^7.0"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Linio\\Log\\": "src/"
-                }
-            },
-            "autoload-dev": {
-                "psr-4": {
-                    "Linio\\Log\\": "tests/"
-                }
-            },
-            "license": [
-                "MIT"
-            ],
-            "description": "Logging formatters, handlers, etc. to comply with Linio standards.",
-            "time": "2018-05-08T15:41:08+00:00"
-        },
-        {
             "name": "monolog/monolog",
             "version": "1.25.5",
             "source": {

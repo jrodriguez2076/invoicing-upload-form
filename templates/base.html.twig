@@ -12,18 +12,16 @@
             <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" crossorigin="anonymous">
             <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.10/css/select2.min.css" media="all" rel="stylesheet" type="text/css" />
         {% endblock %}
-        <link rel="icon" href="{{ asset('favicon.ico') }}" type="image/x-icon">
-        <link rel="shortcut icon" href="{{ asset('favicon.ico') }}" type="image/x-icon">
+      <!--<link rel="icon" href="{{ asset('favicon.ico') }}" type="image/x-icon">
+        <link rel="shortcut icon" href="{{ asset('favicon.ico') }}" type="image/x-icon">-->
     </head>
     <body>
         {% block body %}
         {% include "flashMessages.html.twig" %}
-          <div class="logo-container">
-            <img src="{{ asset('images/brand-logo-lg.svg') }}" alt="linio_logo" class="brand-logo-lg">
-          </div>
+          <!-- <div class="logo-container">
+            <img src="#" alt="logo" class="brand-logo-lg">
+          </div>-->
           <div class="header-form">
-            <img src="{{ asset('images/illustration-1.svg') }}" alt="linio-psc-form-illustration-1" class="illustration1 d-none d-sm-block">
-            <img src="{{ asset('images/illustration-2.svg') }}" alt="linio-psc-form-illustration-2" class="illustration2 d-none d-sm-block">
             {% block headerText %}
               <div class="header-text">{{ 'FORM_TITLE'|trans|upper }}</div>
               <span></span><div class="subheader-text">{{ 'FORM_SUBTITLE'|trans }}</div>

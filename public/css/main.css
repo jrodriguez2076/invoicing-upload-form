@@ -44,7 +44,7 @@ body {
 
 .header-form {
     height: 300px;
-    background-color: #ff6619;
+    background-color: lightskyblue;
 }
 
 .header-text {
@@ -119,7 +119,7 @@ label.required:after {
 
 .btn-primary {
     border-radius: 3px;
-    background-color: #ff6619;
+    background-color: royalblue;
 }
 
 .card {

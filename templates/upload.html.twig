@@ -1,0 +1,56 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+  <div class="container">
+    <div class="accordion" id="accordionForm">
+      {{ form_start(form) }}
+      <div class="card">
+        <div class="card-header">
+          <span class="section-number">1</span>
+          {{ 'SECTION_1_TITLE' | trans }}
+        </div>
+        <div id="collapseOne">
+          <div class="card-body row">
+            {{ form_row(form.contactEmail) }}
+            {{ form_row(form.files, { 'id': 'files' }) }}
+          </div>
+        </div>
+      </div>
+
+
+      <div class="col-md-12 text-right">
+        <input type="submit" id="submitButton" class="btn btn-primary btn-block col-md-4 offset-md-4 submit-btn" value="{{ 'submit'|trans }}"/>
+      </div>
+    </div>
+    <br>
+    {{ form_end(form) }}
+    </div>
+    <div class="modal fade bd-example-modal-lg" id="processingModal" tabindex="-1" role="dialog" aria-labelledby="submitButton" aria-hidden="true">
+      <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-body">
+            <h4>{{ 'PROCESSING_INFORMATION_MODAL_TITLE'|trans }}</h4>
+            {{ 'PROCESSING_INFORMATION_MODAL_BODY'|trans }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script>
+        var locale = '{{ app.request.locale|slice(0, 2) }}';
+    </script>
+    <script src="{{ asset('js/initialize-file-inputs.js') }}"></script>
+    <script>
+        $('#submitButton').on('click', (function()
+        {
+            var formIsValid = document.getElementsByTagName('form')[0].checkValidity();
+            if (formIsValid) {
+                $('#processingModal').modal('show');
+            }
+        }));
+    </script>
+{% endblock %}

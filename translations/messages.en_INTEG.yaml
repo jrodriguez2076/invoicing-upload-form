@@ -1,6 +1,0 @@
-FORM_SUBTITLE: 'Integrations'
-SELLER_CENTER_ID_HELP_CAPTION: 'You can find your ID on the Seller Center Profile where you are selling: <a href="https://sellercenter.linio.com.ar/user/profile/account" target="_blank">Argentina</a>, <a href="https://sellercenter.linio.cl/user/profile/account" target="_blank">Chile</a>, <a href="https://sellercenter.linio.com.co/user/profile/account" target="_blank">Colombia</a>, <a href="https://sellercenter.linio.com.mx/user/profile/account" target="_blank">Mexico</a>, <a href="https://sellercenter.linio.com.pe/user/profile/account" target="_blank">Peru</a>'
-
-# ADDITIONAL INFORMATION FORM FIELD LABELS
-ATTACHMENTS_LABEL: Attachments
-REASON_LABEL: Comments

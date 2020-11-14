@@ -6,6 +6,6 @@ namespace App\Exception;
 
 use DomainException;
 
-class PrmException extends DomainException
+class OroException extends DomainException
 {
 }

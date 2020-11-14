@@ -1,102 +1,14 @@
-PAGE_TITLE: Formulario de Contacto - Linio
-FORM_TITLE: '¡Contáctanos!'
+PAGE_TITLE: Ingreso de Facturas
+FORM_TITLE: Carga de Facturas
 FORM_SUBTITLE: ''
 SECTION_1_TITLE: Completa la siguiente información
-SECTION_2_TITLE: Datos Adicionales
-SECTION_3_TITLE: Adjuntos
-DATES_CAPTION: DD/MM/AA - separados por comas
-ORDER_NUMBERS_CAPTION: Separados por comas
-AMOUNTS_CAPTION: Separados por comas
-BILLING_NUMBERS_CAPTION: Separados por comas
-SKU_CAPTION: Separados por comas
-SUPPLIES_CAPTION: 'Nombre y cantidad de cada insumo. Ej. Bolas grandes: 50, Caja pequeña: 300'
 MANDATORY_FIELD: Este campo es requerido.
-THANKS_MESSAGE: Gracias por contactar a Partner Support Center
-SUCCESS_MESSAGE: Hemos recibido tu solicitud. Recibirás un mensaje de confirmación en tu correo con datos adicionales.
-CASE_CREATE_ERROR: Hubo un error al crear su caso, intente nuevamente más tarde.
+THANKS_MESSAGE: Los archivos fueron cargados satisfactoriamente.
+SUCCESS_MESSAGE: Los contactos relacionados recibirán un email de notificación.
 GENERAL_ERROR: Hubo un error al procesar la información, intente nuevamente más tarde.
-SELLER_CENTER_ID_HELP_CAPTION: Tu ID lo puedes ubicar en tu <a href="https://sellercenter.linio.com.mx/user/profile/account" target="_blank">Perfil de Seller Center</a>
 PROCESSING_INFORMATION_MODAL_TITLE: Procesando su información
 PROCESSING_INFORMATION_MODAL_BODY: Procesando su información, por favor espere...
-MAINTENANCE_TITLE: El sistema se encuentra en Mantenimiento
-MAINTENANCE_MESSAGE: ¡Lamentamos los inconvenientes! En este momento estamos ejecutando tareas de mantenimiento en el sistema.
-
-# CHOICE VALUES AND BUTTON LABELS
-'submit': Enviar información
-'Choose an option': Elige una opción
-'envelopes': Sobres
-'bags': Bolsas
-'boxes': Cajas
-'envelopes_bags': Sobres y Bolsas
-'envelopes_boxes': Sobres y Cajas
-'bags_boxes': Bolsas y Cajas
-'all': Todos
-'international': Internacional
-'local': Local
-'blind_fee': Comisión ciega
-'interfactura': Interfactura
-'own_invoicing': Facturación propia
 
 # GENERAL INFORMATION FORM FIELD LABELS
-CONTACT_FULL_NAME_LABEL: Nombre completo de la persona solicitante
-SELLER_CENTER_ID_LABEL: ID de la cuenta en Seller Center
-EMAIL_LABEL: Correo de contacto
-REPEAT_EMAIL_LABEL: Repita correo de contacto
-CONTACT_PHONE_NUMBER_LABEL: Teléfono de contacto
-REASONS_LABEL: Razón de contacto
-
-# ADDITIONAL INFORMATION FORM FIELD LABELS
-CUTOFF_DATES_LABEL: Fechas de Corte
-SHIPPING_COMPANY_LABEL: Transportadora
-PERSON_IN_CHARGE_LABEL: Nombre de la persona que recibirá el link
-ORDER_NUMBERS_LABEL: Números de orden
-AMOUNTS_LABEL: Montos
-INVOICING_TYPES_LABEL: Esquema de facturación
-PO_NUMBER_LABEL: Número de PO
-ID_NUMBER_LABEL: RFC
-LEGAL_NAME_LABEL: Razón social
-RESPONSIBLE_NAME_LABEL: Nombre del encargado
-ERROR_DESCRIPTION_LABEL: ¿Cuál es el error?
-BILLING_NUMBERS_LABEL: Números de las facturas
-BILLING_DATES_LABEL: Fechas de las facturas
-TRACKING_NUMBER_LABEL: Número de guía o rastreo
-PHONE_LABEL: Número de teléfono de contacto
-REASON_LABEL: Observaciones
-BANK_ACCOUNT_NUMBER_LABEL: Número de cuenta bancaria
-WAREHOUSE_ADDRESS_LABEL: Dirección de almacén
-SUPPLIES_LABEL: Insumos
-PACKAGING_TYPE_LABEL: Tipo de paquetes
-PACKAGE_QTY_LABEL: Cantidad de paquetes
-PACKAGE_SIZE_LABEL: Tamaño de paquetes (cm3)
-PACKAGE_WEIGHT_LABEL: Peso total de paquetes (Kg)
-ORIGIN_LABEL: Internacional o Local
-SKU_LABEL: SKU del vendedor
-PAYMENT_DETAILS_LABEL: Detalle ajuste de pago u ordenes pendiente de pago
-TAX_DOCUMENT_LABEL: Documento tributario
-ID_DOCUMENT_LABEL: Documento de Identificación
-COMPANY_DOCUMENT_LABEL: Documento de registro para la empresa
-ACCOUNT_BALANCE_LABEL: Estado de cuenta
-INVOICES_LABEL: Facturas en formatos XML y PDF
-ACCOUNT_RECEIVABLE_LABEL: Cuenta de cobro
-INTERFACTURA_EVIDENCE_LABEL: Evidencia del error registrando a Interfactura
-EVIDENCE_LABEL: Evidencias
-FBL_SKU_LIST_LABEL: Listado de SKU que desea ingresar a FBL
-SKU_LIST_LABEL: Listado de SKU´s
-SHOPPING_ERROR_LABEL: Error al momento de comprar
-EVENTS_FORM_LABEL: Formulario de novedades
-ORDER_SHIPMENT_DOCUMENT_LABEL: Soporte de envío de orden
-CBU_DOCUMENT_LABEL: Constancia de Ingresos Brutos
-REQUESTED_SUPPLIES_LABEL: Excel con información de insumos necesarios
-INVOICE_PROOF_LABEL: Constancia de Factura
-ALTERNATE_IMAGE_LABEL: Adjuntar imagen de la alternativa
-TECHNICAL_REPORT_LABEL: Informe tecnico en caso que aplique
-CCCI_DOCUMENT_LABEL: Constancia CCCI
-SHIPPING_LABEL_LABEL: Guía de Remisión
-REGISTERED_EMAIL_LABEL: Email de registro en Linio
-RETENTION_CERTIFICATE_LABEL: Certificado de retenciones
-MULTI_PACKAGE_COURIER_LABEL: Carrier que tienes asignado
-MULTI_PACKAGE_LIST_LABEL: Archivo de órdenes multibulto (descargar <a href="https://drive.google.com/u/0/uc?id=1DUWsWKXwYMrigPWCsYSJyjJlmXEybJ10&export=download" target="_blank">plantilla modelo</a>)
-PAYMENT_METHOD_LABEL: Método de pago
-
-# NO RESULT MESSAGE FOR ORDER NUMBERS FIELD
-no_result: Debe ser numérico de 9 dígitos
+CONTACT_EMAIL_LABEL: Correo de contacto
+FILES_LABEL: Archivos

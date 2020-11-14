@@ -3,7 +3,5 @@ healthCheck:
   controller: App\Controller\ContactController::healthCheckAction
 
 index:
-  path: /{store}
-  controller: App\Controller\ContactController::index
-  defaults:
-    store: mx
+  path: /
+  controller: App\Controller\UploadController::index

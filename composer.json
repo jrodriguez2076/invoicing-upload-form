@@ -1,6 +1,6 @@
 {
-    "name": "linio/psc-form",
-    "description": "A Form for sellers to contact us.",
+    "name": "invoicing-upload-form",
+    "description": "A Form for invoicing file uploads.",
     "type": "project",
     "license": "proprietary",
     "require": {
@@ -10,9 +10,7 @@
         "ext-json": "*",
         "doctrine/annotations": "^1.6",
         "guzzlehttp/guzzle": "^6.5",
-        "linio/log-php-sdk": "^0.2.1",
         "sensiolabs/security-checker": "^6.0",
-        "sentry/sentry-symfony": "^3.3",
         "symfony/asset": "5.0.*",
         "symfony/console": "5.0.*",
         "symfony/dotenv": "5.0.*",

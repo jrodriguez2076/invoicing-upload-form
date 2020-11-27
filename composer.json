@@ -5,11 +5,13 @@
     "license": "proprietary",
     "require": {
         "php": "^7.4",
+        "ext-apcu": "*",
         "ext-ctype": "*",
         "ext-iconv": "*",
         "ext-json": "*",
         "doctrine/annotations": "^1.6",
         "guzzlehttp/guzzle": "^6.5",
+        "harvesthq/chosen": "^1.8",
         "sensiolabs/security-checker": "^6.0",
         "symfony/asset": "5.0.*",
         "symfony/console": "5.0.*",
@@ -21,8 +23,7 @@
         "symfony/translation": "5.0.*",
         "symfony/twig-pack": "^1.0",
         "symfony/validator": "5.0.*",
-        "symfony/yaml": "5.0.*",
-        "ext-apcu": "*"
+        "symfony/yaml": "5.0.*"
     },
     "require-dev": {
         "friendsofphp/php-cs-fixer": "^2.16",

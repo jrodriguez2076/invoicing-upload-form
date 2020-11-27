@@ -8,7 +8,10 @@ SUCCESS_MESSAGE: Los contactos relacionados recibirán un email de notificación
 GENERAL_ERROR: Hubo un error al procesar la información, intente nuevamente más tarde.
 PROCESSING_INFORMATION_MODAL_TITLE: Procesando su información
 PROCESSING_INFORMATION_MODAL_BODY: Procesando su información, por favor espere...
+SELECT_OPTION_PLACEHOLDER: Seleccione una opción
+submit: Enviar
 
 # GENERAL INFORMATION FORM FIELD LABELS
-CONTACT_EMAIL_LABEL: Correo de contacto
+CONTACT_EMAIL_LABEL: Contacto
 FILES_LABEL: Archivos
+CATEGORY_LABEL: Categoría/Periodo

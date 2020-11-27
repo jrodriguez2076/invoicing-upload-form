@@ -12,6 +12,7 @@
         <div id="collapseOne">
           <div class="card-body row">
             {{ form_row(form.contactEmail) }}
+            {{ form_row(form.category) }}
             {{ form_row(form.files, { 'id': 'files' }) }}
           </div>
         </div>
@@ -42,6 +43,7 @@
     {{ parent() }}
     <script>
         var locale = '{{ app.request.locale|slice(0, 2) }}';
+        var contacts = {{ contacts|json_encode|raw }};
     </script>
     <script src="{{ asset('js/initialize-file-inputs.js') }}"></script>
     <script>
@@ -52,5 +54,12 @@
                 $('#processingModal').modal('show');
             }
         }));
+    </script>
+    <script>
+        $(document).ready(function() {
+            $('#upload_contactEmail').chosen({
+                no_results_text: "Oops, no se encontró coincidencia!",
+            });
+        });
     </script>
 {% endblock %}

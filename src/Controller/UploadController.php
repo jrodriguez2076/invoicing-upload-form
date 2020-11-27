@@ -26,9 +26,20 @@ class UploadController extends AbstractController
 
     public function index(Request $request): Response
     {
+        $categories = $this->oroAdapter->getCategories();
+        $contacts = $this->oroAdapter->getContacts();
+        $contactValues = [];
+        foreach ($contacts as $key => $contactEmail) {
+            $contactValues[] = $contactEmail;
+        }
+
         $form = $this->createForm(
             UploadType::class,
-            null
+            null,
+            [
+                'categories' => $categories,
+                'contacts' => $contacts,
+            ]
         );
 
         $form->handleRequest($request);
@@ -44,6 +55,7 @@ class UploadController extends AbstractController
                     'upload.html.twig',
                     [
                         'form' => $form->createView(),
+                        'contacts' => $contactValues,
                     ]
                 );
             }
@@ -55,6 +67,7 @@ class UploadController extends AbstractController
             'upload.html.twig',
             [
                 'form' => $form->createView(),
+                'contacts' => $contactValues,
             ]
         );
     }

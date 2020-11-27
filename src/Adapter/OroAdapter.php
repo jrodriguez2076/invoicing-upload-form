@@ -48,7 +48,7 @@ use Symfony\Component\HttpFoundation\File\UploadedFile;
 
         if (!empty($filesArray)) {
             foreach ($filesArray as $file) {
-                $requestBody = $this->buildUploadRequestBody($file, $contactId);
+                $requestBody = $this->buildUploadRequestBody($file, $contactId, $data['category']);
 
                 try {
                     $response = $this->client->request(
@@ -73,6 +73,49 @@ use Symfony\Component\HttpFoundation\File\UploadedFile;
                 }
             }
         }
+    }
+
+    public function getContacts(): array
+    {
+        try {
+            $response = $this->client->request('GET', '/api/rest/latest/emailcontacts', [
+                'headers' => $this->getRequestHeaders($this->getAccessToken()),
+            ]);
+        } catch (BadResponseException $exception) {
+            $responseBody = json_decode((string) $exception->getResponse()->getBody(), true);
+            $errorMessage = $responseBody['message'] ?? $exception->getMessage();
+
+            throw new OroException((string) $errorMessage);
+        } catch (ConnectException $exception) {
+            throw new OroException($exception->getMessage());
+        }
+
+        return json_decode((string) $response->getBody(), true);
+    }
+
+    public function getCategories(): array
+    {
+        try {
+            $response = $this->client->request('GET', '/api/rest/latest/subcategories', [
+                'headers' => $this->getRequestHeaders($this->getAccessToken()),
+            ]);
+        } catch (BadResponseException $exception) {
+            $responseBody = json_decode((string) $exception->getResponse()->getBody(), true);
+            $errorMessage = $responseBody['message'] ?? $exception->getMessage();
+
+            throw new OroException((string) $errorMessage);
+        } catch (ConnectException $exception) {
+            throw new OroException($exception->getMessage());
+        }
+
+        $responseBody = json_decode((string) $response->getBody(), true);
+        $categories = [];
+
+        foreach ($responseBody as $row) {
+            $categories[$row['category']][$row['name']] = $row['id'];
+        }
+
+        return $categories;
     }
 
     public function getContactIdByEmail(string $email): string
@@ -124,12 +167,13 @@ use Symfony\Component\HttpFoundation\File\UploadedFile;
         return $filesRequestArray;
     }
 
-    protected function buildUploadRequestBody(UploadedFile $file, string $contactId ): array
+    protected function buildUploadRequestBody(UploadedFile $file, string $contactId, string $categoryId): array
     {
         $now = new DateTime();
 
         $requestBody = [
             ['name' => 'file[relatedContact]', 'contents' => (int) $contactId],
+            ['name' => 'file[category]', 'contents' => (int) $categoryId],
             ['name' => 'file[uploadedAt]', 'contents' =>  $now->format('Y-m-d H:i:s')],
         ];
 

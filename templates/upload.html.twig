@@ -11,7 +11,7 @@
         </div>
         <div id="collapseOne">
           <div class="card-body row">
-            {{ form_row(form.contactEmail) }}
+            {{ form_row(form.relatedAccount) }}
             {{ form_row(form.category) }}
             {{ form_row(form.files, { 'id': 'files' }) }}
           </div>
@@ -43,7 +43,7 @@
     {{ parent() }}
     <script>
         var locale = '{{ app.request.locale|slice(0, 2) }}';
-        var contacts = {{ contacts|json_encode|raw }};
+        var accounts = {{ accounts|json_encode|raw }};
     </script>
     <script src="{{ asset('js/initialize-file-inputs.js') }}"></script>
     <script>
@@ -57,7 +57,7 @@
     </script>
     <script>
         $(document).ready(function() {
-            $('#upload_contactEmail').chosen({
+            $('#upload_relatedAccount').chosen({
                 no_results_text: "Oops, no se encontró coincidencia!",
             });
         });

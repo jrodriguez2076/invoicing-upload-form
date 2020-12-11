@@ -17,18 +17,17 @@ class UploadType extends AbstractType
     {
         $builder
             ->add(
-                'contactEmail',
+                'relatedAccount',
                 ChoiceType::class,
                 [
-                    'label' => 'CONTACT_EMAIL_LABEL',
+                    'label' => 'ACCOUNT_LABEL',
                     'placeholder' => 'SELECT_OPTION_PLACEHOLDER',
-                    'choices' => $options['contacts'],
+                    'choices' => $options['accounts'],
                     'required' => true,
                     'constraints' => new NotBlank(),
                     'empty_data' => null,
-                    'invalid_message' => 'INVALID_EMAIL_MESSAGE',
                     'attr' => [
-                        'id' => 'contacts',
+                        'id' => 'accounts',
                     ],
                 ]
             )
@@ -59,9 +58,9 @@ class UploadType extends AbstractType
     {
         $resolver->setDefaults([
             'categories' => null,
-            'contacts' => null,
+            'accounts' => null,
         ]);
 
-        $resolver->setRequired(['categories', 'contacts']);
+        $resolver->setRequired(['categories', 'accounts']);
     }
 }

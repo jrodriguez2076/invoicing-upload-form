@@ -42,13 +42,13 @@ use Symfony\Component\HttpFoundation\File\UploadedFile;
         $this->clientSecret = $clientSecret;
     }
 
-    public function sendFiles(array $data, string $contactId): void
+    public function sendFiles(array $data, string $accountId): void
     {
         $filesArray = $this->buildFilesRequest($data);
 
         if (!empty($filesArray)) {
             foreach ($filesArray as $file) {
-                $requestBody = $this->buildUploadRequestBody($file, $contactId, $data['category']);
+                $requestBody = $this->buildUploadRequestBody($file, $accountId, $data['category']);
 
                 try {
                     $response = $this->client->request(
@@ -75,10 +75,10 @@ use Symfony\Component\HttpFoundation\File\UploadedFile;
         }
     }
 
-    public function getContacts(): array
+    public function getAccounts(): array
     {
         try {
-            $response = $this->client->request('GET', '/api/rest/latest/emailcontacts', [
+            $response = $this->client->request('GET', '/api/rest/latest/invoiceaccounts', [
                 'headers' => $this->getRequestHeaders($this->getAccessToken()),
             ]);
         } catch (BadResponseException $exception) {
@@ -118,35 +118,6 @@ use Symfony\Component\HttpFoundation\File\UploadedFile;
         return $categories;
     }
 
-    public function getContactIdByEmail(string $email): string
-    {
-        try {
-            $response = $this->client->request('GET', '/api/rest/latest/emailcontact', [
-                'headers' => $this->getRequestHeaders($this->getAccessToken()),
-                'query' => [
-                    'email' => $email,
-                ],
-            ]);
-        } catch (BadResponseException $exception) {
-            $responseBody = json_decode((string) $exception->getResponse()->getBody(), true);
-            $errorMessage = $responseBody['message'] ?? $exception->getMessage();
-
-            throw new OroException((string) $errorMessage);
-        } catch (ConnectException $exception) {
-            throw new OroException($exception->getMessage());
-        }
-
-        $responseBody = json_decode((string) $response->getBody(), true);
-
-        if (array_key_exists('error', $responseBody)) {
-            throw new OroException('El email de contacto no se encuentra registrado.');
-        }
-
-        $contactId = $responseBody['contact']['id'];
-
-        return (string) $contactId;
-    }
-
     public function getAccessToken(): string
     {
         if (apcu_exists('accessToken')) {
@@ -167,12 +138,12 @@ use Symfony\Component\HttpFoundation\File\UploadedFile;
         return $filesRequestArray;
     }
 
-    protected function buildUploadRequestBody(UploadedFile $file, string $contactId, string $categoryId): array
+    protected function buildUploadRequestBody(UploadedFile $file, string $accountId, string $categoryId): array
     {
         $now = new DateTime();
 
         $requestBody = [
-            ['name' => 'file[relatedContact]', 'contents' => (int) $contactId],
+            ['name' => 'file[relatedAccount]', 'contents' => (int) $accountId],
             ['name' => 'file[category]', 'contents' => (int) $categoryId],
             ['name' => 'file[uploadedAt]', 'contents' =>  $now->format('Y-m-d H:i:s')],
         ];
